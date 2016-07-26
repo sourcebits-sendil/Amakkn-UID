@@ -1,3 +1,19 @@
 @import url("header.css");
 @import url("footer.css");
 @import url("body.css");
+
+@font-face{
+    font-family: proxiNova-reg;
+    src: url(../assets/fonts/ProximaNova-Reg.otf);
+}
+@font-face{
+    font-family: proxiNova-bold;
+    src: url(../assets/fonts/ProximaNova-Bold.otf);
+}
+@font-face{
+    font-family: proxiNova-light;
+    src: url(../assets/fonts/ProximaNova-Light.otf);
+}
+body {
+    font-family: proxiNova-reg;
+}
