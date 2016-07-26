@@ -3,13 +3,17 @@
 @import url("body.css");
 
 @font-face{
-    font-family: proxiNovaCond-reg;
-    src: url(../assets/fonts/ProximaNovaCond-Reg.otf);
-    font-family: proxiNovaCond-bold;
-    src: url(../assets/fonts/ProximaNovaCond-Bold_0.otf);
-    font-family: proxiNovaCond-light;
-    src: url(../assets/fonts/ProximaNovaCond-Light.otf);
+    font-family: proxiNova-reg;
+    src: url(../assets/fonts/ProximaNova-Reg.otf);
 }
-div {
-    font-family: proxiNovaCond-reg;
+@font-face{
+    font-family: proxiNova-bold;
+    src: url(../assets/fonts/ProximaNova-Bold.otf);
+}
+@font-face{
+    font-family: proxiNova-light;
+    src: url(../assets/fonts/ProximaNova-Light.otf);
+}
+body {
+    font-family: proxiNova-reg;
 }
