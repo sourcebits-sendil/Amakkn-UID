@@ -3,6 +3,13 @@
 @import url("body.css");
 
 @font-face{
-    font-family: proxiNovaExcn-reg;
-    src: url(../assets/fonts/ProximaNovaExCn-Reg.otf)
+    font-family: proxiNova-reg;
+    src: url(../assets/fonts/ProximaNova-Reg.otf);
+    font-family: proxiNova-bold;
+    src: url(../assets/fonts/ProximaNova-Bold.otf);
+    font-family: proxiNova-light;
+    src: url(../assets/fonts/ProximaNova-Light.otf);
+}
+div {
+    font-family: proxiNova-reg;
 }
