@@ -19,7 +19,7 @@
         //////////////
 
         function activate() {
-            $log.debug('Activating ' + vm.class);
+            //$log.debug('Activating ' + vm.class);
             $scope.message = 'Hello,  Welcome to Amakkn!!';
         }
     }
