@@ -7,13 +7,13 @@
     src: url(../assets/fonts/ProximaNova-Reg.otf);
 }
 @font-face{
-    font-family: proxiNova-bold;
-    src: url(../assets/fonts/ProximaNova-Bold.otf);
+    font-family: proxiNova-Semibold;
+    src: url(../assets/fonts/ProximaNova-Semibold.otf);
 }
 @font-face{
     font-family: proxiNova-light;
     src: url(../assets/fonts/ProximaNova-Light.otf);
 }
-body {
+html {
     font-family: proxiNova-reg;
 }
