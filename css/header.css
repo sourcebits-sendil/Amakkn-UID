@@ -3,6 +3,9 @@
 .whiteTxt a{color:#fff !important;}
 .navbar-brand {float: right;color: white !important;}
 .nav>li>a {padding-left: 25px;padding-right: 25px;}
+.navbar-default{border-color:#6dc0ce;}
+
+
 @media (max-width: 991px) {
     .navbar-header {
         float: none;
