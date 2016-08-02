@@ -13,7 +13,7 @@ amakknApp.config(function($routeProvider){
     // route for the rent page
     .when('/rent', {
         templateUrl : '../../Views/rent.html',
-        controller  : 'contactController'
+        controller  : 'rentController'
     })
     // route for the sell page
     .when('/sell', {
@@ -25,25 +25,19 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../../Views/mortgage.html',
         controller  : 'mortgageController'
     })
-    // route for the realEstate page
-    .when('/realEstate', {
-        templateUrl : '../../Views/realEstate.html',
-        controller  : 'realEstateController'
-    })
-    // route for the more page
-    .when('/more', {
-        templateUrl : '../../Views/more.html',
-        controller  : 'contactController'
-    })
     // route for the login page
     .when('/login', {
         templateUrl : '../../Views/login.html',
-        controller  : 'contactController'
+        controller  : 'loginController'
+    })
+    // route for the login page
+    .when('/listProperties', {
+        templateUrl : '../../Views/listProperties.html',
+        controller  : 'listPropertyiesController'
     })
     // route for the home page
     .when('/', {
-        templateUrl : '../../Views/home.html',
-        controller  : 'homeController'
+        templateUrl : '../../Views/home.html'
     })
     .otherwise({ redirectTo: '/' });
 })

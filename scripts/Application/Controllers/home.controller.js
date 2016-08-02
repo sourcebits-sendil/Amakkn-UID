@@ -7,20 +7,20 @@
 
     angular
         .module('amakkn')
-        .controller('MainCtrl', MainCtrl);
+        .controller('homeCtrl', homeController);
 
     /* @ngInject */
-    function MainCtrl ($scope, $log) {
+    function homeController ($scope, $log) {
         var vm = this;
-        vm.class = 'MainCtrl';
+        vm.class = 'homeController';
 
         activate();
 
         //////////////
 
         function activate() {
-            //$log.debug('Activating ' + vm.class);
-            $scope.message = 'Hello,  Welcome to Amakkn!!';
+            $log.debug('Activating ' + vm.class);
+            //$scope.message = 'Hello,  Welcome to Amakkn!!';
         }
     }
 })();

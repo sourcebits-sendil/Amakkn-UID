@@ -1,6 +1,6 @@
 @import url("header.css");
 @import url("footer.css");
-@import url("body.css");
+@import url("common.css");
 
 @font-face{
     font-family: proxiNova-reg;
@@ -14,6 +14,11 @@
     font-family: proxiNova-light;
     src: url(../assets/fonts/ProximaNova-Light.otf);
 }
-html {
-    font-family: proxiNova-reg;
+@font-face{
+    font-family: HelveticaNeue;
+    src: url(../assets/fonts/HelveticaNeue-Thin.otf);
 }
+body {
+    font-family: proxiNova-light;
+}
+
