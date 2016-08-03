@@ -2,8 +2,11 @@
     @import url('../css/home.css')
 </style>
 
-<header>
-    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive" >
+<header data-ng-switch on="selection">
+    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
+    <div class="container greyBtmBorder"  data-ng-switch-when="map">
+        <h1>Buy page loaded......</h1>
+    </div>
         <div class="header-content">
             <div class="header-content-inner">
 
@@ -51,7 +54,7 @@
 </div>
                                 </div>
                                   <div class="col-md-2 col-sm-2 paddingLR10">
-                                    <button type="submit" class="btn btn-default greenBtn">Search</button>
+                                    <button type="submit" class="btn btn-default greenBtn" >Search</button>
                                 </div>
                                 </form>
                               </div>
@@ -59,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 vcenter"><button type="button" class="btn btn-default roundedBtn pull-right"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+                    <div class="col-md-3 vcenter"><button type="button" class="btn btn-default roundedBtn pull-right"  data-ng-click="selection = 'map'" value="map"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
             </div>
