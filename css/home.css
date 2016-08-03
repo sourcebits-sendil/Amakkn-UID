@@ -1,3 +1,71 @@
-.bannerBg{background-image: url(../assets/images/banner1440x768.png); min-height: 100%;background-size: cover;background-position: center;position: relative;
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  /*-webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../assets/images/banner1440x768.png');*/
+
+
+}
+header .header-content {
+    position: absolute;
+    padding: 100px 15px 100px;
     width: 100%;
-    text-align: center;}
+    top:40%;
+}
+header .header-content .header-content-inner h3 {
+    width: 100%;
+    height: 48px;
+    font-weight: 100;
+    font-family: 'HelveticaNeue';
+    font-size: 40px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #fff;
+}
+header .header-content .header-content-inner hr {
+  margin: 30px auto;
+}
+
+@media (min-width: 768px) {
+  header {
+    min-height: 100%;
+  }
+  header .header-content {
+    position: absolute;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 50px;
+  }
+  header .header-content .header-content-inner {
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .header-content .header-content-inner h1 {
+    font-size: 50px;
+  }
+
+}
+
+.brandName img{width: 183px;height: 40px;}
+
+/* styles for search box */
+
+.searchOption .panel-body {padding: 0px;border: 0px;}
+.searchOption .btn-group-justified .btn{border-radius: 0px;border: 0px;}
+.searchOption .btn-group-justified .btn{border-bottom: 4px solid #ededed !important; }
+.btn-group-justified .btn .active, .btn-group-justified .btn:active {border-color: #24c969 !important; background-color: #fff; }
+.searchOption .btn-group-justified .btn:hover{color:#24c969;background-color: #fff;}
+.btn-group-justified .btn-lg{font-size: 20px;color: #000; }
+.btn-group>.btn{outline: none;}
+.roundedBtn{border-radius: 50%; width: 50px; height: 50px;}
+.buttonLR{font-size: 20px;line-height: 1.5;}
+.vertical-align {display: flex;align-items: center;}
+.form-control{box-shadow: none;}
