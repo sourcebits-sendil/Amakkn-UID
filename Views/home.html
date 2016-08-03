@@ -11,11 +11,11 @@
 
                 <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
 
-                <div class="row">
-                <div class="col-md-3 "><img src="../assets/images/Left.png" class="pull-left" alt=""></div>
+                <div class="row vertical-align">
+                    <div class="col-md-3 vcenter"><button type="button" class="btn btn-default roundedBtn disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
 
 
-                    <div class="col-md-6 searchOption">
+                    <div class="col-md-6 searchOption vcenter">
                         <div class="panel panel-default">
                           <div class="panel-body">
                             <div class= "btn-group btn-group-justified" role="group" >
@@ -30,22 +30,36 @@
                                    <button type="button" class="btn btn-default btn-lg">Sell</button>
                                 </div>
                               </div>
-                              <div class="row">
-                                <div class="col-md-8 col-sm-8">
-                                    <input type="text" class="" placeholder="Search">
+
+                              <div class="row padding20 ">
+                                <form>
+                                <div class="col-md-7 col-sm-7">
+                                    <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
                                 </div>
-                                <div class="col-md-3 col-sm-3">
-                                    <button class="">Property Type</button>
+                                <div class="col-md-3 col-sm-3 paddingLR10 text-right">
+                                    <div class="">
+  <button type="button" class="btn btn-default dropdown-toggle customHeaderColor " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Property Type <span class="glyphicon glyphicon-menu-down fontSize14"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
                                 </div>
-                                  <div class="col-md-1 col-sm-1">
-                                    <button class="">Search</button>
+                                  <div class="col-md-2 col-sm-2 paddingLR10">
+                                    <button type="submit" class="btn btn-default greenBtn">Search</button>
                                 </div>
+                                </form>
                               </div>
                           </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3"><img src="../assets/images/Right.png" class="pull-right" alt="Map View"></div>
+                    <div class="col-md-3 vcenter"><button type="button" class="btn btn-default roundedBtn pull-right"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
             </div>
