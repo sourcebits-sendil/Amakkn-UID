@@ -14,12 +14,13 @@
         var vm = this;
         vm.class = 'homeController';
 
-        activate();
+        $scope.selection = "banner";
+        $log.debug($scope.selection);
 
         //////////////
 
         function activate() {
-            $log.debug('Activating ' + vm.class);
+            $log.debug('Activating ' + vm.class );
             //$scope.message = 'Hello,  Welcome to Amakkn!!';
         }
     }

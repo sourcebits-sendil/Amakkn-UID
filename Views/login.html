@@ -1,3 +1,52 @@
-<div class="container greyBtmBorder">
-    <h1>Login page loaded......</h1>
+<style>@import url('../css/loginSignup.css')</style>
+
+<div class="container-fluid text-center greyBtmBorder">
+    <form>
+    <div class="col-md-4 col-md-offset-4 padding20">
+        <div class="row loginTextColor ">
+            <h3>Sign In</h3>
+            <p>Dont have an Amakkn account? Sign Up</p>
+        </div>
+        <div class="row" >
+            <div class="" >
+            <button class="btn btn-default googleBtn">
+                SIGN IN WITH GOOGLE PLUS
+                <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
+            </button>
+
+            <button class="btn btn-default fbBtn">
+                SIGN IN WITH FACEBOOK
+                <span><img src="../assets/icons/facebook-logo-button.svg"></span>
+            </button>
+            </div>
+        </div>
+        <div class="row text-center">
+            <span>
+                <svg  height="30" width="230">
+                  <line x1="20" y1="20" x2="120" y2="20" style="stroke: #9e9e9e; fill:none; stroke-width: 1px; stroke-dasharray: 5 2"  />
+                </svg>
+            </span>
+                <span class="orTxt">or</span>
+                <span><svg  height="30" width="230">
+                  <g fill="none" stroke="#9e9e9e" stroke-width="1">
+                    <path stroke-dasharray="5,2" d="M5 30 l215 0" />
+                    </g>
+
+                </svg>
+            </span>
+
+        </div>
+        <div class="row loginTextColor form-group ">
+            <h3>Sign In with your phone number</h3>
+            <input type="tel" placeholder="Phone Number*" id="phoneNum" class="form-control marginTB20">
+            <input type="password" placeholder="Password*" id="pswrd" class="form-control ">
+        </div>
+        <div class="row">
+            <button class="btn btn-default greenBtn">
+                Sign In
+            </button>
+            <p class="forgetPswrd marginTB20">Forgot Password?</p>
+        </div>
+    </div>
+    </form>
 </div>
