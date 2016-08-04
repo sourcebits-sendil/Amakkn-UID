@@ -1,6 +1,9 @@
 .greyBtmBorder{border-bottom: 1px solid #e1e1e1;padding: 50px 20px;}
 .marginTB40{margin: 40px auto;}
+.marginTB20{margin: 20px auto;}
 .padding20{padding: 20px;}
 .paddingLR10{padding-right: 10px; padding-left: 10px;}
 .noBorder{border: 0px;}
 .fontSize14{font-size: 14px !important;}
+.noPadding{padding:0px;}
+.minHeightPage{min-height: 50vh;}
