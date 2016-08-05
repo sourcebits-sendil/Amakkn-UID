@@ -1,6 +1,8 @@
 .greyBg{background-color: #efefef;}
-footer li{display: block;}
+footer li{display: block; color: #fff;}
 footer {color: #9b9b9b;}
 footer .links{color: #444444;font-size: 14px;line-height: 2.3;}
 .copyRight{border-bottom: 1px solid #e1e1e1;padding: 20px 0px;}
 .footerColHeaders{color: #333333;font-size: 16px;padding-bottom: 10px;}
+footer a{text-decoration:none; color:#444444; }
+footer a:hover{text-decoration:none; color: #24c969}
