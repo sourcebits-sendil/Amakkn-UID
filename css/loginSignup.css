@@ -1,6 +1,6 @@
 .loginTextColor h3{color:#587277;font-size: 24px;font-weight: 600;margin-bottom: 5px; margin-top: 10px;}
 p{color:#9e9e9e;font-size: 13px;font-weight: 300;line-height: 1.6;padding-bottom: 15px;}
-.greenBtn{width:auto;padding-left: 25px;padding-right: 25px;margin-top: 25px;}
+.greenBtn{width:auto;padding-left: 25px;padding-right: 25px;}
 input{padding:20px !important;border-radius:3px!important; }
 .forgetPswrd{color:#9e9e9e;font-size: 11px;}
 .googleBtn{background-color: #de4d3a;margin-right: 10px;}
@@ -16,3 +16,5 @@ input{padding:20px !important;border-radius:3px!important; }
 .btn .compUser:hover>img{content:url("../assets/icons/i-c-company-active.svg");}
 .indUser{border-radius:4px 0px 0px 4px; }
 .compUser{border-radius:0px 4px 4px 0px; }
+.custSelect{padding: 12px 10px; color:#587277 !important;border-right: 0px;font-weight: bold; }
+.input-group-btn:last-child>.btn{padding:9px;border-left: 0px;background-color: #eee;color:#587277 !important;}

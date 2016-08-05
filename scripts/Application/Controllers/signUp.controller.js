@@ -13,7 +13,9 @@
     function signUpController ($log, $scope) {
         var vm = this;
         vm.class = 'signUpController';
-        $scope.userType = "indDetails";
+        $scope.view={
+              name: ''
+            };
         $log.debug('userType ' + $scope.userType);
         activate();
 
