@@ -30,6 +30,10 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../../Views/login.html',
         controller  : 'loginController'
     })
+    .when('/signUp', {
+        templateUrl : '../../Views/signUp.html',
+        controller  : 'signUpController'
+    })
     // route for the login page
     .when('/listProperties', {
         templateUrl : '../../Views/listProperties.html',
