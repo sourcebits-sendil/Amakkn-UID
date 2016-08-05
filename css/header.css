@@ -7,8 +7,36 @@
 .highLightGreen a{background-color: #5ca9b5 !important;}
 .dropdown-menu>li>a{color: #393d4a !important;}
 .dropdown-menu>li>a:hover{color: #6dc0ce !important;background-color: #fff;}
-.greenBtn{background-color: #24c969;color:#fff;border:0px;width: 100%;}
+.greenBtn{background-color: #24c969;color:#fff;border:0px;width: auto;  }
 .navbar-nav>li a {padding-top: 15px;padding-bottom: 15px; text-decoration: none;}
+
+
+/*css for images*/
+.thumbnail {
+    position:relative;
+    overflow:hidden;
+}
+
+.caption {
+    position:absolute;
+    top:-100%;
+    right:0;
+    background:rgba(66, 139, 202, 0.75);
+    width:100%;
+    height:100%;
+    padding:2%;
+    text-align:center;
+    color:#fff !important;
+    z-index:2;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.thumbnail:hover .caption {
+    top:0%;
+}
 
 /* -- css fix for iPad Portrait view for menu --- */
 @media (max-width: 991px) {
