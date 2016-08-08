@@ -9,9 +9,10 @@
 
 
     <link rel="stylesheet" href="../scripts/Library/bootstrap-3.3.6-dist/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="../scripts/Library/bootstrap-select-1.10.0/dist/css/bootstrap-select.css" >
       <link rel="stylesheet" href="../scripts/Library/Hover-master/css/hover-min.css" >
     <link rel="stylesheet" href="../css/master.css" >
-
+ <link rel="stylesheet" href="../css/footer.css" >
 
 
   </head>
@@ -64,7 +65,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="#login" class="hvr-underline-reveal">Sign In | Sign Up</a></li>
+        <li><span><a href="#login" class="hvr-underline-reveal">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></span></li>
           <li class="highLightGreen"><a href="#listProperties" class="hvr-underline-reveal ">+ List Your Property</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -72,72 +73,77 @@
 </nav>
 
     <div class="row container-fluid" data-ng-view>
-
     </div>
+
+
+
 
   <footer class="navbar-default ">
 
-        <div class="container-fluid greyBg greyBtmBorder">
+        <div class="container-fluid greyBg greyBtmBorder ">
             <div class="row">&nbsp;</div>
-            <div class="col-md-offset-2 col-md-2 col-sm-6">
-                <ul class="">
-                    <li>Top Real Estate Markets</li>
-                    <li>&nbsp;</li>
-                    <li>San Diego real estate</li>
-                    <li>Miami real estate</li>
-                    <li>Chicago real estate</li>
-                    <li>Las Vegas real estate</li>
-                    <li>Queens real estate</li>
-                    <li>Austin real estate</li>
+            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-3 col-sm-6 links">
+                <ul id="cssmenu">
+                    <li class="footerColHeaders">Top Real Estate Markets</li>
+
+                    <li><a href="#">San Diego real estate</a></li>
+                    <li><a href="#">Miami real estate</a></li>
+                    <li><a href="#">Chicago real estate</a></li>
+                    <li><a href="#">Las Vegas real estate</a></li>
+                    <li><a href="#">Queens real estate</a></li>
+                    <li><a href="#">Austin real estate</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 col-sm-6">
+            <div class="col-md-3 col-sm-6 links">
                 <ul >
-                    <li>Explore Amakkn</li>
-                    <li>&nbsp;</li>
-                    <li>Homes for Sale</li>
-                    <li>Rentals</li>
-                    <li>Houses for Rent</li>
-                    <li>Apartments for Rent</li>
-                    <li>Real Estate Advice</li>
-                    <li>Real Estate Apps</li>
+                    <li class="footerColHeaders">Explore Amakkn</li>
+
+                    <li><a href="#">Homes for Sale</a></li>
+                    <li><a href="#">Rentals</a></li>
+                    <li><a href="#">Houses for Rent</a></li>
+                    <li><a href="#">Apartments for Rent</a></li>
+                    <li><a href="#">Real Estate Advice</a></li>
+                    <li><a href="#">Real Estate Apps</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 col-sm-6">
+            <div class="col-md-3 col-sm-6 links">
                 <ul >
-                    <li>For Professionals</li>
-                    <li>&nbsp;</li>
-                    <li>Stats &amp; Trends</li>
-                    <li>Tools &amp; Extras</li>
-                    <li>Home Price Maps</li>
-                    <li>U.S. Property Records</li>
-                    <li>Popular Counties</li>
-                    <li>Rental Communities</li>
+                    <li class="footerColHeaders">For Professionals</li>
+
+                    <li><a href="#">Stats &amp; Trends</a></li>
+                    <li><a href="#">Tools &amp; Extras</a></li>
+                    <li><a href="#">Home Price Maps</a></li>
+                    <li><a href="#">U.S. Property Records</a></li>
+                    <li><a href="#">Popular Counties</a></li>
+                    <li><a href="#">Rental Communities</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 col-sm-6">
+            <div class="col-md-3 col-sm-6 links">
                 <ul >
-                    <li>About Amakkn</li>
-                    <li>&nbsp;</li>
-                    <li>About</li>
-                    <li>About Zillow Group</li>
-                    <li>Careers</li>
-                    <li>Investor Relations</li>
-                    <li>Advertising Terms</li>
-                    <li>Privacy</li>
+                    <li class="footerColHeaders">About Amakkn</li>
+
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">About Zillow Group</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Advertising Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
                 </ul>
+            </div>
             </div>
         </div>
         <div class="container-fluid copyRight">
-          <div class="col-md-offset-2 col-md-3  col-sm-6">Copyright 2016 Amakkn, All Rights Reserved.</div>
+            <div class="col-md-offset-2 col-md-3  col-sm-6">Copyright 2016 <a href="#">Amakkn</a>, All Rights Reserved.</div>
           <div class="col-md-2 col-sm-6"> </div>
-            <div class="col-md-5 col-sm-6">Desktop Site |  Leave Feedback |  Terms of Use |  Privacy Policy</div>
+            <div class="col-md-5 col-sm-6"><a href="#">Desktop Site</a> |  <a href="#">Leave Feedback</a> |<a href="#">  Terms of Use </a>|<a href="#">  Privacy Policy</a></div>
         </div>
 
       </footer>
       <!-- Importing Javascript libraries -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="../scripts/Library/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+      <script src="../scripts/Library/bootstrap-select-1.10.0/dist/js/bootstrap-select.js"></script>
       <script src="../scripts/Library/node_modules/angular/angular.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
       <script src="../scripts/Library/imageGrid.js"></script>
@@ -151,6 +157,8 @@
       <script src="../scripts/Application/Controllers/mortgage.controller.js"></script>
       <script src="../scripts/Application/Controllers/rent.controller.js"></script>
       <script src="../scripts/Application/Controllers/sell.controller.js"></script>
+      <script src="../scripts/Application/Controllers/signUp.controller.js"></script>
+
 
 
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

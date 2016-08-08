@@ -1,3 +1,4 @@
+
 header {
   position: relative;
   width: 100%;
@@ -59,9 +60,52 @@ header .header-content .header-content-inner hr {
 /* styles for search box */
 
 .searchOption .panel-body {padding: 0px;border: 0px;}
-.searchOption .btn{border-radius: 0px;border: 0px;}
-.searchOption .btn{border-bottom: 4px solid #ededed !important; }
-.btn.active, .btn:active {border-color: #24c969 !important; background-color: #fff; }
-.searchOption .btn:hover{color:#24c969;background-color: #fff;}
-.btn-lg{font-size: 20px;color: #000; }
+.searchOption .btn-group-justified .btn{border-radius: 0px;border: 0px;}
+.searchOption .btn-group-justified .btn{border-bottom: 4px solid #ededed !important; }
+.btn-group-justified .btn .active, .btn-group-justified .btn:active {border-color: #24c969 !important; background-color: #fff; }
+.searchOption .btn-group-justified .btn:hover{color:#24c969;background-color: #fff;}
+.btn-group-justified .btn-lg{font-size: 20px;color: #000; }
 .btn-group>.btn{outline: none;}
+.roundedBtn{border-radius: 50%; width: 50px; height: 50px;}
+.buttonLR{font-size: 20px;line-height: 1.5;}
+.vertical-align {display: flex;align-items: center;}
+.form-control{box-shadow: none;}
+.listed{ margin-bottom:20px;}
+.clear
+{
+    clear:both;
+}
+
+.zooming {
+    margin: 10px 10px 10px 10px;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    height: 100px;
+    }
+
+.zooming:hover {
+    position: relative;
+	cursor: pointer;
+	-webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(2, 2);
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    box-shadow: 1px 1px 1px #888888;
+    z-index: 1;
+
+    }
+
+.services-wrapper icon bg-crete{
+    background-image: url('../assets/images/oval-20.png');
+    }
+.services-wrapper{
+    text-align: center;
+}
+.services-wrapper p
+{
+    text-align: center;
+}

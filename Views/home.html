@@ -1,9 +1,15 @@
 <style>
     @import url('../css/home.css')
-</style>
 
-<header>
-    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive" >
+</style>
+<style>
+@import url('../css/grid.css')</style>
+
+<header data-ng-switch on="selection">
+    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
+    <div class="container greyBtmBorder"  data-ng-switch-when="map">
+        <h1>Buy page loaded......</h1>
+    </div>
         <div class="header-content">
             <div class="header-content-inner">
 
@@ -11,12 +17,12 @@
 
                 <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
 
-                <div class="row">
-                <div class="col-md-3 "><img src="../assets/images/Left.png" class="pull-left" alt=""></div>
+                <div class="row vertical-align">
+                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
 
 
-                    <div class="col-md-6 searchOption">
-                        <div class="panel panel-default">
+                    <div class="col-md-6  searchOption text-center">
+                        <div class="panel panel-default col-md-10 col-md-offset-1 noPadding">
                           <div class="panel-body">
                             <div class= "btn-group btn-group-justified" role="group" >
                                 <div class="
@@ -30,28 +36,290 @@
                                    <button type="button" class="btn btn-default btn-lg">Sell</button>
                                 </div>
                               </div>
-                              <div class="row">
-                                <div class="col-md-8 col-sm-8">
-                                    <input type="text" class="" placeholder="Search">
+
+                              <div class="row padding20 ">
+                                <form>
+                                <div class="col-md-7 col-sm-7">
+                                    <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
                                 </div>
-                                <div class="col-md-3 col-sm-3">
-                                    <button class="">Property Type</button>
+                                <div class="col-md-3 col-sm-3 paddingLR10 text-right">
+                                    <div class="">
+  <button type="button" class="btn btn-default dropdown-toggle customHeaderColor " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Property Type <span class="glyphicon glyphicon-menu-down fontSize14"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
                                 </div>
-                                  <div class="col-md-1 col-sm-1">
-                                    <button class="">Search</button>
+                                  <div class="col-md-2 col-sm-2 paddingLR10">
+                                    <button type="submit" class="btn btn-default greenBtn" >Search</button>
                                 </div>
+                                </form>
                               </div>
                           </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3"><img src="../assets/images/Right.png" class="pull-right" alt="Map View"></div>
+                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right"  data-ng-click="selection = 'map'" value="map"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
             </div>
         </div>
 </header>
+<div class="container greyBtmBorder">
+         <div class= "text-center ">
+             <h1>Recently Listed</h1>
+             <h5>Dubai, United Arab Emirates</h5>
+        </div>
+          <div class="container">
+	<div class="row">
+		<div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+    	<div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+	    <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+    </div>
+</div>
+          <div class= "text-center ">
+             <h1>Why Amakkn?</h1>
+         </div>
+
+          <div class="row">
+              <div class="col-md-12 ">
+                 <p> In the last five to six years the FTA satellite receiver has become an everyday household electronic device. People all over the world are buying free to air receivers because of their growing and always evolving features and capabilities. FTA receivers these days are gaining popularity all over. Starting initially in Europe, the craze spread globally shortly after. With FTA satellite TV being available in almost every country across the globe, FTA satellite is the wave of the TV future.</p>
+
+                 <p>Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
+
+<div class="text-center">
+<a href="#" class="btn btn-success greenBtn  ">Find Out More</a></div>
+
+              </div>
+          </div>
+
+          <hr>
 
 
+         <div class="item team" id="team1">
+
+    		<div class="container">
+
+    			<div class="row margin-bottom-40">
+
+    				<div class="col-md-12">
+
+    					<div class= "text-center ">
+             <h1>What Our User Says...</h1>
+          </div>
+
+    				</div><!-- /.col-md-12 -->
+
+    			</div><!-- /.row -->
+
+    			<div class="row margin-bottom-20 text-center">
+
+    				<div class="col-md-3 ">
+
+    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
+
+    				   	<div class="editContent ">
+
+
+    				   	<p class= "text-center ">
+    				   		The following article covers a topic that has recently moved to centre stage-at least it seems that way.
+    				   	</p>
+                            <h4>Binesh Walla</h4>
+                            <p class= "text-center ">Netflix</p>
+    				   	</div><!-- /.editContent -->
+
+
+
+    				</div><!-- /.col-md-3 col -->
+
+    				<div class="col-md-3">
+
+    				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
+
+
+    				   	<div class="editContent">
+
+    				   	<p class= "text-center ">
+    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
+    				   	</p>
+                            <h4>Adam Cartlidge</h4>
+                            <p class= "text-center ">Sourcebits</p>
+    				   	</div><!-- /.editContent -->
+
+
+
+    				</div><!-- /.col-md-3 col -->
+
+    				<div class="col-md-3">
+
+    				       				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
+
+
+    				   	<div class="editContent">
+
+    				   	<p class= "text-center ">
+    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
+    				   	</p>
+                            <h4>Gary Howe</h4>
+                            <p class= "text-center ">Google</p>
+    				   	</div><!-- /.editContent -->
+
+
+
+    				</div><!-- /.col-md-3 col -->
+
+    				<div class="col-md-3">
+
+    				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
+
+
+    				   	<div class="editContent">
+
+
+    				   	<p class= "text-center ">
+    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
+    				   	</p>
+                            <h4>Gary Howe</h4>
+                            <p class= "text-center ">Google</p>
+    				   	</div><!-- /.editContent -->
+
+
+    				</div><!-- /.col-md-3 col -->
+
+    			</div><!-- /.row -->
+
+    		</div><!-- /.container -->
+
+    	</div><!-- /.item -->
+
+         <hr>
+
+
+
+	<section id="content-1-3" class="content-block content-1-3">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-12">
+
+					     <div clas="underlined-title">
+						       <div class="editContent" data-selector="Footers">
+			        		      <div class= "text-center ">
+                                      <h1>Live Realtor Advice</h1>
+                                      <h5>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
+                                  </div>
+						       </div>
+		        	     </div>
+
+				        <div class="services-wrapper">
+
+						       <div class="col-md-4">
+							       <div class="icon bg-crete">
+								      <img src="../assets/images/shape.png">
+                                      <span class="fa fa-laptop"></span>
+							       </div>
+							          <div class="editContent" data-selector="Footers">
+								          <h4>Digital Design</h4>
+							          </div>
+							          <div class="editContent" data-selector="Footers">
+								        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem.</p>
+							          </div>
+						        </div>
+
+						       <div class="col-md-4">
+							       <div class="icon bg-finn">
+                                      <img src="../assets/images/compare-icon.png">
+								      <span class="fa fa-balance-scale"></span>
+							       </div>
+							       <div class="editContent" data-selector="Footers">
+								      <h4>Web Development</h4>
+							       </div>
+							       <div class="editContent" data-selector="Footers">
+								      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem.</p>
+							       </div>
+						       </div>
+
+						     <div class="col-md-4">
+							      <div class="icon bg-sunflower">
+                                     <img src="../assets/images/calculator-2.png">
+								     <span class="fa fa-rocket"></span>
+							      </div>
+							      <div class="editContent" data-selector="Footers">
+								     <h4>Creative Direction</h4>
+							      </div>
+							      <div class="editContent" data-selector="Footers">
+								     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem.</p>
+							      </div>
+						     </div>
+
+					   </div>
+				</div>
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section>
+
+
+
+  <br>
+
+   <div id="page" class="page">
+
+
+	<section id="content-1-2" class="content-block content-1-2">
+		<div class="container" id="footer">
+			<!-- Start Row -->
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="editContent">
+						<h2>Get Our New App</h2>
+					</div>
+					<div class="editContent">
+						<p class="lead">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
+					</div>
+					<div class="editContent">
+						<p>Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
+					</div>
+					<div class="row">
+						<div class="col-sm-5 col-xs-12">
+							<a href="#" ><img src="../assets/images/google-play.png"></a>
+						</div>
+						<div class="col-sm-5 col-xs-12">
+							<a href="#" ><img src="../assets/images/img-app-store.png"></a>
+						</div>
+					</div>
+
+
+				</div>
+
+				<br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+				<div class="col-sm-5 col-sm-offset-1">
+					<img class="img-rounded img-responsive" src="../assets/images/mobs.png">
+				</div>
+			</div>
+            <div class="col-sm-5 col-xs-12">
+							<a href="#" ><img src="../assets/icons/app-icon.png"></a>
+						</div>
+			<!--// END Row -->
+		</div>
+	</section>
+    <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
