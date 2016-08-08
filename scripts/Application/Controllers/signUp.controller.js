@@ -7,13 +7,16 @@
 
     angular
         .module('amakkn')
-        .controller('signUpController', SignUpController);
+        .controller('signUpController', signUpController);
 
     /* @ngInject */
-    function SignUpController ($log) {
+    function signUpController ($log, $scope) {
         var vm = this;
-        vm.class = 'SignUpController';
-
+        vm.class = 'signUpController';
+        $scope.view={
+              name: ''
+            };
+        $log.debug('userType ' + $scope.userType);
         activate();
 
         //////////////
