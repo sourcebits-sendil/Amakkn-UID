@@ -35,6 +35,8 @@ font-size: 18px;
 	font-weight: 600;
 	color: #ffffff;
   height: auto;
+     min-width: 100%;
+    min-height: 100%;
   background:
   /* color overlay */
    /* color overlay */ linear-gradient( rgba(240, 212, 0, 0.05), rgba(0, 0, 0, 0.45) ), /* image to overlay */ url(../assets/images/bitmap.png)
