@@ -2,7 +2,39 @@
 
 
 <div class="container-fluid text-center greyBtmBorder" data-ng-switch on="view.name">
-    <form data-ng-submit="processForm()">
+
+     <div class="row bs-wizard" style="border-bottom:0;">
+
+                <div class="col-xs-3 bs-wizard-step complete">
+                  <div class="text-center bs-wizard-stepnum">ACCOUNT TYPE</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot" id='dot1'></a>
+                  <div class="bs-wizard-info text-center">Individual</div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">DETAILS</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center"> </div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">OTP</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center"> </div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">CHOOSE PASSWORD</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center"></div>
+                </div>
+            </div>
+
+    <form name="userForm" novalidate>
         <div ng-switch-default >
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
@@ -12,16 +44,18 @@
 
             </div>
             <div class="row col-md-4 col-md-offset-4 btn" >
-                <div class="col-md-6 userType indUser" ng-click="view.name = 'indDetails'">
+                <div class="col-md-6 userType indUser" ng-click="userType('indDetails')">
                     <img src="../assets/icons/i-c-individuals.svg" class="img-responsive col-centered " >
                     <h4>Individuals</h4>
                 </div>
-             <div class="col-md-6 userType compUser" ng-click="view.name = 'compDetails'">
+             <div class="col-md-6 userType compUser" ng-click="userType('compDetails')">
                     <img src="../assets/icons/i-c-company.svg" class="img-responsive col-centered ">
                  <h4>Real Estate Company</h4>
                 </div>
             </div>
         </div>
+
+
         <div data-ng-switch-when="indDetails">
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
@@ -29,9 +63,9 @@
                     <p>Please select user type and type your name</p>
                 </div>
             </div>
-            <div class="row form-group col-md-4 col-md-offset-4 ">
+            <div class="row  col-md-4 col-md-offset-4 ">
 
-                <div class="input-group">
+                <div class="input-group form-group">
                     <span class="input-group-addon custSelect">User  Type:</span>
                     <select class="form-control selectpicker custSelect">
                       <option>Normal User</option>
@@ -39,11 +73,15 @@
                       <option>Corporate Users</option>
                     </select>
                   </div>
-
-                <input type="text" class="form-control marginTB20" id="userName" placeholder="Name*">
-                <input type="email" class="form-control " id="emailId" placeholder="Email*">
-
-                <button class="btn btn-default greenBtn marginTB20" data-ng-click="view.name = 'otp'">
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                    <input type="text" class="form-control marginTB20" name="name" placeholder="Name*" ng-model="name" required>
+                    <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block text-left">You name is required.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                    <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="email">
+                    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block text-left">Enter a valid email.</p>
+                </div>
+                <button class="btn btn-default greenBtn marginTB20" data-ng-click="view.name = 'otp'" type="submit" ng-disabled="userForm.$invalid">
                     Next
                 </button>
             </div>
@@ -80,32 +118,35 @@
                 </button>
             </div>
         </div>
+    </form>
+    <form name="otpForm" novalidate>
 
         <div data-ng-switch-when="otp">
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
                     <h3>One Time Password</h3>
-                    <p>Please fill the OTP for user verification</p>
+                    <p>Please fill the OTP for user verification {{otpForm.$invalid}}</p>
                 </div>
             </div>
-            <div class="row form-group col-md-4 col-md-offset-4 ">
-                <div class="input-group">
+            <div class="row col-md-4 col-md-offset-4 ">
+                <div class="input-group form-group" ng-class="{ 'has-error' : otpForm.phone.$invalid && !otpForm.phone.$pristine }">
                     <div class="input-group-btn">
-                        <select id="basic" class="selectpicker form-control">
+                        <select name="basic" class="selectpicker form-control">
                             <option>KSA +966</option>
                         </select>
                     </div>
-                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12">
+
+                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="phone">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">Send OTP</button>
                     </span>
                 </div><!-- /input-group -->
+                <p ng-show="otpForm.phone.$invalid && !otpForm.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
+                <p class="text-left" style="">SMS verification code will be sent to you. If did not recieve it Resend</p>
 
-                <p class="pull-left" style="padding-top:12px;">SMS verification code will be sent to you. If did not recieve it Resend</p>
+                <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6" required name="code" ng-model="code">
 
-                <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6">
-
-                <button class="btn btn-default greenBtn" data-ng-click="view.name = 'pswrd'">
+                <button class="btn btn-default greenBtn"  type="submit" ng-disabled="otpForm.$invalid" ng-click="response()">
                     Confirm
                 </button>
 

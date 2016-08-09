@@ -1,6 +1,6 @@
 /**
- * @author
- * @since 8/3/2016
+ * @author Sendil
+ * @since 25/7/2016
  */
 (function () {
     'use strict';
@@ -10,19 +10,35 @@
         .controller('signUpController', signUpController);
 
     /* @ngInject */
-    function signUpController ($log, $scope) {
+    function signUpController ($log, $scope, $http) {
         var vm = this;
         vm.class = 'signUpController';
+
         $scope.view={
               name: ''
             };
-        $log.debug('userType ' + $scope.userType);
-        activate();
+
+        $scope.userType = function(type){
+           $scope.view.name=type;
+            $scope.userForm.accountType = 1;
+            //activate();
+        }
+
+        //activate();
 
         //////////////
 
-        function activate() {
-            $log.debug('Activating ' + vm.class);
+        $scope.response = function activate() {
+            $log.debug('Activating ' + $scope.userForm.accountType);
+            $http({
+                method : "POST",
+                url : "http://52.42.99.192/Login/signupIndividualUser/"
+            }).then(function mySucces(response) {
+                $scope.myWelcome = response.data;
+                 $log.debug($scope.myWelcome);
+            }, function myError(response) {
+                $scope.myWelcome = response.statusText;
+            });
         }
     }
 })();
