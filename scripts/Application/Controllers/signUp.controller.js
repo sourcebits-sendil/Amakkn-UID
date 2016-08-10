@@ -15,30 +15,64 @@
         vm.class = 'signUpController';
 
         $scope.view={
-              name: ''
+              name: '',
+            accountType:''
             };
+        $scope.userForm={
 
-        $scope.userType = function(type){
+        };
+        $scope.user = function(type){
            $scope.view.name=type;
-            $scope.userForm.accountType = 1;
-            //activate();
+            $scope.userForm.accountType = type=='indDetails'? '1':'2';
+            //$log.debug($scope.view.accountType);
         }
+        /*$scope.userForm.userType = '';
+        $scope.userForm.phone = '';
+        $scope.userForm.countryCode = '';
+        $scope.userForm.name = '';*/
 
+        $scope.addName = function(){
+            $log.debug($scope.userForm.userType );
+            $scope.view.name = "otp";
+            if($scope.userForm.accountType=='1'){
+                $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
+                $scope.submitForm = $scope.userForm;
+                //activate();
+
+            }
+        }
         //activate();
 
         //////////////
 
-        $scope.response = function activate() {
-            $log.debug('Activating ' + $scope.userForm.accountType);
+        function activate() {
+            $log.debug('Values ' + $scope.userForm.accountType + ' ' +
+                       $scope.userForm.userType + ' ' +
+                       $scope.userForm.countryCode + ' ' +
+                      $scope.userForm.phone + ' ' +
+
+                      $scope.userForm.name );
+
+            //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
+
             $http({
-                method : "POST",
-                url : "http://52.42.99.192/Login/signupIndividualUser/"
-            }).then(function mySucces(response) {
-                $scope.myWelcome = response.data;
-                 $log.debug($scope.myWelcome);
-            }, function myError(response) {
-                $scope.myWelcome = response.statusText;
-            });
+              method  : 'POST',
+                dataType: 'jsonp',
+              url     : $scope.urlRest,
+              data    : ($scope.submitForm),  // pass in data as strings
+              headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+             })
+              .success(function(data) {
+                $log.debug(data);
+
+                if (!data.success) {
+                  // if not successful, bind errors to error variables
+
+                } else {
+                  // if successful, bind success message to message
+
+                }
+              });
         }
     }
 })();
