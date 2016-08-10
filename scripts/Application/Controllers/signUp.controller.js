@@ -10,7 +10,7 @@
         .controller('signUpController', signUpController);
 
     /* @ngInject */
-    function signUpController ($log, $scope, $http) {
+    function signUpController ($log, $scope, $http, $timeout) {
         var vm = this;
         vm.class = 'signUpController';
 
@@ -32,18 +32,34 @@
         $scope.userForm.name = '';*/
 
         $scope.addName = function(){
-            $log.debug($scope.userForm.userType );
+            //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
-                $scope.submitForm = $scope.userForm;
-                //activate();
 
+            }else{
+                $scope.urlRest = 'http://52.42.99.192/Login/signupCorporateUser/';
             }
+
+            //$scope.submitForm = $scope.userForm;
         }
         //activate();
 
         //////////////
+        $scope.codes = null;
+        $scope.countryCodes = null;
+        $scope.loadCodes = function(){
+            return $timeout(function() {
+            /*$scope.countryCodes = [{"country_code":"AC","country_isd_code":"+247-####","country_name":"Ascension"}, {"country_code":"AD","country_isd_code":"+376-###-###","country_name":"Andorra"}];*/
+                $http.get('../scripts/Library/data.json').success(function(data) {
+            $scope.countryCodes = data;
+            //$log.debug(data);
+        });
+
+    }, 650);
+
+        }
+
 
         function activate() {
             $log.debug('Values ' + $scope.userForm.accountType + ' ' +
