@@ -10,83 +10,98 @@
         .controller('signUpController', signUpController);
 
     /* @ngInject */
-    function signUpController ($log, $scope, $http, $timeout) {
+    function signUpController ($log, $scope, $http, $timeout, $filter) {
         var vm = this;
         vm.class = 'signUpController';
-
         $scope.view={
               name: '',
             accountType:''
             };
-        $scope.userForm={
-
-        };
+        $scope.isDisabled = false;
+        $scope.userForm={};
+        $scope.errorResponse={};
+        $scope.successResponse={};
+        $scope.userForm.userType = '1';
+        $scope.userForm.companyType = '1';
         $scope.user = function(type){
            $scope.view.name=type;
-            $scope.userForm.accountType = type=='indDetails'? '1':'2';
-            //$log.debug($scope.view.accountType);
+            $scope.selectedUser = type;
+            $scope.userForm.accountType = type=='Individual'? '1':'2';
+            var myEl = angular.element( document.querySelector( '#step1' ) );
+myEl.removeClass('active');myEl.addClass('complete');
+            $timeout(function() {
+                myEl = angular.element( document.querySelector( '#step2' ) ).removeClass('disabled').addClass('active');
+            }, 500);
         }
-        /*$scope.userForm.userType = '';
-        $scope.userForm.phone = '';
-        $scope.userForm.countryCode = '';
-        $scope.userForm.name = '';*/
 
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
-
             }else{
                 $scope.urlRest = 'http://52.42.99.192/Login/signupCorporateUser/';
+                alert(' ')
             }
 
             //$scope.submitForm = $scope.userForm;
+            var myEl = angular.element( document.querySelector( '#step2' ) );
+            myEl.removeClass('active');myEl.addClass('complete');
+            $timeout(function() {
+                myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
+            }, 500);
+
         }
         //activate();
 
-        //////////////
+
         $scope.codes = null;
         $scope.countryCodes = null;
         $scope.loadCodes = function(){
             return $timeout(function() {
-            /*$scope.countryCodes = [{"country_code":"AC","country_isd_code":"+247-####","country_name":"Ascension"}, {"country_code":"AD","country_isd_code":"+376-###-###","country_name":"Andorra"}];*/
-                $http.get('../scripts/Library/data.json').success(function(data) {
-            $scope.countryCodes = data;
-            //$log.debug(data);
-        });
+            $http.get('../scripts/Library/data.json').success(function(data) {
+                $scope.countryCodes = data;
 
-    }, 650);
+            });
+
+            }, 650);
 
         }
 
-
-        function activate() {
+        $scope.getOTP = function() {
+            $scope.isDisabled = true;
+            $scope.userForm.countryCode = $scope.userForm.codes.country_isd_code;
             $log.debug('Values ' + $scope.userForm.accountType + ' ' +
                        $scope.userForm.userType + ' ' +
-                       $scope.userForm.countryCode + ' ' +
+                       $scope.userForm.countryCode  + ' ' +
                       $scope.userForm.phone + ' ' +
 
                       $scope.userForm.name );
 
-            //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
+        //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
+            restCall();
 
+        }
+
+        function restCall(){
             $http({
-              method  : 'POST',
+                method  : 'POST',
                 dataType: 'jsonp',
-              url     : $scope.urlRest,
-              data    : ($scope.submitForm),  // pass in data as strings
-              headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                url     : $scope.urlRest,
+                data    : $scope.userForm,  // pass in data as strings
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
              })
               .success(function(data) {
-                $log.debug(data);
+
 
                 if (!data.success) {
                   // if not successful, bind errors to error variables
-
+                    $log.debug(data.resStr);
+                    $scope.successResponse = data;
                 } else {
                   // if successful, bind success message to message
-
+                    $log.debug(data.resStr);
+                    $scope.successResponse = data;
                 }
               });
         }

@@ -18,9 +18,9 @@ input{padding:20px !important;border-radius:3px!important; }
 .compUser{border-radius:0px 4px 4px 0px; }
 .custSelect{padding: 12px 10px; color:#587277 !important;border-right: 0px;font-weight: bold; }
 .input-group-btn:last-child>.btn{padding:9px;border-left: 0px;background-color: #eee;color:#587277 !important;}
-textarea{max-width:504px;max-height:70px;}
-
-
+textarea{max-width:100%;max-height:70px;}
+#otp-group md-select,#user-group md-select{margin:0px;}
+#otp-group .form-control{border:0px;} #otp-group{border:1px solid #ccc;} ._md-select-value{border:0px;}
 
 
 .bs-wizard {margin-top: 40px;}
