@@ -37,8 +37,11 @@ font-size: 18px;
   height: auto;
      min-width: 100%;
     min-height: 100%;
-  background:
-  /* color overlay */
-   /* color overlay */ linear-gradient( rgba(240, 212, 0, 0.05), rgba(0, 0, 0, 0.45) ), /* image to overlay */ url(../assets/images/bitmap.png)
 
+
+}
+
+.content-1-2{
+    background-image: url(../assets/images/bitmap.png);
+    background-size: cover;
 }

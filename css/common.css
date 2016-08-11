@@ -1,4 +1,4 @@
-.greyBtmBorder{border-bottom: 1px solid #e1e1e1;padding: 50px 20px;}
+.greyBtmBorder{border-bottom: 1px solid #e1e1e1;padding: 50px 20px;} footer .greyBtmBorder{padding:20px;}
 .marginTB40{margin: 40px auto;}
 .marginTB20{margin: 20px auto;}
 .padding20{padding: 20px;}
@@ -8,3 +8,4 @@
 .noPadding{padding:0px;}
 .minHeightPage{min-height: 50vh;}
 p{font-size: 16px; line-height: 25px;text-align: justify;}
+.greenTxt{color: #24c969;}
