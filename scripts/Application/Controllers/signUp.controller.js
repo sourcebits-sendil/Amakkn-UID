@@ -23,6 +23,23 @@
         $scope.successResponse={};
         $scope.userForm.userType = '1';
         $scope.userForm.companyType = '1';
+        $http.get('../scripts/Library/data.json').success(function(data) {
+                $scope.countryCodes = data;
+
+            });
+        if (navigator.geolocation) {
+
+            $.getJSON("http://freegeoip.net/json/", function(result){
+                //alert('Country: ' + result.country_name + '\n' + 'Code: ' + result.country_code);
+               $scope.userForm.codes = result.country_code;
+                //alert($scope.IPloc.country_code);
+
+            });
+
+            } else {
+                //alert("Geolocation services are not supported by your browser.");
+            }
+        //$scope.userForm.codes = 'IN';
         $scope.user = function(type){
            $scope.view.name=type;
             $scope.selectedUser = type;
@@ -37,11 +54,14 @@ myEl.removeClass('active');myEl.addClass('complete');
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
+
+
+
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
             }else{
                 $scope.urlRest = 'http://52.42.99.192/Login/signupCorporateUser/';
-                alert(' ')
+
             }
 
             //$scope.submitForm = $scope.userForm;
@@ -91,7 +111,7 @@ myEl.removeClass('active');myEl.addClass('complete');
                 data    : $scope.userForm,  // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
              })
-              .success(function(data) {
+              .then(function successCallback(data) {
 
 
                 if (!data.success) {
@@ -103,7 +123,12 @@ myEl.removeClass('active');myEl.addClass('complete');
                     $log.debug(data.resStr);
                     $scope.successResponse = data;
                 }
-              });
+              }, function errorCallback(response) {
+
+
+            });
         }
+
+
     }
 })();
