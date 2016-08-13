@@ -10,46 +10,49 @@
         .controller('signUpController', signUpController);
 
     /* @ngInject */
-    function signUpController ($log, $scope, $http, $timeout, $filter) {
-        var vm = this;
-        vm.class = 'signUpController';
+    function signUpController($log, $scope, $http, $timeout, $filter) {
+
+        /* initiating view objects used to switch */
         $scope.view={
               name: '',
             accountType:''
-            };
+        };
+        /* used to disable OTP button and enable resend link*/
         $scope.isDisabled = false;
+        /* used for form values */
         $scope.userForm={};
+        /* var for error Response */
         $scope.errorResponse={};
+        /* var for success Response */
         $scope.successResponse={};
+        /* default seleted userType */
         $scope.userForm.userType = '1';
+        /* default seleted userType */
         $scope.userForm.companyType = '1';
-        $http.get('../scripts/Library/data.json').success(function(data) {
+        /* loading country codes and ISD codes from JSON file from own Library*/ $http.get('../scripts/Library/data.json').success(function(data) {
                 $scope.countryCodes = data;
-
-            });
+        });
+        /* checking the browser's support for HTML geolocation support and fetching the country code based on IP address*/
         if (navigator.geolocation) {
 
             $.getJSON("http://freegeoip.net/json/", function(result){
-                //alert('Country: ' + result.country_name + '\n' + 'Code: ' + result.country_code);
-               $scope.userForm.codes = result.country_code;
-                //alert($scope.IPloc.country_code);
-
+                /* Selecting the matching country code in dropdown of the mobile number field*/
+                $scope.userForm.codes = result.country_code;
             });
-
-            } else {
+        }else{
                 //alert("Geolocation services are not supported by your browser.");
-            }
-        //$scope.userForm.codes = 'IN';
+        }
+        /* Function to switch into details entry form based on user type - Individual or Real estate agent*/
         $scope.user = function(type){
-           $scope.view.name=type;
+            $scope.view.name = type;
             $scope.selectedUser = type;
-            $scope.userForm.accountType = type=='Individual'? '1':'2';
+            $scope.userForm.accountType = type == 'Individual'? '1':'2';
             var myEl = angular.element( document.querySelector( '#step1' ) );
 myEl.removeClass('active');myEl.addClass('complete');
             $timeout(function() {
-                myEl = angular.element( document.querySelector( '#step2' ) ).removeClass('disabled').addClass('active');
+                myEl = angular.element(document.querySelector('#step2')).removeClass('disabled').addClass('active');
             }, 500);
-        }
+        };
 
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
