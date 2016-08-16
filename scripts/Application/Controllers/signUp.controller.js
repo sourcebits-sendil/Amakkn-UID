@@ -77,11 +77,17 @@
             var isd = $filter('filter')(IsdJson, {country_code:$scope.userForm.codes})[0];
             //alert(isd.country_isd_code);
             $scope.userForm.countryCode =  isd.country_isd_code;
-            /*$log.debug('Values ' + $scope.userForm.accountType + ' ' +
+            $log.debug('Values ' + $scope.userForm.accountType + ' ' +
                        $scope.userForm.userType + ' ' +
                        $scope.userForm.countryCode  + ' ' +
-                      $scope.userForm.phone + ' ' +
-                           $scope.userForm.name );*/
+                      $scope.userForm.email + ' ' +
+                       $scope.userForm.phone + ' ' +
+                       $scope.userForm.companyName + ' ' +
+                       $scope.userForm.managerName + ' ' +
+                       $scope.userForm.commercialRecordNumber + ' ' +
+                       $scope.userForm.website + ' ' +
+                       $scope.userForm.description + ' ' +
+                           $scope.userForm.name );
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
             restCall();
@@ -111,6 +117,7 @@
         }
 
          $scope.setPass = function(){
+             $scope.urlRest = 'http://52.42.99.192/Login/setPasswordForUser/';
 
          }
 
