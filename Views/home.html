@@ -26,14 +26,25 @@
                           <div class="panel-body">
                             <div class= "btn-group btn-group-justified" role="group" >
                                 <div class="
-                                            btn-group" role="group">
-                                    <button type="button" class="btn btn-default btn-lg"> Buy </button>
+                                            btn-group " role="group" >
+                                   <div class="btn btn-default btn-lg" ng-click="tab = 1">Buy</div>
+                                      <div ng-show="tab == 1">
+
+         </div>
                                 </div>
                                <div class="
-                                           btn-group" role="group">
-                                   <button type="button" class="btn btn-default btn-lg">Rent</button>                                </div>
-                               <div class=" btn-group" role="group">
-                                   <button type="button" class="btn btn-default btn-lg">Sell</button>
+                                            btn-group " role="group" >
+                                   <div class="btn btn-default btn-lg" ng-click="tab = 2">Rent</div>
+                                      <div ng-show="tab == 2">
+
+         </div>
+                                </div>
+                               <div class="
+                                            btn-group " role="group" >
+                                   <div class="btn btn-default btn-lg" ng-click="tab = 3">Sell</div>
+                                      <div ng-show="tab == 3">
+
+         </div>
                                 </div>
                               </div>
 
@@ -43,15 +54,14 @@
                                     <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
                                 </div>
                                 <div class="col-md-3 col-sm-3 paddingLR10 text-right">
-                                    <div class="">
-  <button type="button" class="btn btn-default dropdown-toggle customHeaderColor " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Property Type <span class="glyphicon glyphicon-menu-down fontSize14"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Residential</a></li>
-    <li><a href="#">Commercial</a></li>
-</ul>
-</div>
+
+
+     <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()" id="md-select">
+      <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+    </md-select>
+
+
+
                                 </div>
                                   <div class="col-md-2 col-sm-2 paddingLR10">
                                     <button type="submit" class="btn btn-default greenBtn" >Search</button>
@@ -65,7 +75,13 @@
                     <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
-            </div>
+            </div><div class="padding20"></div>
+            <div class="row text-center">
+  <div class="col-md-12 ">
+      <button class="btn btn-default gray-circle-button" ></button>
+      <button class="btn btn-default gray-circle-button" ></button></div>
+
+</div>
         </div>
 </header>
 <div class=" greyBtmBorder">
@@ -96,8 +112,8 @@
 
                  <p style="padding: 0% 2%;">Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
 
-<div class="text-center">
-<a href="#" class="btn btn-success greenBtn  ">Find Out More</a></div>
+<div class="text-center padding20">
+<a href="#" class="btn btn-default greenBtn btn-lg ">Find Out More</a></div><div class="padding20"></div>
 
               </div>
           </div>
@@ -125,10 +141,11 @@
 
     				<div class="col-md-4 ">
                         <div class="whiteBgShad">
+                            <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
     				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
     				   	<div class="editContent padding20">
+
 
 
     				   	<p class= "text-center ">
@@ -144,6 +161,7 @@
 
     				<div class="col-md-4 ">
                         <div class="whiteBgShad">
+                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
     				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
 
@@ -163,6 +181,7 @@
 
     				<div class="col-md-4 ">
                         <div class="whiteBgShad">
+                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
     				       				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
 
@@ -284,10 +303,10 @@
                     <div class="padding20"></div>
 					<div class="row">
 						<div class="col-md-4">
-							<a href="#" ><img src="../assets/images/google-play.png"></a>
+							<a href="#" ng-click="showSimpleToast()"><img src="../assets/images/google-play.png"></a>
 						</div>
 						<div class="col-md-4">
-							<a href="#" ><img src="../assets/images/img-app-store.jpg"></a>
+							<a href="#" ng-click="showToast2()"><img src="../assets/images/img-app-store.jpg"></a>
 						</div>
 					</div>
                     <div class="padding20"></div>
@@ -303,7 +322,7 @@
                 <div class="col-md-6">
                        <div class="padding20"></div>
                     <div class="padding20"></div>
-					<img class="img-rounded img-responsive" src="../assets/images/mobs.png">
+					<img class="img-rounded img-responsive" id="cell" src="../assets/images/mobs.png">
 
 				</div>
 			<div class="row padding20"></div>
@@ -312,6 +331,7 @@
 			<!--// END Row -->
 		</div>
 	</section>
+
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
