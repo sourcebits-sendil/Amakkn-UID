@@ -2,7 +2,40 @@
 
 
 <div class="container-fluid text-center greyBtmBorder" data-ng-switch on="view.name">
-    <form>
+
+     <div class="row text-center" >
+         <div class="row col-md-8 col-md-offset-2 bs-wizard" style="border-bottom:0;">
+                <div class="col-xs-3 bs-wizard-step active" id="step1">
+                  <div class="text-center bs-wizard-stepnum">ACCOUNT TYPE</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <div class="bs-wizard-dot" id='dot1'></div>
+                  <div class="bs-wizard-info text-center" ng-show="userForm.accountType">{{selectedUser}}</div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step disabled" id="step2"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">DETAILS</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <div class="bs-wizard-dot"></div>
+                  <div class="bs-wizard-info text-center"> </div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step disabled" id="step3"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">OTP</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <div class="bs-wizard-dot"></div>
+                  <div class="bs-wizard-info text-center"> </div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step disabled" id="step4"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">CHOOSE PASSWORD</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <div class="bs-wizard-dot"></div>
+                  <div class="bs-wizard-info text-center"></div>
+                </div>
+             </div>
+            </div>
+
+
         <div ng-switch-default >
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
@@ -12,106 +45,150 @@
 
             </div>
             <div class="row col-md-4 col-md-offset-4 btn" >
-                <div class="col-md-6 userType indUser" ng-click="view.name = 'indDetails'">
+                <div class="col-md-6 userType indUser" ng-click="user('Individual')">
                     <img src="../assets/icons/i-c-individuals.svg" class="img-responsive col-centered " >
                     <h4>Individuals</h4>
                 </div>
-             <div class="col-md-6 userType compUser" ng-click="view.name = 'compDetails'">
+             <div class="col-md-6 userType compUser" ng-click="user('Real Estate Company')">
                     <img src="../assets/icons/i-c-company.svg" class="img-responsive col-centered ">
                  <h4>Real Estate Company</h4>
                 </div>
             </div>
         </div>
-        <div data-ng-switch-when="indDetails">
+
+
+        <div data-ng-switch-when="Individual">
+             <form name="signUp" novalidate ng-submit="addName()">
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
                     <h3>Fill up your details</h3>
                     <p>Please select user type and type your name</p>
                 </div>
             </div>
-            <div class="row form-group col-md-4 col-md-offset-4 ">
+            <div class="row  col-md-4 col-md-offset-4 ">
 
-                <div class="input-group">
-                    <span class="input-group-addon custSelect">User  Type:</span>
-                    <select class="form-control selectpicker custSelect">
-                      <option>Normal User</option>
-                      <option>Broker &amp; Owner</option>
-                      <option>Corporate Users</option>
-                    </select>
+                <div class="input-group form-group" id="user-group">
+                    <span class="input-group-addon"  style="width:10%;">User  Type:</span>
+                    <md-select class="form-group" name="userType" ng-model="userForm.userType" aria-label="..">
+                      <md-option value="1" >Normal User</md-option>
+                      <md-option value="2">Broker &amp; Owner</md-option>
+                </md-select>
                   </div>
-
-                <input type="text" class="form-control marginTB20" id="userName" placeholder="Name*">
-                <input type="email" class="form-control " id="emailId" placeholder="Email*">
-
-                <button class="btn btn-default greenBtn marginTB20" data-ng-click="view.name = 'otp'">
+                <div class="form-group" ng-class="{ 'has-error' : signUp.name.$invalid && !signUp.name.$pristine }" id="name-group">
+                    <input type="text" class="form-control marginTB20" name="name" placeholder="Name*"  required maxlength="25" ng-model="userForm.name">
+                    <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
+                    <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="userForm.email" maxlength="30">
+                    <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
+                </div>
+                <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
                     Next
                 </button>
+
+
             </div>
+ </form>
         </div>
 
-        <div data-ng-switch-when="compDetails">
+        <div data-ng-switch-when="Real Estate Company">
+            <form name="signUp" novalidate ng-submit="addName()">
                 <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
                     <h3>Fill up your company details</h3>
                     <p>Please select user type and type your name</p>
                 </div>
             </div>
-            <div class="row form-group col-md-4 col-md-offset-4 ">
+            <div class="row col-md-4 col-md-offset-4 ">
 
-                <div class="input-group">
-                    <span class="input-group-addon custSelect">User  Type:</span>
-                    <select class="form-control selectpicker custSelect">
-                      <option>Normal User</option>
-                      <option>Broker &amp; Owner</option>
-                      <option>Corporate Users</option>
-                    </select>
+                <div class="input-group form-group" id="user-group">
+                    <span class="input-group-addon" style="width:10%;">Company Type:</span>
+                    <md-select class="" name="companyType" ng-model="userForm.companyType" aria-label="..">
+                      <md-option value="1">Real Estate Marketing Company</md-option>
+                      <md-option value="2">Real Estate Development Company</md-option>
+
+                    </md-select>
                   </div>
 
-                <input type="text" class="form-control marginTB20" id="userName" placeholder="Name*">
-                <input type="email" class="form-control " id="emailId" placeholder="Email*">
-                <input type="text" class="form-control marginTB20" id="compName" placeholder="Commercial Name of the company*">
-                <input type="text" class="form-control marginTB20" id="managName" placeholder="Manager Name*">
-                <input type="text" class="form-control marginTB20" id="recNum" placeholder="Commercial record number">
-                <input type="url" class="form-control marginTB20" id="webUrl" placeholder="Company website url">
-                <textarea class="form-control" placeholder="Write about company: 4000 chars Maximum" maxlength="4000" id="abtComp"></textarea>
+                <div class="form-group" ng-class="{ 'has-error' : signUp.name.$invalid && !signUp.name.$pristine }" id="name-group">
+                    <input type="text" class="form-control marginTB20" name="name" placeholder="Name*"  required maxlength="25" ng-model="userForm.name">
+                    <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
+                </div>
 
-                <button class="btn btn-default greenBtn marginTB20" data-ng-click="view.name = 'otp'">
+                <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
+                    <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="userForm.email" maxlength="30">
+                    <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.companyName.$invalid && !signUp.companyName.$pristine }">
+                <input type="text" class="form-control marginTB20" name="companyName" placeholder="Commercial Name of the company*" ng-model="userForm.companyName" required/>
+                <p ng-show="signUp.companyName.$invalid && !signUp.companyName.$pristine" class="help-block text-left">Enter your Company Name.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.managerName.$invalid && !signUp.managerName.$pristine }">
+                <input type="text" class="form-control marginTB20" name="managerName" placeholder="Manager Name*" ng-model="userForm.managerName" required />
+                <p ng-show="signUp.managerName.$invalid && !signUp.managerName.$pristine" class="help-block text-left">Enter Manager's Name.</p>
+                </div>
+
+                <div class="form-group">
+                <input type="text" class="form-control marginTB20" name="commercialRecordNumber" placeholder="Commercial record number" ng-model="userForm.commercialRecordNumber"/>
+                </div>
+                <div class="form-group">
+                <input type="url" class="form-control marginTB20" name="website" placeholder="Company website url" ng-model="userForm.website"/>
+                </div>
+                <div class="form-group">
+                <textarea class="form-control" placeholder="Write about company: 4000 chars Maximum" maxlength="4000" id="abtComp" ng-model="userForm.description"></textarea>
+
+                </div>
+
+                <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
                     Next
                 </button>
             </div>
+            </form>
         </div>
 
+
+
         <div data-ng-switch-when="otp">
+            <form name="signUp" novalidate ng-submit="addPass()">
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
                     <h3>One Time Password</h3>
                     <p>Please fill the OTP for user verification</p>
                 </div>
             </div>
-            <div class="row form-group col-md-4 col-md-offset-4 ">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <select id="basic" class="selectpicker form-control">
-                            <option>KSA +966</option>
-                        </select>
+            <div class="row col-md-4 col-md-offset-4 ">
+                <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
+                    <div class="">
+                        <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:25%;">
+                            <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes">{{codes.country_code +' '+codes.country_isd_code}}</md-option>
+                        </md-select>
                     </div>
-                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12">
+
+                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" style="width:73%;">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Send OTP</button>
+                        <button class="btn btn-default" type="submit" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
                     </span>
                 </div><!-- /input-group -->
+                <p ng-show="signUp.phone.$invalid && !signUp.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
+                <p class="text-left" style="">SMS verification code will be sent to you. If did not recieve it <a ng-click="getOTP()" class="btn" ng-disabled="!isDisabled">Resend</a></p>
 
-                <p class="pull-left" style="padding-top:12px;">SMS verification code will be sent to you. If did not recieve it Resend</p>
+                <div class="form-group" ng-class="{ 'has-error' : signUp.code.$invalid && !signUp.code.$pristine }">
+                <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6"  minlength="6" required name="code" ng-model="userForm.code" style="text-transform: uppercase;">
+                <p ng-show="signUp.code.$invalid && !signUp.code.$pristine" style="color:#a94442;" class="text-left">Add OTP code from the SMS.</p>
 
-                <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6">
 
-                <button class="btn btn-default greenBtn" data-ng-click="view.name = 'pswrd'">
+                <button class="btn btn-default greenBtn"  type="submit" ng-disabled="signUp.$invalid">
                     Confirm
                 </button>
 
             </div>
-        </div>
+                </div>
+            </form>
+    </div>
         <div data-ng-switch-when="pswrd">
+            <form name="signUp" novalidate ng-submit="setPass()">
             <div class="padding20 text-center" >
                 <div class="row loginTextColor ">
                     <h3>Choose Password</h3>
@@ -119,26 +196,32 @@
                 </div>
             </div>
             <div class="row form-group col-md-4 col-md-offset-4 ">
-                <input type="password" class="form-control" id="pswrd" placeholder="Password*" maxlength="12">
+                <input type="password" class="form-control" id="pw1" name="pw1" placeholder="Password*" maxlength="12" required ng-model="userForm.password"/>
 
-                <input type="password" class="form-control marginTB20" id="pswrdConf" placeholder="Retype Password*" maxlength="12">
+                <input type="password" class="form-control marginTB20" id="pw2" placeholder="Retype Password*" name="pw2" maxlength="12" required ng-model="pw2" pw-check="pw1"/>
+
+                  <p class="text-left" style="color:#a94442;" ng-show="signUp.pw2.$error.pwmatch && signUp.pw2.$invalid">
+                    Re-type same as in password.
+                  </p>
+
 
                 <p class="text-center">By clicking below, you agree to Amakkn Terms of Use* and Privacy Policy</p>
 
-                <button class="btn btn-default greenBtn">
+                <button class="btn btn-default greenBtn" type="submit" ng-disabled="signUp.$invalid">
                     Confirm
                 </button>
 
             </div>
+            </form>
         </div>
 
 
-    </form>
+
 </div>
  <script>
           $(document).ready(function(){
-              $('.selectpicker').selectpicker({
+             /* $('.selectpicker').selectpicker({
 
-              });
+              });*/
           })
       </script>
