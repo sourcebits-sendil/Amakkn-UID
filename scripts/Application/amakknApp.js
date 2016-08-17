@@ -1,4 +1,4 @@
-var amakknApp = angular.module("amakkn", ["ngRoute"]);
+var amakknApp = angular.module("amakkn", ["ngRoute","ngMaterial"]);
 
 
 // Route used for Menu bar -------------
