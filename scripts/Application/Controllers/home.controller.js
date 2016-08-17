@@ -10,12 +10,55 @@
         .controller('homeCtrl', homeController);
 
     /* @ngInject */
-    function homeController ($scope, $log) {
+    function homeController ($scope, $log,$timeout,$mdToast) {
         var vm = this;
         vm.class = 'homeController';
 
         $scope.selection = "banner";
-        $log.debug($scope.selection);
+       // $log.debug($scope.selection);
+
+        //property list
+        $scope.user = null;
+  $scope.users = null;
+  $scope.loadUsers = function() {
+    // Use timeout to simulate a 650ms request.
+    return $timeout(function() {
+      $scope.users =  $scope.users  || [
+        { id: 1, name: 'Residential' },
+        { id: 2, name: 'Commercial' }
+      ];
+    }, 650);
+  };
+
+        //toast
+         $scope.showToast1 = function() {
+                  $mdToast.show(
+                     $mdToast.simple()
+                        .textContent('Hello World!')
+                        .hideDelay(3000)
+                  );
+               };
+         $scope.showToast2 = function() {
+                  var toast = $mdToast.simple()
+                     .textContent('Hello World!')
+                     .action('OK')
+                     .highlightAction(false);
+                  $mdToast.show(toast).then(function(response) {
+                     if ( response == 'ok' ) {
+                        alert('You clicked \'OK\'.');
+                     }
+                  });
+               }
+
+         $scope.openToast = function($event){
+            $mdToast.show($mdToast.simple().textContent('Hello'));
+            // Could also do $mdToast.showSimple('Hello');
+         };
+
+function sample( ){
+
+
+};
 
         //////////////
 
