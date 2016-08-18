@@ -1,4 +1,6 @@
-<style>@import url('../css/loginSignup.css')</style>
+<style>@import url('../css/loginSignup.css')
+</style>
+
 
 
 <div class="container-fluid text-center greyBtmBorder" data-ng-switch on="view.name">
@@ -7,16 +9,17 @@
          <div class="row col-md-8 col-md-offset-2 bs-wizard" style="border-bottom:0;">
                 <div class="col-xs-3 bs-wizard-step active" id="step1">
                   <div class="text-center bs-wizard-stepnum">ACCOUNT TYPE</div>
-                  <div class="progress"><div class="progress-bar"></div></div>
-                  <div class="bs-wizard-dot" id='dot1'></div>
-                  <div class="bs-wizard-info text-center" ng-show="userForm.accountType">{{selectedUser}}</div>
+                  <div class="progress"><div class="progress-bar checkmark"></div></div>
+                  <div class="bs-wizard-dot  " id='dot1'></div>
+                  <div class="bs-wizard-info text-center  " ng-show="userForm.accountType" id="login-account">
+  {{selectedUser}}</div>
                 </div>
 
                 <div class="col-xs-3 bs-wizard-step disabled" id="step2"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">DETAILS</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <div class="bs-wizard-dot"></div>
-                  <div class="bs-wizard-info text-center"> </div>
+                  <div class="bs-wizard-info text-center" > </div>
                 </div>
 
                 <div class="col-xs-3 bs-wizard-step disabled" id="step3"><!-- complete -->
@@ -67,8 +70,8 @@
             </div>
             <div class="row  col-md-4 col-md-offset-4 ">
 
-                <div class="input-group form-group" id="user-group">
-                    <span class="input-group-addon"  style="width:10%;">User  Type:</span>
+                <div class="input-group form-group form-control" id="otp-group">
+                    <span class="input-group-addon"  style="width:10%;" id="input-back">User  Type:</span>
                     <md-select class="form-group" name="userType" ng-model="userForm.userType" aria-label="..">
                       <md-option value="1" >Normal User</md-option>
                       <md-option value="2">Broker &amp; Owner</md-option>
@@ -101,8 +104,8 @@
             </div>
             <div class="row col-md-4 col-md-offset-4 ">
 
-                <div class="input-group form-group" id="user-group">
-                    <span class="input-group-addon" style="width:10%;">Company Type:</span>
+                <div class="input-group form-group form-control" id="otp-group">
+                    <span class="input-group-addon" style="width:10%;" id="input-back">Company Type:</span>
                     <md-select class="" name="companyType" ng-model="userForm.companyType" aria-label="..">
                       <md-option value="1">Real Estate Marketing Company</md-option>
                       <md-option value="2">Real Estate Development Company</md-option>
@@ -160,19 +163,19 @@
             </div>
             <div class="row col-md-4 col-md-offset-4 ">
                 <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
-                    <div class="">
-                        <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:25%;">
+                    <div class="" >
+                        <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:25%; color:#6dc0ce" >
                             <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes">{{codes.country_code +' '+codes.country_isd_code}}</md-option>
                         </md-select>
                     </div>
 
                   <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" style="width:73%;">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
+                    <span class="input-group-btn ">
+                        <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
                     </span>
                 </div><!-- /input-group -->
                 <p ng-show="signUp.phone.$invalid && !signUp.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
-                <p class="text-left" style="">SMS verification code will be sent to you. If did not recieve it <a ng-click="getOTP()" class="btn" ng-disabled="!isDisabled">Resend</a></p>
+                <p class="text-left" style="">SMS verification code will be sent to you. If did not recieve it <a ng-click="getOTP()" class="btn code" ng-disabled="!isDisabled" >Resend</a></p>
 
                 <div class="form-group" ng-class="{ 'has-error' : signUp.code.$invalid && !signUp.code.$pristine }">
                 <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6"  minlength="6" required name="code" ng-model="userForm.code" style="text-transform: uppercase;">
@@ -225,3 +228,4 @@
               });*/
           })
       </script>
+

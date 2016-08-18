@@ -5,6 +5,7 @@
 <style>
 @import url('../css/grid.css')</style>
 
+
 <header data-ng-switch on="selection">
     <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
     <div class="container greyBtmBorder"  data-ng-switch-when="map">
@@ -89,19 +90,33 @@
              <h1>Recently Listed</h1>
              <h5>Dubai, United Arab Emirates</h5>
         </div>
-  <div class="container">
-	<div class="row">
-		<div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-    	<div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-	    <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+  <div class="container" id="photos">
+	<div class="row" >
+		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
+
+        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
+
+    </div>
+      <div class="row" >
+		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
+
+        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
+
+    </div>
+      <div class="row" >
+		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
+
+        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
+
+    </div>
+      <div class="row" >
+		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
+
+        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
+
     </div>
 </div>
+
           <div class= "text-center ">
              <h1>Why Amakkn?</h1>
          </div>
@@ -331,7 +346,17 @@
 			<!--// END Row -->
 		</div>
 	</section>
+<script>
+$(document).ready(function() {
+function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+  for (var i = 0; i < 25; i++) {
+    var width = getRandomSize(200, 400);
+    var height =  getRandomSize(200, 400);
 
+  }
+});</script>
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
