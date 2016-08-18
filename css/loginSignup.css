@@ -61,7 +61,7 @@ border-radius: 4px;}
 .code{
     color: #24c969;
 }
-#login-account{
+/*#login-account{
     content: "♦";
 
     position: absolute;
@@ -73,6 +73,46 @@ border-radius: 4px;}
     color: #FFF !important;
     border-radius: 2px;
 }
+*/
+
+/*indidual*/
+#login-account {
+  position: relative;
+  width: 200px;
+    left: 60px;
+  padding: 5px;
+    color: #fff;
+  background: #6dc0ce;
+  border: 1px solid #6dc0ce;
+  border-radius: 4px;
+  background-image: -webkit-linear-gradient(top, #6dc0ce, #6dc0ce);
+  background-image: -moz-linear-gradient(top, #6dc0ce, #6dc0ce);
+  background-image: -o-linear-gradient(top, #6dc0ce, #6dc0ce);
+  background-image: linear-gradient(to bottom, #6dc0ce, #6dc0ce);
+
+
+}
+#login-account:before, #login-account:after, #login-account ul:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 91px;
+  width: 0;
+  height: 0;
+  border: 7px outset transparent;
+}
+#login-account:before {
+  top: -14px;
+  border-bottom: 7px solid #6dc0ce;
+}
+#login-account:after {
+  top: -13px;
+  border-bottom: 7px solid #6dc0ce;
+}
+
+
+
+
 
 @font-face {
   font-family: 'icomoon';
