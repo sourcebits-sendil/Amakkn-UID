@@ -1,14 +1,14 @@
 .customHeaderColor,.navbar-default .navbar-nav>li>a{background-color: #6dc0ce;color:#fff;border:0px;}
 .whiteTxt a{color:#fff !important;}
 .navbar-brand {float: left;color: #fff; left:50%; padding: 12px 15px;}
-.nav>li>a, .nav>li>span {padding-left: 20px;padding-right: 20px;letter-spacing: 0.2px;}
+.nav>li>a, .nav>li>span {padding-left: 20px;padding-right: 20px;}
 .navbar-default{border:0px;}
 .navbar-default .navbar-nav>.open>a{background-color: #6dc0ce !important;}
 .highLightGreen a{background-color: #5ca9b5 !important;}
 .dropdown-menu>li>a{color: #393d4a !important;}
 .dropdown-menu>li>a:hover{color: #6dc0ce !important;background-color: #fff;}
 .greenBtn{background-color: #24c969;color:#fff;border:0px;width: auto;  }.greenBtn:hover{background-color: #29da73;color:#fff;}
-.navbar-nav>li a {padding-top: 15px;padding-bottom: 15px; text-decoration: none;}
+.navbar-nav>li a {padding-top: 15px;padding-bottom: 15px; text-decoration: none;font-weight: 600;}
 .dropdown-menu>li>a:hover{color:#24c969!important;}
 .optionBtn:hover{background: #fff;color:#24c969;}
 /*css for images*/
