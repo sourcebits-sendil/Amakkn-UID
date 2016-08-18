@@ -10,7 +10,11 @@
         .controller('signUpController', signUpController);
 
     /* @ngInject */
+<<<<<<< HEAD
     function signUpController($log, $scope, $http, $timeout, $filter) {
+=======
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location) {
+>>>>>>> master
 
         /* initiating view objects used to switch */
         $scope.view={
@@ -88,6 +92,7 @@
                        $scope.userForm.website + ' ' +
                        $scope.userForm.description + ' ' +
                            $scope.userForm.name );
+<<<<<<< HEAD
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
             restCall();
@@ -149,5 +154,64 @@
         }
 
 
+=======
+
+        //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
+
+            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                 if(result.resCode == 0){
+                       // alert(result.resStr);
+                    }else{
+                        alert(result.resStr);
+                    }
+                });
+        }
+        $scope.resendOTP = function(){
+            $scope.urlRest = 'http://52.42.99.192/Login/forgotPassword/';
+            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                 if(result.resCode == 0){
+                       // alert(result.resStr);
+                    }else{
+                        alert(result.resStr);
+                    }
+                });
+        }
+        $scope.confOTP = function(){
+            $scope.urlRest = 'http://52.42.99.192/Login/verifyUser/';
+            //$log.debug($scope.userForm.code +' '+ $scope.userForm.phone );
+            var codeUpperCase = $filter('uppercase')($scope.userForm.code)
+            $scope.userForm.code = codeUpperCase;
+
+
+            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                 if(result.resCode == 0){
+                        $scope.view.name = 'pswrd';
+                        var myEl = angular.element( document.querySelector( '#step3' ) );
+                        myEl.removeClass('active').addClass('complete');
+
+                        $timeout(function() {
+                            myEl = angular.element( document.querySelector( '#step4' )).removeClass('disabled').addClass('active');
+                        }, 500);
+                    }else{
+                        alert(result.resStr);
+                    }
+                });
+        }
+
+         $scope.setPass = function(){
+             $scope.urlRest = 'http://52.42.99.192/Login/setPasswordForUser/';
+             $log.debug($scope.userForm.password);
+             //restCall();
+             httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                if(result.resCode == 0){
+                    var myEl = angular.element( document.querySelector( '#step4' ) );
+                    myEl.removeClass('active').addClass('complete');
+                    $location.path('/');
+                }else{
+                    alert(result.resStr);
+                }
+             });
+         }
+>>>>>>> master
     }
 })();
