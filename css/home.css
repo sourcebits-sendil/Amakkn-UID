@@ -153,3 +153,6 @@ header .header-content .header-content-inner hr {
 .gray-circle-link-greater-than {
     font-size: 1em;
 }
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
