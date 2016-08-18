@@ -5,6 +5,7 @@
 <style>
 @import url('../css/grid.css')</style>
 
+
 <header data-ng-switch on="selection">
     <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
     <div class="container greyBtmBorder"  data-ng-switch-when="map">
@@ -109,6 +110,7 @@
         </div>
     </div>
 </div>
+
           <div class= "text-center ">
              <h1>Why Amakkn?</h1>
          </div>
@@ -338,7 +340,17 @@
 			<!--// END Row -->
 		</div>
 	</section>
+<script>
+$(document).ready(function() {
+function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+  for (var i = 0; i < 25; i++) {
+    var width = getRandomSize(200, 400);
+    var height =  getRandomSize(200, 400);
 
+  }
+});</script>
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
