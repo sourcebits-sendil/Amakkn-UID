@@ -45,3 +45,7 @@ amakknApp.config(function($routeProvider){
     })
     .otherwise({ redirectTo: '/' });
 })
+angular.module('amakkn').controller('index',function($scope,$http){
+
+
+});

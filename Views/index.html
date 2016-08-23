@@ -38,7 +38,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse whiteTxt col-md-7" id="amakkn-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#buy" class="hvr-underline-reveal">Buy <span class="sr-only">(current)</span></a></li>
+        <li><a href="#buy" class="hvr-underline-reveal" onclick="loader()">Buy <span class="sr-only">(current)</span></a></li>
         <li><a href="#rent" class="hvr-underline-reveal">Rent</a></li>
         <li><a href="#sell" class="hvr-underline-reveal">Sell</a></li>
         <li><a href="#mortgage" class="hvr-underline-reveal">Mortgage</a></li>
@@ -73,14 +73,21 @@
           </div>
   </div><!-- /.container-fluid -->
 </nav>
-
-    <div class="row container-fluid " data-ng-view>
+      <div class="preLoaderContainer" id="page-loading" >
+        <div class="cssload-thecube">
+            <div class="cssload-cube cssload-c1"></div>
+            <div class="cssload-cube cssload-c2"></div>
+            <div class="cssload-cube cssload-c4"></div>
+            <div class="cssload-cube cssload-c3"></div>
+        </div>
+      </div>
+    <div class="row container-fluid " data-ng-view >
     </div>
 
 
 
 
-  <footer class="navbar-default ">
+  <footer class="navbar-default">
 
         <div class="container-fluid greyBg greyBtmBorder ">
             <div class="row">&nbsp;</div>
@@ -221,7 +228,13 @@ if (navigator.geolocation) {
 }
 
 </script>
-
+<script type="text/javascript">
+   var loader =  document.addEventListener("DOMContentLoaded", function(event) {
+        /*VANILLA JAVASCRIPT*/
+        var element = document.getElementById("page-loading");
+        //element.style.visibility='hidden';
+    });
+</script>
   </body>
 
 </html>

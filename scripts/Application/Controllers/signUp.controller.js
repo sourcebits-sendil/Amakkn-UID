@@ -11,7 +11,7 @@
 
     /* @ngInject */
 
-    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location) {
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
 
 
         /* initiating view objects used to switch */
@@ -93,7 +93,7 @@
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
 
-            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+            $rootScope.promise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
                        // alert(result.resStr);
                     }else{
