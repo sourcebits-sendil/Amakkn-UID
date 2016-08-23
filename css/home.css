@@ -136,6 +136,7 @@ header .header-content .header-content-inner hr {
 	height: 3em;
 	width: 3em;
 	position: relative;
+
 }
 .gray-circle-button:hover {
 	color:#ffffff;
@@ -146,7 +147,7 @@ header .header-content .header-content-inner hr {
 }
 .gray-circle-button:visited {
 	color:#ffffff;
-    background-color: #24c969;
+
 	text-decoration: none;
 
 }

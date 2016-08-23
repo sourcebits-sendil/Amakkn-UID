@@ -8,13 +8,14 @@
 
 <header data-ng-switch on="selection">
     <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
+    <article></article>
     <div class="container greyBtmBorder"  data-ng-switch-when="map">
-        <h1>Buy page loaded......</h1>
+        <article>Buy page loaded......</article>
     </div>
         <div class="header-content">
             <div class="header-content-inner">
 
-                <div class="text-center brandName marginTB20"><img src="../assets/images/logo-header.svg" alt="Amakkn"></div>
+                <div class="text-center brandName marginTB20"><img src="../assets/images/logo.svg" alt="Amakkn"></div>
 
                 <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
 
@@ -77,10 +78,11 @@
 
                 </div>
             </div><div class="padding20"></div>
-            <div class="row text-center">
+            <div class="row text-center ">
   <div class="col-md-12 ">
-      <button class="btn btn-default gray-circle-button" ></button>
-      <button class="btn btn-default gray-circle-button" ></button></div>
+      <a href="#" class="btn btn-default  gray-circle-button"> </a>
+
+    						<a href="#" class="btn btn-primary btn-hg gray-circle-button"></a></div>
 
 </div>
         </div>
@@ -288,6 +290,11 @@
 
 
 
+
+
+
+
+
   <br>
 
    <div id="page" class="page">
@@ -351,6 +358,42 @@ function getRandomSize(min, max) {
 
   }
 });</script>
+       <script>
+function success(position) {
+  var mapcanvas = document.createElement('div');
+  mapcanvas.id = 'mapcontainer';
+  mapcanvas.style.height = '400px';
+  mapcanvas.style.width = '100%';
+
+  document.querySelector('article').appendChild(mapcanvas);
+
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+  var options = {
+    zoom: 15,
+    center: coords,
+    mapTypeControl: false,
+    navigationControlOptions: {
+    	style: google.maps.NavigationControlStyle.SMALL
+    },
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+  var marker = new google.maps.Marker({
+      position: coords,
+      map: map,
+      title:"You are here!"
+  });
+}
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success);
+} else {
+  error('Geo Location is not supported');
+}
+
+</script>
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
