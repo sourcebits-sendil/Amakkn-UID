@@ -8,7 +8,7 @@
 
 <header data-ng-switch on="selection">
     <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
-    <article></article>
+
     <div class="container greyBtmBorder"  data-ng-switch-when="map">
         <article>Buy page loaded......</article>
     </div>
@@ -27,8 +27,7 @@
                         <div class="panel panel-default col-md-10 col-md-offset-1 noPadding">
                           <div class="panel-body">
                             <div class= "btn-group btn-group-justified" role="group" >
-                                <div class="
-                                            btn-group " role="group" >
+                                <div class="btn-group " role="group" >
                                    <div class="btn btn-default btn-lg" ng-click="tab = 1">Buy</div>
                                       <div ng-show="tab == 1">
 
@@ -37,7 +36,7 @@
                                <div class="
                                             btn-group " role="group" >
                                    <div class="btn btn-default btn-lg " ng-click="tab = 2">Rent</div>
-                                      <div class="btn" ng-show="tab == 2">
+                                      <div  ng-show="tab == 2">
 
          </div>
                                 </div>
@@ -58,7 +57,7 @@
                                 <div class="col-md-3 col-sm-3 paddingLR10 text-right">
 
 
-     <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()" id="md-select">
+     <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
       <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
     </md-select>
 
@@ -78,11 +77,12 @@
 
                 </div>
             </div><div class="padding20"></div>
-            <div class="row text-center ">
-  <div class="col-md-12 ">
-      <a href="#" class="btn btn-default  gray-circle-button"> </a>
+            <div class="row text-center " >
+  <div class="col-md-12" id="gray-cicle"   >
+      <a href="#" class="btn btn-default disabled" id="gray" ><img src="../assets/icons/icon.png"  ></a>
 
-    						<a href="#" class="btn btn-primary btn-hg gray-circle-button"></a></div>
+    						<a href="#" class="btn btn-sec " id="gray"><img src="../assets/icons/map-icon.png"></a>
+                </div>
 
 </div>
         </div>
@@ -94,21 +94,173 @@
         </div>
   <div class="container">
 	<div id="grid" data-columns>
-	   <div class="column size-1of3">
-            <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-           <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-           <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+	   <div class="column size-1of3 col-md-4">
+            <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/1.jpg" /></div>
+               <div class="content">
 
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/2.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/10.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
         </div>
-        <div class="column size-1of3">
-            <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-           <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-           <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="column size-1of3 col-md-4">
+            <div class="card card-background">
+           <div><img class="img-responsive " src="../assets/images/gallery/6.jpg" /></div>
+           <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+            </div>
+           <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/8.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/shape.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/5.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
         </div>
-        <div class="column size-1of3">
-            <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-           <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-           <div><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+        <div class="column size-1of3 col-md-4">
+          <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/11.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/shape.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+              </div>
+           <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/12.jpg" /></div>
+               <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background">
+           <div><img class="img-responsive" src="../assets/images/gallery/14.jpg" /></div>
+               <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/shape.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
         </div>
     </div>
 </div>
@@ -150,8 +302,8 @@
 
     			<div class="row margin-bottom-20 text-center">
 
-    				<div class="col-md-4 ">
-                        <div class="whiteBgShad">
+    				<div class="col-md-4  " id="shrink">
+                        <div class="whiteBgShad ">
                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
     				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
@@ -170,7 +322,7 @@
                         </div>
     				</div><!-- /.col-md-3 col -->
 
-    				<div class="col-md-4 ">
+    				<div class="col-md-4 " id="shrink">
                         <div class="whiteBgShad">
                              <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
@@ -190,7 +342,7 @@
 
     				</div><!-- /.col-md-3 col -->
 
-    				<div class="col-md-4 ">
+    				<div class="col-md-4 " id="shrink">
                         <div class="whiteBgShad">
                              <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
@@ -216,7 +368,7 @@
     		</div><!-- /.container -->
 
     	</div><!-- /.item -->
-
+<div class="padding20"></div><div class="padding20"></div>
          <hr>
 
 
@@ -239,7 +391,7 @@
                          <div class="padding20"></div>
 				        <div class="services-wrapper">
 
-						       <div class="col-md-4">
+						       <div class="col-md-4 ">
 							       <div class="">
 
                                       <span class="iconShadow">
@@ -301,7 +453,7 @@
 
 
 	<section id="content-1-2" class="content-block content-1-2">
-		<div class="container-fluid" id="footer">
+		<div class="container-fluid" id="footer ">
 			<!-- Start Row -->
             <div class="padding20"></div>
 			<div class="col-md-8 col-md-offset-2">
@@ -346,7 +498,10 @@
            </div>
 			<!--// END Row -->
 		</div>
-	</section>
+	</section><div class="row padding20"></div>
+                <div class="row padding20"></div><div class="row padding20"></div>
+
+
 <script>
 $(document).ready(function() {
 function getRandomSize(min, max) {
@@ -394,6 +549,7 @@ if (navigator.geolocation) {
 }
 
 </script>
+
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
