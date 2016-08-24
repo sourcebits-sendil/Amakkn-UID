@@ -1,4 +1,4 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy']);
 
 
 // Route used for Menu bar -------------
@@ -42,10 +42,105 @@ amakknApp.config(function($routeProvider){
     // route for the home page
     .when('/', {
         templateUrl : '../../Views/home.html'
+        /*resolve: {
+              delay: function($timeout) {
+                return $timeout(function(){}, 3000);
+              }
+            }*/
     })
     .otherwise({ redirectTo: '/' });
-})
-angular.module('amakkn').controller('index',function($scope,$http){
+}).run(function($rootScope) {
+      $rootScope.$on('$stateChangeStart', function() {
+        $rootScope.stateLoading = true;
+      })
 
+      $rootScope.$on('$stateChangeSuccess', function() {
+        $rootScope.stateLoading = false;
+      })
+    })
+.factory('MyService', ['$http', function($http){
 
+  var Service = {};
+
+  Service.requestingSomeURL = function(){
+    for (var i = http.pendingRequests.length - 1; i >= 0; i--) {
+      if($http.pendingRequests[i].url === ('/someURL')) return true;
+    }
+    return false;
+  }
+
+  return Service;
+}])
+/*.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.interceptors.push('LoadingListener');
+}])
+.factory('LoadingListener', [ '$q', '$rootScope', function($q, $rootScope) {
+    var reqsActive = 0;
+
+    function onResponse() {
+        reqsActive--;
+        if (reqsActive === 0) {
+            $rootScope.$broadcast('loading:completed');
+        }
+    }
+
+    return {
+        'request': function(config) {
+            if (reqsActive === 0) {
+                $rootScope.$broadcast('loading:started');
+            }
+            reqsActive++;
+            return config;
+        },
+        'response': function(response) {
+            if (!response || !response.config) {
+                return response;
+            }
+            onResponse();
+            return response;
+        },
+        'responseError': function(rejection) {
+            if (!rejection || !rejection.config) {
+                return $q.reject(rejection);
+            }
+            onResponse();
+            return $q.reject(rejection);
+        },
+        isLoadingActive : function() {
+            return reqsActive === 0;
+        }
+    };
+}])
+
+.directive('loadingListener', [ '$rootScope', 'LoadingListener', function($rootScope, LoadingListener) {
+
+    var tpl = ''//'<div class="preLoaderContainer" id="page-loading" ><div class="cssload-thecube"><div class="cssload-cube cssload-c1"></div><div class="cssload-cube cssload-c2"></div><div class="cssload-cube cssload-c4"></div><div class="cssload-cube cssload-c3"></div></div></div>';
+
+    return {
+        restrict: 'CA',
+        link: function linkFn(scope, elem, attr) {
+            var indicator = angular.element(tpl);
+            elem.prepend(indicator);
+
+            elem.css('position', 'relative');
+            if (!LoadingListener.isLoadingActive()) {
+                indicator.css('display', 'none');
+            }
+
+            $rootScope.$on('loading:started', function () {
+                indicator.css('display', 'block');
+                alert(' completed ')
+            });
+            $rootScope.$on('loading:completed', function () {
+                indicator.css('display', 'none');
+
+            });
+        }
+    };
+}]); */
+angular.module('amakkn').controller('index',['MyService'],function($scope,$http,MyService){
+
+    $scope.pendingRequests = function(){
+        return MyService.requestingSomeURL();
+      }
 });

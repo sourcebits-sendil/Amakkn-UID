@@ -14,12 +14,13 @@
       <link rel="stylesheet" href="../scripts/Library/node_modules/angular-material/angular-material.min.css" >
     <link rel="stylesheet" href="../css/master.css" >
  <link rel="stylesheet" href="../css/footer.css" >
+      <link rel="stylesheet" href="../css/angular-busy.min.css" >
 
 
   </head>
 
-  <body data-ng-app="amakknApp" ng-controller="homeCtrl" class="">
-
+  <body data-ng-app="amakknApp" ng-controller="homeCtrl" class="" >
+<div cg-busy="{promise:myPromise,message:'Loading',backdrop:true,templateUrl:'loader.html',delay:300,minDuration:700}" >
   	<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid customHeaderColor">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -73,14 +74,10 @@
           </div>
   </div><!-- /.container-fluid -->
 </nav>
-      <div class="preLoaderContainer" id="page-loading" >
-        <div class="cssload-thecube">
-            <div class="cssload-cube cssload-c1"></div>
-            <div class="cssload-cube cssload-c2"></div>
-            <div class="cssload-cube cssload-c4"></div>
-            <div class="cssload-cube cssload-c3"></div>
-        </div>
-      </div>
+
+
+    <div class="preLoaderContainer" ng-show="stateLoading"><div class="cssload-thecube"><div class="cssload-cube cssload-c1"></div><div class="cssload-cube cssload-c2"></div><div class="cssload-cube cssload-c4"></div><div class="cssload-cube cssload-c3"></div></div></div>
+
     <div class="row container-fluid " data-ng-view >
     </div>
 
@@ -162,6 +159,7 @@
       <script src="../scripts/Library/node_modules/angular-material/angular-material.min.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
       <script src="../scripts/Library/imageGrid.js"></script>
+      <script src="../scripts/Library/angular-busy.min.js"></script>
 
 
        <!-- Importing App contollers & services -->
@@ -178,6 +176,7 @@
        <script src="../scripts/Application/Controllers/toaster.controller.js"></script>
 
       <script src="../scripts/Application/Services/http-service.js"></script>
+
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
@@ -228,13 +227,7 @@ if (navigator.geolocation) {
 }
 
 </script>
-<script type="text/javascript">
-   var loader =  document.addEventListener("DOMContentLoaded", function(event) {
-        /*VANILLA JAVASCRIPT*/
-        var element = document.getElementById("page-loading");
-        //element.style.visibility='hidden';
-    });
-</script>
+</div>
   </body>
 
 </html>

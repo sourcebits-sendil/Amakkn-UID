@@ -22,7 +22,7 @@ p{font-size: 16px; line-height: 25px;text-align: justify;}
 .cssload-thecube {
 	width: 73px;
 	height: 73px;
-	    margin-left: 35%;
+	margin: 0 auto;
 	margin-top:20%;
 	position: relative;
 	transform: rotateZ(45deg);

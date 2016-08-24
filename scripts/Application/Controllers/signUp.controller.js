@@ -93,8 +93,8 @@
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
 
-            $rootScope.promise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
-                 if(result.resCode == 0){
+           $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                if(result.resCode == 0){
                        // alert(result.resStr);
                     }else{
                         alert(result.resStr);
