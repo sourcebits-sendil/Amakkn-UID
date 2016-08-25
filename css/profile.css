@@ -7,8 +7,9 @@
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
-    box-shadow: 2px 2px 0 2px rgba(0,0,0,0.1);
-	border: .2em solid #efefef;
+   /* box-shadow: 2px 2px 0 2px rgba(0,0,0,0.1);*/
+	border: .1em solid #efefef;
+    border-bottom: 0px;
 	font-size: 1em;
 	line-height: 1.1em;
 	color: #ffffff;
@@ -88,11 +89,12 @@
 }
 
 .profile-usermenu ul li {
-  border-bottom: 1px solid #f0f4f7;
+  border-bottom: 0px solid #f0f4f7;
 }
 
 .profile-usermenu ul li:last-child {
   border-bottom: none;
+
 }
 
 .profile-usermenu ul li a {
