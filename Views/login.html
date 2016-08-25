@@ -1,7 +1,8 @@
 <style>@import url('../css/loginSignup.css')</style>
 
 <div class="container-fluid text-center greyBtmBorder">
-    <form>
+
+     <div class="row">
     <div class="col-md-4 col-md-offset-4 padding20">
         <div class="row loginTextColor ">
             <h3>Sign In</h3>
@@ -31,19 +32,35 @@
     			</div><!-- /.divider -->
 
     		</div><!-- /.col -->
+            </div>
+        </div>
+         <div class="row text-center loginTextColor " >
 
 
-        <div class="row loginTextColor form-group ">
             <h3>Sign In with your phone number</h3>
-            <input type="tel" placeholder="Phone Number*" id="phoneNum" class="form-control marginTB20">
-            <input type="password" placeholder="Password*" id="pswrd" class="form-control ">
+
         </div>
-        <div class="row">
-            <button class="btn btn-default greenBtn">
-                Sign In
-            </button>
-            <p class="forgetPswrd marginTB20">Forgot Password?</p>
-        </div>
-    </div>
-    </form>
+        <div class="row form-group col-md-4 col-md-offset-4 ">
+             <form name="login" novalidate ng-submit="userlogin()">
+                 <div class="row">
+                <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
+                 <p ng-show="login.phone.$invalid && !login.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
+                    </div>
+                 <div class="row">
+                <input type="password" class="form-control" id="pw1" name="pw1" placeholder="Password*" maxlength="12" required ng-model="userForm.password"/>
+
+                  <p class="text-left" style="color:#a94442;" ng-show="login.pw2.$error.pwmatch && login.pw2.$invalid">
+                    Re-type same as in password.
+                  </p>
+                 </div>
+                <button class="btn btn-default greenBtn" type="submit" ng-disabled="login.$invalid">
+                    Sign in
+                </button>
+                <p class="forgetPswrd marginTB20"><a href="#" ng-click="redirect()">Forgot Password?</a></p>
+             </form>
+            </div>
+
+
+
+
 </div>

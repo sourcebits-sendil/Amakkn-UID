@@ -32,6 +32,7 @@
         /* default seleted userType */
         $scope.userForm.companyType = '1';
         /* loading country codes and ISD codes from JSON file from own Library*/
+        $rootScope.loggedIn = false;
 
         $http.get('../scripts/Library/data.json').success(function(data) {
                 $scope.countryCodes = data;
@@ -61,6 +62,7 @@
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
+            $scope.userForm.isSocial = "No";
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
             }else{
@@ -164,6 +166,7 @@
                     var myEl = angular.element( document.querySelector( '#step4' ) );
                     myEl.removeClass('active').addClass('complete');
                     $location.path('/');
+                    $rootScope.loggedIn = true;
                 }else{
                     alert(result.resStr);
                 }
