@@ -7,203 +7,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amakkn</title>
 
-
+<link rel="stylesheet" href="https://i.icomoon.io/public/temp/6ed1c3e962/UntitledProject/style.css">
     <link rel="stylesheet" href="../scripts/Library/bootstrap-3.3.6-dist/css/bootstrap.min.css" >
       <link rel="stylesheet" href="../scripts/Library/bootstrap-select-1.10.0/dist/css/bootstrap-select.css" >
       <link rel="stylesheet" href="../scripts/Library/Hover-master/css/hover-min.css" >
       <link rel="stylesheet" href="../scripts/Library/node_modules/angular-material/angular-material.min.css" >
     <link rel="stylesheet" href="../css/master.css" >
  <link rel="stylesheet" href="../css/footer.css" >
+       <link rel="stylesheet" href="../css/profile.css" >
+      <link rel="stylesheet" href="../css/loginSignup.css" >
       <style>@import url('../css/loginSignup.css')
 </style>
 
 
   </head>
+<nav class="navbar navbar-default navbar-fixed-top">
+     <div class="container-fluid customHeaderColor">
+          <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="col-md-12">
+                <div class="col-md-2">
+                </div>
+                <div class="navbar-header col-md-3">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#amakkn-navbar-collapse-1" aria-expanded="false">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" class="hidden-xs hidden-md"></a>
+               </div>
 
-  <body data-ng-app="amakknApp" ng-controller="homeCtrl" class="">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse whiteTxt col-md-7" id="amakkn-navbar-collapse-1">
+                       <ul class="nav navbar-nav">
+                           <li><a href="#buy" class="hvr-underline-reveal">Buy <span class="sr-only">(current)</span></a></li>
+                           <li><a href="#rent" class="hvr-underline-reveal">Rent</a></li>
+                           <li><a href="#sell" class="hvr-underline-reveal">Sell</a></li>
+                           <li><a href="#mortgage" class="hvr-underline-reveal">Mortgage</a></li>
+                           <li class="dropdown">
+                               <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Real Estate Companies <span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                           <li><a href="#">Edwards And Towers</a></li>
+                           <li><a href="#">Al Ghuroob Real Estate</a></li>
+                           <li><a href="#">Veda Real Estate</a></li>
+                           <li><a href="#">Kirk Dixon Real Estate</a></li>
+                           <li><a href="#">CitiWay Real Estate</a></li>
+                           <li><a href="#">Midmac Real Estate</a></li>
+                           <li><a href="#">Al Mubadarah Real Estate</a></li>
+                           </ul>
+                           </li>
+                           <li class="dropdown">
+                               <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a href="#">Agent</a></li>
+                            <li><a href="#">Realtor</a></li>
+                            <li><a href="#">Lenders</a></li>
+                            <li><a href="#">Settings</a></li>
+                            </ul>
+                           </li>
+                           <li class="dropdown profile-userpic1">
+                               <a href="" class="dropdown-toggle hvr-underline-reveal  " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Sendil <span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                           <li><a href="#">Chat</a></li>
+                           <li><a href="#">Add Property</a></li>
+                           <li><a href="#">My Favourites</a></li>
+                           <li><a href="#">My Listings</a></li>
+                           <li><a href="#">Wanted Properties</a></li>
+                           <li><a href="#">Compare Lineup</a></li>
+                           <li><a href="#">Call Asking</a></li>
+                           <li><a href="#">Edit Profile</a></li>
+                           <li><a href="#">SignOut</a></li>
+                           </ul>
+                           </li>
+                     </ul>
 
-  	<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid customHeaderColor">
-    <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="col-md-12">
-          <div class="col-md-2"></div>
-    <div class="navbar-header col-md-3">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#amakkn-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" class="hidden-xs hidden-md"></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse whiteTxt col-md-7" id="amakkn-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#buy" class="hvr-underline-reveal">Buy <span class="sr-only">(current)</span></a></li>
-        <li><a href="#rent" class="hvr-underline-reveal">Rent</a></li>
-        <li><a href="#sell" class="hvr-underline-reveal">Sell</a></li>
-        <li><a href="#mortgage" class="hvr-underline-reveal">Mortgage</a></li>
-        <li class="dropdown">
-          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Real Estate Companies <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Edwards And Towers</a></li>
-            <li><a href="#">Al Ghuroob Real Estate</a></li>
-            <li><a href="#">Veda Real Estate</a></li>
-            <li><a href="#">Kirk Dixon Real Estate</a></li>
-              <li><a href="#">CitiWay Real Estate</a></li>
-              <li><a href="#">Midmac Real Estate</a></li>
-              <li><a href="#">Al Mubadarah Real Estate</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Agent</a></li>
-            <li><a href="#">Realtor</a></li>
-              <li><a href="#">Lenders</a></li>
-              <li><a href="#">Settings</a></li>
-          </ul>
-        </li>
-          <li class="dropdown">
-          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Binesh Walla <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Chat</a></li>
-            <li><a href="#">Add Property</a></li>
-              <li><a href="#">My Favourites</a></li>
-              <li><a href="#">My Listings</a></li>
-              <li><a href="#">Wanted Properties</a></li>
-              <li><a href="#">Compare Lineup</a></li>
-              <li><a href="#">Call Asking</a></li>
-              <li><a href="#">Edit Profile</a></li>
-              <li><a href="#">SignOut</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-left">
-        <li><span><a href="#login" class="hvr-underline-reveal">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></span></li>
-          <li class="highLightGreen"><a href="#listProperties" class="hvr-underline-reveal ">+ List Your Property</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+                     <ul class="nav navbar-nav navbar-left">
+                         <li><span><a href="#login" class="hvr-underline-reveal">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></span></li>
+                         <li class="highLightGreen"><a href="#listProperties" class="hvr-underline-reveal ">+ List Your Property</a></li>
+                     </ul>
+                </div><!-- /.navbar-collapse -->
           </div>
-  </div><!-- /.container-fluid -->
+    </div><!-- /.container-fluid -->
 </nav>
-      <div class="padding20"></div>
-      <div class="padding20"></div>
-      <div class="padding20"></div>
 
-      <div class="container">
-
-      <div class="row">
-  <div class="col-md-4">Profile
-      <div class="row">
-          <div class="col-md-4">Inbox</div>
-      </div>
-       <div class="row">
-          <div class="col-md-4">Add Property</div>
-      </div>
-          <div class="row">
-          <div class="col-md-4">My Favourites</div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">My Listings</div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">Wanted Properties</div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">Compare Lineup</div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">Call Asking</div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">Edit Profile</div>
-      </div>
-
-          </div>
+     <div class="padding20"></div>
 
 
-  <div class="col-md-8">
+
+<div class="container">
+
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="../assets/icons/sendil.JPG" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle text-center">
+					<div class="profile-usertitle-name">
+						Adam Cartlidge
+					</div>
+					<div class="profile-usertitle-job">
+						Belfast, N. Ireland, United Kingdom<br>
+                        <a href="">Standard User</a> • Since July 2015
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">
+							<span class="icon-bubble2"></span>
+							Inbox <span class="label label-danger pull-right">2</span></a>
+						</li>
+						<li>
+							<a href="#">
+							<span class="icon-bubble2"></span>
+							Add Property </a>
+						</li>
+						<li>
+							<a href="#" target="_blank">
+							<span class="glyphicon glyphicon-heart-empty"></span>
+							My Favourites <span class="label label-danger1 pull-right">9</span></a>
+						</li>
+						<li>
+							<a href="#">
+							<span class="icon-home"></span>
+							My Listings<span class="label label-danger2 pull-right">4</span> </a>
+						</li>
+                        <li>
+							<a href="#">
+							<span class="icon-coin-dollar"></span>
+							Wanted Properties <span class="label label-danger3 pull-right">5</span></a>
+						</li>
+                        <li>
+							<a href="#">
+							<span class="icon-balance-scale"></span>
+							Compare Lineup<span class="label label-danger4 pull-right">6</span></a>
+						</li>
+                        <li>
+							<a href="#">
+							<span class="icon-phone"></span>
+							Call Asking <span class="label label-danger4 pull-right">3</span></a>
+						</li>
+
+
+					</ul>
+
+
+				</div>
+                <div class="profile-sidebar1"><a href="#">
+							<span class="icon-pen-angled"></span>
+							Edit Profile </a></div>
+				<!-- END MENU -->
+			</div>
+		</div>
+
+
+		<div class="col-md-9">
              <h1>Edit Your Profile</h1>
 
-          <div class="row">
-          <div class="col-md-8">.
-              <form name="signUp" novalidate ng-submit="addName()">
+                 <div class="row">
+                      <div class="col-md-8">.
+                           <form name="signUp" novalidate ng-submit="addName()">
+                                 <div class="form-group" ng-class="{ 'has-error' : signUp.name.$invalid && !signUp.name.$pristine }" id="name-group">
+                                 <input type="text" class="form-control marginTB20" name="name" placeholder="Name*"  required maxlength="25" ng-model="userForm.name">
+                                 <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
+                                 </div>
+                                 <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
+                                 <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="userForm.email" maxlength="30">
+                                 <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
+                                 </div>
+                                 <div class="input-group form-group form-control" id="otp-group">
+                                 <span class="input-group-addon"  style="width:10%;" id="input-back">User  Type:</span>
+                                 <md-select class="form-group " name="userType" ng-model="userForm.userType" aria-label="..">
+                                 <md-option value="1" >Normal User</md-option>
+                                 <md-option value="2">Broker &amp; Owner</md-option>
+                                 </md-select>
+                                 </div>
+                                 <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
+                                   Next
+                                 </button>
+
+                           </form>
+                       </div>
+                </div>
 
 
-                <div class="form-group" ng-class="{ 'has-error' : signUp.name.$invalid && !signUp.name.$pristine }" id="name-group">
-                    <input type="text" class="form-control marginTB20" name="name" placeholder="Name*"  required maxlength="25" ng-model="userForm.name">
-                    <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
-                </div>
-                <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
-                    <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="userForm.email" maxlength="30">
-                    <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
-                </div>
-                   <div class="input-group form-group form-control" id="otp-group">
-                    <span class="input-group-addon"  style="width:10%;" id="input-back">User  Type:</span>
-                    <md-select class="form-group " name="userType" ng-model="userForm.userType" aria-label="..">
-                      <md-option value="1" >Normal User</md-option>
-                      <md-option value="2">Broker &amp; Owner</md-option>
-                </md-select>
+               <div class="row">
+                    <div class="col-md-8">
+                         <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
+                              <div class="" >
+                                   <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:25%; color:#6dc0ce" >
+                                   <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes">{{codes.country_code +' '+codes.country_isd_code}}</md-option>
+                                   </md-select>
+                              </div>
+
+                                   <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" style="width:73%;">
+                                   <span class="input-group-btn ">
+                                   <a href="#" class="btn btn-success" id="verified"><span class="glyphicon glyphicon-ok-circle"></span>  Verified</a>
+                                   </span>
+                        </div>
+                              <h5>We will send you a one-time password to verify your number.</h5>
+                               <span class="input-group-btn ">
+                                     <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
+                               </span>
+                   </div>
+               </div>
+
+              <div class="row">
+                   <div class="col-md-8">
+                        <form name="signUp" novalidate ng-submit="setPass()">
+                              <div class=" text-center" >
+                                   <div class="row loginTextColor ">
+                                        <h3>Choose Password</h3>
+                                        <p>Must be 8 characters, letters (small and capital) + numbers.</p>
+                                   </div>
+                              </div>
+
+                              <input type="password" class="form-control" id="pw1" name="pw1" placeholder="Password*" maxlength="12" required ng-model="userForm.password"/>
+
+                              <input type="password" class="form-control marginTB20" id="pw2" placeholder="Retype Password*" name="pw2" maxlength="12" required ng-model="pw2" pw-check="pw1"/>
+
+                             <p class="text-left" style="color:#a94442;" ng-show="signUp.pw2.$error.pwmatch && signUp.pw2.$invalid">
+                             Re-type same as in password.
+                             </p>
+
+                             <p class="text-center">By clicking below, you agree to Amakkn Terms of Use* and Privacy Policy</p>
+
+                             <button class="btn btn-default greenBtn" type="submit" ng-disabled="signUp.$invalid">
+                             Confirm
+                             </button>
+                        </form>
                   </div>
-                <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
-                    Next
-                </button>
-
-
-
- </form>
-
-
-              </div>
-      </div>
-      <div class="row">
-          <div class="col-md-8"> <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
-                    <div class="" >
-                        <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:25%; color:#6dc0ce" >
-                            <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes">{{codes.country_code +' '+codes.country_isd_code}}</md-option>
-                        </md-select>
-                    </div>
-
-                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" style="width:73%;">
-                    <span class="input-group-btn ">
-                        <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
-                    </span>
-                </div><!-- /input-group --></div>
-      </div>
-      <div class="row">
-          <div class="col-md-8"><form name="signUp" novalidate ng-submit="setPass()">
-            <div class=" text-center" >
-                <div class="row loginTextColor ">
-                    <h3>Choose Password</h3>
-                    <p>Must be 8 characters, letters (small and capital) + numbers.</p>
-                </div>
             </div>
-
-                <input type="password" class="form-control" id="pw1" name="pw1" placeholder="Password*" maxlength="12" required ng-model="userForm.password"/>
-
-                <input type="password" class="form-control marginTB20" id="pw2" placeholder="Retype Password*" name="pw2" maxlength="12" required ng-model="pw2" pw-check="pw1"/>
-
-                  <p class="text-left" style="color:#a94442;" ng-show="signUp.pw2.$error.pwmatch && signUp.pw2.$invalid">
-                    Re-type same as in password.
-                  </p>
+        </div><!--col-9 close-->
+	</div><!--profile div close-->
+ </div><!--container Close-->
 
 
-                <p class="text-center">By clicking below, you agree to Amakkn Terms of Use* and Privacy Policy</p>
-
-                <button class="btn btn-default greenBtn" type="submit" ng-disabled="signUp.$invalid">
-                    Confirm
-                </button>
-
-
-            </form></div>
-      </div>
-
-          </div>
-</div>
-      </div>
 
 
 
@@ -252,6 +300,5 @@
         <![endif]-->
       <!--Ends Importing Javascript libraries -->
 
-  </body>
 
-</html>
+   </html>
