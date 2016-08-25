@@ -87,6 +87,7 @@
                        $scope.userForm.companyName + ' ' +
                        $scope.userForm.managerName + ' ' +
                        $scope.userForm.commercialRecordNumber + ' ' +
+
                        $scope.userForm.website + ' ' +
                        $scope.userForm.description + ' ' +
                            $scope.userForm.name );
