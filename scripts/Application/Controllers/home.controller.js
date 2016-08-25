@@ -10,7 +10,7 @@
         .controller('homeCtrl', homeController);
 
     /* @ngInject */
-    function homeController ($scope, $log,$timeout,$mdToast) {
+    function homeController ($scope, $log,$timeout,$mdToast,$rootScope,$location) {
         var vm = this;
         vm.class = 'homeController';
 
@@ -55,10 +55,19 @@
             // Could also do $mdToast.showSimple('Hello');
          };
 
-function sample( ){
+        $scope.logOut = function(){
+            //alert('working')
+            $rootScope.myPromise = $timeout(function(){
+            $location.path('/');
+            $rootScope.loggedIn = false;
+            }, 1000)
 
-
-};
+        }
+        $scope.switchMap = function(){
+            $rootScope.myPromise = $timeout(function(){
+                $scope.selection = "map";
+            }, 1000)
+        }
 
         //////////////
 

@@ -1,17 +1,16 @@
 <style>
-    @import url('../css/home.css')
-
-</style>
-<style>
-@import url('../css/grid.css')</style>
+    @import url('../css/home.css');
+    @import url('../css/grid.css')</style>
 
 <div>
 <header data-ng-switch on="selection">
-    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
 
-    <div class="container greyBtmBorder"  data-ng-switch-when="map">
-        <article>Buy page loaded......</article>
+
+    <div class="container padding20"  data-ng-switch-when="map" style="min-height:50vh;">
+        <article> </article>
     </div>
+    <div data-ng-switch-when="banner">
+        <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  >
         <div class="header-content">
             <div class="header-content-inner">
 
@@ -54,7 +53,7 @@
                                 <div class="col-md-7 col-sm-7">
                                     <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
                                 </div>
-                               <!-- <div class="col-md-3 col-sm-3 paddingLR10 text-right">
+                               <div class="col-md-3 col-sm-3 paddingLR10 text-right">
 
 
      <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
@@ -66,26 +65,26 @@
                                 </div>
                                   <div class="col-md-2 col-sm-2 paddingLR10">
                                     <button type="submit" class="btn btn-default greenBtn" >Search</button>
-                                </div>-->
+                                </div>
                                 </form>
                               </div>
                           </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
             </div><div class="padding20"></div>
             <div class="row text-center " >
   <div class="col-md-12" id="gray-cicle"   >
-      <a href="#" class="btn btn-default disabled" id="gray" ><img src="../assets/icons/icon.png"  ></a>
+      <a href="" class="btn btn-default disabled" id="gray" ><img src="../assets/icons/icon.png"  ></a>
 
-    						<a href="#" class="btn btn-sec " id="gray"><img src="../assets/icons/map-icon.png"></a>
+    						<a href="" class="btn btn-sec " id="gray" ng-click="switchMap()"><img src="../assets/icons/map-icon.png"></a>
                 </div>
 
 </div>
-        </div>
+    </div></div>
 </header>
 <div class=" greyBtmBorder">
          <div class= "text-center padding20">
@@ -502,53 +501,53 @@
                 <div class="row padding20"></div><div class="row padding20"></div>
 
 
-<script>
-$(document).ready(function() {
-function getRandomSize(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-  for (var i = 0; i < 25; i++) {
-    var width = getRandomSize(200, 400);
-    var height =  getRandomSize(200, 400);
 
-  }
-});</script>
        <script>
-function success(position) {
-  var mapcanvas = document.createElement('div');
-  mapcanvas.id = 'mapcontainer';
-  mapcanvas.style.height = '400px';
-  mapcanvas.style.width = '100%';
+            $(document).ready(function() {
+            function getRandomSize(min, max) {
+              return Math.round(Math.random() * (max - min) + min);
+            }
+              for (var i = 0; i < 25; i++) {
+                var width = getRandomSize(200, 400);
+                var height =  getRandomSize(200, 400);
+              }
 
-  document.querySelector('article').appendChild(mapcanvas);
+                function success(position) {
+                  var mapcanvas = document.createElement('div');
+                  mapcanvas.id = 'mapcontainer';
+                  mapcanvas.style.height = '400px';
+                  mapcanvas.style.width = '100%';
 
-  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                  document.querySelector('article').appendChild(mapcanvas);
 
-  var options = {
-    zoom: 15,
-    center: coords,
-    mapTypeControl: false,
-    navigationControlOptions: {
-    	style: google.maps.NavigationControlStyle.SMALL
-    },
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+                  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-  var marker = new google.maps.Marker({
-      position: coords,
-      map: map,
-      title:"You are here!"
-  });
-}
+                  var options = {
+                    zoom: 15,
+                    center: coords,
+                    mapTypeControl: false,
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    },
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+                  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success);
-} else {
-  error('Geo Location is not supported');
-}
+                  var marker = new google.maps.Marker({
+                      position: coords,
+                      map: map,
+                      title:"You are here!"
+                  });
+                }
 
-</script>
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(success);
+                } else {
+                  error('Geo Location is not supported');
+                }
+
+            });
+       </script>
 
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 

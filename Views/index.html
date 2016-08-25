@@ -26,14 +26,14 @@
     <!-- Brand and toggle get grouped for better mobile display -->
       <div class="col-md-12">
           <div class="col-md-2"></div>
-    <div class="navbar-header col-md-3">
+    <div class="navbar-header col-md-2">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#amakkn-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" class="hidden-xs hidden-md"></a>
+      <a class="navbar-brand hidden-xs hidden-md hidden-sm" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" ></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,9 +67,9 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-left">
-        <li ng-hide="loggedIn"><span><a href="#login" class="hvr-underline-reveal">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></span></li>
+        <li ng-hide="loggedIn"><span><a href="#login" class="hvr-underline-reveal" style="padding: 20px 0px;">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal" style="padding: 20px 0px;">Sign Up</a></span></li>
           <li class="dropdown" ng-show="loggedIn">
-          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hameed<span class="caret"></span></a>
+          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" style="width:25px; height:25px; background:#fff;color:#ededed;margin:0px auto;border-radius:50%;padding-top: 4%;"></span>{{loggedName}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Chat</a></li>
             <li><a href="#">Add Property</a></li>
@@ -79,7 +79,7 @@
               <li><a href="#">Compare Lineup</a></li>
               <li><a href="#">Call Asking</a></li>
               <li><a href="#">Edit Profile</a></li>
-              <li><a href="#">SignOut</a></li>
+              <li><a href="" ng-click="logOut()">SignOut</a></li>
           </ul>
         </li>
           <li class="highLightGreen"><a href="#listProperties" class="hvr-underline-reveal ">+ List Your Property</a></li>
@@ -97,7 +97,7 @@
 
 
 
-
+<div class="padding20"></div>
   <footer class="navbar-default">
 
         <div class="container-fluid greyBg greyBtmBorder ">

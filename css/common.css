@@ -15,6 +15,9 @@ p{font-size: 16px; line-height: 25px;text-align: justify;}
 #cell{    position: absolute;
     top: 200%;}
 .marginTB80{padding: 40px auto;}
+.navbar-nav>li>a{line-height: 30px;}
+
+
 
 .preLoaderContainer{position: fixed; z-index: 100001; background-color: #000; opacity: 0.8;min-height: 100%; min-width: 100%;}
 

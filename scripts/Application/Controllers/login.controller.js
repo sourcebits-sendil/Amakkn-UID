@@ -21,17 +21,20 @@
         /* var for success Response */
         $scope.successResponse={};
         //activate();
+        $rootScope.loggedName = '';
 
         $scope.userlogin = function(){
 
             $scope.urlRest = 'http://52.42.99.192/Login/loginUser/';
-             $log.debug($scope.userForm.password + ' '+$scope.userForm.password );
+             //$log.debug($scope.userForm.password + ' '+$scope.userForm.password );
              //restCall();
             $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if(result.resCode == 0){
-                    alert('User Logged in')
+                    //alert('User Logged in')
                     $location.path('/');
                     $rootScope.loggedIn = true;
+                    $rootScope.loggedName = result.response.user.name;
+                    //alert($rootScope.loggedName);
                 }else{
                     alert(result.resStr);
                 }
@@ -39,11 +42,13 @@
         }
 
             $scope.redirect = function(){
-                $scope.view.name = "otp";
-                $scope.userForm.isSocial = "No";
-                $scope.addPass;
-               // $location.path('/signUp');
+               $rootScope.myPromise = $timeout(function(){
+                   $location.path('/signUp');
+                   $scope.view.name = "otp";
+                    $scope.userForm.isSocial = "No";
+               }, 1000);
             }
+
 
 
         //////////////
