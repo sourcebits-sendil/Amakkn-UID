@@ -261,3 +261,20 @@ md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select .
     color: #fff;
 }
 
+
+
+#textp{
+
+    font-size: 16px;
+    line-height: 25px;
+    text-align: justify;
+    color: #fff;
+    font-weight: 600;
+    font-family: ProximaNova-Light;
+
+}
+
+#textph{
+    color: #fff;
+    font-family: ProximaNova-Light;
+    }

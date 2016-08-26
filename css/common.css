@@ -7,7 +7,7 @@
 .fontSize14{font-size: 14px !important;}
 .noPadding{padding:0px;}
 .minHeightPage{min-height: 50vh;}
-p{font-size: 16px; line-height: 25px;text-align: justify;}
+p{font-size: 16px; line-height: 25px;text-align: justify;font-family: ProximaNova-Light;}
 .greenTxt{color: #24c969;}.blueTxt{color:#6dc0ce;}
 #md-select {margin: 0; background-color: #6dc0ce;    border-radius: 5px; color: #fff;}
 .doublequote{position: absolute;
