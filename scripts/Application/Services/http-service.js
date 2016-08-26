@@ -22,6 +22,7 @@
                         headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
                       }).then(function(result){
 
+            //element.style.visibility='hidden';
             // What we return here is the data that will be accessible
             // to us after the promise resolves
             return result.data;

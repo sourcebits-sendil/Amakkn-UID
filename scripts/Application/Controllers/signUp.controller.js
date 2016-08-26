@@ -11,7 +11,7 @@
 
     /* @ngInject */
 
-    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location) {
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
 
 
         /* initiating view objects used to switch */
@@ -32,6 +32,7 @@
         /* default seleted userType */
         $scope.userForm.companyType = '1';
         /* loading country codes and ISD codes from JSON file from own Library*/
+        $rootScope.loggedIn = false;
 
         $http.get('../scripts/Library/data.json').success(function(data) {
                 $scope.countryCodes = data;
@@ -61,6 +62,7 @@
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
+            $scope.userForm.isSocial = "No";
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
             }else{
@@ -94,8 +96,8 @@
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
 
-            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
-                 if(result.resCode == 0){
+           $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                if(result.resCode == 0){
                        // alert(result.resStr);
                     }else{
                         alert(result.resStr);
@@ -109,7 +111,7 @@
             var codeUpperCase = $filter('uppercase')($scope.userForm.code)
             $scope.userForm.code = codeUpperCase;
             //$log.debug($scope.userForm.code);
-            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
                     $scope.view.name = 'pswrd';
                     var myEl = angular.element( document.querySelector( '#step3' ) );
@@ -126,7 +128,7 @@
 
         $scope.resendOTP = function(){
             $scope.urlRest = 'http://52.42.99.192/Login/forgotPassword/';
-            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
                        // alert(result.resStr);
                     }else{
@@ -141,7 +143,7 @@
             $scope.userForm.code = codeUpperCase;
 
 
-            httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
                         $scope.view.name = 'pswrd';
                         var myEl = angular.element( document.querySelector( '#step3' ) );
@@ -160,11 +162,12 @@
              $scope.urlRest = 'http://52.42.99.192/Login/setPasswordForUser/';
              $log.debug($scope.userForm.password);
              //restCall();
-             httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+             $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if(result.resCode == 0){
                     var myEl = angular.element( document.querySelector( '#step4' ) );
                     myEl.removeClass('active').addClass('complete');
                     $location.path('/');
+                    $rootScope.loggedIn = true;
                 }else{
                     alert(result.resStr);
                 }
