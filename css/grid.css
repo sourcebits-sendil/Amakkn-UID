@@ -122,3 +122,60 @@ font-size: 18px;
     background-color: #fff;
 margin-left:30px;
 }
+
+
+.girdcls{
+    width: 350px;
+	height: 220px;
+	background: #ccc;
+
+}
+
+.girdcls1{
+   width: 350px;
+	height: 181px;
+	background: #ccc;
+}
+.girdcls2{
+    width: 350px;
+	height: 300px;
+	object-fit: contain;
+
+background: #ccc;
+}
+.girdcls3{
+    width: 350px;
+	height: 210px;
+	background: #ccc;
+
+}
+.girdcls4{
+    width: 350px;
+	height: 170px;
+	background: #ccc;
+
+}
+.girdcls5{
+    width: 350px;
+	height: 270px;
+	object-fit: contain;
+
+	background: #ccc;
+
+}
+.girdcls6{
+    width: 350px;
+	height: 350px;
+	object-fit: contain;
+
+	background: #ccc;
+}
+.girdcls7{
+    width: 350px;
+	height: 431px;
+	background: #ccc;
+
+}
+.girdcls8{
+
+}
