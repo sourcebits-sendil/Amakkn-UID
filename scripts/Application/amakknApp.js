@@ -1,4 +1,4 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
@@ -38,6 +38,10 @@ amakknApp.config(function($routeProvider){
     .when('/listProperties', {
         templateUrl : '../../Views/listProperties.html',
         controller  : 'listPropertyiesController'
+    })
+    .when('/profile', {
+        templateUrl : '../../Views/profile.html'
+
     })
     // route for the home page
     .when('/', {

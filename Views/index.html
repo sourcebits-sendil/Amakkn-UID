@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="amakkn">
+<html ng-app="amakkn" itemscope itemtype="http://schema.org/Article">
 
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amakkn</title>
 
-<link rel="stylesheet" href="https://i.icomoon.io/public/temp/6ed1c3e962/UntitledProject/style.css">
     <link rel="stylesheet" href="../scripts/Library/bootstrap-3.3.6-dist/css/bootstrap.min.css" >
       <link rel="stylesheet" href="../scripts/Library/bootstrap-select-1.10.0/dist/css/bootstrap-select.css" >
       <link rel="stylesheet" href="../scripts/Library/Hover-master/css/hover-min.css" >
@@ -33,7 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand hidden-xs hidden-md hidden-sm" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" ></a>
+      <a class="navbar-brand hidden-xs hidden-md hidden-sm" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" style="height:150%;"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,22 +45,22 @@
         <li class="dropdown">
           <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Real Estate Companies <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Edwards And Towers</a></li>
-            <li><a href="#">Al Ghuroob Real Estate</a></li>
-            <li><a href="#">Veda Real Estate</a></li>
-            <li><a href="#">Kirk Dixon Real Estate</a></li>
-              <li><a href="#">CitiWay Real Estate</a></li>
-              <li><a href="#">Midmac Real Estate</a></li>
-              <li><a href="#">Al Mubadarah Real Estate</a></li>
+            <li><a href="">Edwards And Towers</a></li>
+            <li><a href="">Al Ghuroob Real Estate</a></li>
+            <li><a href="">Veda Real Estate</a></li>
+            <li><a href="">Kirk Dixon Real Estate</a></li>
+              <li><a href="">CitiWay Real Estate</a></li>
+              <li><a href="">Midmac Real Estate</a></li>
+              <li><a href="">Al Mubadarah Real Estate</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="list.html">Agent</a></li>
-            <li><a href="#">Realtor</a></li>
-              <li><a href="#">Lenders</a></li>
-              <li><a href="#">Settings</a></li>
+            <li><a href="">Realtor</a></li>
+              <li><a href="">Lenders</a></li>
+              <li><a href="">Settings</a></li>
           </ul>
         </li>
       </ul>
@@ -71,14 +70,14 @@
           <li class="dropdown" ng-show="loggedIn">
           <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" style="width:25px; height:25px; background:#fff;color:#ededed;margin:0px auto;border-radius:50%;padding-top: 4%;text-align:center;"></span>  {{loggedName}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Chat</a></li>
-            <li><a href="#">Add Property</a></li>
-              <li><a href="#">My Favourites</a></li>
-              <li><a href="#">My Listings</a></li>
-              <li><a href="#">Wanted Properties</a></li>
-              <li><a href="#">Compare Lineup</a></li>
-              <li><a href="#">Call Asking</a></li>
-              <li><a href="#">Edit Profile</a></li>
+            <li><a href="">Chat</a></li>
+            <li><a href="">Add Property</a></li>
+              <li><a href="">My Favourites</a></li>
+              <li><a href="">My Listings</a></li>
+              <li><a href="">Wanted Properties</a></li>
+              <li><a href="">Compare Lineup</a></li>
+              <li><a href="">Call Asking</a></li>
+              <li><a href="#profile">Edit Profile</a></li>
               <li><a href="" ng-click="logOut()">SignOut</a></li>
           </ul>
         </li>
@@ -96,66 +95,66 @@
     </div>
 
 
-<div class="padding20"></div>
-  <footer class="navbar-default">
 
-        <div class="container-fluid greyBg greyBtmBorder ">
+  <footer class="navbar-default" >
+
+        <div class="container-fluid greyBg  ">
             <div class="row">&nbsp;</div>
             <div class="col-md-9 col-md-offset-2">
             <div class="col-md-3 col-sm-6 links">
                 <ul id="cssmenu">
                     <li class="footerColHeaders">Top Real Estate Markets</li>
 
-                    <li><a href="#">San Diego real estate</a></li>
-                    <li><a href="#">Miami real estate</a></li>
-                    <li><a href="#">Chicago real estate</a></li>
-                    <li><a href="#">Las Vegas real estate</a></li>
-                    <li><a href="#">Queens real estate</a></li>
-                    <li><a href="#">Austin real estate</a></li>
+                    <li><a href="">San Diego real estate</a></li>
+                    <li><a href="">Miami real estate</a></li>
+                    <li><a href="">Chicago real estate</a></li>
+                    <li><a href="">Las Vegas real estate</a></li>
+                    <li><a href="">Queens real estate</a></li>
+                    <li><a href="">Austin real estate</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-6 links">
                 <ul >
                     <li class="footerColHeaders">Explore Amakkn</li>
 
-                    <li><a href="#">Homes for Sale</a></li>
-                    <li><a href="#">Rentals</a></li>
-                    <li><a href="#">Houses for Rent</a></li>
-                    <li><a href="#">Apartments for Rent</a></li>
-                    <li><a href="#">Real Estate Advice</a></li>
-                    <li><a href="#">Real Estate Apps</a></li>
+                    <li><a href="">Homes for Sale</a></li>
+                    <li><a href="">Rentals</a></li>
+                    <li><a href="">Houses for Rent</a></li>
+                    <li><a href="">Apartments for Rent</a></li>
+                    <li><a href="">Real Estate Advice</a></li>
+                    <li><a href="">Real Estate Apps</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-6 links">
                 <ul >
                     <li class="footerColHeaders">For Professionals</li>
 
-                    <li><a href="#">Stats &amp; Trends</a></li>
-                    <li><a href="#">Tools &amp; Extras</a></li>
-                    <li><a href="#">Home Price Maps</a></li>
-                    <li><a href="#">U.S. Property Records</a></li>
-                    <li><a href="#">Popular Counties</a></li>
-                    <li><a href="#">Rental Communities</a></li>
+                    <li><a href="">Stats &amp; Trends</a></li>
+                    <li><a href="">Tools &amp; Extras</a></li>
+                    <li><a href="">Home Price Maps</a></li>
+                    <li><a href="">U.S. Property Records</a></li>
+                    <li><a href="">Popular Counties</a></li>
+                    <li><a href="">Rental Communities</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-6 links">
                 <ul >
                     <li class="footerColHeaders">About Amakkn</li>
 
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">About Zillow Group</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Advertising Terms</a></li>
-                    <li><a href="#">Privacy</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">About Zillow Group</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Investor Relations</a></li>
+                    <li><a href="">Advertising Terms</a></li>
+                    <li><a href="">Privacy</a></li>
                 </ul>
             </div>
             </div>
         </div>
         <div class="container-fluid copyRight" >
-            <div class="col-md-offset-2 col-md-3  col-sm-6">Copyright 2016 <a href="#" class="blueTxt">Amakkn</a>, All Rights Reserved.</div>
+            <div class="col-md-offset-2 col-md-3  col-sm-6">Copyright 2016 <a href="" class="blueTxt">Amakkn</a>, All Rights Reserved.</div>
           <div class="col-md-2 col-sm-6"> </div>
-            <div class="col-md-5 col-sm-6 blueTxt"><a href="#" class="blueTxt">Mobile Site</a> |  <a href="#" class="blueTxt" >Leave Feedback</a> |<a href="#" class="blueTxt">  Terms of Use </a>|<a href="#" class="blueTxt">  Privacy Policy</a></div>
+            <div class="col-md-5 col-sm-6 blueTxt"><a href="" class="blueTxt">Mobile Site</a> |  <a href="" class="blueTxt" >Leave Feedback</a> |<a href="" class="blueTxt">  Terms of Use </a>|<a href="" class="blueTxt">  Privacy Policy</a></div>
         </div>
 
       </footer>
@@ -191,11 +190,14 @@
        <script src="../scripts/Application/Controllers/toaster.controller.js"></script>
 
       <script src="../scripts/Application/Services/http-service.js"></script>
-    <script src="../scripts/Application/Services/authentication.service.js"></script>
+    <!--<script src="../scripts/Application/Services/authentication.service.js"></script>-->
+    <script src="../scripts/Application/Directives/google-plus-signin.js"></script>
+
 <script src="http://maps.googleapis.com/maps/api/js">
 </script>
 
-
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
 
 
 

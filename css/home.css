@@ -1,4 +1,6 @@
 
+.margin10{margin: 33px 10px;}
+
 header {
   position: relative;
   width: 100%;
@@ -38,7 +40,7 @@ header .header-content .header-content-inner hr {
   }
   header .header-content {
     position: absolute;
-    top: 40%;
+    top: 45%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -101,7 +103,7 @@ header .header-content .header-content-inner hr {
     }
 
 .services-wrapper icon bg-crete{
-    background-image: url('../assets/images/oval-20.png');
+
     }
 .services-wrapper{
     text-align: center;
@@ -123,7 +125,7 @@ header .header-content .header-content-inner hr {
 
 #gray-cicle
 {
-    top: 370px;
+    top: 320px;
     position: relative;
 
 }
@@ -271,10 +273,10 @@ article{padding-top: 30px;}
     text-align: justify;
     color: #fff;
     font-weight: 600;
-    font-family: ProximaNova-Light;
+
 }
 
 #textph{
     color: #fff;
-    font-family: ProximaNova-Light;
+
     }

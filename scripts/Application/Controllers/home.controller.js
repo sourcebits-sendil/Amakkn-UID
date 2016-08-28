@@ -16,6 +16,7 @@
 
         $scope.selection = "banner";
        // $log.debug($scope.selection);
+        $scope.isFav = false;
         $scope.urlGet = '';
         //property list
         $scope.user = null;
@@ -31,9 +32,12 @@
   };
 
 
-            $scope.urlGet = 'http://52.42.99.192/Testimonials/getTestimonials/';
+        $scope.isFavTog = function(Prop){
 
+            Prop.isFav = {false:true, true:false}[Prop.isFav];
+        }
 
+        $scope.urlGet = 'http://52.42.99.192/Testimonials/getTestimonials/';
         $rootScope.myPromise = $http({
                     method : "GET",
                     url : $scope.urlGet})
@@ -138,7 +142,7 @@
               var mapcanvas = document.createElement('div');
               mapcanvas.id = 'mapcontainer';
               mapcanvas.style.height = '400px';
-              mapcanvas.style.width = '600px';
+              mapcanvas.style.width = '100%';
 
               document.querySelector('article').appendChild(mapcanvas);
 
