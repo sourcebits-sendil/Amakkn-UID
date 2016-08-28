@@ -1,20 +1,20 @@
 <style>
-    @import url('../css/home.css')
+    @import url('../css/home.css');
+    @import url('../css/grid.css')</style>
 
-</style>
-<style>
-@import url('../css/grid.css')</style>
-
-
+<div>
 <header data-ng-switch on="selection">
-    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
-    <div class="container greyBtmBorder"  data-ng-switch-when="map">
-        <h1>Buy page loaded......</h1>
+
+
+    <div class="container padding20"  data-ng-switch-when="map" style="min-height:50vh;">
+        <article> </article>
     </div>
+    <div data-ng-switch-when="banner">
+        <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  >
         <div class="header-content">
             <div class="header-content-inner">
 
-                <div class="text-center brandName marginTB20"><img src="../assets/images/logo-header.svg" alt="Amakkn"></div>
+                <div class="text-center brandName marginTB20"><img src="../assets/images/logo.svg" alt="Amakkn"></div>
 
                 <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
 
@@ -26,8 +26,7 @@
                         <div class="panel panel-default col-md-10 col-md-offset-1 noPadding">
                           <div class="panel-body">
                             <div class= "btn-group btn-group-justified" role="group" >
-                                <div class="
-                                            btn-group " role="group" >
+                                <div class="btn-group " role="group" >
                                    <div class="btn btn-default btn-lg" ng-click="tab = 1">Buy</div>
                                       <div ng-show="tab == 1">
 
@@ -36,7 +35,7 @@
                                <div class="
                                             btn-group " role="group" >
                                    <div class="btn btn-default btn-lg " ng-click="tab = 2">Rent</div>
-                                      <div class="btn" ng-show="tab == 2">
+                                      <div  ng-show="tab == 2">
 
          </div>
                                 </div>
@@ -54,10 +53,10 @@
                                 <div class="col-md-7 col-sm-7">
                                     <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
                                 </div>
-                                <div class="col-md-3 col-sm-3 paddingLR10 text-right">
+                               <div class="col-md-3 col-sm-3 paddingLR10 text-right">
 
 
-     <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()" id="md-select">
+     <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
       <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
     </md-select>
 
@@ -73,49 +72,199 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
             </div><div class="padding20"></div>
-            <div class="row text-center">
-  <div class="col-md-12 ">
-      <button class="btn btn-default gray-circle-button" ></button>
-      <button class="btn btn-default gray-circle-button" ></button></div>
+            <div class="row text-center " >
+  <div class="col-md-12" id="gray-cicle"   >
+      <a href="" class="btn btn-default disabled" id="gray" ><img src="../assets/icons/icon.png"  ></a>
+
+    						<a href="" class="btn btn-sec " id="gray" ng-click="switchMap()"><img src="../assets/icons/map-icon.png"></a>
+                </div>
 
 </div>
-        </div>
+    </div></div>
 </header>
 <div class=" greyBtmBorder">
          <div class= "text-center padding20">
              <h1>Recently Listed</h1>
              <h5>Dubai, United Arab Emirates</h5>
         </div>
-  <div class="container" id="photos">
-	<div class="row" >
-		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
 
-        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 girdcls"></div>
+         <div class="col-md-4 girdcls1"></div>
+         <div class="col-md-4 girdcls2"></div>
+    </div>
+         <div class="row">
+        <div class="col-md-4 girdcls3"></div>
+         <div class="col-md-4 girdcls4"></div>
+         <div class="col-md-4 girdcls5"></div>
+    </div>
+         <div class="row">
+        <div class="col-md-4 girdcls6"></div>
+         <div class="col-md-4 girdcls7"></div>
+         <div class="col-md-4 girdcls"></div>
+    </div>
 
     </div>
-      <div class="row" >
-		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
+  <!--<div class="container">
+	<div >
+	   <div class="column size-1of3 col-md-4">
+            <div class="card card-background girdcls">
+           <div><img class="img-responsive" src="../assets/images/gallery/1.jpg" /></div>
+               <div class="content">
 
-        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
 
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background girdcls4">
+           <div><img class="img-responsive" src="../assets/images/gallery/2.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background girdcls6">
+           <div><img class="img-responsive" src="../assets/images/gallery/10.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+        </div>
+        <div class="column size-1of3 col-md-4">
+            <div class="card card-background girdcls2">
+           <div><img class="img-responsive " src="../assets/images/gallery/6.jpg" /></div>
+           <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+            </div>
+           <div class="card card-background girdcls5">
+           <div><img class="img-responsive" src="../assets/images/gallery/8.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/shape.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+           <div class="card card-background girdcls3">
+           <div><img class="img-responsive" src="../assets/images/gallery/3.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+        </div>
+        <div class="column size-1of3 col-md-4">
+          <div class="card card-background girdcls1">
+           <div><img class="img-responsive" src="../assets/images/gallery/11.jpg" /></div>
+              <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/shape.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+              </div>
+           <div class="card card-background girdcls7">
+           <div><img class="img-responsive" src="../assets/images/gallery/12.jpg" /></div>
+               <div class="content">
+
+                     <a href="#" class="pull-right">
+                        <img src="../assets/icons/liked-copy.svg">
+                     </a>
+
+            </div>
+            <div class="footer">
+               <div class="author">
+                    <a href="#">
+                       <h3 class="price">$345,000</h3>
+                       <p>3 Bedroom Penthouse Apartment   </p>
+                    </a>
+                </div>
+            </div>
+           </div>
+
+        </div>
     </div>
-      <div class="row" >
-		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
-
-        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
-
-    </div>
-      <div class="row" >
-		<div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/home.jpg" /></div>
-
-        <div class="col-md-6 col-sm-4 col-xs-6 listed"><img  src="../assets/images/download.jpeg" /></div>
-
-    </div>
-</div>
+</div>-->
 
           <div class= "text-center ">
              <h1>Why Amakkn?</h1>
@@ -154,8 +303,8 @@
 
     			<div class="row margin-bottom-20 text-center">
 
-    				<div class="col-md-4 ">
-                        <div class="whiteBgShad">
+    				<div class="col-md-4 col-shrink " id="shrink">
+                        <div class="whiteBgShad  ">
                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
     				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
@@ -174,7 +323,7 @@
                         </div>
     				</div><!-- /.col-md-3 col -->
 
-    				<div class="col-md-4 ">
+    				<div class="col-md-4 col-shrink" id="shrink">
                         <div class="whiteBgShad">
                              <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
@@ -194,7 +343,7 @@
 
     				</div><!-- /.col-md-3 col -->
 
-    				<div class="col-md-4 ">
+    				<div class="col-md-4 col-shrink " id="shrink">
                         <div class="whiteBgShad">
                              <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20"></div>
@@ -220,7 +369,7 @@
     		</div><!-- /.container -->
 
     	</div><!-- /.item -->
-
+<div class="padding20"></div><div class="padding20"></div><div class="padding20"></div><div class="padding20"></div>
          <hr>
 
 
@@ -236,14 +385,14 @@
 						       <div class="editContent" data-selector="Footers">
 			        		      <div class= "text-center ">
                                       <h1>Live Realtor Advice</h1>
-                                      <h5>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
+                                      <h6>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
                                   </div>
 						       </div>
 		        	     </div>
                          <div class="padding20"></div>
 				        <div class="services-wrapper">
 
-						       <div class="col-md-4">
+						       <div class="col-md-4 ">
 							       <div class="">
 
                                       <span class="iconShadow">
@@ -294,34 +443,39 @@
 
 
 
+
+
+
+
+
   <br>
 
    <div id="page" class="page">
 
 
 	<section id="content-1-2" class="content-block content-1-2">
-		<div class="container-fluid" id="footer">
+		<div class="container-fluid" id="footer ">
 			<!-- Start Row -->
             <div class="padding20"></div>
 			<div class="col-md-8 col-md-offset-2">
 				<div class="col-md-6">
 					<div class=" editContent">
-						<h2>Get Our New App</h2>
+						<h2 id="textph">Get Our New App</h2>
 					</div>
 
 					<div class="editContent">
-						<p class="lead">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
+						<p class="lead" id="textp">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
 					</div>
 					<div class="editContent">
-						<p>Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
+						<p id="textp">Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
 					</div>
                     <div class="padding20"></div>
 					<div class="row">
 						<div class="col-md-4">
-							<a href="#" ng-click="showSimpleToast()"><img src="../assets/images/google-play.png"></a>
+							<a  href="#" ng-click="showToast1()"><img src="../assets/images/google-play.png"></a>
 						</div>
-						<div class="col-md-4">
-							<a href="#" ng-click="showToast2()"><img src="../assets/images/img-app-store.jpg"></a>
+						<div class="col-md-4" >
+							<a  href="#" ng-click="showToast2()"><img src="../assets/images/img-app-store.jpg"></a>
 						</div>
 					</div>
                     <div class="padding20"></div>
@@ -345,18 +499,59 @@
            </div>
 			<!--// END Row -->
 		</div>
-	</section>
-<script>
-$(document).ready(function() {
-function getRandomSize(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-  for (var i = 0; i < 25; i++) {
-    var width = getRandomSize(200, 400);
-    var height =  getRandomSize(200, 400);
+	</section><div class="row padding20"></div>
+                <div class="row padding20"></div><div class="row padding20"></div>
 
-  }
-});</script>
+
+
+       <script>
+            $(document).ready(function() {
+            function getRandomSize(min, max) {
+              return Math.round(Math.random() * (max - min) + min);
+            }
+              for (var i = 0; i < 25; i++) {
+                var width = getRandomSize(200, 400);
+                var height =  getRandomSize(200, 400);
+              }
+
+                function success(position) {
+                  var mapcanvas = document.createElement('div');
+                  mapcanvas.id = 'mapcontainer';
+                  mapcanvas.style.height = '400px';
+                  mapcanvas.style.width = '100%';
+
+                  document.querySelector('article').appendChild(mapcanvas);
+
+                  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                  var options = {
+                    zoom: 15,
+                    center: coords,
+                    mapTypeControl: false,
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    },
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+                  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+                  var marker = new google.maps.Marker({
+                      position: coords,
+                      map: map,
+                      title:"You are here!"
+                  });
+                }
+
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(success);
+                } else {
+                  error('Geo Location is not supported');
+                }
+
+            });
+       </script>
+
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
+</div>

@@ -51,6 +51,7 @@ header .header-content .header-content-inner hr {
   }
   header .header-content .header-content-inner h1 {
     font-size: 50px;
+      background: trs
   }
 
 }
@@ -120,8 +121,28 @@ header .header-content .header-content-inner hr {
     box-shadow: #ddd 0 0 30px 0px;}
 
 
+#gray-cicle
+{
+    top: 370px;
+    position: relative;
 
+}
 
+#gray
+{
+    border-radius: 50%;
+        height: 4em;
+    width: 4em;
+    margin: auto;
+    padding-top: 16px;
+    margin-left: 15px;
+
+}
+.btn-sec {
+        color: #fff;
+    background-color: #fff;
+    border-color: #fff;
+}
 /*landing page buttons*/
 
 .gray-circle-button {
@@ -136,6 +157,8 @@ header .header-content .header-content-inner hr {
 	height: 3em;
 	width: 3em;
 	position: relative;
+    top: 370px;
+
 }
 .gray-circle-button:hover {
 	color:#ffffff;
@@ -146,10 +169,112 @@ header .header-content .header-content-inner hr {
 }
 .gray-circle-button:visited {
 	color:#ffffff;
-    background-color: #24c969;
+
 	text-decoration: none;
 
 }
 .gray-circle-link-greater-than {
     font-size: 1em;
 }
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+.img-responsive{
+    padding-top: 10px;
+}
+
+.card-background:hover .filter {
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+.card-background .content, .card-background .footer {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.card .content {
+    padding: 15px 15px 10px 15px;
+    color:#fff;
+}
+.card-background .price {
+    margin: 0;
+    color: #ffffff;
+    font-weight:normal;
+}
+.card-background .title {
+    margin-top: 30px;
+    font-weight: 400;
+}
+.card-background .title, .card-background .stats,
+.card-background .category,
+.card-background .description,
+.card-background small, .card-background a {
+    color: #ffffff;
+}
+.card .title {
+    margin: 0 0 10px 0;
+    color: #333333;
+    font-weight: 300;
+}
+.card-background .footer {
+    bottom: 0;
+    top: auto;
+    padding: 10px 15px;
+    width: 100%;
+    line-height: 40px;
+    color: #ffffff;
+}
+.card .footer div {
+    display: inline-block;
+}
+.card .author {
+    font-size: 14px;
+
+}
+
+.card {
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+
+    margin-top:30px;
+}
+.card-background {
+    position: relative;
+    text-shadow: 0 0 5px #000000;
+}
+.card-background .image {
+    border-radius: 6px;
+}
+
+
+md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select ._md-select-value._md-select-placeholder
+{
+    color:#fff;
+}
+
+.container-fluid copyRight
+{
+    color: #fff;
+}
+
+
+
+#textp{
+
+    font-size: 16px;
+    line-height: 25px;
+    text-align: justify;
+    color: #fff;
+    font-weight: 600;
+    font-family: ProximaNova-Light;
+
+}
+
+#textph{
+    color: #fff;
+    font-family: ProximaNova-Light;
+    }

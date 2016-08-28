@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="amakkn">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amakkn</title>
+
+
+    <link rel="stylesheet" href="../scripts/Library/bootstrap-3.3.6-dist/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="../scripts/Library/bootstrap-select-1.10.0/dist/css/bootstrap-select.css" >
+      <link rel="stylesheet" href="../scripts/Library/Hover-master/css/hover-min.css" >
+      <link rel="stylesheet" href="../scripts/Library/node_modules/angular-material/angular-material.min.css" >
+    <link rel="stylesheet" href="../css/master.css" >
+ <link rel="stylesheet" href="../css/footer.css" >
+
+
+  </head>
+
+  <body data-ng-app="amakknApp" ng-controller="homeCtrl" class="">
+
+  	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid customHeaderColor">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="col-md-12">
+          <div class="col-md-2"></div>
+    <div class="navbar-header col-md-3">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#amakkn-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#index"><img src="../assets/images/logo.svg" alt="Amakkn" class="hidden-xs hidden-md"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse whiteTxt col-md-7" id="amakkn-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#buy" class="hvr-underline-reveal">Buy <span class="sr-only">(current)</span></a></li>
+        <li><a href="#rent" class="hvr-underline-reveal">Rent</a></li>
+        <li><a href="#sell" class="hvr-underline-reveal">Sell</a></li>
+        <li><a href="#mortgage" class="hvr-underline-reveal">Mortgage</a></li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Real Estate Companies <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Edwards And Towers</a></li>
+            <li><a href="#">Al Ghuroob Real Estate</a></li>
+            <li><a href="#">Veda Real Estate</a></li>
+            <li><a href="#">Kirk Dixon Real Estate</a></li>
+              <li><a href="#">CitiWay Real Estate</a></li>
+              <li><a href="#">Midmac Real Estate</a></li>
+              <li><a href="#">Al Mubadarah Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Agent</a></li>
+            <li><a href="#">Realtor</a></li>
+              <li><a href="#">Lenders</a></li>
+              <li><a href="#">Settings</a></li>
+          </ul>
+        </li>
+          <li class="dropdown">
+          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Binesh Walla <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Add Property</a></li>
+              <li><a href="#">My Favourites</a></li>
+              <li><a href="#">My Listings</a></li>
+              <li><a href="#">Wanted Properties</a></li>
+              <li><a href="#">Compare Lineup</a></li>
+              <li><a href="#">Call Asking</a></li>
+              <li><a href="#">Edit Profile</a></li>
+              <li><a href="#">SignOut</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li><span><a href="#login" class="hvr-underline-reveal">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></span></li>
+          <li class="highLightGreen"><a href="#listProperties" class="hvr-underline-reveal ">+ List Your Property</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+          </div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+      <!-- Importing Javascript libraries -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="../scripts/Library/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+      <script src="../scripts/Library/bootstrap-select-1.10.0/dist/js/bootstrap-select.js"></script>
+
+      <script src="../scripts/Library/node_modules/angular/angular.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+      <script src="../scripts/Library/node_modules/angular-material/angular-material.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+      <script src="../scripts/Library/imageGrid.js"></script>
+
+
+       <!-- Importing App contollers & services -->
+      <script src="../scripts/Application/amakknApp.js"></script>
+      <script src="../scripts/Application/Controllers/home.controller.js"></script>
+      <script src="../scripts/Application/Controllers/buy.controller.js"></script>
+      <script src="../scripts/Application/Controllers/listPropertyies.controller.js"></script>
+      <script src="../scripts/Application/Controllers/login.controller.js"></script>
+      <script src="../scripts/Application/Controllers/mortgage.controller.js"></script>
+      <script src="../scripts/Application/Controllers/rent.controller.js"></script>
+      <script src="../scripts/Application/Controllers/sell.controller.js"></script>
+      <script src="../scripts/Application/Controllers/signUp.controller.js"></script>
+		<script src="../scripts/Application/Directives/passMatch.js"></script>
+       <script src="../scripts/Application/Controllers/toaster.controller.js"></script>
+
+      <script src="../scripts/Application/Services/http-service.js"></script>
+
+
+
+
+
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<script src="../scripts/Application/salvattore.min.js"></script>
+        <![endif]-->
+      <!--Ends Importing Javascript libraries -->
+
+  </body>
+
+</html>

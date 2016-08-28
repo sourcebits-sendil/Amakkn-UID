@@ -10,7 +10,9 @@
         .controller('signUpController', signUpController);
 
     /* @ngInject */
-    function signUpController($log, $scope, $http, $timeout, $filter) {
+
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
+
 
         /* initiating view objects used to switch */
         $scope.view={
@@ -30,6 +32,7 @@
         /* default seleted userType */
         $scope.userForm.companyType = '1';
         /* loading country codes and ISD codes from JSON file from own Library*/
+        $rootScope.loggedIn = false;
 
         $http.get('../scripts/Library/data.json').success(function(data) {
                 $scope.countryCodes = data;
@@ -59,6 +62,7 @@
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
+            $scope.userForm.isSocial = "No";
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
             }else{
@@ -85,13 +89,20 @@
                        $scope.userForm.companyName + ' ' +
                        $scope.userForm.managerName + ' ' +
                        $scope.userForm.commercialRecordNumber + ' ' +
+
                        $scope.userForm.website + ' ' +
                        $scope.userForm.description + ' ' +
                            $scope.userForm.name );
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
-            restCall();
 
+           $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                if(result.resCode == 0){
+                       // alert(result.resStr);
+                    }else{
+                        alert(result.resStr);
+                    }
+                });
         }
 
         $scope.addPass = function(){
@@ -100,54 +111,67 @@
             var codeUpperCase = $filter('uppercase')($scope.userForm.code)
             $scope.userForm.code = codeUpperCase;
             //$log.debug($scope.userForm.code);
-            restCall();
-            if($scope.successResponse){
-                //alert($scope.successResponse.resStr);
-                if($scope.successResponse.resStr==='Success!!!'){
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                 if(result.resCode == 0){
                     $scope.view.name = 'pswrd';
                     var myEl = angular.element( document.querySelector( '#step3' ) );
             myEl.removeClass('active').addClass('complete');
             $timeout(function() {
                 myEl = angular.element( document.querySelector( '#step4' )).removeClass('disabled').addClass('active');
             }, 500);
-                }
-            }
-            $scope.view.name = 'pswrd';
-
-        }
-
-         $scope.setPass = function(){
-             $scope.urlRest = 'http://52.42.99.192/Login/setPasswordForUser/';
-
-         }
-
-        function restCall(){
-            $http({
-                method  : 'POST',
-                dataType: 'jsonp',
-                url     : $scope.urlRest,
-                data    : $scope.userForm,  // pass in data as strings
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-             })
-              .then(function successCallback(response) {
-                $scope.successResponse = response.data;
-
-                if (!response.success) {
-                  // if not successful, bind errors to error variables
-
-                    $log.debug( 'success but failed ' + $scope.successResponse.resStr);
-                } else {
-                  // if successful, bind success message to message
-                    $scope.successResponse = response.data;
-                    $log.debug('success and completed ' + $scope.successResponse.resStr);
-                }
-                return $scope.successResponse;
-              }, function errorCallback(response) {
-                    //alert(response.data)
-
+                }else{
+                        alert(result.resStr);
+                    }
             });
         }
 
 
+        $scope.resendOTP = function(){
+            $scope.urlRest = 'http://52.42.99.192/Login/forgotPassword/';
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                 if(result.resCode == 0){
+                       // alert(result.resStr);
+                    }else{
+                        alert(result.resStr);
+                    }
+                });
+        }
+        $scope.confOTP = function(){
+            $scope.urlRest = 'http://52.42.99.192/Login/verifyUser/';
+            //$log.debug($scope.userForm.code +' '+ $scope.userForm.phone );
+            var codeUpperCase = $filter('uppercase')($scope.userForm.code)
+            $scope.userForm.code = codeUpperCase;
+
+
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                 if(result.resCode == 0){
+                        $scope.view.name = 'pswrd';
+                        var myEl = angular.element( document.querySelector( '#step3' ) );
+                        myEl.removeClass('active').addClass('complete');
+
+                        $timeout(function() {
+                            myEl = angular.element( document.querySelector( '#step4' )).removeClass('disabled').addClass('active');
+                        }, 500);
+                    }else{
+                        alert(result.resStr);
+                    }
+                });
+        }
+
+         $scope.setPass = function(){
+             $scope.urlRest = 'http://52.42.99.192/Login/setPasswordForUser/';
+             $log.debug($scope.userForm.password);
+             //restCall();
+             $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                if(result.resCode == 0){
+                    var myEl = angular.element( document.querySelector( '#step4' ) );
+                    myEl.removeClass('active').addClass('complete');
+                    $location.path('/');
+                    $rootScope.loggedIn = true;
+                }else{
+                    alert(result.resStr);
+                }
+             });
+         }
     }
 })();

@@ -1,0 +1,48 @@
+
+    h1 {
+      font-size: 3em;
+      line-height: 1;
+      margin-bottom: 0.5em;
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 1.5em;
+    }
+    .main-image {
+      width: 380px;
+      margin-bottom: 0.75em;
+    }
+    .thumbnails li {
+      display: inline;
+      margin: 0 10px 0 0;
+    }
+
+.bor
+{
+    border: none;
+}
+.hide-bullets {
+list-style:none;
+margin-left: -40px;
+margin-top:20px;
+}
+
+.cus{
+    width:700px;
+    height: 300px;
+}
+
+.imgesresponsive
+{
+    width:600px;
+    height: 400px;
+
+}
+
+.propic
+{
+        padding-left: 100px;
+}

@@ -95,3 +95,87 @@ font-size: 18px;
     background-image: url(../assets/images/bitmap.png);
     background-size: cover;
 }
+
+#shrink :hover {
+    opacity: 0.6;
+    cursor: pointer;
+    border-radius: 0px;
+  -webkit-transform: scale(1.1, 1.1);
+  -webkit-transition-timing-function: ease-out;
+                      -moz-transform: scale(1.1, 1.1);
+     -moz-transition-timing-function: ease-out;
+                       -ms-transform: scale(1.20, 1.20);
+      -ms-transition-timing-function: ease-out;
+
+         -webkit-transition-duration: 500ms;
+            -moz-transition-duration: 500ms;
+             -ms-transition-duration: 500ms;
+
+
+}
+
+
+.col-shrink{
+        width: 350px;
+    height: 270px;
+    border-radius: 3px;
+    background-color: #fff;
+margin-left:30px;
+}
+
+
+.girdcls{
+    width: 350px;
+	height: 220px;
+	background: #ccc;
+
+}
+
+.girdcls1{
+   width: 350px;
+	height: 181px;
+	background: #ccc;
+}
+.girdcls2{
+    width: 350px;
+	height: 300px;
+	object-fit: contain;
+
+background: #ccc;
+}
+.girdcls3{
+    width: 350px;
+	height: 210px;
+	background: #ccc;
+
+}
+.girdcls4{
+    width: 350px;
+	height: 170px;
+	background: #ccc;
+
+}
+.girdcls5{
+    width: 350px;
+	height: 270px;
+	object-fit: contain;
+
+	background: #ccc;
+
+}
+.girdcls6{
+    width: 350px;
+	height: 350px;
+	object-fit: contain;
+
+	background: #ccc;
+}
+.girdcls7{
+    width: 350px;
+	height: 431px;
+	background: #ccc;
+
+}
+.girdcls8{
+
+}
