@@ -255,16 +255,26 @@ md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select .
 {
     color:#fff;
 }
-
 .container-fluid copyRight
 {
     color: #fff;
 }
-
 #mapcontainer{width: 100% !important;height:500px !important;}
 article{padding-top: 30px;}
-
 .userFeedImg{height:120px;}
 .userFeedImg>img{height:100%};
-
 .userFeedImg img{border-radius: 50% !important;}
+#textp{
+
+    font-size: 16px;
+    line-height: 25px;
+    text-align: justify;
+    color: #fff;
+    font-weight: 600;
+    font-family: ProximaNova-Light;
+}
+
+#textph{
+    color: #fff;
+    font-family: ProximaNova-Light;
+    }

@@ -108,10 +108,29 @@
              <h1>Recently Listed</h1>
              <h5>Dubai, United Arab Emirates</h5>
         </div>
-  <div class="container">
-	<div id="grid" data-columns>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 girdcls"></div>
+         <div class="col-md-4 girdcls1"></div>
+         <div class="col-md-4 girdcls2"></div>
+    </div>
+         <div class="row">
+        <div class="col-md-4 girdcls3"></div>
+         <div class="col-md-4 girdcls4"></div>
+         <div class="col-md-4 girdcls5"></div>
+    </div>
+         <div class="row">
+        <div class="col-md-4 girdcls6"></div>
+         <div class="col-md-4 girdcls7"></div>
+         <div class="col-md-4 girdcls"></div>
+    </div>
+
+    </div>
+  <!--<div class="container">
+	<div >
 	   <div class="column size-1of3 col-md-4">
-            <div class="card card-background">
+            <div class="card card-background girdcls">
            <div><img class="img-responsive" src="../assets/images/gallery/1.jpg" /></div>
                <div class="content">
 
@@ -129,7 +148,7 @@
                 </div>
             </div>
            </div>
-           <div class="card card-background">
+           <div class="card card-background girdcls4">
            <div><img class="img-responsive" src="../assets/images/gallery/2.jpg" /></div>
               <div class="content">
 
@@ -147,7 +166,7 @@
                 </div>
             </div>
            </div>
-           <div class="card card-background">
+           <div class="card card-background girdcls6">
            <div><img class="img-responsive" src="../assets/images/gallery/10.jpg" /></div>
               <div class="content">
 
@@ -167,7 +186,7 @@
            </div>
         </div>
         <div class="column size-1of3 col-md-4">
-            <div class="card card-background">
+            <div class="card card-background girdcls2">
            <div><img class="img-responsive " src="../assets/images/gallery/6.jpg" /></div>
            <div class="content">
 
@@ -185,7 +204,7 @@
                 </div>
             </div>
             </div>
-           <div class="card card-background">
+           <div class="card card-background girdcls5">
            <div><img class="img-responsive" src="../assets/images/gallery/8.jpg" /></div>
               <div class="content">
 
@@ -203,8 +222,8 @@
                 </div>
             </div>
            </div>
-           <div class="card card-background">
-           <div><img class="img-responsive" src="../assets/images/gallery/5.jpg" /></div>
+           <div class="card card-background girdcls3">
+           <div><img class="img-responsive" src="../assets/images/gallery/3.jpg" /></div>
               <div class="content">
 
                      <a href="#" class="pull-right">
@@ -223,7 +242,7 @@
            </div>
         </div>
         <div class="column size-1of3 col-md-4">
-          <div class="card card-background">
+          <div class="card card-background girdcls1">
            <div><img class="img-responsive" src="../assets/images/gallery/11.jpg" /></div>
               <div class="content">
 
@@ -241,7 +260,7 @@
                 </div>
             </div>
               </div>
-           <div class="card card-background">
+           <div class="card card-background girdcls7">
            <div><img class="img-responsive" src="../assets/images/gallery/12.jpg" /></div>
                <div class="content">
 
@@ -259,27 +278,10 @@
                 </div>
             </div>
            </div>
-           <div class="card card-background">
-           <div><img class="img-responsive" src="../assets/images/gallery/14.jpg" /></div>
-               <div class="content">
 
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/shape.svg">
-                     </a>
-
-            </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
-            </div>
-           </div>
         </div>
     </div>
-</div>
+</div>-->
 
           <div class= "text-center ">
              <h1>Why Amakkn?</h1>
@@ -318,8 +320,11 @@
 
     			<div class="row margin-bottom-20 text-center shrink">
 
+
     				<div class="col-md-4 "  ng-repeat="x in userFeed">
                         <div class="whiteBgShad ">
+
+
                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20 userFeedImg">
     				   	<img src="{{x.image}}" class="img-rounded teamImage" alt=""></div>
@@ -336,13 +341,12 @@
     				</div><!-- /.col-md-3 col -->
 
 
-
     			</div><!-- /.row -->
 
     		</div><!-- /.container -->
 
     	</div><!-- /.item -->
-<div class="padding20"></div><div class="padding20"></div>
+<div class="padding20"></div><div class="padding20"></div><div class="padding20"></div><div class="padding20"></div>
          <hr>
 
 
@@ -358,7 +362,7 @@
 						       <div class="editContent" data-selector="Footers">
 			        		      <div class= "text-center ">
                                       <h1>Live Realtor Advice</h1>
-                                      <h5>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
+                                      <h6>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
                                   </div>
 						       </div>
 		        	     </div>
@@ -433,14 +437,14 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="col-md-6">
 					<div class=" editContent">
-						<h2>Get Our New App</h2>
+						<h2 id="textph">Get Our New App</h2>
 					</div>
 
 					<div class="editContent">
-						<p class="lead">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
+						<p class="lead" id="textp">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
 					</div>
 					<div class="editContent">
-						<p>Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
+						<p id="textp">Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
 					</div>
                     <div class="padding20"></div>
 					<div class="row">

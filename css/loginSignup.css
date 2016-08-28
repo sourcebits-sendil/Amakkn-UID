@@ -25,6 +25,29 @@ textarea{max-width:100%;max-height:70px;}
 
 .bs-wizard {margin-top: 95px;}
 
+#customHeaderColor {
+    background-color: #fff;
+    color: #fff;
+    border: 0px;
+    background: #fff;
+    box-shadow: #ddd 0 0 20px 0px;
+    padding-top: 20px;
+    padding-left:160px;
+}
+.flight{
+    width: 900px;
+}
+.input-group-btn:last-child>.btn{
+    margin-left: -33px;
+}
+.right {
+    border-right: 1px solid #ccc;
+}
+
+.mapbutton{
+    margin-top: 20px;
+}
+
 /*Form Wizard*/
 .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
 .bs-wizard > .bs-wizard-step {padding: 0; position: relative;}

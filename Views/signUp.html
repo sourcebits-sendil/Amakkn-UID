@@ -113,7 +113,7 @@
                     <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
-                    <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="userForm.email" maxlength="30">
+                    <input type="email" class="form-control " name="email" placeholder="Email"  maxlength="30">
                     <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
                 </div>
                 <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
