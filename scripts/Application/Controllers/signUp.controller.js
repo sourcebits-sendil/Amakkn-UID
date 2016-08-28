@@ -166,8 +166,10 @@
                 if(result.resCode == 0){
                     var myEl = angular.element( document.querySelector( '#step4' ) );
                     myEl.removeClass('active').addClass('complete');
-                    $location.path('/');
                     $rootScope.loggedIn = true;
+                    $rootScope.loggedName = result.response.user.name;
+                    $location.path('/');
+
                 }else{
                     alert(result.resStr);
                 }

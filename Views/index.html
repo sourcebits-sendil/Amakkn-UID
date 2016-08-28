@@ -69,7 +69,7 @@
       <ul class="nav navbar-nav navbar-left">
         <li ng-hide="loggedIn"><span><a href="#login" class="hvr-underline-reveal" style="padding: 20px 0px;">Sign In</a> | <a href="#signUp" class="hvr-underline-reveal" style="padding: 20px 0px;">Sign Up</a></span></li>
           <li class="dropdown" ng-show="loggedIn">
-          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" style="width:25px; height:25px; background:#fff;color:#ededed;margin:0px auto;border-radius:50%;padding-top: 4%;"></span>{{loggedName}} <span class="caret"></span></a>
+          <a href="" class="dropdown-toggle hvr-underline-reveal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" style="width:25px; height:25px; background:#fff;color:#ededed;margin:0px auto;border-radius:50%;padding-top: 4%;text-align:center;"></span>  {{loggedName}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Chat</a></li>
             <li><a href="#">Add Property</a></li>
@@ -193,9 +193,9 @@
 
       <script src="../scripts/Application/Services/http-service.js"></script>
     <script src="../scripts/Application/Services/authentication.service.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js">
+</script>
 
-
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
 
 
@@ -208,7 +208,7 @@
         <![endif]-->
       <!--Ends Importing Javascript libraries -->
 
-      <script>
+    <!--<script>
 function success(position) {
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
@@ -243,7 +243,10 @@ if (navigator.geolocation) {
   error('Geo Location is not supported');
 }
 
-</script>
+</script> -->
+
+
+
 </div>
   </body>
 

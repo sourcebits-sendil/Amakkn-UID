@@ -6,8 +6,23 @@
 <header data-ng-switch on="selection">
 
 
-    <div class="container padding20"  data-ng-switch-when="map" style="min-height:50vh;">
-        <article> </article>
+    <div class="container padding20 "  data-ng-switch-when="map" >
+        <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
+        <div class="row text-center " >
+            <article></article>
+        </div>
+        <div class="row padding20 greyBG">
+            <div class="row text-center " >
+              <div class="" id="gray-cicle"   style="top:0px;">
+                  <a href="" class="btn btn-default " id="gray" ng-click="switchBanner()">
+                      <img src="../assets/icons/icon.png"  >
+                  </a>
+                  <a href="" class="btn btn-sec disabled" id="gray" >
+                    <img src="../assets/icons/map-icon.png">
+                  </a>
+              </div>
+            </div>
+        </div>
     </div>
     <div data-ng-switch-when="banner">
         <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  >
@@ -75,7 +90,8 @@
                     <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
-            </div><div class="padding20"></div>
+            </div>
+            <div class="padding20"></div>
             <div class="row text-center " >
   <div class="col-md-12" id="gray-cicle"   >
       <a href="" class="btn btn-default disabled" id="gray" ><img src="../assets/icons/icon.png"  ></a>
@@ -86,6 +102,7 @@
 </div>
     </div></div>
 </header>
+    <div class="padding20"></div>
 <div class=" greyBtmBorder">
          <div class= "text-center padding20">
              <h1>Recently Listed</h1>
@@ -106,7 +123,7 @@
             <div class="footer">
                <div class="author">
                     <a href="#">
-                       <h3 class="price">$345,000</h3>
+                       <h3 class="price">$5,000</h3>
                        <p>3 Bedroom Penthouse Apartment   </p>
                     </a>
                 </div>
@@ -124,7 +141,7 @@
             <div class="footer">
                <div class="author">
                     <a href="#">
-                       <h3 class="price">$345,000</h3>
+                       <h3 class="price">$25,000</h3>
                        <p>3 Bedroom Penthouse Apartment   </p>
                     </a>
                 </div>
@@ -299,67 +316,25 @@
 
     			</div><!-- /.row -->
 
-    			<div class="row margin-bottom-20 text-center">
+    			<div class="row margin-bottom-20 text-center shrink">
 
-    				<div class="col-md-4  " id="shrink">
+    				<div class="col-md-4 "  ng-repeat="x in userFeed">
                         <div class="whiteBgShad ">
                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
-                            <div class="padding20"></div>
-    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
+                            <div class="padding20 userFeedImg">
+    				   	<img src="{{x.image}}" class="img-rounded teamImage" alt=""></div>
     				   	<div class="editContent padding20">
-
-
-
-    				   	<p class= "text-center ">
-    				   		The following article covers a topic that has recently moved to centre stage-at least it seems that way.
-    				   	</p>
-                            <h4>Binesh Walla</h4>
-                            <p class= "text-center greenTxt">Netflix</p>
+                            <p class= "text-center ">
+                                {{x.description}}
+                            </p>
+                            <h4>{{x.name}}</h4>
+                            <p class= "text-center greenTxt">{{x.company}}</p>
     				   	</div><!-- /.editContent -->
 
 
                         </div>
     				</div><!-- /.col-md-3 col -->
 
-    				<div class="col-md-4 " id="shrink">
-                        <div class="whiteBgShad">
-                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
-                            <div class="padding20"></div>
-    				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent padding20">
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Adam Cartlidge</h4>
-                            <p class= "text-center greenTxt">Sourcebits</p>
-    				   	</div><!-- /.editContent -->
-
-                        </div>
-
-    				</div><!-- /.col-md-3 col -->
-
-    				<div class="col-md-4 " id="shrink">
-                        <div class="whiteBgShad">
-                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
-                            <div class="padding20"></div>
-    				       				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent padding20">
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Gary Howe</h4>
-                            <p class= "text-center greenTxt">Google</p>
-    				   	</div><!-- /.editContent -->
-
-                        </div>
-
-    				</div><!-- /.col-md-3 col -->
 
 
     			</div><!-- /.row -->
@@ -553,3 +528,70 @@
 
 
 </div>
+<!--<script>
+        var map;
+                var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+                function initialize()
+                {
+                var mapProp = {
+                  center:myCenter,
+                  zoom:5,
+                  mapTypeId:google.maps.MapTypeId.ROADMAP
+                  };
+
+                  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                  google.maps.event.addListener(map, 'click', function(event) {
+                    placeMarker(event.latLng);
+                  });
+                }
+
+                function placeMarker(location) {
+                  var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                  });
+                  var infowindow = new google.maps.InfoWindow({
+                    content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
+                  });
+                  infowindow.open(map,marker);
+                }
+
+                google.maps.event.addDomListener(window, 'load', initialize);
+    </script>-->
+
+    <script>
+            setTimeout(function(){
+               /* function success(position) {
+              var mapcanvas = document.createElement('div');
+              mapcanvas.id = 'mapcontainer';
+              mapcanvas.style.height = '400px';
+              mapcanvas.style.width = '600px';
+
+              document.querySelector('article').appendChild(mapcanvas);
+
+              var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+              var options = {
+                zoom: 15,
+                center: coords,
+                mapTypeControl: false,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.SMALL
+                },
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+              var marker = new google.maps.Marker({
+                  position: coords,
+                  map: map,
+                  title:"You are here!"
+              });
+            }*/
+            },2000);
+
+
+
+    </script>

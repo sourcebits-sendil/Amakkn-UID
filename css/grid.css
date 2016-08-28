@@ -96,21 +96,6 @@ font-size: 18px;
     background-size: cover;
 }
 
-#shrink :hover {
-    opacity: 0.6;
-    cursor: pointer;
-    border-radius: 0px;
-  -webkit-transform: scale(1.1, 1.1);
-  -webkit-transition-timing-function: ease-out;
-                      -moz-transform: scale(1.1, 1.1);
-     -moz-transition-timing-function: ease-out;
-                       -ms-transform: scale(1.20, 1.20);
-      -ms-transition-timing-function: ease-out;
 
-         -webkit-transition-duration: 500ms;
-            -moz-transition-duration: 500ms;
-             -ms-transition-duration: 500ms;
-
-}
 
 

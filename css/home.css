@@ -261,3 +261,10 @@ md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select .
     color: #fff;
 }
 
+#mapcontainer{width: 100% !important;height:500px !important;}
+article{padding-top: 30px;}
+
+.userFeedImg{height:120px;}
+.userFeedImg>img{height:100%};
+
+.userFeedImg img{border-radius: 50% !important;}
