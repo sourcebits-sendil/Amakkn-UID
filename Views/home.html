@@ -6,15 +6,30 @@
 <header data-ng-switch on="selection">
 
 
-    <div class="container padding20"  data-ng-switch-when="map" style="min-height:50vh;">
-        <article> </article>
+    <div class="container padding20 "  data-ng-switch-when="map" >
+        <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
+        <div class="row text-center " >
+            <article></article>
+        </div>
+        <div class="row padding20 greyBG">
+            <div class="row text-center " >
+              <div class="" id="gray-cicle"   style="top:0px;">
+                  <a href="" class="btn btn-default " id="gray" ng-click="switchBanner()">
+                      <img src="../assets/icons/icon.png"  >
+                  </a>
+                  <a href="" class="btn btn-sec disabled" id="gray" >
+                    <img src="../assets/icons/map-icon.png">
+                  </a>
+              </div>
+            </div>
+        </div>
     </div>
     <div data-ng-switch-when="banner">
         <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  >
         <div class="header-content">
             <div class="header-content-inner">
 
-                <div class="text-center brandName marginTB20"><img src="../assets/images/logo.svg" alt="Amakkn"></div>
+                <div class="text-center  marginTB20"><img src="../assets/images/logo.svg" alt="Amakkn" ></div>
 
                 <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
 
@@ -56,7 +71,7 @@
                                <div class="col-md-3 col-sm-3 paddingLR10 text-right">
 
 
-     <md-select placeholder="Property Type" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
+     <md-select placeholder="All Properties" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
       <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
     </md-select>
 
@@ -75,17 +90,20 @@
                     <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
-            </div><div class="padding20"></div>
-            <div class="row text-center " >
-  <div class="col-md-12" id="gray-cicle"   >
-      <a href="" class="btn btn-default disabled" id="gray" ><img src="../assets/icons/icon.png"  ></a>
-
-    						<a href="" class="btn btn-sec " id="gray" ng-click="switchMap()"><img src="../assets/icons/map-icon.png"></a>
+            </div>
+            <div class="row text-center " id="gray-cicle">
+                <div class="col-md-12">
+                    <a href="" class="btn btn-default disabled" id="gray">
+                        <img src="../assets/icons/icon.png">
+                    </a>
+                    <a href="" class="btn btn-sec " id="gray" ng-click="switchMap()">
+                        <img src="../assets/icons/map-icon.png">
+                    </a>
                 </div>
-
-</div>
+            </div>
     </div></div>
 </header>
+
 <div class=" greyBtmBorder">
          <div class= "text-center padding20">
              <h1>Recently Listed</h1>
@@ -93,180 +111,111 @@
         </div>
 
     <div class="container">
-    <div class="row">
-        <div class="col-md-4 girdcls"></div>
-         <div class="col-md-4 girdcls1"></div>
-         <div class="col-md-4 girdcls2"></div>
-    </div>
-         <div class="row">
-        <div class="col-md-4 girdcls3"></div>
-         <div class="col-md-4 girdcls4"></div>
-         <div class="col-md-4 girdcls5"></div>
-    </div>
-         <div class="row">
-        <div class="col-md-4 girdcls6"></div>
-         <div class="col-md-4 girdcls7"></div>
-         <div class="col-md-4 girdcls"></div>
-    </div>
-
-    </div>
-  <!--<div class="container">
-	<div >
-	   <div class="column size-1of3 col-md-4">
-            <div class="card card-background girdcls">
-           <div><img class="img-responsive" src="../assets/images/gallery/1.jpg" /></div>
-               <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/liked-copy.svg">
-                     </a>
-
+    <div class="col-md-4 noPadding">
+        <div class="girdcls margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
             </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
             </div>
-           </div>
-           <div class="card card-background girdcls4">
-           <div><img class="img-responsive" src="../assets/images/gallery/2.jpg" /></div>
-              <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/liked-copy.svg">
-                     </a>
-
-            </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
-            </div>
-           </div>
-           <div class="card card-background girdcls6">
-           <div><img class="img-responsive" src="../assets/images/gallery/10.jpg" /></div>
-              <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/liked-copy.svg">
-                     </a>
-
-            </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
-            </div>
-           </div>
         </div>
-        <div class="column size-1of3 col-md-4">
-            <div class="card card-background girdcls2">
-           <div><img class="img-responsive " src="../assets/images/gallery/6.jpg" /></div>
-           <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/liked-copy.svg">
-                     </a>
-
+        <div class="girdcls3 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
             </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
             </div>
-            </div>
-           <div class="card card-background girdcls5">
-           <div><img class="img-responsive" src="../assets/images/gallery/8.jpg" /></div>
-              <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/shape.svg">
-                     </a>
-
-            </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
-            </div>
-           </div>
-           <div class="card card-background girdcls3">
-           <div><img class="img-responsive" src="../assets/images/gallery/3.jpg" /></div>
-              <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/liked-copy.svg">
-                     </a>
-
-            </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
-            </div>
-           </div>
         </div>
-        <div class="column size-1of3 col-md-4">
-          <div class="card card-background girdcls1">
-           <div><img class="img-responsive" src="../assets/images/gallery/11.jpg" /></div>
-              <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/shape.svg">
-                     </a>
-
+        <div class="girdcls5 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="this.isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="this.isFav">
+                </a>
             </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
             </div>
-              </div>
-           <div class="card card-background girdcls7">
-           <div><img class="img-responsive" src="../assets/images/gallery/12.jpg" /></div>
-               <div class="content">
-
-                     <a href="#" class="pull-right">
-                        <img src="../assets/icons/liked-copy.svg">
-                     </a>
-
-            </div>
-            <div class="footer">
-               <div class="author">
-                    <a href="#">
-                       <h3 class="price">$345,000</h3>
-                       <p>3 Bedroom Penthouse Apartment   </p>
-                    </a>
-                </div>
-            </div>
-           </div>
-
         </div>
     </div>
-</div>-->
+    <div class="col-md-4 noPadding">
+        <div class=" girdcls1 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="this.isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="this.isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class=" girdcls4 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+         <div class="girdcls6 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 noPadding">
+        <div class=" girdcls2 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class=" girdcls7 margin10">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:33px;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
 
-          <div class= "text-center ">
+    </div>
+    <div class= "text-center ">
              <h1>Why Amakkn?</h1>
          </div>
 
@@ -277,7 +226,7 @@
                  <p style="padding: 0% 2%;">Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
 
 <div class="text-center padding20">
-<a href="#" class="btn btn-default greenBtn btn-lg">Find Out More</a></div><div class="padding20"></div>
+<a href="" class="btn btn-default greenBtn btn-lg">Find Out More</a></div><div class="padding20"></div>
 
               </div>
           </div>
@@ -301,66 +250,26 @@
 
     			</div><!-- /.row -->
 
-    			<div class="row margin-bottom-20 text-center">
+    			<div class="row margin-bottom-20 text-center shrink">
 
-    				<div class="col-md-4 col-shrink " id="shrink">
-                        <div class="whiteBgShad  ">
+
+    				<div class="col-md-4 "  ng-repeat="x in userFeed">
+                        <div class="whiteBgShad ">
+
+
                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
-                            <div class="padding20"></div>
-    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
+                            <div class="padding20 userFeedImg">
+    				   	<img src="{{x.image}}" class="img-rounded teamImage" alt=""></div>
     				   	<div class="editContent padding20">
-
-
-
-    				   	<p class= "text-center ">
-    				   		The following article covers a topic that has recently moved to centre stage-at least it seems that way.
-    				   	</p>
-                            <h4>Binesh Walla</h4>
-                            <p class= "text-center greenTxt">Netflix</p>
+                            <p class= "text-center ">
+                                {{x.description}}
+                            </p>
+                            <h4>{{x.name}}</h4>
+                            <p class= "text-center greenTxt">{{x.company}}</p>
     				   	</div><!-- /.editContent -->
 
 
                         </div>
-    				</div><!-- /.col-md-3 col -->
-
-    				<div class="col-md-4 col-shrink" id="shrink">
-                        <div class="whiteBgShad">
-                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
-                            <div class="padding20"></div>
-    				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent padding20">
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Adam Cartlidge</h4>
-                            <p class= "text-center greenTxt">Sourcebits</p>
-    				   	</div><!-- /.editContent -->
-
-                        </div>
-
-    				</div><!-- /.col-md-3 col -->
-
-    				<div class="col-md-4 col-shrink " id="shrink">
-                        <div class="whiteBgShad">
-                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
-                            <div class="padding20"></div>
-    				       				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent padding20">
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Gary Howe</h4>
-                            <p class= "text-center greenTxt">Google</p>
-    				   	</div><!-- /.editContent -->
-
-                        </div>
-
     				</div><!-- /.col-md-3 col -->
 
 
@@ -385,7 +294,7 @@
 						       <div class="editContent" data-selector="Footers">
 			        		      <div class= "text-center ">
                                       <h1>Live Realtor Advice</h1>
-                                      <h6>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
+                                      <h6>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h6>
                                   </div>
 						       </div>
 		        	     </div>
@@ -443,11 +352,6 @@
 
 
 
-
-
-
-
-
   <br>
 
    <div id="page" class="page">
@@ -472,10 +376,10 @@
                     <div class="padding20"></div>
 					<div class="row">
 						<div class="col-md-4">
-							<a  href="#" ng-click="showToast1()"><img src="../assets/images/google-play.png"></a>
+							<a  href=""><img src="../assets/images/google-play.png"></a>
 						</div>
 						<div class="col-md-4" >
-							<a  href="#" ng-click="showToast2()"><img src="../assets/images/img-app-store.jpg"></a>
+							<a  href=""><img src="../assets/icons/app-store-badges.svg"></a>
 						</div>
 					</div>
                     <div class="padding20"></div>
@@ -484,7 +388,8 @@
                     <div class="padding20"></div>
                     <div class="row">
                          <div class="col-md-2 col-md-offset-1">
-                        <a href="#" ><img src="../assets/icons/app-icon.png"></a>
+                        <a href="" ><img src="../assets/icons/app-icon.svg"></a>
+                             <p class="text-center whiteTxt">Amakkn</p>
                              </div>
                     </div>
 				</div>
@@ -555,3 +460,35 @@
 
 
 </div>
+<!--<script>
+        var map;
+                var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+                function initialize()
+                {
+                var mapProp = {
+                  center:myCenter,
+                  zoom:5,
+                  mapTypeId:google.maps.MapTypeId.ROADMAP
+                  };
+
+                  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                  google.maps.event.addListener(map, 'click', function(event) {
+                    placeMarker(event.latLng);
+                  });
+                }
+
+                function placeMarker(location) {
+                  var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                  });
+                  var infowindow = new google.maps.InfoWindow({
+                    content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
+                  });
+                  infowindow.open(map,marker);
+                }
+
+                google.maps.event.addDomListener(window, 'load', initialize);
+    </script>-->

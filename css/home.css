@@ -1,4 +1,6 @@
 
+.margin10{margin: 33px 10px;}
+
 header {
   position: relative;
   width: 100%;
@@ -38,7 +40,7 @@ header .header-content .header-content-inner hr {
   }
   header .header-content {
     position: absolute;
-    top: 40%;
+    top: 45%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -101,7 +103,7 @@ header .header-content .header-content-inner hr {
     }
 
 .services-wrapper icon bg-crete{
-    background-image: url('../assets/images/oval-20.png');
+
     }
 .services-wrapper{
     text-align: center;
@@ -123,7 +125,7 @@ header .header-content .header-content-inner hr {
 
 #gray-cicle
 {
-    top: 370px;
+    top: 320px;
     position: relative;
 
 }
@@ -255,12 +257,26 @@ md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select .
 {
     color:#fff;
 }
-
 .container-fluid copyRight
 {
     color: #fff;
 }
+#mapcontainer{width: 100% !important;height:500px !important;}
+article{padding-top: 30px;}
+.userFeedImg{height:120px;}
+.userFeedImg>img{height:100%};
+.userFeedImg img{border-radius: 50% !important;}
+#textp{
 
+    font-size: 16px;
+    line-height: 25px;
+    text-align: justify;
+    color: #fff;
+    font-weight: 600;
+
+}
+
+<<<<<<< HEAD
 
 
 #textp{
@@ -277,4 +293,9 @@ md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select .
 #textph{
     color: #fff;
     font-family: ProximaNova-Light;
+=======
+#textph{
+    color: #fff;
+
+>>>>>>> 2a13fa8218ca5fdfa9a60486bf4b54e818f5c4d4
     }

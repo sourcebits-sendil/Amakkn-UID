@@ -1,5 +1,35 @@
-<style>@import url('../css/loginSignup.css')</style>
 
+<head>
+    <meta name="google-signin-client_id" content="491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com">
+
+    <style>@import url('../css/loginSignup.css')</style>
+    <script>
+        var googleUser = {};
+          var startApp = function() {
+            gapi.load('auth2', function(){
+              // Retrieve the singleton for the GoogleAuth library and set up the client.
+              auth2 = gapi.auth2.init({
+                client_id: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',
+                cookiepolicy: 'single_host_origin',
+                // Request scopes in addition to 'profile' and 'email'
+                //scope: 'additional_scope'
+              });
+              attachSignin(document.getElementById('customBtn'));
+            });
+          };
+
+          function attachSignin(element) {
+            console.log(element.id);
+            auth2.attachClickHandler(element, {},
+                function(googleUser) {
+                  //document.getElementById('name').innerText = "Signed in: " +
+                      googleUser.getBasicProfile().getName();
+                }, function(error) {
+                  alert(JSON.stringify(error, undefined, 2));
+                });
+          }
+    </script>
+</head>
 <div class="container-fluid text-center greyBtmBorder">
 
      <div class="row">
@@ -10,10 +40,12 @@
         </div>
         <div class="row" >
             <div class="col-md-6 noPadding" >
-            <button class="btn btn-default googleBtn">
+            <button class="btn btn-default googleBtn" id="customBtn">
                 SIGN IN WITH GOOGLE PLUS
                 <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
             </button>
+                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
             </div>
             <div class="col-md-6 noPadding" >
             <button class="btn btn-default fbBtn">
@@ -61,7 +93,18 @@
              </form>
             </div>
 
+    </div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYKFUW-y6Aw9P_NNC_k1mHs6sri2CBZ6k&libraries=places&callback=initAutocomplete"
+        async defer></script>
+<script>
+   /* function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail());
+    }*/
 
-
-
-</div>
+    startApp();
+</script>

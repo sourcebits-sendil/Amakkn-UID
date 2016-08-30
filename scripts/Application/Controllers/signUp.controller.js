@@ -11,11 +11,11 @@
 
     /* @ngInject */
 
-    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast) {
 
 
         /* initiating view objects used to switch */
-        $scope.view={
+        $rootScope.view={
               name: '',
             accountType:''
         };
@@ -98,9 +98,11 @@
 
            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if(result.resCode == 0){
-                       // alert(result.resStr);
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
                     }else{
-                        alert(result.resStr);
+                        $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                        //alert(result.resStr);
                     }
                 });
         }
@@ -120,7 +122,8 @@
                 myEl = angular.element( document.querySelector( '#step4' )).removeClass('disabled').addClass('active');
             }, 500);
                 }else{
-                        alert(result.resStr);
+                        $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                        //alert(result.resStr);
                     }
             });
         }
@@ -130,9 +133,12 @@
             $scope.urlRest = 'http://52.42.99.192/Login/forgotPassword/';
             $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
+
+                     $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
                        // alert(result.resStr);
                     }else{
-                        alert(result.resStr);
+                        $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                        //alert(result.resStr);
                     }
                 });
         }
@@ -153,7 +159,8 @@
                             myEl = angular.element( document.querySelector( '#step4' )).removeClass('disabled').addClass('active');
                         }, 500);
                     }else{
-                        alert(result.resStr);
+                        $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                        //alert(result.resStr);
                     }
                 });
         }
@@ -166,10 +173,13 @@
                 if(result.resCode == 0){
                     var myEl = angular.element( document.querySelector( '#step4' ) );
                     myEl.removeClass('active').addClass('complete');
-                    $location.path('/');
                     $rootScope.loggedIn = true;
+                    $rootScope.loggedName = result.response.user.name;
+                    $location.path('/');
+
                 }else{
-                    alert(result.resStr);
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
                 }
              });
          }

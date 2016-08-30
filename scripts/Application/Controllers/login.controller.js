@@ -10,7 +10,7 @@
         .controller('loginController', loginController);
 
     /* @ngInject */
-    function loginController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
+    function loginController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast) {
         //var vm = this;
         //vm.class = 'loginController';
 
@@ -42,15 +42,27 @@
         }
 
             $scope.redirect = function(){
+
+                //$mdToast.show($mdToast.simple().textContent('Hello'));
                $rootScope.myPromise = $timeout(function(){
-                   $location.path('/signUp');
-                   $scope.view.name = "otp";
+                    $location.path('/signUp');
+                   $rootScope.myPromise = $timeout(function(){$rootScope.view.name = "otp";}, 50)
+
                     $scope.userForm.isSocial = "No";
+
                }, 1000);
             }
 
 
+            $scope.$on('event:google-plus-signin-success', function (event,authResult) {
+                // Send login to server or save into cookie
 
+                $log.debug(authResult.data)
+              });
+              $scope.$on('event:google-plus-signin-failure', function (event,authResult) {
+                // Auth failure or signout detected
+                  $log.debug(authResult.data)
+              });
         //////////////
 
         function activate() {
