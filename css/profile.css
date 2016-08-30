@@ -1,0 +1,174 @@
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+   /* box-shadow: 2px 2px 0 2px rgba(0,0,0,0.1);*/
+	border: .1em solid #efefef;
+    border-bottom: 0px;
+	font-size: 1em;
+	line-height: 1.1em;
+	color: #ffffff;
+
+
+}
+.profile-sidebar1 {
+  padding: 20px 0 10px 0;
+
+	background-color: #f3f3f3;
+	font-size: 1em;
+	line-height: 1.1em;
+	color: #ffffff;
+
+
+}
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-userpic1 img {
+  float: left;
+    background-image: url("../assets/icons/sendil.JPG");
+
+  width: 5%;
+  height: 10%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 0px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+
+}
+
+#verified{
+    background-color: #fff;
+    border: none;
+
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    border-radius: 50%;
+}
+
+.label-danger {
+    background-color: #24c969;
+}
+.label-danger1 {
+    background-color: #df3b20;
+}
+.label-danger2 {
+    background-color: #6dc0ce;
+}
+.label-danger3 {
+    background-color: #e88412;
+}
+.label-danger4 {
+    background-color: #768ead;
+}
+.pull-right {
+    float: right!important;
+}
+
+.colborder{
+    border: solid 1px #e1e1e1
+}
+

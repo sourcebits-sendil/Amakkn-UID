@@ -1,39 +1,65 @@
 <style>
-    @import url('../css/home.css')
+    @import url('../css/home.css');
+    @import url('../css/grid.css')</style>
 
-</style>
-<style>
-@import url('../css/grid.css')</style>
-
+<div>
 <header data-ng-switch on="selection">
-    <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  data-ng-switch-when="banner">
-    <div class="container greyBtmBorder"  data-ng-switch-when="map">
-        <h1>Buy page loaded......</h1>
+
+
+    <div class="container padding20 "  data-ng-switch-when="map" >
+        <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
+        <div class="row text-center " >
+            <article></article>
+        </div>
+        <div class="row padding20 greyBG">
+            <div class="row text-center " >
+              <div class="" id="gray-cicle"   style="top:0px;">
+                  <a href="" class="btn btn-default " id="gray" ng-click="switchBanner()">
+                      <img src="../assets/icons/icon.png"  >
+                  </a>
+                  <a href="" class="btn btn-sec disabled" id="gray" >
+                    <img src="../assets/icons/map-icon.png">
+                  </a>
+              </div>
+            </div>
+        </div>
     </div>
+    <div data-ng-switch-when="banner">
+        <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  >
         <div class="header-content">
             <div class="header-content-inner">
 
-                <div class="text-center brandName marginTB20"><img src="../assets/images/logo-header.svg" alt="Amakkn"></div>
+                <div class="text-center  marginTB20"><img src="../assets/images/logo.svg" alt="Amakkn" ></div>
 
                 <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
 
                 <div class="row vertical-align">
-                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
+                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn disabled visible-lg visible-md"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
 
 
-                    <div class="col-md-6  searchOption text-center">
+                    <div class="col-md-6  searchOption text-center visible-lg visible-md">
                         <div class="panel panel-default col-md-10 col-md-offset-1 noPadding">
                           <div class="panel-body">
                             <div class= "btn-group btn-group-justified" role="group" >
-                                <div class="
-                                            btn-group" role="group">
-                                    <button type="button" class="btn btn-default btn-lg"> Buy </button>
+                                <div class="btn-group " role="group" >
+                                   <div class="btn btn-default btn-lg" ng-click="tab = 1">Buy</div>
+                                      <div ng-show="tab == 1">
+
+         </div>
                                 </div>
                                <div class="
-                                           btn-group" role="group">
-                                   <button type="button" class="btn btn-default btn-lg">Rent</button>                                </div>
-                               <div class=" btn-group" role="group">
-                                   <button type="button" class="btn btn-default btn-lg">Sell</button>
+                                            btn-group " role="group" >
+                                   <div class="btn btn-default btn-lg " ng-click="tab = 2">Rent</div>
+                                      <div  ng-show="tab == 2">
+
+         </div>
+                                </div>
+                               <div class="
+                                            btn-group " role="group" >
+                                   <div class="btn btn-default btn-lg" ng-click="tab = 3">Sell</div>
+                                      <div ng-show="tab == 3">
+
+         </div>
                                 </div>
                               </div>
 
@@ -42,19 +68,15 @@
                                 <div class="col-md-7 col-sm-7">
                                     <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
                                 </div>
-                                <div class="col-md-3 col-sm-3 paddingLR10 text-right">
-                                    <div class="">
-  <button type="button" class="btn btn-default dropdown-toggle customHeaderColor " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Property Type <span class="glyphicon glyphicon-menu-down fontSize14"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
+                               <div class="col-md-3 col-sm-3 paddingLR10 text-right">
+
+
+     <md-select placeholder="All Properties" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
+      <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+    </md-select>
+
+
+
                                 </div>
                                   <div class="col-md-2 col-sm-2 paddingLR10">
                                     <button type="submit" class="btn btn-default greenBtn" >Search</button>
@@ -65,42 +87,146 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right"  data-ng-click="selection = 'map'" value="map"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
                 </div>
             </div>
-        </div>
+            <div class="row text-center " id="gray-cicle">
+                <div class="col-md-12">
+                    <a href="" class="btn btn-default disabled" id="gray">
+                        <img src="../assets/icons/icon.png">
+                    </a>
+                    <a href="" class="btn btn-sec " id="gray" ng-click="switchMap()">
+                        <img src="../assets/icons/map-icon.png">
+                    </a>
+                </div>
+            </div>
+    </div></div>
 </header>
-<div class="container greyBtmBorder">
-         <div class= "text-center ">
+
+<div class=" greyBtmBorder">
+         <div class= "text-center padding20">
              <h1>Recently Listed</h1>
              <h5>Dubai, United Arab Emirates</h5>
         </div>
-          <div class="container">
-	<div class="row">
-		<div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-    	<div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-	    <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
-        <div class="col-md-4 col-sm-4 col-xs-6 listed"><img class="img-responsive" src="../assets/images/home.jpg" /></div>
+
+    <div class="container">
+    <div class="col-md-4 noPadding">
+        <div class="girdcls margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class="girdcls3 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class="girdcls5 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="this.isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="this.isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
     </div>
-</div>
-          <div class= "text-center ">
+    <div class="col-md-4 noPadding">
+        <div class=" girdcls1 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="this.isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="this.isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class=" girdcls4 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+         <div class="girdcls6 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 noPadding">
+        <div class=" girdcls2 margin10" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class=" girdcls7 margin10">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:33px;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class= "text-center ">
              <h1>Why Amakkn?</h1>
          </div>
 
           <div class="row">
-              <div class="col-md-12 ">
-                 <p> In the last five to six years the FTA satellite receiver has become an everyday household electronic device. People all over the world are buying free to air receivers because of their growing and always evolving features and capabilities. FTA receivers these days are gaining popularity all over. Starting initially in Europe, the craze spread globally shortly after. With FTA satellite TV being available in almost every country across the globe, FTA satellite is the wave of the TV future.</p>
+              <div class="col-md-8 col-md-offset-2">
+                 <p style="padding: 0% 2%;"> In the last five to six years the FTA satellite receiver has become an everyday household electronic device. People all over the world are buying free to air receivers because of their growing and always evolving features and capabilities. FTA receivers these days are gaining popularity all over. Starting initially in Europe, the craze spread globally shortly after. With FTA satellite TV being available in almost every country across the globe, FTA satellite is the wave of the TV future.</p>
 
-                 <p>Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
+                 <p style="padding: 0% 2%;">Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
 
-<div class="text-center">
-<a href="#" class="btn btn-success greenBtn  ">Find Out More</a></div>
+<div class="text-center padding20">
+<a href="" class="btn btn-default greenBtn btn-lg">Find Out More</a></div><div class="padding20"></div>
 
               </div>
           </div>
@@ -116,7 +242,7 @@
 
     				<div class="col-md-12">
 
-    					<div class= "text-center ">
+    					<div class= "text-center padding20">
              <h1>What Our User Says...</h1>
           </div>
 
@@ -124,86 +250,35 @@
 
     			</div><!-- /.row -->
 
-    			<div class="row margin-bottom-20 text-center">
-
-    				<div class="col-md-3 ">
-
-    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-    				   	<div class="editContent ">
+    			<div class="row margin-bottom-20 text-center shrink">
 
 
-    				   	<p class= "text-center ">
-    				   		The following article covers a topic that has recently moved to centre stage-at least it seems that way.
-    				   	</p>
-                            <h4>Binesh Walla</h4>
-                            <p class= "text-center ">Netflix</p>
+    				<div class="col-md-4 "  ng-repeat="x in userFeed">
+                        <div class="whiteBgShad ">
+
+
+                            <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
+                            <div class="padding20 userFeedImg">
+    				   	<img src="{{x.image}}" class="img-rounded teamImage" alt=""></div>
+    				   	<div class="editContent padding20">
+                            <p class= "text-center ">
+                                {{x.description}}
+                            </p>
+                            <h4>{{x.name}}</h4>
+                            <p class= "text-center greenTxt">{{x.company}}</p>
     				   	</div><!-- /.editContent -->
 
 
-
+                        </div>
     				</div><!-- /.col-md-3 col -->
 
-    				<div class="col-md-3">
-
-    				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent">
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Adam Cartlidge</h4>
-                            <p class= "text-center ">Sourcebits</p>
-    				   	</div><!-- /.editContent -->
-
-
-
-    				</div><!-- /.col-md-3 col -->
-
-    				<div class="col-md-3">
-
-    				       				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent">
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Gary Howe</h4>
-                            <p class= "text-center ">Google</p>
-    				   	</div><!-- /.editContent -->
-
-
-
-    				</div><!-- /.col-md-3 col -->
-
-    				<div class="col-md-3">
-
-    				   	    				   	<img src="../assets/images/oval-20.png" class="img-rounded teamImage" alt="">
-
-
-    				   	<div class="editContent">
-
-
-    				   	<p class= "text-center ">
-    				   		What is the loop of Creation? How is there something from nothing? In spite of the fact that is
-    				   	</p>
-                            <h4>Gary Howe</h4>
-                            <p class= "text-center ">Google</p>
-    				   	</div><!-- /.editContent -->
-
-
-    				</div><!-- /.col-md-3 col -->
 
     			</div><!-- /.row -->
 
     		</div><!-- /.container -->
 
     	</div><!-- /.item -->
-
+<div class="padding20"></div><div class="padding20"></div><div class="padding20"></div><div class="padding20"></div>
          <hr>
 
 
@@ -219,49 +294,53 @@
 						       <div class="editContent" data-selector="Footers">
 			        		      <div class= "text-center ">
                                       <h1>Live Realtor Advice</h1>
-                                      <h5>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h5>
+                                      <h6>Lorem ipsum dolor sit amet, condectetur adipiscing elit. Mauris viverra rutrum mauris.</h6>
                                   </div>
 						       </div>
 		        	     </div>
-
+                         <div class="padding20"></div>
 				        <div class="services-wrapper">
 
-						       <div class="col-md-4">
-							       <div class="icon bg-crete">
-								      <img src="../assets/images/shape.png">
-                                      <span class="fa fa-laptop"></span>
+						       <div class="col-md-4 ">
+							       <div class="">
+
+                                      <span class="iconShadow">
+                                       <img src="../assets/images/shape.png"></span>
 							       </div>
-							          <div class="editContent" data-selector="Footers">
-								          <h4>Digital Design</h4>
+							          <div class="editContent greenTxt bold" data-selector="Footers">
+								          <h4>Expert Advice</h4>
 							          </div>
 							          <div class="editContent" data-selector="Footers">
-								        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem.</p>
+								        <p>Mauris viverra rutrum mauris sed blandit. Etiam accumsan risus condimentum, elementum.</p>
 							          </div>
 						        </div>
 
 						       <div class="col-md-4">
-							       <div class="icon bg-finn">
-                                      <img src="../assets/images/compare-icon.png">
-								      <span class="fa fa-balance-scale"></span>
+							       <div class="">
+
+								      <span class="iconShadow">
+                                       <img src="../assets/images/compare-icon.png"></span>
+							       </div>
+							       <div class="editContent greenTxt" data-selector="Footers">
+								      <h4>Compare</h4>
 							       </div>
 							       <div class="editContent" data-selector="Footers">
-								      <h4>Web Development</h4>
-							       </div>
-							       <div class="editContent" data-selector="Footers">
-								      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem.</p>
+								      <p>Eelementum mauris quis, scelerisque eauris viverra rutrum  ailaw shenib mauris.</p>
 							       </div>
 						       </div>
 
 						     <div class="col-md-4">
-							      <div class="icon bg-sunflower">
-                                     <img src="../assets/images/calculator-2.png">
-								     <span class="fa fa-rocket"></span>
+							      <div class="">
+
+								     <span class="iconShadow">
+                                        <img src="../assets/images/calculator-2.png">
+                                      </span>
+							      </div>
+							      <div class="editContent greenTxt" data-selector="Footers">
+								     <h4>Calculators</h4>
 							      </div>
 							      <div class="editContent" data-selector="Footers">
-								     <h4>Creative Direction</h4>
-							      </div>
-							      <div class="editContent" data-selector="Footers">
-								     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem.</p>
+								     <p>Mauris viverra rutrum mauris sed blandit. Etiam accumsan risus condime.</p>
 							      </div>
 						     </div>
 
@@ -279,47 +358,137 @@
 
 
 	<section id="content-1-2" class="content-block content-1-2">
-		<div class="container" id="footer">
+		<div class="container-fluid" id="footer ">
 			<!-- Start Row -->
-			<div class="row">
-				<div class="col-sm-6">
+            <div class="padding20"></div>
+			<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-6">
+					<div class=" editContent">
+						<h2 id="textph">Get Our New App</h2>
+					</div>
+
 					<div class="editContent">
-						<h2>Get Our New App</h2>
+						<p class="lead" id="textp">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
 					</div>
 					<div class="editContent">
-						<p class="lead">Introducing our brand ne IOS and Android apps, with all the features you've grown to love</p>
+						<p id="textp">Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
 					</div>
-					<div class="editContent">
-						<p>Do you want to download free song for ipod? If so, reading this article could save you from getting in to a lot of trouble! Downloading music to you ipod has more than one pitfall associated with it, and this article will tell you the best way to download free song for Ipoad</p>
-					</div>
+                    <div class="padding20"></div>
 					<div class="row">
-						<div class="col-sm-5 col-xs-12">
-							<a href="#" ><img src="../assets/images/google-play.png"></a>
+						<div class="col-md-4">
+							<a  href=""><img src="../assets/images/google-play.png"></a>
 						</div>
-						<div class="col-sm-5 col-xs-12">
-							<a href="#" ><img src="../assets/images/img-app-store.png"></a>
+						<div class="col-md-4" >
+							<a  href=""><img src="../assets/icons/app-store-badges.svg"></a>
 						</div>
 					</div>
-
+                    <div class="padding20"></div>
+                    <div class="padding20"></div>
+                    <div class="padding20"></div>
+                    <div class="padding20"></div>
+                    <div class="row">
+                         <div class="col-md-2 col-md-offset-1">
+                        <a href="" ><img src="../assets/icons/app-icon.svg"></a>
+                             <p class="text-center whiteTxt">Amakkn</p>
+                             </div>
+                    </div>
+				</div>
+                <div class="col-md-6">
+                       <div class="padding20"></div>
+                    <div class="padding20"></div>
+					<img class="img-rounded img-responsive" id="cell" src="../assets/images/mobs.png">
 
 				</div>
-
-				<br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-				<div class="col-sm-5 col-sm-offset-1">
-					<img class="img-rounded img-responsive" src="../assets/images/mobs.png">
-				</div>
-			</div>
-            <div class="col-sm-5 col-xs-12">
-							<a href="#" ><img src="../assets/icons/app-icon.png"></a>
-						</div>
+			<div class="row padding20"></div>
+                <div class="row padding20"></div>
+           </div>
 			<!--// END Row -->
 		</div>
-	</section>
+	</section><div class="row padding20"></div>
+                <div class="row padding20"></div><div class="row padding20"></div>
+
+
+
+       <script>
+            $(document).ready(function() {
+            function getRandomSize(min, max) {
+              return Math.round(Math.random() * (max - min) + min);
+            }
+              for (var i = 0; i < 25; i++) {
+                var width = getRandomSize(200, 400);
+                var height =  getRandomSize(200, 400);
+              }
+
+                function success(position) {
+                  var mapcanvas = document.createElement('div');
+                  mapcanvas.id = 'mapcontainer';
+                  mapcanvas.style.height = '400px';
+                  mapcanvas.style.width = '100%';
+
+                  document.querySelector('article').appendChild(mapcanvas);
+
+                  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                  var options = {
+                    zoom: 15,
+                    center: coords,
+                    mapTypeControl: false,
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    },
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+                  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+                  var marker = new google.maps.Marker({
+                      position: coords,
+                      map: map,
+                      title:"You are here!"
+                  });
+                }
+
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(success);
+                } else {
+                  error('Geo Location is not supported');
+                }
+
+            });
+       </script>
+
     <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
+</div>
+<!--<script>
+        var map;
+                var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+                function initialize()
+                {
+                var mapProp = {
+                  center:myCenter,
+                  zoom:5,
+                  mapTypeId:google.maps.MapTypeId.ROADMAP
+                  };
+
+                  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                  google.maps.event.addListener(map, 'click', function(event) {
+                    placeMarker(event.latLng);
+                  });
+                }
+
+                function placeMarker(location) {
+                  var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                  });
+                  var infowindow = new google.maps.InfoWindow({
+                    content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
+                  });
+                  infowindow.open(map,marker);
+                }
+
+                google.maps.event.addDomListener(window, 'load', initialize);
+    </script>-->
