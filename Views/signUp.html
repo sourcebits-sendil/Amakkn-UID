@@ -2,7 +2,7 @@
 </style>
 
 
-<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
 <div class="container-fluid text-center " data-ng-switch on="view.name" style="margin-bottom:30px;background: #fff;">
 
      <div class="row text-center" >
@@ -209,16 +209,16 @@
                     <textarea class="form-control" placeholder="Write about company: 4000 chars Maximum" maxlength="4000" id="abtComp" ng-model="userForm.description"></textarea>
                 </div>
                 <div  class="form-group">
-                  <input id="pac-input" placeholder="Enter your address" class="form-control marginTB20" type="text" onFocus="geolocate()">
+                  <input placeholder="Enter your address" class="form-control marginTB20" type="text" id="placesInp">
                 </div>
-                <div id="map"></div>
+                <div ng-bind="userForm.map" id="map"></div>
 
                 <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
                     Next
                 </button>
                     </div></div>
             </form>
-            <div ng-if="view.name == 'Real Estate Company'">
+           <!-- <div>
             <script>
              var placeSearch, autocomplete;
             var address = document.getElementById("pac-input");
@@ -322,7 +322,7 @@
 
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYKFUW-y6Aw9P_NNC_k1mHs6sri2CBZ6k&libraries=places&callback=initAutocomplete"
         async defer></script>
-            </div>
+            </div>-->
         </div>
 
 

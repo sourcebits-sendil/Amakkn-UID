@@ -38,7 +38,7 @@
         }
 
         $scope.urlGet = 'http://52.42.99.192/Testimonials/getTestimonials/';
-        $rootScope.myPromise = $http({
+                $http({
                     method : "GET",
                     url : $scope.urlGet})
                 .then(function mySucces(result) {
@@ -129,50 +129,16 @@
         }
 
         $scope.switchBanner = function(){
-            $rootScope.myPromise = $timeout(function(){
+           $timeout(function(){
                 $scope.selection = "banner";
                 }, 1000)
         }
 
         $scope.switchMap = function(){
-            $rootScope.myPromise = $timeout(function(){
+
                 $scope.selection = "map";
 
-            function success(position) {
-              var mapcanvas = document.createElement('div');
-              mapcanvas.id = 'mapcontainer';
-              mapcanvas.style.height = '400px';
-              mapcanvas.style.width = '100%';
 
-              document.querySelector('article').appendChild(mapcanvas);
-
-              var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-              var options = {
-                zoom: 15,
-                center: coords,
-                mapTypeControl: false,
-                navigationControlOptions: {
-                    style: google.maps.NavigationControlStyle.SMALL
-                },
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-              };
-              var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-
-              var marker = new google.maps.Marker({
-                  position: coords,
-                  map: map,
-                  title:"You are here!"
-              });
-            }
-
-                if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(success);
-            } else {
-              error('Geo Location is not supported');
-            }
-
-            }, 1000)
         }
 
         //////////////

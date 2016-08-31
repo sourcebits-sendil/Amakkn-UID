@@ -9,7 +9,13 @@
     <div class="container padding20 "  data-ng-switch-when="map" >
         <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
         <div class="row text-center " >
-            <article></article>
+            <!--<article></article>-->
+            <ng-map zoom="11" center="[40.74, -74.18]">
+                <marker position="Toronto Canada"
+                  title="You are here"
+                  animation="Animation.BOUNCE"
+                  centered="true"></marker>
+              </ng-map>
         </div>
         <div class="row padding20 greyBG">
             <div class="row text-center " >
@@ -407,88 +413,7 @@
 	</section><div class="row padding20"></div>
                 <div class="row padding20"></div><div class="row padding20"></div>
 
-
-
-       <script>
-            $(document).ready(function() {
-            function getRandomSize(min, max) {
-              return Math.round(Math.random() * (max - min) + min);
-            }
-              for (var i = 0; i < 25; i++) {
-                var width = getRandomSize(200, 400);
-                var height =  getRandomSize(200, 400);
-              }
-
-                function success(position) {
-                  var mapcanvas = document.createElement('div');
-                  mapcanvas.id = 'mapcontainer';
-                  mapcanvas.style.height = '400px';
-                  mapcanvas.style.width = '100%';
-
-                  document.querySelector('article').appendChild(mapcanvas);
-
-                  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-                  var options = {
-                    zoom: 15,
-                    center: coords,
-                    mapTypeControl: false,
-                    navigationControlOptions: {
-                        style: google.maps.NavigationControlStyle.SMALL
-                    },
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                  };
-                  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-
-                  var marker = new google.maps.Marker({
-                      position: coords,
-                      map: map,
-                      title:"You are here!"
-                  });
-                }
-
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(success);
-                } else {
-                  error('Geo Location is not supported');
-                }
-
-            });
-       </script>
-
-    <!--// END Content Block 1-2 --></div><!-- /#page -->
+<!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
 </div>
-<!--<script>
-        var map;
-                var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-
-                function initialize()
-                {
-                var mapProp = {
-                  center:myCenter,
-                  zoom:5,
-                  mapTypeId:google.maps.MapTypeId.ROADMAP
-                  };
-
-                  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-                  google.maps.event.addListener(map, 'click', function(event) {
-                    placeMarker(event.latLng);
-                  });
-                }
-
-                function placeMarker(location) {
-                  var marker = new google.maps.Marker({
-                    position: location,
-                    map: map,
-                  });
-                  var infowindow = new google.maps.InfoWindow({
-                    content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
-                  });
-                  infowindow.open(map,marker);
-                }
-
-                google.maps.event.addDomListener(window, 'load', initialize);
-    </script>-->
