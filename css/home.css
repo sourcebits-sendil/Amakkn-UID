@@ -238,8 +238,7 @@ header .header-content .header-content-inner hr {
 }
 
 .card {
-    border-radius: 6px;
-    background-color: #FFFFFF;
+
     margin-bottom: 20px;
 
     margin-top:30px;
@@ -280,3 +279,8 @@ article{padding-top: 30px;}
     color: #fff;
 
     }
+
+.footercolore
+{
+    background: #fff;
+}

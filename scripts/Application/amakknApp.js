@@ -43,6 +43,15 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../../Views/profile.html'
 
     })
+      .when('/listview', {
+        templateUrl : '../../Views/listview.html'
+
+    })
+
+     .when('/moredetails', {
+        templateUrl : '../../Views/moredetails.html'
+
+    })
     // route for the home page
     .when('/', {
         templateUrl : '../../Views/home.html'
