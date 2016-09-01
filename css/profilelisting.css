@@ -1,0 +1,121 @@
+.profilep{
+    font-size: 22px;
+	letter-spacing: -0.2px;
+	text-align: center;
+	color: #25454c;
+}
+
+.profilepsmall{
+    font-size: 14px;
+	text-align: center;
+	color: #25454c;
+
+}
+
+.profilexs{
+    font-size: 13px;
+	font-weight: 600;
+	text-align: center;
+
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    border-radius: 50%;
+    width: 24px;
+	height: 24px;
+    padding-top: 7px;
+}
+.label-danger {
+    background-color: #24c969;
+}
+.label-danger1 {
+    background-color: #df3b20;
+}
+.label-danger2 {
+    background-color: #6dc0ce;
+}
+.label-danger3 {
+    background-color: #e88412;
+}
+.label-danger4 {
+    background-color: #768ead;
+}
+.pull-right {
+    float: right!important;
+}
+
+.colborder{
+    border: solid 1px #e1e1e1
+}
+
+.proborder a {
+    background: none;
+}
+
+.proborder{
+    border: none;
+    background: none;
+
+}
+
+.bg-white
+{
+    background: #fff;
+}
+.containerback{
+    background: #fff;
+}
+.leftborder{
+    border: solid 0.8px #e6e6e6;
+    margin-top: 15px;
+        padding-right: 26px;
+    line-height: 3;
+
+}
+.mask {
+	width: 256px;
+	height: 175px;
+	object-fit: contain;
+	border-radius: 4px;
+	background-image: linear-gradient(rgba(109, 191, 206, 0.75), rgba(109, 191, 206, 0.75)), linear-gradient(to bottom, rgba(0, 0, 0, 0.0), #000000);
+}
+
+.qrcode{
+    width:100px;
+    height:100px;
+    background: none;
+}
+
+.agentp{
+    font-size: 16px;
+	letter-spacing: 0.6px;
+	color: #707070;
+    text-align: justify;
+
+}
+
+.profileborder{
+    background-color: #ffffff;
+	border: solid 1px #e1e1e1;
+    box-shadow: 2px;
+    margin-left: 13px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.profiletextbox{
+    width: 600px;
+    height: 60px;
+    background-color: #ffffff;
+    border: solid 1px #cdcdcd;
+}
