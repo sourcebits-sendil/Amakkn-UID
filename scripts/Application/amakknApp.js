@@ -1,4 +1,4 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
@@ -186,12 +186,14 @@ amakknApp.config(function($routeProvider){
         }
     };
 }]); */
-angular.module('amakkn').controller('index',['MyService'],function($scope,$http,MyService){
+amakknApp.controller('index',['MyService','$scope', '$location', '$rootScope', function($scope,$http,MyService, $location,$rootScope){
 
-    $scope.pendingRequests = function(){
+    /*$scope.pendingRequests = function(){
         return MyService.requestingSomeURL();
-      }
-})
+      }*/
+
+
+}]);
 //amakknApp.run(run);
 /*run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
 function run($rootScope, $location, $cookieStore, $http) {

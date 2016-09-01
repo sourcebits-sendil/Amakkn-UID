@@ -5,22 +5,14 @@ header {
   position: relative;
   width: 100%;
   min-height: auto;
-  /*-webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-image: url('../assets/images/banner1440x768.png');*/
-
-
 }
 header .header-content {
     position: absolute;
     padding: 100px 15px 100px;
     width: 100%;
-    top:40%;
+    top:50%;
 }
-header .header-content .header-content-inner h3 {
+header h3 {
     width: 100%;
     height: 48px;
     font-weight: 100;
@@ -30,9 +22,7 @@ header .header-content .header-content-inner h3 {
     text-align: center;
     color: #fff;
 }
-header .header-content .header-content-inner hr {
-  margin: 30px auto;
-}
+.banner_img{height:768px;background: url(../assets/images/image@2x.png) left top no-repeat;background-size:cover;}
 
 @media (min-width: 768px) {
   header {
@@ -40,24 +30,22 @@ header .header-content .header-content-inner hr {
   }
   header .header-content {
     position: absolute;
-    top: 45%;
+    top: 80%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     padding: 0 50px;
   }
-  header .header-content .header-content-inner {
+  header .header-content {
 
     margin-left: auto;
     margin-right: auto;
   }
-  header .header-content .header-content-inner h1 {
-    font-size: 50px;
-      background: trs
-  }
 
 }
-
+header .md-button.md-accent{color: #24c969;}
+header md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969;}
+header .md-nav-item{width:30%;}
 .brandName img{width: 183px;height: 40px;}
 
 /* styles for search box */
@@ -238,9 +226,7 @@ header .header-content .header-content-inner hr {
 }
 
 .card {
-
     margin-bottom: 20px;
-
     margin-top:30px;
 }
 .card-background {
@@ -272,13 +258,10 @@ article{padding-top: 30px;}
     text-align: justify;
     color: #fff;
     font-weight: 600;
-
 }
-
 #textph{
     color: #fff;
-
-    }
+}
 
 .bg-white
 {
