@@ -9,12 +9,13 @@
 
 
     <link rel="stylesheet" href="../scripts/Library/bootstrap-3.3.6-dist/css/bootstrap.min.css" >
-      <link rel="stylesheet" href="../scripts/Library/bootstrap-select-1.10.0/dist/css/bootstrap-select.css" >
-      <link rel="stylesheet" href="../scripts/Library/Hover-master/css/hover-min.css" >
-      <link rel="stylesheet" href="../scripts/Library/node_modules/angular-material/angular-material.min.css" >
+    <link rel="stylesheet" href="../scripts/Library/bootstrap-select-1.10.0/dist/css/bootstrap-select.css" >
+    <link rel="stylesheet" href="../scripts/Library/Hover-master/css/hover-min.css" >
+    <link rel="stylesheet" href="../scripts/Library/node_modules/angular-material/angular-material.min.css" >
     <link rel="stylesheet" href="../css/master.css" >
- <link rel="stylesheet" href="../css/footer.css" >
-      <link rel="stylesheet" href="../css/angular-busy.min.css" >
+    <link rel="stylesheet" href="../css/footer.css" >
+    <link rel="stylesheet" href="../css/angular-busy.min.css" >
+      <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 
   </head>
@@ -102,7 +103,7 @@
   <footer class="navbar-default">
 
 
-        <div class="container-fluid greyBg  ">
+        <div class="container-fluid greyBg">
             <div class="row">&nbsp;</div>
             <div class="col-md-9 col-md-offset-2">
             <div class="col-md-3 col-sm-6 links">
@@ -176,8 +177,9 @@
       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
       <script src="../scripts/Library/node_modules/angular-material/angular-material.min.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-      <script src="../scripts/Library/imageGrid.js"></script>
+      <!--<script src="../scripts/Library/imageGrid.js"></script>-->
       <script src="../scripts/Library/angular-busy.min.js"></script>
+    <script src="../scripts/Library/ng-map.min.js"></script>
 
 
        <!-- Importing App contollers & services -->
@@ -196,10 +198,7 @@
       <script src="../scripts/Application/Services/http-service.js"></script>
     <!--<script src="../scripts/Application/Services/authentication.service.js"></script>-->
     <script src="../scripts/Application/Directives/google-plus-signin.js"></script>
-
-<!--
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-  <script src="https://apis.google.com/js/api:client.js"></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYKFUW-y6Aw9P_NNC_k1mHs6sri2CBZ6k&libraries=places" async defer></script>
 
 
 
@@ -211,42 +210,7 @@
         <![endif]-->
       <!--Ends Importing Javascript libraries -->
 
-    <!--<script>
-function success(position) {
-  var mapcanvas = document.createElement('div');
-  mapcanvas.id = 'mapcontainer';
-  mapcanvas.style.height = '400px';
-  mapcanvas.style.width = '600px';
 
-  document.querySelector('article').appendChild(mapcanvas);
-
-  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-  var options = {
-    zoom: 15,
-    center: coords,
-    mapTypeControl: false,
-    navigationControlOptions: {
-    	style: google.maps.NavigationControlStyle.SMALL
-    },
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-
-  var marker = new google.maps.Marker({
-      position: coords,
-      map: map,
-      title:"You are here!"
-  });
-}
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success);
-} else {
-  error('Geo Location is not supported');
-}
-
-</script> -->
 
 
 

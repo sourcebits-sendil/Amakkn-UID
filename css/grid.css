@@ -114,47 +114,11 @@ font-size: 18px;
     background-size: 100% auto;
 }
 
-<<<<<<< HEAD
 
-}
-
-
-.col-shrink{
-        width: 350px;
-    height: 270px;
-    border-radius: 3px;
-    background-color: #fff;
-margin-left:30px;
-}
-
-
-.girdcls{
-    width: 350px;
-	height: 220px;
-	background: #ccc;
-
-}
-
-=======
->>>>>>> 2a13fa8218ca5fdfa9a60486bf4b54e818f5c4d4
 .girdcls1{
    width: 350px;
 	height: 181px;
 	background: #ccc;
-<<<<<<< HEAD
-}
-.girdcls2{
-    width: 350px;
-	height: 300px;
-	object-fit: contain;
-
-background: #ccc;
-}
-.girdcls3{
-    width: 350px;
-	height: 210px;
-	background: #ccc;
-=======
     color:#fff;
     text-shadow: 2px 2px 4px #000000;
     background-image: url(../assets/images/gallery/10.jpg);
@@ -214,37 +178,4 @@ background: #ccc;
     text-shadow: 2px 2px 4px #000000;
     background-image: url(../assets/images/gallery/16.jpg);
     background-size: 100% auto;
-}
->>>>>>> 2a13fa8218ca5fdfa9a60486bf4b54e818f5c4d4
-
-}
-.girdcls4{
-    width: 350px;
-	height: 170px;
-	background: #ccc;
-
-}
-.girdcls5{
-    width: 350px;
-	height: 270px;
-	object-fit: contain;
-
-	background: #ccc;
-
-}
-.girdcls6{
-    width: 350px;
-	height: 350px;
-	object-fit: contain;
-
-	background: #ccc;
-}
-.girdcls7{
-    width: 350px;
-	height: 431px;
-	background: #ccc;
-
-}
-.girdcls8{
-
 }
