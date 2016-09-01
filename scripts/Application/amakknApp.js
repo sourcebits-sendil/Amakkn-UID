@@ -43,6 +43,49 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../../Views/profile.html'
 
     })
+      .when('/listview', {
+        templateUrl : '../../Views/listview.html'
+
+    })
+
+     .when('/moredetails', {
+        templateUrl : '../../Views/moredetails.html'
+
+    })
+
+    .when('/profile-my-listing', {
+        templateUrl : '../../Views/profile-my-listing.html'
+
+    })
+    .when('/favourites', {
+        templateUrl : '../../Views/favourites.html'
+
+    })
+     .when('/favouritesshare', {
+        templateUrl : '../../Views/favouritesshare.html'
+
+    })
+
+     .when('/qrcode', {
+        templateUrl : '../../Views/qrcode.html'
+
+    })
+
+
+    .when('/agentproperties', {
+        templateUrl : '../../Views/agentproperties.html'
+
+    })
+
+    .when('/agentprofile', {
+        templateUrl : '../../Views/agentprofile.html'
+
+    })
+    .when('/addagent', {
+        templateUrl : '../../Views/addagent.html'
+
+    })
+
     // route for the home page
     .when('/', {
         templateUrl : '../../Views/home.html'

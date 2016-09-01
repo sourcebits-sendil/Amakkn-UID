@@ -80,18 +80,25 @@
   padding: 3px 9px;
   color: #fff;
   border: 0px;
+    border: solid 1px #9e9e9e;
+    border-radius: 3px;
 }
 
 .pagination > li > a {
   margin-right: 5px;
     background-color: #ccc;
+
 }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-  background-color: #32c5d2;
+  background-color: #eee;
+    	border: solid 1px #24c969;
+    border-radius: 3px;
+
 }
 .previous{
     border: none;
+
 }
 
 .fixed{
@@ -100,12 +107,77 @@
 }
 
 
-.imgresponsive{height: 175px;
-    width: 350px;
+.imgresponsive{
+    height: 175px;
+   width: 100%;
         border-color: #ddd #bbb #aaa #ccc;
     border-style: solid;
     padding: 10px;
+    border-radius: 14px;
 
 
 }
+
+.pullpadding{
+    padding-right: 10px;
+}
+.pullp
+{color:#fff;
+text-align: justify;
+font-weight: 100px;}
+
+
+.pullbutton{
+    margin-left:0px;}
+
+.listp
+{
+    width: 474px;
+	height: 26px;
+	object-fit: contain;
+
+	font-size: 20px;
+	line-height: 1.3;
+	letter-spacing: -0.1px;
+	color: #25454c;
+}
+
+.listh
+{
+    width: 403px;
+	height: 26px;
+    text-align: justify;
+
+	font-size: 14px;
+	line-height: 1.9;
+	letter-spacing: -0.1px;
+	color: #707070;
+}
+
+.imgshape{
+   	width: 40px;
+	height: 40px;
+
+
+}
+
+.imgbanner{
+    width: 730px;
+	height: 436px;
+}
+
+.imgsmall{
+    width: 160px;
+	height: 116px;
+
+
+}
+.panels {
+    padding: 0px;
+    border:  solid 1px #dcdcdc
+}
+.panels1{
+    padding-top: 10px;
+}
+
 

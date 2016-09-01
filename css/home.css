@@ -226,10 +226,7 @@ header .md-nav-item{width:30%;}
 }
 
 .card {
-    border-radius: 6px;
-    background-color: #FFFFFF;
     margin-bottom: 20px;
-
     margin-top:30px;
 }
 .card-background {
@@ -264,4 +261,9 @@ article{padding-top: 30px;}
 }
 #textph{
     color: #fff;
+}
+
+.bg-white
+{
+    background: #fff;
 }
