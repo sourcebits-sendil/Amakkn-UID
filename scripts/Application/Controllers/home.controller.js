@@ -11,6 +11,10 @@
 
     /* @ngInject */
     function homeController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
+
+
+
+
         var vm = this;
         vm.class = 'homeController';
 
@@ -140,6 +144,11 @@
 
 
         }
+
+
+
+        //$rootScope.hideFooter = $location.path() === '/signUp';
+        //alert($rootScope.hideFooter);
 
         //////////////
 

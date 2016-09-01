@@ -2,115 +2,84 @@
     @import url('../css/home.css');
     @import url('../css/grid.css')</style>
 
-<div>
-<header data-ng-switch on="selection">
+
+<header data-ng-switch on="selection" >
 
 
-    <div class="container padding20 "  data-ng-switch-when="map" >
-        <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
-        <div class="row text-center " >
-            <!--<article></article>-->
-            <ng-map zoom="11" center="[40.74, -74.18]">
-                <marker position="Toronto Canada"
+    <div class="container  noPadding"  data-ng-switch-when="map" style="width:100%;">
+        <ng-map zoom="15" center="[40.74, -74.18]" scrollwheel="false" style="height:768px;">
+                <marker position="current"
                   title="You are here"
                   animation="Animation.BOUNCE"
                   centered="true"></marker>
-              </ng-map>
-        </div>
-        <div class="row padding20 greyBG">
-            <div class="row text-center " >
-              <div class="" id="gray-cicle"   style="top:0px;">
+          </ng-map>
+            <div class=" header-content" style="padding: 0px 30px;">
+                    <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  visible-lg visible-md" ng-click="switchBanner()"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
+
+
+                <div class="pull-right"><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md disabled"  value="map" ><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+
+            </div>
+            <div class="text-center" id="gray-cicle"   style="top:-80px;">
                   <a href="" class="btn btn-default " id="gray" ng-click="switchBanner()">
                       <img src="../assets/icons/icon.png"  >
                   </a>
                   <a href="" class="btn btn-sec disabled" id="gray" >
-                    <img src="../assets/icons/map-icon.png">
+                    <img src="../assets/icons/map-icon.png" class="disabled">
                   </a>
               </div>
-            </div>
-        </div>
+
     </div>
-    <div data-ng-switch-when="banner">
-        <img src="../assets/images/image@2x.png" alt="Your city" class="img-responsive"  >
-        <div class="header-content">
-            <div class="header-content-inner">
+    <div data-ng-switch-when="banner" class="banner_img">
 
-                <div class="text-center  marginTB20"><img src="../assets/images/logo.svg" alt="Amakkn" ></div>
-
-                <div class="text-center"><h3 class="marginTB40">Helping you to find right place</h3></div>
-
-                <div class="row vertical-align">
-                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn disabled visible-lg visible-md"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
+        <div class="text-center" style="top:20%;position:relative;">
+            <div class="row marginTB20" ><img src="../assets/images/logo.svg" alt="Amakkn" ></div>
+            <div class="row marginTB20"><h3>Helping you to find right place</h3></div>
+            <div class="header-content" style="padding: 0px 30px;">
+                    <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  visible-lg visible-md disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
 
 
-                    <div class="col-md-6  searchOption text-center visible-lg visible-md">
-                        <div class="panel panel-default col-md-10 col-md-offset-1 noPadding">
-                          <div class="panel-body">
-                            <div class= "btn-group btn-group-justified" role="group" >
-                                <div class="btn-group " role="group" >
-                                   <div class="btn btn-default btn-lg" ng-click="tab = 1">Buy</div>
-                                      <div ng-show="tab == 1">
+                <div class="pull-right"><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md "  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
-         </div>
-                                </div>
-                               <div class="
-                                            btn-group " role="group" >
-                                   <div class="btn btn-default btn-lg " ng-click="tab = 2">Rent</div>
-                                      <div  ng-show="tab == 2">
-
-         </div>
-                                </div>
-                               <div class="
-                                            btn-group " role="group" >
-                                   <div class="btn btn-default btn-lg" ng-click="tab = 3">Sell</div>
-                                      <div ng-show="tab == 3">
-
-         </div>
-                                </div>
-                              </div>
-
-                              <div class="row padding20 ">
-                                <form>
-                                <div class="col-md-7 col-sm-7">
-                                    <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
-                                </div>
-                               <div class="col-md-3 col-sm-3 paddingLR10 text-right">
-
-
-     <md-select placeholder="All Properties" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
-      <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
-    </md-select>
-
-
-
-                                </div>
-                                  <div class="col-md-2 col-sm-2 paddingLR10">
-                                    <button type="submit" class="btn btn-default greenBtn" >Search</button>
-                                </div>
-                                </form>
-                              </div>
-                          </div>
+            </div>
+            <div class="row marginTB20 visible-md visible-lg">
+                 <md-content class="md-padding" style="width:690px;height:120px;margin: 0px auto;">
+                    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                      <md-nav-item md-nav-click="goto('buy')" name="buy">Buy</md-nav-item>
+                      <md-nav-item md-nav-click="goto('rent')" name="rent">Rent</md-nav-item>
+                      <md-nav-item md-nav-click="goto('sell')" name="sell">Sell</md-nav-item>
+                    </md-nav-bar>
+                    <div class="ext-content">
+                        <div class="col-md-7 col-sm-7">
+                            <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code">
+                        </div>
+                        <div class="col-md-3 col-sm-3 paddingLR10 text-right">
+                            <md-select placeholder="All Properties" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff" >
+                                <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+                            </md-select>
+                        </div>
+                        <div class="col-md-2 col-sm-2 paddingLR10">
+                            <button type="submit" class="btn btn-default greenBtn" >Search</button>
                         </div>
                     </div>
-
-                    <div class="col-md-3 "><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
-
-                </div>
+                </md-content>
             </div>
-            <div class="row text-center " id="gray-cicle">
-                <div class="col-md-12">
-                    <a href="" class="btn btn-default disabled" id="gray">
-                        <img src="../assets/icons/icon.png">
-                    </a>
-                    <a href="" class="btn btn-sec " id="gray" ng-click="switchMap()">
-                        <img src="../assets/icons/map-icon.png">
-                    </a>
-                </div>
-            </div>
-    </div></div>
+
+
+        </div>
+        <div class="text-center"  style="bottom:0;position:absolute;width:100%;padding-bottom:30px;">
+                  <a href="" class="btn btn-default disabled" id="gray" >
+                      <img src="../assets/icons/icon.png" >
+                  </a>
+                  <a href="" class="btn btn-default" id="gray"  ng-click="switchMap()">
+                    <img src="../assets/icons/map-icon.png" >
+                  </a>
+              </div>
+
+    </div>
 </header>
 
-<div class=" greyBtmBorder">
+<div style="background:#fff;">
          <div class= "text-center padding20">
              <h1>Recently Listed</h1>
              <h5>Dubai, United Arab Emirates</h5>

@@ -143,12 +143,14 @@ amakknApp.config(function($routeProvider){
         }
     };
 }]); */
-angular.module('amakkn').controller('index',['MyService'],function($scope,$http,MyService){
+amakknApp.controller('index',['MyService','$scope', '$location', '$rootScope', function($scope,$http,MyService, $location,$rootScope){
 
-    $scope.pendingRequests = function(){
+    /*$scope.pendingRequests = function(){
         return MyService.requestingSomeURL();
-      }
-})
+      }*/
+
+
+}]);
 //amakknApp.run(run);
 /*run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
 function run($rootScope, $location, $cookieStore, $http) {

@@ -183,6 +183,7 @@
                 }
              });
          }
+             $scope.isCurrentPage = $location.path() === '/signUp';
 
          // Map implementations --------
 
