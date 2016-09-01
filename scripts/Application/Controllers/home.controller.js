@@ -10,7 +10,7 @@
         .controller('homeCtrl', homeController);
 
     /* @ngInject */
-    function homeController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
+    function homeController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, NgMap) {
 
 
 
@@ -18,13 +18,25 @@
         var vm = this;
         vm.class = 'homeController';
 
+        vm.placeChanged = function() {
+            vm.place = this.getPlace();
+            console.log('location', vm.place.geometry.location);
+            vm.map.setCenter(vm.place.geometry.location);
+          }
+          NgMap.getMap().then(function(map) {
+            //vm.map = map;
+          });
+
+
         $scope.selection = "banner";
        // $log.debug($scope.selection);
         $scope.isFav = false;
         $scope.urlGet = '';
         //property list
         $scope.user = null;
-  $scope.users = null;
+        $scope.users = null;
+        $scope.currentNavItem = "buy";
+
   $scope.loadUsers = function() {
     // Use timeout to simulate a 650ms request.
     return $timeout(function() {
