@@ -11,8 +11,28 @@
 
     /* @ngInject */
 
-    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast) {
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast, NgMap) {
 
+        var vm = this;
+        var marker;
+        $scope.placeChanged = function() {
+            //alert(' ');
+            vm.place = this.getPlace();
+
+            //alert(vm.place.geometry.location)
+            //console.log('location', vm.place.geometry.location);
+            vm.map.setCenter(vm.place.geometry.location);
+            $timeout(function(){
+                var marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
+                vm.map.panTo(vm.place.geometry.location);
+            }, 200);
+
+          }
+          NgMap.getMap().then(function(map) {
+            vm.map = map;
+              //alert(' ');
+
+          });
 
         /* initiating view objects used to switch */
         $rootScope.view={
@@ -57,6 +77,7 @@
             $timeout(function() {
                 myEl = angular.element(document.querySelector('#step2')).removeClass('disabled').addClass('active');
             }, 500);
+
         };
 
         $scope.addName = function(){
