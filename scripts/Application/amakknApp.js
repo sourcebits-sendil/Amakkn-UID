@@ -86,6 +86,44 @@ amakknApp.config(function($routeProvider){
 
     })
 
+    .when('/propertytype', {
+        templateUrl : '../../Views/propertytype.html'
+
+    })
+
+     .when('/propertylocation', {
+        templateUrl : '../../Views/propertylocation.html'
+
+    })
+    .when('/roomsbathroom', {
+        templateUrl : '../../Views/roomsbathroom.html'
+
+    })
+
+     .when('/completelisting', {
+        templateUrl : '../../Views/completelisting.html'
+
+    })
+
+    .when('/completelistingphoto', {
+        templateUrl : '../../Views/completelistingphoto.html'
+
+    })
+
+       .when('/addresssave', {
+        templateUrl : '../../Views/addresssave.html'
+
+    })
+
+     .when('/propertydescription', {
+        templateUrl : '../../Views/propertydescription.html'
+
+    })
+     .when('/listtype', {
+        templateUrl : '../../Views/listtype.html'
+
+    })
+
     // route for the home page
     .when('/', {
         templateUrl : '../../Views/home.html'
