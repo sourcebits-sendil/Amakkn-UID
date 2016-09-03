@@ -4,7 +4,7 @@
     @import url('../css/home.css');
      @import url('../css/filtermenu.css');
     @import url('../css/propertytype.css');
-
+ @import url('../css/pricerange.css');
 
 
 </style>
@@ -89,9 +89,11 @@
           <li class="dropdown list">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Price Range <span class="caret"></span></a>
           <ul class="dropdown-menu propertyborder groupwidth">
-              <li><a href="">From $550,000 to $1M</a></li>
-              <input id="slider3" type ="range" min ="-2.5" max="3.0" step ="0.1"/>
-
+              <li><a href="">
+                  </a></li>
+             <rzslider rz-slider-model="slider.minValue"
+          rz-slider-high="slider.maxValue"
+          rz-slider-options="slider.options"></rzslider>
 
           </ul>
         </li>
