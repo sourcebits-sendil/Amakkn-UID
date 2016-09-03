@@ -23,7 +23,7 @@
             //console.log('location', vm.place.geometry.location);
             vm.map.setCenter(vm.place.geometry.location);
             $timeout(function(){
-                var marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
+             marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
                 vm.map.panTo(vm.place.geometry.location);
             }, 200);
 

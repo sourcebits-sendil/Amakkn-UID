@@ -7,11 +7,8 @@
 
 
     <div class="container  noPadding"  data-ng-switch-when="map" style="width:100%;height:768px;">
-        <ng-map zoom="15" center="[40.74, -74.18]" scrollwheel="false" style="height:100%">
-                <marker position="current"
-                  title="You are here"
-                  animation="Animation.BOUNCE"
-                  centered="true"></marker>
+        <ng-map zoom="15" center="current-position"  scrollwheel="false" style="height:100%" zoom-to-include-markers="auto" street-view-control="false">
+                <marker ng-repeat="p in positions" position="{{p.pos}}" title="pos: {{p.pos}}"></marker>
           </ng-map>
             <div class=" header-content" style="padding: 0px 30px;">
                     <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  visible-lg visible-md" ng-click="switchBanner()"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
@@ -51,7 +48,7 @@
                     </md-nav-bar>
                     <div class="ext-content">
                         <div class="" style="padding-top: 20px;">
-                            <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code" style="width:60%;" places-auto-complete size=80 ng-model="vm.address"  on-place-changed="vm.placeChanged()" />
+                            <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code" style="width:60%;" places-auto-complete size=80 ng-model="vm.address"  on-place-changed="placeChanged()" />
 
                             <md-select placeholder="All Properties" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff;width:141px;height:35px;margin:0px 20px;" >
                                 <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
