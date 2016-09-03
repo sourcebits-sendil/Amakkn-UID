@@ -124,6 +124,32 @@ amakknApp.config(function($routeProvider){
 
     })
 
+
+    .when('/pricerange', {
+        templateUrl : '../../Views/pricerange.html'
+
+    })
+
+    .when('/bedbaths', {
+        templateUrl : '../../Views/bedbaths.html'
+
+    })
+    .when('/filterproperty', {
+        templateUrl : '../../Views/filterproperty.html'
+
+    })
+    .when('/filterPropertyType', {
+        templateUrl : '../../Views/filterPropertyType.html'
+
+    })
+
+     .when('/filterBuyPriceRange', {
+        templateUrl : '../../Views/filterBuyPriceRange.html'
+
+    })
+
+
+
     // route for the home page
     .when('/', {
         templateUrl : '../../Views/home.html'
