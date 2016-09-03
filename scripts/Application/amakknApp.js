@@ -86,6 +86,70 @@ amakknApp.config(function($routeProvider){
 
     })
 
+    .when('/propertytype', {
+        templateUrl : '../../Views/propertytype.html'
+
+    })
+
+     .when('/propertylocation', {
+        templateUrl : '../../Views/propertylocation.html'
+
+    })
+    .when('/roomsbathroom', {
+        templateUrl : '../../Views/roomsbathroom.html'
+
+    })
+
+     .when('/completelisting', {
+        templateUrl : '../../Views/completelisting.html'
+
+    })
+
+    .when('/completelistingphoto', {
+        templateUrl : '../../Views/completelistingphoto.html'
+
+    })
+
+       .when('/addresssave', {
+        templateUrl : '../../Views/addresssave.html'
+
+    })
+
+     .when('/propertydescription', {
+        templateUrl : '../../Views/propertydescription.html'
+
+    })
+     .when('/listtype', {
+        templateUrl : '../../Views/listtype.html'
+
+    })
+
+
+    .when('/pricerange', {
+        templateUrl : '../../Views/pricerange.html'
+
+    })
+
+    .when('/bedbaths', {
+        templateUrl : '../../Views/bedbaths.html'
+
+    })
+    .when('/filterproperty', {
+        templateUrl : '../../Views/filterproperty.html'
+
+    })
+    .when('/filterPropertyType', {
+        templateUrl : '../../Views/filterPropertyType.html'
+
+    })
+
+     .when('/filterBuyPriceRange', {
+        templateUrl : '../../Views/filterBuyPriceRange.html'
+
+    })
+
+
+
     // route for the home page
     .when('/', {
         templateUrl : '../../Views/home.html'
