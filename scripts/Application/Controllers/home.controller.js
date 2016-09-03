@@ -10,7 +10,7 @@
         .controller('homeCtrl', homeController);
 
     /* @ngInject */
-    function homeController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope) {
+    function homeController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, NgMap, $mdToast) {
 
 
 
@@ -18,13 +18,24 @@
         var vm = this;
         vm.class = 'homeController';
 
+
+        var marker;
+        $scope.positions =[];
+        $scope.search = {
+            latitude:'',
+            longitude:'',
+            page:'1'
+        };
         $scope.selection = "banner";
        // $log.debug($scope.selection);
         $scope.isFav = false;
-        $scope.urlGet = '';
+        $scope.urlRest = '';
         //property list
         $scope.user = null;
-  $scope.users = null;
+        $scope.users = null;
+        $scope.currentNavItem = "buy";
+        $rootScope.propertyArr = [];
+
   $scope.loadUsers = function() {
     // Use timeout to simulate a 650ms request.
     return $timeout(function() {
@@ -58,70 +69,6 @@
              });
 
 
-        // --- google map with current positions --------
-
-           $timeout(function(){
-               /*if(!!navigator.geolocation) {
-
-	    		var map;
-
-		    	var mapOptions = {
-		    		zoom: 15,
-		    		mapTypeId: google.maps.MapTypeId.ROADMAP
-		    	};
-
-		    	map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
-
-	    		$rootScope.myPromise =  navigator.geolocation.getCurrentPosition(function(position) {
-
-		    		var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-		    		var infowindow = new google.maps.InfoWindow({
-		    			map: map,
-		    			position: geolocate,
-		    			content:
-		    				'<h1>Location pinned from HTML5 Geolocation!</h1>' +
-		    				'<h2>Latitude: ' + position.coords.latitude + '</h2>' +
-		    				'<h2>Longitude: ' + position.coords.longitude + '</h2>'
-		    		});
-
-		    		map.setCenter(geolocate);
-
-	    		});
-
-	    	} else {
-	    		document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
-	    	}*/
-
-
-
-        },1000);
-        // ---Ends google map with current positions --------
-
-        //toast
-         $scope.showToast1 = function() {
-                  $mdToast.show(
-                     $mdToast.simple()
-                        .textContent('Hello World!')
-                        .hideDelay(3000)
-                  );
-               };
-         $scope.showToast2 = function() {
-                  var toast = $mdToast.simple()
-                     .textContent('Hello World!')
-                     .action('OK')
-                     .highlightAction(false);
-                  $mdToast.show(toast).then(function(response) {
-                     if ( response == 'ok' ) {
-                        alert('You clicked \'OK\'.');
-                     }
-                  });
-               }
-
-         $scope.openToast = function($event){
-            $mdToast.show($mdToast.simple().textContent('Hello'));
-            // Could also do $mdToast.showSimple('Hello');
-         };
 
         $scope.logOut = function(){
             //alert('working')
@@ -137,15 +84,44 @@
                 $scope.selection = "banner";
                 }, 1000)
         }
-
+        $scope.placeChanged = function() {
+            vm.place = this.getPlace();
+            $scope.latLong = vm.place.geometry.location;
+        }
         $scope.switchMap = function(){
+            $scope.selection = "map";
+            NgMap.getMap().then(function(map) {
+                vm.map = map;
 
-                $scope.selection = "map";
-
-
+                $timeout(function(){
+                    $scope.latLong = (map.getCenter());
+                    $scope.search.latitude = $scope.latLong.lat();
+                    $scope.search.longitude = $scope.latLong.lng();
+                    getProperties();
+                }, 200);
+            });
         }
 
+        var getProperties = function(){
 
+                $scope.urlRest = 'http://52.42.99.192/Property/searchPropertiesInLocation/';
+                httpService.getData($scope.urlRest, $scope.search).then(function(result) {
+                if(result.resCode == 0){
+                    $rootScope.propertyArr = result.response.propertyArray;
+                    $scope.positions = [];
+                    $rootScope.propertyArr.forEach(function(val, i){
+                        $log.debug(val.latitude +' ' +val.longitude);
+                        $scope.positions.push({pos:[val.latitude, val.longitude]});
+                    });
+                    //$mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+
+                    }else{
+                        $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                        //alert(result.resStr);
+                    }
+                });
+
+        }
 
         //$rootScope.hideFooter = $location.path() === '/signUp';
         //alert($rootScope.hideFooter);

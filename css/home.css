@@ -30,7 +30,7 @@ header h3 {
   }
   header .header-content {
     position: absolute;
-    top: 80%;
+    top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -43,24 +43,21 @@ header h3 {
   }
 
 }
-header .md-button.md-accent{color: #24c969;}
-header md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969;}
-header .md-nav-item{width:30%;}
-.brandName img{width: 183px;height: 40px;}
 
 /* styles for search box */
+header .md-button.md-accent{color: #24c969;width: 100%;font-size: 20px;}
+header md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969;}
+header .md-nav-item{width:30%;}
+header .searchBox{width:690px;height:120px;margin: 0px auto;padding: 0px 5px;background: #fff;border-radius: 5px;}
 
-.searchOption .panel-body {padding: 0px;border: 0px;}
-.searchOption .btn-group-justified .btn{border-radius: 0px;border: 0px;}
-.searchOption .btn-group-justified .btn{border-bottom: 4px solid #ededed !important; }
-.btn-group-justified .btn .active, .btn-group-justified .btn:active {border-color: #24c969 !important; background-color: #24c969; }
-.searchOption .btn-group-justified .btn:hover{color:#24c969;background-color: #fff;}
-.btn-group-justified .btn-lg{font-size: 20px;color: #9b9b9b ; }
-.searchOption .btn-group-justified .btn:focus {color: #24c969;background: #fff;border-bottom-color: #24c969 !important;}
+.ext-content div>*{float: left;}
+.brandName img{width: 183px;height: 40px;}
+
+
 
 .btn-group:active {border-color: #24c969 !important; background-color: #24c969; }
 .btn-group>.btn{outline: none;}
-.roundedBtn{border-radius: 50%; width: 50px; height: 50px;}
+.roundedBtn{border-radius: 50%; width: 60px; height: 60px;}
 .buttonLR{font-size: 20px;line-height: 1.5;}
 .vertical-align {display: flex;align-items: center;}
 .form-control{box-shadow: none;}
@@ -90,9 +87,6 @@ header .md-nav-item{width:30%;}
 
     }
 
-.services-wrapper icon bg-crete{
-
-    }
 .services-wrapper{
     text-align: center;
 }
@@ -111,20 +105,15 @@ header .md-nav-item{width:30%;}
     box-shadow: #ddd 0 0 30px 0px;}
 
 
-#gray-cicle
-{
-    top: 320px;
-    position: relative;
-
-}
+.gray-cicle{top:-80px;position: relative;}
 
 #gray
 {
     border-radius: 50%;
-        height: 4em;
-    width: 4em;
+    height: 48px;
+    width: 48px;
     margin: auto;
-    padding-top: 16px;
+    padding-top: 13px;
     margin-left: 15px;
 
 }
@@ -148,7 +137,6 @@ header .md-nav-item{width:30%;}
 	width: 3em;
 	position: relative;
     top: 370px;
-
 }
 .gray-circle-button:hover {
 	color:#ffffff;
