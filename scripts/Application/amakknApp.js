@@ -43,8 +43,9 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../../Views/profile.html'
 
     })
-      .when('/listview', {
-        templateUrl : '../../Views/listview.html'
+      .when('/listView', {
+        templateUrl : '../../Views/listView.html',
+        controller  : 'listViewController'
 
     })
 
