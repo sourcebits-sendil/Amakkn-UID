@@ -1,0 +1,142 @@
+
+<style>
+
+    @import url('../css/home.css');
+     @import url('../css/filtermenu.css');
+    @import url('../css/propertytype.css');
+
+
+
+</style>
+
+<div class="padding20"></div>
+
+
+
+    <nav id="navbar navbar-default" id="filtermenu" >
+  <div class="container-fluid container-fluidmenu " id="filtermenu">
+      <div class="col-md-12 menushadow-nav">
+          <div class="col-md-2"></div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header ">
+      <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only ">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-md-3 menubar2padding" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+
+
+           <li class="dropdown list ">
+          <a href="" class="dropdown-toggle active " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy <span class="caret"></span></a>
+          <ul class="dropdown-menu ">
+
+            <li><a href="">Buy</a></li>
+            <li><a href="">Rent</a></li>
+            <li><a href="">Sell</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="">One more separated link</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="What are you looking for?" style="width:380px;border:none;"><a href="" class="btn btn-default" style="border:none;"><span class="glyphicon glyphicon-send" ></span> </a>
+        </div>
+        <button type="button" class="btn btn-success" >Search</button>
+
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown list">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Property Type <span class="caret"></span></a>
+         <ul class="dropdown-menu propertyborder groupwidth">
+
+                 <div class="row">
+        <div class="col-md-12"><h3 class="property">Apartment, House / Villa, Office, Warehouse</h3></div>
+    </div><hr>
+
+
+                     <div class="col-md-12 "><p class="filterp" > Residential Properties</p>
+<button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Apartment</button>
+                         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">House / Villa</button>
+                         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Land / Plot</button>
+
+</div>
+                     <div class="col-md-12 "><p class="filterp" >Commercial Properties</p>
+  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu">Office</button>
+                         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Showroom</button>
+                         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Commercial Site</button>
+                         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Industrial</button>
+                         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Warehouse</button>
+</div>
+
+
+          </ul>
+        </li>
+          <li class="dropdown list">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Price Range <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="">From $550,000 to $1M</a></li>
+              <input id="slider3" type ="range" min ="-2.5" max="3.0" step ="0.1"/>
+
+
+          </ul>
+        </li>
+
+          <li class="dropdown list">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bed/Baths<span class="caret"></span></a>
+          <ul class="dropdown-menu propertyborder groupwidth">
+
+                 <div class="row">
+        <div class="col-md-12"><h3 class="property">3+ Bedrooms, 2+ Bathrooms</h3></div>
+    </div><hr>
+                 <div class="col-md-12">
+
+                     <div class="col-md-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p> <section layout="row" layout-align="center center">
+  <md-button class="groupX gy left">1+</md-button>
+  <md-button class="groupX  gy middle">2+</md-button>
+  <md-button class="groupX gy middle">3+</md-button>
+  <md-button class="groupX gy middle">4+</md-button>
+  <md-button class="groupX gy right">5+</md-button>
+</section></div>
+                     <div class="col-md-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p> <section layout="row" layout-align="center center">
+  <md-button class="groupX gy left">1+</md-button>
+  <md-button class="groupX gy middle">2+</md-button>
+  <md-button class="groupX gy middle">3+</md-button>
+  <md-button class="groupX gy middle">4+</md-button>
+  <md-button class="groupX gy right">5+</md-button>
+</section></div>
+                 </div>
+
+          </ul>
+        </li>
+          <li class="dropdown list">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="">Action</a></li>
+            <li><a href="">Another action</a></li>
+            <li><a href="">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="">Separated link</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+      </div>
+  </div><!-- /.container-fluid -->
+</nav>
+   <div class="padding20"></div><div class="padding20"></div>
