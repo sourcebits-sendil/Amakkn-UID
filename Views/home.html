@@ -8,7 +8,9 @@
 
     <div class="container  noPadding"  data-ng-switch-when="map" style="width:100%;height:768px;">
         <ng-map zoom="15" center="current-position"  scrollwheel="false" style="height:100%" zoom-to-include-markers="auto" street-view-control="false">
-                <marker ng-repeat="p in positions" position="{{p.pos}}" title="pos: {{p.pos}}"></marker>
+            <custom-marker ng-repeat="p in positions" position="{{p.pos}}" title="pos: {{p.pos}}">
+                <div>{{p.price}}</div>
+            </custom-marker>
           </ng-map>
             <div class=" header-content" style="padding: 0px 30px;">
                     <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  visible-lg visible-md" ng-click="switchBanner()"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
