@@ -148,7 +148,10 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../../Views/filterBuyPriceRange.html'
 
     })
+    .when('/listMap', {
+        templateUrl : '../../Views/listMap.html'
 
+    })
 
 
     // route for the home page
