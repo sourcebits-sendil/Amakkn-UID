@@ -51,7 +51,7 @@
                 <div class="form-group">
                   <input type="text" class="form-control" style="min-width:90%;border:none;" placeholder="Enter a City, Address or ZIP Code" places-auto-complete size=80 ng-model="vm.address"  on-place-changed="placeChanged()"><a href="" class="btn btn-default" style="border:none;"><span class="glyphicon glyphicon-send" ></span> </a>
                 </div>
-                <button type="button" class="btn btn-success" >Search</button>
+                <a href="#listMap"><button type="button" class="btn btn-success" >Search</button></a>
 
               </form>
 
@@ -186,7 +186,7 @@
                                 <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
                             </md-select>
 
-                            <button type="submit" class="btn btn-default greenBtn" style="width:74px;height:35px;"><a href="#listMap" style="color:#fff;">Search</a></button>
+                            <a href="#listMap" style="color:#fff;text-decoration:none;"><button type="submit" class="btn btn-default greenBtn" style="width:74px;height:35px;">Search</button></a>
                         </div>
                     </div>
                 </md-content>

@@ -249,14 +249,3 @@ article{padding-top: 30px;}
 }
 #textph{color: #fff;}
 .bg-white{background: #fff;}
-.custom-marker{
-    font-size: 1.5em;
-    padding: 5px;
-    color: #fff;
-    background: url('../assets/icons/selected-pin.svg') no-repeat;
-    font-weight: bold;
-    padding-bottom: 8px;
-    min-width: 80px;
-  }
-.mapViewFil .navbar-default .navbar-nav>li>a{background-color: #fff !important;color: #24c969 !important;}
-.mapViewFil .navbar{margin-bottom: 0px !important;}

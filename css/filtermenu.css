@@ -75,3 +75,21 @@ padding-right: 10px;
 
     border:none;
 }
+.custom-marker{
+    font-size: 1.5em;
+    padding: 5px;
+    color: #fff;
+    background: url('../assets/icons/selected-pin.svg') no-repeat;
+    font-weight: bold;
+    padding-bottom: 8px;
+    min-width: 80px;
+  }
+.mapViewFil .navbar-default .navbar-nav>li>a{background-color: #fff !important;color: #24c969 !important;}
+.mapViewFil .navbar{margin-bottom: 0px !important;}
+.md-nav-bar .md-button._md-nav-button:hover{color:#24c969;}
+.badge-notify{
+   background:red;
+   position:relative;
+   top: -20px;
+   left: -35px;
+}

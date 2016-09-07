@@ -149,7 +149,8 @@ amakknApp.config(function($routeProvider){
 
     })
     .when('/listMap', {
-        templateUrl : '../../Views/listMap.html'
+        templateUrl : '../../Views/listMap.html',
+        controller  : 'listViewController'
 
     })
 

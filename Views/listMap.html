@@ -1,7 +1,7 @@
 <style>
     @import url('../css/filtermenu.css');
-    @import url('../css/propertytype.css');
-    @import url('../css/home.css');
+    @import url('../css/list.css');
+    @import url('../css/listMap.css');
 </style>
 
 <div class="container  noPadding mapViewFil" style="width:100%;height:768px;">
@@ -44,9 +44,9 @@
               </ul>
               <form class="navbar-form navbar-left">
                 <div class="form-group">
-                  <input type="text" class="form-control" style="min-width:90%;border:none;" placeholder="Enter a City, Address or ZIP Code" places-auto-complete size=80 ng-model="vm.address"  on-place-changed="placeChanged()"><a href="" class="btn btn-default" style="border:none;"><span class="glyphicon glyphicon-send" ></span> </a>
+                  <input type="text" class="form-control" style="min-width:90%;border:none;" placeholder="Enter a City, Address or ZIP Code" places-auto-complete size=80 on-place-changed="placeChanged()"><a href="" class="btn btn-default" style="border:none;"><span class="glyphicon glyphicon-send" ></span> </a>
                 </div>
-                <button type="button" class="btn btn-success" >Search</button>
+                <button type="button" class="btn btn-success" ng-click="updateMap()">Search</button>
 
               </form>
 
@@ -131,14 +131,49 @@
               </div>
           </div><!-- /.container-fluid -->
         </nav>
-    <div class="col-md-9">
-        <ng-map zoom="15" center="current-position"  scrollwheel="false" style="height:100%" zoom-to-include-markers="auto" street-view-control="false">
+    <div class="col-md-9 noPadding">
+        <ng-map zoom="15" center="current-position"  scrollwheel="false" style="height:85vh" zoom-to-include-markers="auto" street-view-control="false">
             <custom-marker ng-repeat="p in positions" position="{{p.pos}}" title="pos: {{p.pos}}">
                 <div>{{p.price}}</div>
             </custom-marker>
           </ng-map>
     </div>
-    <div class="col-md-3">
-
+    <div class="col-md-3 ">
+        <div class="col-md-2">Display:</div>
+        <div class="col-md-2">
+            <a href="#listView"><button type="button" class="btn btn-success ">List</button></a>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-default">Map</button>
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="button" class="btn btn-success ">List</button>
+             <span class="badge badge-notify">3</span>
+        </div>
+        <div class="">
+            <h5>Properties for Sale in Hamza Street, Dubai City, UAE</h5>
+            <h6>324 apartments in 126 New Projects | 9426 Resale apartments</h6>
+        </div>
+        <div class="">
+            <h5>Sort by: </h5>
+        </div>
+        <div class="" style="overflow-y:auto;max-height:85vh;">
+            <div style="max-height:125px;overflow:hidden;" ng-repeat="item in propertiesData">
+                <div class="col-md-4" style="max-height:105px;overflow:hidden;">
+                    <img class="img-responsive" ng-src={{getImage(item.photos)}} />
+                </div>
+                <div class="col-md-8">
+                    <div class="col-md-6">
+                        <button class="btn btn-success btn-xs"> OPEN VIEWING</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger btn-xs"> COMPARE</button>
+                    </div>
+                    <h4>{{item.price | currency}}</h4>
+                    <h6>{{item.propertyTypeName}}</h6>
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
 </div>

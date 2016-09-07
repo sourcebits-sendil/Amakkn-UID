@@ -19,13 +19,14 @@
         vm.class = 'homeController';
 
 
-        var marker;
-        $scope.positions =[];
-        $scope.search = {
+        //var marker;
+        $rootScope.positions =[];
+        $rootScope.search = {
             latitude:'',
             longitude:'',
             page:'1'
         };
+        $rootScope.latLong = null;
         $scope.selection = "banner";
        // $log.debug($scope.selection);
         $scope.isFav = false;
@@ -86,7 +87,10 @@
         }
         $scope.placeChanged = function() {
             vm.place = this.getPlace();
-            $scope.latLong = vm.place.geometry.location;
+            $rootScope.latLong = vm.place.geometry.location;
+            $rootScope.search.latitude = $rootScope.latLong.lat();
+            $rootScope.search.longitude = $rootScope.latLong.lng();
+            //alert($rootScope.search.latitude);
         }
         $scope.switchMap = function(){
             $scope.selection = "map";
@@ -94,9 +98,9 @@
                 vm.map = map;
 
                 $timeout(function(){
-                    $scope.latLong = (map.getCenter());
-                    $scope.search.latitude = $scope.latLong.lat();
-                    $scope.search.longitude = $scope.latLong.lng();
+                    $rootScope.latLong = (map.getCenter());
+                    $rootScope.search.latitude = $rootScope.latLong.lat();
+                    $rootScope.search.longitude = $rootScope.latLong.lng();
                     getProperties();
                 }, 200);
             });
@@ -105,16 +109,16 @@
         var getProperties = function(){
 
                 $scope.urlRest = 'http://52.42.99.192/Property/searchPropertiesInLocation/';
-                //$log.debug($scope.search.latitude +' '+ $scope.search.longitude);
+                //$log.debug($rootScope.search.latitude +' '+ $rootScope.search.longitude);
 
-                httpService.getData($scope.urlRest, $scope.search).then(function(result) {
+                httpService.getData($scope.urlRest, $rootScope.search).then(function(result) {
                 if(result.resCode == 0){
                     $rootScope.propertyArr = result.response.propertyArray;
-                    $scope.positions = [];
+                    $rootScope.positions = [];
                     $rootScope.propertyArr.forEach(function(val, i){
                         //$log.debug(val.latitude +' ' +val.longitude);
                         $log.debug(val.price)
-                        $scope.positions.push({pos:[val.latitude, val.longitude], price: ('$' +val.price.price/1000 + 'k')});
+                        $rootScope.positions.push({pos:[val.latitude, val.longitude], price: ('$' +val.price.price/1000 + 'k')});
 
                     });
                     //$mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
