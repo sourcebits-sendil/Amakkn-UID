@@ -1,0 +1,333 @@
+<style>
+  @import url('../css/list.css');
+  @import url('../css/home.css');
+  @import url('../css/loginSignup.css');
+  @import url('../css/gallery.css');
+  @import url('../css/moredetials.css');
+</style>
+<div class="padding20"></div>
+<div class="padding20"></div>
+<div class="container">
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-2 more ">${{propertiesData.price.price}}M</div>
+      <div class="col-md-2 forsale "><button type="button" class="btn btn-success btn-xs ">For {{propertiesData.listedFor}}</button>
+      </div>
+      <div class="col-md-6  ">
+        <div class="dropdown emi ">
+          <button class="btn btn-default btn-xs dropdown-toggle previous" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          EMI Start at $5000
+          <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h5> {{propertiesData.rooms.Rooms}} Bed, {{propertiesData.rooms.Bathrooms}} Bath {{propertiesData.features['Construction Area']}} Sqft Apartments | Posted on:15 {{ propertiesData.createdAt | date: 'yyyy-MM-dd HH:mm:ss Z'}}</h5>
+      </div>
+      <div class="col-md-4">
+        <h5>Compare this Property</h5>
+      </div>
+    </div>
+    <div class="row" style="min-height: 436px;">
+      <div class="col-md-12 "><img class="img-rounded img-responsive  " src={{imageArray[0]}} style="width:100%"></div>
+    </div>
+    <div class="row" style="min-height:116px;">
+      <div class="col-md-3"  ng-repeat="item in imageArray"><img ng-src={{item}} class="img-rounded img-responsive" /></div>      
+    </div>
+    <div class="row leftborder " style="max-height: 554px;     min-height: 412px;">
+      <div class="col-md-12">
+        <h4>OVERVIEW</h4>
+      </div>
+      <div class="col-md-12">
+        <p style="text-align:justify;">Real Estate Overview for 424 E 58th Street #10-F</p>
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th>Property Type</th>
+            <th>{{propertiesData.propertyTypeName}}</th>
+          </tr>
+          <tr ng-repeat="(key, value) in propertiesData.features">
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+          </tr>
+          <tr ng-repeat="(key, value) in propertiesData.rooms">
+              <td>{{key}}</td>
+              <td>{{value}}</td>
+          </tr>
+          <tr >
+            <td>Price</td>
+            <td>{{propertiesData.price['price'] | currency}}</td>
+          </tr>
+          <tr>
+            <td>Days on Amakkn</td>
+            <td>{{diffDays}} days</td>
+          </tr>
+          <tr>
+            <td>Total Views</td>
+            <td>{{propertiesData.views}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row leftborder" style="max-height:435px; min-height: 317px;">
+      <div class="col-md-12">
+        <h4>DESCRIPTION</h4>
+      </div>
+      <div class="col-md-12" style="text-align:justify;">
+        {{propertiesData.description}}
+      </div>
+    </div>
+    <div class="row leftborder " style="max-height:305px;     min-height: 245px;">
+      <div class="col-md-12">
+        <h4>FEATURES</h4>
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr ng-repeat="item in propertiesData.amenities">
+            <td>{{item}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row leftborder" style="max-height:404px;     min-height: 353px;">
+      <div class="col-md-12">
+        <h4>NEIGHBORHOOD INFO</h4>
+      </div>
+      <div class="col-md-12 text-center"><img src="../assets/images/m-a-p-big.png"></div>
+    </div>
+    <div class="row leftborder" style="max-height:404px;     min-height: 370px;
+      ">
+      <div class="col-md-12">
+        <h4>FLOOR PLAN</h4>
+      </div>
+      <div class="col-md-12 text-center"><img src="../assets/images/bitmap1.png"></div>
+    </div>
+  </div>
+  <!---col-9 close-->
+  <div class="col-md-3 ">
+    <div class="row">
+      <div class="col-md-12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 "><a href="#" class="btn btn-default bor"><span class="glyphicon glyphicon-print"></span></a>
+        <a href="#" class="btn btn-default bor "><span class="glyphicon glyphicon-thumbs-up"></span></a>
+        <a href="#" class="btn btn-default bor"> <span class="glyphicon glyphicon-thumbs-down"></span></a>
+        <a href="#" class="btn btn-default bor"> <span class="glyphicon glyphicon-random"></span></a>
+        <a href="#" class="btn btn-default bor"> <span class="glyphicon glyphicon-shopping-cart"></span></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7 col-md-offset-5"></div>
+    </div>
+    <div class="row leftborder " style="min-height:436px;">
+      <div class="col-md-12">
+        <h5 class="text-center">PROPERTY LISTED & MANAGED BY</h5>
+        <hr>
+      </div>
+      <div class="col-md-12"><img alt="Avatar" class="img-md img-circle img-border mar-btm" src="http://bootdey.com/img/Content/avatar/avatar4.png"></div>
+      <div class="col-md-12">
+        <div class="pad-btm panels1 ">
+          <button class="btn btn-info btn-sm">Company Profile</button>
+          <button class="btn btn-info btn-sm">See All Listings</button>
+        </div>
+      </div>
+      <div class="col-md-12 text-center">
+        <h4>Agent Name</h4>
+        <p>Ghassan Saleh (BRN: 30723)</p>
+        <h4>Real Estate Agency Details</h4>
+        <p>Saudi Real Estate (RERA ORN: 12945)</p>
+      </div>
+      <div class="col-md-12">
+        <div class="pad-btm text-center">
+          <button class="btn btn-success">Call Broker</button>
+          <button class="btn btn-success">Live Chat</button>
+        </div>
+      </div>
+    </div>
+    <div class="row prof leftborder">
+      <div class="col-md-6">
+        <p style="text-align:justify;">{{propertiesData.address}}
+        </p>
+      </div>
+      <div class="col-md-6 breakbr text-center "><button class="btn btn-success btn-xs"> $1.19M</button></div>
+    </div>
+    <div class="row leftborder" style="min-height:158px;">
+      <div class="col-md-12">
+        <h4 class="text-center">VISITING HOURS</h4>
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td><button class="btn btn-info btn-xs">Open now</button></td>
+            <td>2:00 PM to 4:00 PM</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>&nbsp;</td>
+            <td>2:00 PM to 4:00 PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row leftborder" style="max-height:215px; min-height: 147px;">
+      <div class="col-md-12">
+        <h4 class="text-center">Q R CODE</h4>
+      </div>
+      <div class="col-md-6 breakbr"><img src="../assets/icons/qrcode.png"></div>
+      <div class="col-md-6">
+        <h4 class="text-center">Scan Q R Code
+          view in mobile
+        </h4>
+      </div>
+    </div>
+    <div class="row leftborder" style="min-height:586px;">
+      <div class="col-md-12">
+        <h4 class="text-center">RELATED PROPERTIES</h4>
+      </div>
+      <div class="col-md-6"><img src="../assets/images/rectangle.png"></div>
+      <div class="col-md-6">
+        <p class="listpa">$454.43 M</p>
+        <p class="listpa">5 Bedroom Apartment</p>
+        <a href="">963 Trystan Causeway Apt. 916</a>
+      </div>
+      <div class="col-md-6"><img src="../assets/images/rectangle.png"></div>
+      <div class="col-md-6">
+        <p class="listpa">$134.38 M</p>
+        <p class="listpa">5 Bedroom Apartment</p>
+        <a href="">0037 Walsh Viaduct Apt. 454</a>
+      </div>
+      <div class="col-md-6"><img src="../assets/images/rectangle.png"></div>
+      <div class="col-md-6">
+        <p class="listpa">$416.95 M</p>
+        <p class="listpa">5 Bedroom Apartment</p>
+        <a href="">567 Estelle Burgs Suite 439</a>
+      </div>
+      <div class="col-md-6"><img src="../assets/images/rectangle.png"></div>
+      <div class="col-md-6">
+        <p class="listpa">$545.84 M</p>
+        <p  class="listpa">5 Bedroom Apartment</p>
+        <a href="">43 Schulist Spring Apt. 429</a>
+      </div>
+      <div class="col-md-6"><img src="../assets/images/rectangle.png"></div>
+      <div class="col-md-6">
+        <p class="listpa">$319.17 M</p>
+        <p class="listpa">5 Bedroom Apartment</p>
+        <a href="">847 Lynch Crossroad Suite 962</a>
+      </div>
+      <div class="col-md-12 text-center breakbr"><button class="btn btn-success ">See all</button></div>
+    </div>
+    <div class="row leftborder" style="max-height:305px; min-height: 226px;">
+      <div class="col-md-12">
+        <h4 class="text-center">SUBSCRIBE THIS PROPERTY</h4>
+      </div>
+      <div class="col-md-12">
+        <p>You will get a notification when any user add property has a similar attributes. </p>
+      </div>
+      <div class="col-md-12">                                    <input type="text" class="form-control noBorder"  placeholder="Your email id"></div>
+      <div class="col-md-12 text-center breakbr"><button class="btn btn-default">Subscribe</button></div>
+    </div>
+    <div class="row leftborder" style="max-height:845px;     min-height: 610px;">
+      <div class="col-md-12">
+        <h4>PRICE HISTROY</h4>
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>DATE
+            </td>
+            <td>PRICE
+            </td>
+            <td>$/SQFT
+            </td>
+          </tr>
+          <tr>
+            <td>06/24/16</td>
+            <td>$383,4 </td>
+            <td>$189</td>
+          </tr>
+          <tr>
+            <td>08/17/15</td>
+            <td>L$339,875</td>
+            <td>$172</td>
+          </tr>
+          <tr>
+            <td>07/27/14</td>
+            <td>$339,875</td>
+            <td>$135</td>
+          </tr>
+          <tr>
+            <td>09/14/12</td>
+            <td>$301,879</td>
+            <td>$102</td>
+          </tr>
+          <tr>
+            <td>10/03/10</td>
+            <td>$230,800</td>
+            <td>$98</td>
+          </tr>
+          <tr>
+            <td>10/03/09</td>
+            <td>$383,4 </td>
+            <td>$189</td>
+          </tr>
+          <tr>
+            <td>10/03/08</td>
+            <td>$339,875</td>
+            <td>$172</td>
+          </tr>
+          <tr>
+            <td>10/03/07</td>
+            <td>$339,875</td>
+            <td>$135</td>
+          </tr>
+          <tr>
+            <td>10/03/06</td>
+            <td>$29,243 </td>
+            <td>$123</td>
+          </tr>
+          <tr>
+            <td>10/03/05</td>
+            <td>$301,879</td>
+            <td>$102</td>
+          </tr>
+          <tr>
+            <td>10/03/04</td>
+            <td>$230,800</td>
+            <td>$383,4 </td>
+          </tr>
+          <tr>
+            <td>10/03/03</td>
+            <td>$189</td>
+            <td>$81</td>
+          </tr>
+          <tr>
+            <td>10/03/02</td>
+            <td>L$339,875</td>
+            <td>$172</td>
+          </tr>
+          <tr>
+            <td>10/03/01</td>
+            <td>$339,875</td>
+            <td>$135</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!--col-3-close-->
+</div>
+<!--container close-->
+<div class="padding20"></div>
+<div class="padding20"></div>

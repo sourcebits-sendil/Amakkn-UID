@@ -49,8 +49,9 @@ amakknApp.config(function($routeProvider){
 
     })
 
-     .when('/moredetails', {
-        templateUrl : '../../Views/moredetails.html'
+     .when('/propertyDetails', {
+        templateUrl : '../../Views/propertyDetails.html',
+        controller  : 'propertyDetailsController'
 
     })
 

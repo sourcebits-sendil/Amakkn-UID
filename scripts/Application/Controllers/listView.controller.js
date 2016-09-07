@@ -27,7 +27,6 @@
             //$log.debug($scope.userForm.code +' '+ $scope.userForm.phone );
             var param = {"latitude":"12.986926","longitude":"77.687130","page" : "1"};
             $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {
-                debugger;
                  $scope.propertiesData = result.response.propertyArray;
                  $scope.propertiesCount = result.response.totalCount;
             });
@@ -35,8 +34,11 @@
         $scope.propertyList();
         $scope.getImage = function(photos)
         {
-            var photosArr = photos.split(',');
-            return photosArr[0];
+            if (photos != "") 
+            {
+                var photosArr = photos.split(',');
+                return photosArr[0];
+            }
         }
     }
 })();
