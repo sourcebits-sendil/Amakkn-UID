@@ -1,4 +1,4 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
@@ -145,11 +145,27 @@ amakknApp.config(function($routeProvider){
 
      .when('/filterBuyPriceRange', {
         templateUrl : '../../Views/filterBuyPriceRange.html',
-        controller  : 'filterBuyPriceRange'
+        controller  : 'filterBuyPriceRange',
+
 
     })
 
 
+    .when('/completeListingDetails', {
+        templateUrl : '../../Views/completeListingDetails.html',
+         controller  : 'listingDetials'
+
+    })
+     .when('/listingDetialsCustom', {
+        templateUrl : '../../Views/listingDetialsCustom.html',
+
+    })
+
+
+    .when('/morefilter', {
+        templateUrl : '../../Views/morefilter.html',
+controller  : 'morefilter'
+    })
 
     // route for the home page
     .when('/', {

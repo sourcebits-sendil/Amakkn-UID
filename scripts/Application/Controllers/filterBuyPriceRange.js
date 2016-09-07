@@ -32,6 +32,17 @@ $scope.slider = {
     }
   }
 };
+
+     function ctrl($scope) {
+  $scope.value = "10;15";
+  $scope.options = {
+    from: 0,
+    to: 40,
+    step: 1,
+    dimension: " $",
+    scale: [0, '|', 10, '|', 20, '|' , 30, '|', 40]
+  };
+}
         activate();
 
         //////////////
