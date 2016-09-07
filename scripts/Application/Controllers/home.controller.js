@@ -105,13 +105,17 @@
         var getProperties = function(){
 
                 $scope.urlRest = 'http://52.42.99.192/Property/searchPropertiesInLocation/';
+                //$log.debug($scope.search.latitude +' '+ $scope.search.longitude);
+
                 httpService.getData($scope.urlRest, $scope.search).then(function(result) {
                 if(result.resCode == 0){
                     $rootScope.propertyArr = result.response.propertyArray;
                     $scope.positions = [];
                     $rootScope.propertyArr.forEach(function(val, i){
-                        $log.debug(val.latitude +' ' +val.longitude);
-                        $scope.positions.push({pos:[val.latitude, val.longitude]});
+                        //$log.debug(val.latitude +' ' +val.longitude);
+                        $log.debug(val.price)
+                        $scope.positions.push({pos:[val.latitude, val.longitude], price: ('$' +val.price.price/1000 + 'k')});
+
                     });
                     //$mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
 

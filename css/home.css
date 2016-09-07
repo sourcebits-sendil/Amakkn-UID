@@ -30,7 +30,7 @@ header h3 {
   }
   header .header-content {
     position: absolute;
-    top: 50%;
+    top: 55%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -247,11 +247,16 @@ article{padding-top: 30px;}
     color: #fff;
     font-weight: 600;
 }
-#textph{
+#textph{color: #fff;}
+.bg-white{background: #fff;}
+.custom-marker{
+    font-size: 1.5em;
+    padding: 5px;
     color: #fff;
-}
-
-.bg-white
-{
-    background: #fff;
-}
+    background: url('../assets/icons/selected-pin.svg') no-repeat;
+    font-weight: bold;
+    padding-bottom: 8px;
+    min-width: 80px;
+  }
+.mapViewFil .navbar-default .navbar-nav>li>a{background-color: #fff !important;color: #24c969 !important;}
+.mapViewFil .navbar{margin-bottom: 0px !important;}
