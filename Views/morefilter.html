@@ -1,0 +1,106 @@
+<style>
+    @import url('../css/propertytype.css');
+  @import url('../css/home.css');
+    @import url('../css/morefilter.css');
+
+</style>
+
+   <div class="padding20"></div>   <div class="padding20"></div>
+<div class="container">
+<div class="row">
+    <div class="col-md-10">
+    <md-content class="md-padding" layout="column">
+    <form name="fruitForm">
+      <md-chips ng-model="self.roFruitNames" name="fruitName" readonly="self.readonly"
+                md-removable="self.removable" md-max-chips="6">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+
+        </md-chip-template>
+      </md-chips>
+      <!--<div class="errors" ng-messages="fruitForm.fruitName.$error">
+        <div ng-message="md-max-chips">The maxmium of chips is reached.</div>
+      </div>-->
+    </form>
+
+  </md-content>
+    </div>
+
+     <div class="col-md-1" >
+             <a href="" class="btn btn-default" ng-click="firstReset()" id="reset"><span class="glyphicon glyphicon-repeat"></span> Reset All</a></div>
+   <div class="col-md-1" ><a href="" class="btn btn-success">Apply Filters</a>  </div>
+</div>
+
+    <div class="row">
+		<div class="" >
+             <h4>PROPERTY TYPE</h4>
+            <button type="button" class="btn btn-round color1">Apartment & Floor</button>
+            <button type="button" class="btn btn-round color2">Villa/Palace</button>
+            <button type="button" class="btn btn-round color2">Land/Plot</button>
+            <button type="button" class="btn btn-round color2">Building</button>
+            <button type="button" class="btn btn-round color2">Farm</button>
+            <button type="button" class="btn btn-round color2">Store</button>
+            <button type="button" class="btn btn-round color2">Gallery</button>
+            <button type="button" class="btn btn-round color2">Office</button>
+            <button type="button" class="btn btn-round color2">Resort</button>
+            <button type="button" class="btn btn-round color2">Duplex Home</button>
+
+			</div>
+	</div>
+        <div class="padding20"></div>
+
+    <div class="row">
+    <h4>YEAR OF CONSTRUCTION</h4><br>
+    <input ng-model="value" type="text" id="mySlider1" slider options="options" />
+    </div>
+    <div class="padding20"></div>
+      <div class="row">
+		<div class="" >
+             <h4>PROPERTY TYPE</h4>
+            <button type="button" class="btn btn-round color1">Swimming Pool</button>
+            <button type="button" class="btn btn-round color2">Playground</button>
+            <button type="button" class="btn btn-round color2">Driver Room</button>
+            <button type="button" class="btn btn-round color2">Maid Room</button>
+            <button type="button" class="btn btn-round color2">Furnished</button>
+            <button type="button" class="btn btn-round color2">Unfurnished</button>
+            <button type="button" class="btn btn-round color2">Parks</button>
+            <button type="button" class="btn btn-round color2">Cultivated Area</button>
+            <button type="button" class="btn btn-round color2">Basement</button>
+            <button type="button" class="btn btn-round color2" style="margin-top:20px;">External Extension</button>
+
+			</div>
+	</div>
+
+
+      <div class="row">
+    <h4>CONSTRUCTION AREA</h4><br>
+    <input ng-model="value2" type="text" id="mySlider1" slider options="optionsone" />
+    </div>
+
+
+
+
+    <div class="padding20"></div>
+      <div class="row">
+		<div class="" >
+             <h4>FRONTISPIECE</h4>
+            <button type="button" class="btn btn-round color1">North</button>
+            <button type="button" class="btn btn-round color2">East</button>
+            <button type="button" class="btn btn-round color2">West</button>
+            <button type="button" class="btn btn-round color2">South</button>
+            <button type="button" class="btn btn-round color2">North-West</button>
+            <button type="button" class="btn btn-round color2">South-West</button>
+            <button type="button" class="btn btn-round color2">South-East</button>
+			</div>
+	</div>
+
+
+      <div class="row">
+    <h4>LAND AREA</h4><br>
+    <input ng-model="value3" type="text" id="mySlider1" slider options="optionstwo" />
+    </div>
+
+
+
+     <div class="padding20"></div>   <div class="padding20"></div>
+    </div>
