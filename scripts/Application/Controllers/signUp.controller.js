@@ -15,6 +15,7 @@
 
         var vm = this;
         var marker;
+        var geocoder = new google.maps.Geocoder();
         $scope.placeChanged = function() {
             //alert(' ');
             vm.place = this.getPlace();
@@ -22,18 +23,34 @@
             //alert(vm.place.geometry.location)
             //console.log('location', vm.place.geometry.location);
             vm.map.setCenter(vm.place.geometry.location);
-            $timeout(function(){
+            /*$timeout(function(){
              marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
                 vm.map.panTo(vm.place.geometry.location);
-            }, 200);
+            }, 200);*/
 
           }
-          NgMap.getMap().then(function(map) {
+        $timeout(function(){
+            NgMap.getMap().then(function(map) {
             vm.map = map;
               //alert(' ');
+                marker = new google.maps.Marker({position: map.getCenter(), map: vm.map});
+                vm.map.panTo(map.getCenter());
 
+                geocodePosition(marker.getPosition());
           });
+        },200)
 
+       var geocodePosition = function(pos) {
+          geocoder.geocode({
+            latLng: pos
+          }, function(responses) {
+            if (responses && responses.length > 0) {
+              $scope.address=(responses[0].formatted_address);
+            } else {
+              $scope.address=('Cannot determine address at this location.');
+            }
+          });
+        }
         /* initiating view objects used to switch */
         $rootScope.view={
               name: '',
