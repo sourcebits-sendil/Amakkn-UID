@@ -35,6 +35,7 @@
         $scope.propertyList = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/searchPropertiesInLocation/';
             //$log.debug($scope.userForm.code +' '+ $scope.userForm.phone );
+
             //var param = {"latitude":"12.986926","longitude":"77.687130","page" : "1"};
             //$log.debug($rootScope.search.latitude +' '+ $rootScope.search.longitude);
             $rootScope.myPromise = httpService.getData($scope.urlRest, $rootScope.search).then(function(result) {
@@ -51,6 +52,7 @@
 
                 });
                 }
+
             });
         }
 
@@ -81,8 +83,11 @@
         //$scope.updateMap();
         $scope.getImage = function(photos)
         {
-            var photosArr = photos.split(',');
-            return photosArr[0];
+            if (photos != "") 
+            {
+                var photosArr = photos.split(',');
+                return photosArr[0];
+            }
         }
 
 
