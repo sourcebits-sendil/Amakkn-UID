@@ -1,6 +1,6 @@
 /**
- * @author
- * @since 8/1/2016
+ * @author: Devansh
+ * @since(mm/dd/yy): 9/6/2016
  */
 (function () {
     'use strict';
@@ -78,8 +78,6 @@
                     $scope.propertyList();
                 }, 200);
             });
-
-
         //$scope.updateMap();
         $scope.getImage = function(photos)
         {
@@ -89,8 +87,5 @@
                 return photosArr[0];
             }
         }
-
-
-
     }
 })();
