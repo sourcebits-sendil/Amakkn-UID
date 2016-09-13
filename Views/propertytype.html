@@ -24,7 +24,7 @@
     <div class="col-md-6"  ng-repeat="item in propertiesTypeData">
       <div class="row ">
         <!-- <div class="row bottmborder"> -->
-        <div ng-class="myfunc($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
+        <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
           <div class="col-md-2"><img src="../assets/icons/oval7.png">
           </div>
           <div class="col-md-10"><a href="">{{item.name}}</a>

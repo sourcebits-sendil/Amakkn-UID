@@ -84,22 +84,13 @@
         <p>Enter the details of your property.</p>
       </div>
       <div class="row borderinside">
-        <h4 class="buttonleft">AMENITIES</h4>
-        <div class="row">
-          <div class="buttonleft">
-            <button type="button" class="btn btn-round color1">Swimming Pool</button>
-            <button type="button" class="btn btn-round color2">Playground</button>
-            <button type="button" class="btn btn-round color2">Driver Room</button>
-            <button type="button" class="btn btn-round color2">Maid Room</button>
-            <button type="button" class="btn btn-round color1">Furnished</button>
-            <button type="button" class="btn btn-round color2">Unfurnished</button>
-            <button type="button" class="btn btn-round color1">Parks</button>
-            <button type="button" class="btn btn-round color2">Cultivated Area</button>
-            <button type="button" class="btn btn-round color2">Basement</button>
-            <button type="button" class="btn btn-round color2">External Extension</button>
+        <div class="col-md-12">
+          <h4 class="buttonleft">AMENITIES</h4>
+          <div class="buttonleft contentMarginBottom">
+            <button type="button" class="btn btn-round" ng-class="currStatus  ? 'color2' : 'color1'"    ng-click="getStatus()" ng-repeat="item in amenityListData" >{{item.name}}</button>
           </div>
         </div>
-        <div class="row">
+        <div class="col-md-12">
           <div class="col-md-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
           </div>
         </div>
@@ -107,7 +98,7 @@
       <div class="row borderinside">
         <h4 class="buttonleft">Features</h4>
         <div class="row"></div>
-        <div class="row buttonleft" style="position: relative">
+        <div class="col-md-11 buttonleft" style="position: relative">
           <h4>YEAR OF CONSTRUCTION</h4>
           <div>
             <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options" rz-slider-tpl-url="listingDetialsCustom.html"> </rzslider>

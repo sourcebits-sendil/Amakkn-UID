@@ -13,12 +13,11 @@
 
 /*button color*/
 .btn.btn-round {
-       margin: 15px 3px;
+       margin: 10px 3px;
 	text-shadow: none;
 	box-shadow: none;
 	transition: all 0.12s linear 0s !important;
 	color: #fff;
-    font-weight: 600;
 	border-radius: 20px;
 		-webkit-border-radius: 20px;
 		-moz-border-radius: 20px;
@@ -82,6 +81,10 @@
 
 .buttonleft{
     margin-left: 20px;
+}
+.contentMarginBottom
+{
+  margin-bottom: 50px;
 }
 
 .colright {
