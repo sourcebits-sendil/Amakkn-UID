@@ -1,76 +1,44 @@
-
 <style>
-    @import url('../css/propertytype.css');
+  @import url('../css/propertytype.css');
   @import url('../css/home.css');
-
-
 </style>
-<div class="padding20"></div><div class="padding20"></div>
+<div class="padding20"></div>
+<div class="padding20"></div>
 <div class="container">
-    <div class="row">
-<div class="col-md-12"><h3>List Your Property</h3></div></div>
-    <hr>
-    <div class="row ">
-    <div class="col-md-6 resi propertyborder ">Residential</div>
-        <div class="col-md-6 resi propertyborder  ">Commercial</div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>List Your Property</h3>
     </div>
-
-<div class="col-md-12"><h3 class="property">What type of property would you like to list?</h3></div><div class="padding20"></div>
-    <div class="padding20"></div>
-
-
-    <div class="row propertyborder">
-  <div class="col-md-6">
-    <div class="row ">
-        <div class="row bottmborder">
-        <div class="col-md-2"><img src="../assets/icons/oval7.png"></div>
-            <div class="col-md-10"><a href="">Apartment</a><p>Description of what an apartment is here.</p></div></div>
-        <div class="row bottmborder">
-     <div class="col-md-2"><img src="../assets/icons/oval2.png"></div>
-            <div class="col-md-10"><a href="">Building</a><p>A type of this is placeholder content.</p></div></div>
-        <div class="row bottmborder">
-         <div class="col-md-2"><img src="../assets/icons/oval3.png"></div>
-            <div class="col-md-10"><a href="">Farm</a><p>A farm is a dummy text placeholder.</p></div></div>
-        <div class="row bottmbordernone ">
-         <div class="col-md-2"><img src="../assets/icons/oval4.png"></div>
-            <div class="col-md-10"><a href="">Land</a><p>A site / are of land that dummy text.</p></div></div>
-      </div>
-    </div>
-
-
-
-  <div class="col-md-6">
+  </div>
+  <hr>
+  <div class="row ">
+    <a href="" ng-click="selectCategory('1')"><div class="col-md-6 resi propertyborder">Residential</div></a>
+    <a href="" ng-click="selectCategory('2')"><div class="col-md-6 resi propertyborder">Commercial</div></a>
+  </div>
+  <div class="col-md-12">
+    <h3 class="property">What type of property would you like to list?</h3>
+  </div>
+  <div class="padding20"></div>
+  <div class="padding20"></div>
+  <div class="row propertyborder">
+    <div class="col-md-6"  ng-repeat="item in propertiesTypeData">
       <div class="row ">
-          <div class="row bottmborder">
-        <div class="col-md-2   "><img src="../assets/icons/oval5.png"></div>
-        <div class="col-md-10"><a href="">Apartment</a><p>Description of what an apartment is here.</p></div>
-              </div>
-           <div class="row bottmborder">
-     <div class="col-md-2"><img src="../assets/icons/oval6.png"></div>
-        <div class="col-md-10"><a href="">Building</a><p>A type of this is placeholder content.</p></div>
-               </div>
-           <div class="row bottmborder">
-
-         <div class="col-md-2"><img src="../assets/icons/oval7.png"></div>
-        <div class="col-md-10"><a href="">Farm</a><p>A farm is a dummy text placeholder.</p></div></div>
-
-           <div class="row bottmbordernone ">
-         <div class="col-md-2"><img src="../assets/icons/oval.png"></div>
-        <div class="col-md-10"><a href="">Land</a><p>A site / are of land that dummy text.</p></div>
-      </div>
-      </div>
-
-    </div>
+        <!-- <div class="row bottmborder"> -->
+        <div ng-class="myfunc($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
+          <div class="col-md-2"><img src="../assets/icons/oval7.png">
+          </div>
+          <div class="col-md-10"><a href="">{{item.name}}</a>
+            <p>Description of what an apartment is here.</p>
+          </div>
         </div>
-
-
-    <div class="padding20"></div>
-    <div class="row">
-    <div class="col-md-12 text-center"><a href="#" class="btn btn-lg btn-success propertbutton"><span class="gfd"></span> Continue</a></div>
+      </div>
     </div>
-
-
+  </div>
+  <div class="padding20"></div>
+  <div class="row">
+    <div class="col-md-12 text-center"><a href="#propertylocation" class="btn btn-lg btn-success propertbutton"><span class="gfd"></span> Continue</a>
+    </div>
+  </div>
 </div>
 <div class="padding20"></div>
-
 <div class="padding20"></div>

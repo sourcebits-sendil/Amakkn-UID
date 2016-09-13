@@ -32,7 +32,12 @@
     </div> <div class="padding20"></div>
 
     <div class="row">
-    <div class="col-md-12 maplocation"><img src="../assets/images/maplocation.png"></div>
+    <ng-map zoom="15" center="{{positionStr}}"  scrollwheel="false" style="height:100%" zoom-to-include-markers="auto" street-view-control="false">
+            <!-- <custom-marker ng-repeat="p in positions" position="{{p.pos}}" title="pos: {{p.pos}}">
+                <div>{{p.price}}</div>
+            </custom-marker> -->
+          </ng-map>
+    <!-- <div class="col-md-12 maplocation"><img src="../assets/images/maplocation.png"></div> -->
     </div>
     <div class="padding20"></div>
        <div class="row">
