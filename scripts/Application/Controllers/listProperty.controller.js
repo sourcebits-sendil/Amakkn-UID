@@ -106,7 +106,8 @@
         }
         $scope.amenityList();
 
-        $scope.getStatus = function(){
+        $scope.clickedBtn = function(index){
+            $scope.selectedBtn = index;
             
         }
     }

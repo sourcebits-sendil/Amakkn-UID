@@ -87,7 +87,7 @@
         <div class="col-md-12">
           <h4 class="buttonleft">AMENITIES</h4>
           <div class="buttonleft contentMarginBottom">
-            <button type="button" class="btn btn-round" ng-class="currStatus  ? 'color2' : 'color1'"    ng-click="getStatus()" ng-repeat="item in amenityListData" >{{item.name}}</button>
+            <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
           </div>
         </div>
         <div class="col-md-12">
