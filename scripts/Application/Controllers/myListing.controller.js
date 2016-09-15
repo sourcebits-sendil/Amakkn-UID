@@ -27,7 +27,7 @@
             var param = {"userId":"1","page": "1","pageSize" :"9"};
             $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {    
                 if(result.resCode == 0){
-                    debugger;
+                    //debugger;
                     $scope.propertiesData = result.response.propertyArray;
                     $rootScope.propertyArr = result.response.propertyArray;
                     $scope.propertiesCount = result.response.totalCount;

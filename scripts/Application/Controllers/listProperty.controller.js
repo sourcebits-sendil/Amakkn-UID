@@ -100,7 +100,6 @@
                 if(result.resCode == 0){
                     $scope.amenityListData = result.response;
                     $scope.amenityListCount = result.response.length;
-                    debugger;
                 }
             });
         }
