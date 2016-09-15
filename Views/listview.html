@@ -72,7 +72,7 @@
                             <button class="btn btn-success btn-xs"> OPEN VIEWING</button>
                             <button class="btn btn-danger btn-xs"> COMPARE</button>
                             <a href="#">
-                                <h3 class="price">{{item.price | currency}}</h3>
+                                <h3 class="price">{{item.priceRent['Monthly'] | currency:"$":0}}</h3>
                                 <p class="pullp">4 Bedroom {{item.propertyTypeName}} </p>
                             </a>
                         </div>
