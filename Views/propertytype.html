@@ -25,10 +25,10 @@
       <div class="row ">
         <!-- <div class="row bottmborder"> -->
         <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
-          <div class="col-md-2"><img src="../assets/icons/oval7.png">
+          <div class="col-md-2"><img ng-src={{item.image}}>
           </div>
           <div class="col-md-10"><a href="">{{item.name}}</a>
-            <p>Description of what an apartment is here.</p>
+            <p>{{item.description}}</p>
           </div>
         </div>
       </div>

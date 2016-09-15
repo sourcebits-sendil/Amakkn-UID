@@ -164,13 +164,13 @@
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-6">
-                        <button class="btn btn-success btn-xs"> OPEN VIEWING</button>
+                        <button class="btn btn-success btn-xs"> FOR {{item.listedFor | uppercase}}</button>
                     </div>
                     <div class="col-md-6">
                         <button class="btn btn-danger btn-xs"> COMPARE</button>
                     </div>
-                    <h4>{{item.price | currency}}</h4>
-                    <h6>{{item.propertyTypeName}}</h6>
+                    <h4>{{item.priceRent['Monthly'] | currency}}</h4>
+                    <h6>4 Bedroom {{item.propertyTypeName}}</h6>
                 </div>
                 <hr>
             </div>

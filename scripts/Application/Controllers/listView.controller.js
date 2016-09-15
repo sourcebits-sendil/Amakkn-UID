@@ -48,7 +48,7 @@
                 $rootScope.propertyArr.forEach(function(val, i){
                     //$log.debug(val.latitude +' ' +val.longitude);
                     //$log.debug(val.price)
-                    $rootScope.positions.push({pos:[val.latitude, val.longitude], price: ('$' +val.price.price/1000 + 'k')});
+                    $rootScope.positions.push({pos:[val.latitude, val.longitude], price: ('$' +val.priceRent['Monthly']/1000 + 'k')});
 
                 });
                 }
@@ -84,7 +84,12 @@
             if (photos != "") 
             {
                 var photosArr = photos.split(',');
-                return photosArr[0];
+                if(photosArr == null)
+                {
+                    return photos;
+                }else{
+                    return photosArr[0];
+                }
             }
         }
     }

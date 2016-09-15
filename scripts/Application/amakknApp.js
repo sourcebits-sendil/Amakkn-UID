@@ -35,10 +35,6 @@ amakknApp.config(function($routeProvider){
         controller  : 'signUpController'
     })
     // route for the login page
-    .when('/listProperties', {
-        templateUrl : '../../Views/listProperties.html',
-        controller  : 'listPropertyiesController'
-    })
     .when('/profile', {
         templateUrl : '../../Views/profile.html'
 
@@ -48,117 +44,88 @@ amakknApp.config(function($routeProvider){
         controller  : 'listViewController'
 
     })
-
-     .when('/propertyDetails', {
+    .when('/propertyDetails', {
         templateUrl : '../../Views/propertyDetails.html',
         controller  : 'propertyDetailsController'
-
     })
 
-    .when('/profile-my-listing', {
-        templateUrl : '../../Views/profile-my-listing.html'
+    .when('/myListing', {
+        templateUrl : '../../Views/myListing.html',
+        controller  : 'myListingController'
 
     })
-    .when('/favourites', {
-        templateUrl : '../../Views/favourites.html'
+    .when('/myFavourites', {
+        templateUrl : '../../Views/myFavourites.html',
+        controller  : 'myFavouritesController'
 
     })
-     .when('/favouritesshare', {
-        templateUrl : '../../Views/favouritesshare.html'
-
+     .when('/myFavouritesList', {
+        templateUrl : '../../Views/myFavouritesList.html',
+        controller  : 'myFavouritesController'
     })
-
      .when('/qrcode', {
         templateUrl : '../../Views/qrcode.html'
-
     })
-
-
     .when('/agentproperties', {
         templateUrl : '../../Views/agentproperties.html'
 
     })
-
     .when('/agentprofile', {
         templateUrl : '../../Views/agentprofile.html'
 
     })
     .when('/addagent', {
         templateUrl : '../../Views/addagent.html'
-
     })
 
-    .when('/propertytype', {
-        templateUrl : '../../Views/propertytype.html'
-
+    .when('/propertyType', {
+        templateUrl : '../../Views/propertyType.html',
+        controller  : 'listPropertyController'
     })
-
-     .when('/propertylocation', {
-        templateUrl : '../../Views/propertylocation.html'
-
+    .when('/propertyLocation', {
+        templateUrl : '../../Views/propertyLocation.html',
+        controller  : 'listPropertyController'
+    })
+    .when('/addPropertyDetails', {
+        templateUrl : '../../Views/addPropertyDetails.html',
+         controller  : 'listPropertyController'
     })
     .when('/roomsbathroom', {
         templateUrl : '../../Views/roomsbathroom.html'
-
     })
-
-     .when('/completelisting', {
+    .when('/completelisting', {
         templateUrl : '../../Views/completelisting.html'
-
     })
-
     .when('/completelistingphoto', {
         templateUrl : '../../Views/completelistingphoto.html'
-
     })
-
-       .when('/addresssave', {
+    .when('/addresssave', {
         templateUrl : '../../Views/addresssave.html'
-
     })
-
      .when('/propertydescription', {
         templateUrl : '../../Views/propertydescription.html'
-
     })
      .when('/listtype', {
         templateUrl : '../../Views/listtype.html'
-
     })
-
-
     .when('/pricerange', {
         templateUrl : '../../Views/pricerange.html'
-
     })
 
     .when('/bedbaths', {
         templateUrl : '../../Views/bedbaths.html'
-
     })
     .when('/filterproperty', {
         templateUrl : '../../Views/filterproperty.html'
-
     })
     .when('/filterPropertyType', {
         templateUrl : '../../Views/filterPropertyType.html'
-
     })
-
-     .when('/filterBuyPriceRange', {
+    .when('/filterBuyPriceRange', {
         templateUrl : '../../Views/filterBuyPriceRange.html',
         controller  : 'filterBuyPriceRange',
-
-
     })
-
-
-    .when('/completeListingDetails', {
-        templateUrl : '../../Views/completeListingDetails.html',
-         controller  : 'listingDetials'
-
-    })
-     .when('/listingDetialsCustom', {
+    .when('/listingDetialsCustom', {
         templateUrl : '../../Views/listingDetialsCustom.html',
 
     })
@@ -167,7 +134,6 @@ amakknApp.config(function($routeProvider){
         controller  : 'listViewController'
 
     })
-
     .when('/morefilter', {
         templateUrl : '../../Views/morefilter.html',
 controller  : 'morefilter'
