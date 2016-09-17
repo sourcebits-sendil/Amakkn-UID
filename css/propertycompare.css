@@ -1,0 +1,22 @@
+.textp{
+    font-size: 15px;
+	font-weight: 600;
+	line-height: 1.6;
+	letter-spacing: -0.1px;
+    color: #707070;
+}
+.leftborder{
+    border: solid 0.8px #e6e6e6;
+    margin-top: 15px;
+    
+}
+.panels {
+    padding: 0px;
+    border:  solid 1px #dcdcdc
+}
+.panels1{
+    padding-top: 10px;
+}
+.text-center {
+    text-align: center;
+}
