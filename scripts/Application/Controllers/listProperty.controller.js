@@ -105,9 +105,9 @@
         }
         $scope.amenityList();
 
-        $scope.clickedBtn = function(index){
-            $scope.selectedBtn = index;
-            
+        $scope.clickedBtn = function($event){
+            //debugger;
+            $(event.currentTarget).toggleClass('color2').toggleClass('color1');            
         }
     }
 })();

@@ -67,7 +67,7 @@
           </tr>
           <tr >
             <td>Price</td>
-            <td>{{propertiesData.price['price'] | currency}}</td>
+            <td>{{propertiesData.priceRent['Yearly'] | currency:"$":0}}</td>
           </tr>
           <tr>
             <td>Days on Amakkn</td>
@@ -188,33 +188,9 @@
       </div>
       <table class="table table-striped">
         <tbody>
-          <tr>
-            <td>Type/Time</td>
-            <td>Price</td>
-          </tr>
-          <tr>
-            <td>Yearly</td>
-            <td>$62805</td>
-          </tr>
-            <tr>
-            <td>6 Months</td>
-            <td>$47519</td>
-          </tr>
-            <tr>
-            <td>Monthly</td>
-            <td>$7234</td>
-          </tr>
-            <tr>
-            <td>Weekly</td>
-            <td>$936</td>
-          </tr>
-            <tr>
-            <td>Weekend</td>
-            <td>$794</td>
-          </tr>
-            <tr>
-            <td>Daily</td>
-            <td>$284</td>
+          <tr ng-repeat="(key, value) in propertiesData.priceRent">
+           <td>{{key}}</td>
+            <td>{{value | currency:"$":0}}</td>
           </tr>
         </tbody>
       </table>

@@ -7,147 +7,147 @@ amakknApp.config(function($routeProvider){
 
    // route for the buy page
     .when('/buy', {
-        templateUrl : '../../Views/buy.html',
+        templateUrl : '../Views/buy.html',
         controller  : 'buyController'
     })
     // route for the rent page
     .when('/rent', {
-        templateUrl : '../../Views/rent.html',
+        templateUrl : '../Views/rent.html',
         controller  : 'rentController'
     })
     // route for the sell page
     .when('/sell', {
-        templateUrl : '../../Views/sell.html',
+        templateUrl : '../Views/sell.html',
         controller  : 'sellController'
     })
     // route for the mortgage page
     .when('/mortgage', {
-        templateUrl : '../../Views/mortgage.html',
+        templateUrl : '../Views/mortgage.html',
         controller  : 'mortgageController'
     })
     // route for the login page
     .when('/login', {
-        templateUrl : '../../Views/login.html',
+        templateUrl : '../Views/login.html',
         controller  : 'loginController'
     })
     .when('/signUp', {
-        templateUrl : '../../Views/signUp.html',
+        templateUrl : '../Views/signUp.html',
         controller  : 'signUpController'
     })
     // route for the login page
     .when('/profile', {
-        templateUrl : '../../Views/profile.html'
+        templateUrl : '../Views/profile.html'
 
     })
       .when('/listView', {
-        templateUrl : '../../Views/listView.html',
+        templateUrl : '../Views/listView.html',
         controller  : 'listViewController'
 
     })
     .when('/propertyDetails', {
-        templateUrl : '../../Views/propertyDetails.html',
+        templateUrl : '../Views/propertyDetails.html',
         controller  : 'propertyDetailsController'
     })
 
     .when('/myListing', {
-        templateUrl : '../../Views/myListing.html',
+        templateUrl : '../Views/myListing.html',
         controller  : 'myListingController'
 
     })
     .when('/myFavourites', {
-        templateUrl : '../../Views/myFavourites.html',
+        templateUrl : '../Views/myFavourites.html',
         controller  : 'myFavouritesController'
 
     })
      .when('/myFavouritesList', {
-        templateUrl : '../../Views/myFavouritesList.html',
+        templateUrl : '../Views/myFavouritesList.html',
         controller  : 'myFavouritesController'
     })
      .when('/qrcode', {
-        templateUrl : '../../Views/qrcode.html'
+        templateUrl : '../Views/qrcode.html'
     })
     .when('/agentproperties', {
-        templateUrl : '../../Views/agentproperties.html'
+        templateUrl : '../Views/agentproperties.html'
 
     })
     .when('/agentprofile', {
-        templateUrl : '../../Views/agentprofile.html'
+        templateUrl : '../Views/agentprofile.html'
 
     })
     .when('/addagent', {
-        templateUrl : '../../Views/addagent.html'
+        templateUrl : '../Views/addagent.html'
     })
 
     .when('/propertyType', {
-        templateUrl : '../../Views/propertyType.html',
+        templateUrl : '../Views/propertyType.html',
         controller  : 'listPropertyController'
     })
     .when('/propertyLocation', {
-        templateUrl : '../../Views/propertyLocation.html',
+        templateUrl : '../Views/propertyLocation.html',
         controller  : 'listPropertyController'
     })
     .when('/addPropertyDetails', {
-        templateUrl : '../../Views/addPropertyDetails.html',
+        templateUrl : '../Views/addPropertyDetails.html',
          controller  : 'listPropertyController'
     })
     .when('/roomsbathroom', {
-        templateUrl : '../../Views/roomsbathroom.html'
+        templateUrl : '../Views/roomsbathroom.html'
     })
     .when('/completelisting', {
-        templateUrl : '../../Views/completelisting.html'
+        templateUrl : '../Views/completelisting.html'
     })
     .when('/completelistingphoto', {
-        templateUrl : '../../Views/completelistingphoto.html'
+        templateUrl : '../Views/completelistingphoto.html'
     })
     .when('/addresssave', {
-        templateUrl : '../../Views/addresssave.html'
+        templateUrl : '../Views/addresssave.html'
     })
      .when('/propertydescription', {
-        templateUrl : '../../Views/propertydescription.html'
+        templateUrl : '../Views/propertydescription.html'
     })
      .when('/listtype', {
-        templateUrl : '../../Views/listtype.html'
+        templateUrl : '../Views/listtype.html'
     })
     .when('/pricerange', {
-        templateUrl : '../../Views/pricerange.html'
+        templateUrl : '../Views/pricerange.html'
     })
 
     .when('/bedbaths', {
-        templateUrl : '../../Views/bedbaths.html'
+        templateUrl : '../Views/bedbaths.html'
     })
     .when('/filterproperty', {
-        templateUrl : '../../Views/filterproperty.html'
+        templateUrl : '../Views/filterproperty.html'
     })
     .when('/filterPropertyType', {
-        templateUrl : '../../Views/filterPropertyType.html'
+        templateUrl : '../Views/filterPropertyType.html'
     })
     .when('/filterBuyPriceRange', {
-        templateUrl : '../../Views/filterBuyPriceRange.html',
+        templateUrl : '../Views/filterBuyPriceRange.html',
         controller  : 'filterBuyPriceRange',
     })
     .when('/listingDetialsCustom', {
-        templateUrl : '../../Views/listingDetialsCustom.html',
+        templateUrl : '../Views/listingDetialsCustom.html',
 
     })
     .when('/listMap', {
-        templateUrl : '../../Views/listMap.html',
+        templateUrl : '../Views/listMap.html',
         controller  : 'listViewController'
 
     })
     .when('/morefilter', {
-        templateUrl : '../../Views/morefilter.html',
-controller  : 'morefilter'
+        templateUrl : '../Views/morefilter.html',
+        controller  : 'morefilter'
     })
     
     .when('/propertyCompare', {
-        templateUrl : '../../Views/propertyCompare.html',
-controller  : 'propertyCompare'
+        templateUrl : '../Views/propertyCompare.html',
+        controller  : 'propertyCompareController'
     })
     
 
     // route for the home page
     .when('/', {
-        templateUrl : '../../Views/home.html'
+        templateUrl : '../Views/home.html'
         /*resolve: {
               delay: function($timeout) {
                 return $timeout(function(){}, 3000);
