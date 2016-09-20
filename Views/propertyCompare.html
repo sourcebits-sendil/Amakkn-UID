@@ -7,7 +7,7 @@
 <div class="container leftborder">
     <div class="col-md-4"  ng-repeat="item in propertiesData.propertyArray">    
         <div class="row " >
-            <div class="col-md-12 "><img src="../assets/images/apartment.png">
+            <div class="col-md-12 "><img ng-src={{getImage(item.photos)}}>
                 <div class="row ">
                     <div class="col-md-6">
                         <h4>FOR {{item.listedFor | uppercase}}</h4>
@@ -230,7 +230,7 @@
         </div>
         <div class="row" style="min-height:436px;">
             <div class="col-md-12 leftborder">
-                <div class="col-md-12 text-center"><img alt="Avatar" class="img-md img-circle img-border mar-btm" src="http://bootdey.com/img/Content/avatar/avatar4.png">
+                <div class="col-md-12 text-center"><img alt="Avatar" class="img-md img-circle img-border mar-btm" ng-src={{item.hostInfo['avatar']}} />
                 </div>
                 <div class="col-md-12 text-center">
                     <div class="pad-btm panels1 ">
