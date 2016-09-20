@@ -67,7 +67,7 @@
           </tr>
           <tr >
             <td>Price</td>
-            <td>{{propertiesData.price['price'] | currency}}</td>
+            <td>{{propertiesData.priceRent['Yearly'] | currency:"$":0}}</td>
           </tr>
           <tr>
             <td>Days on Amakkn</td>
@@ -88,7 +88,7 @@
         {{propertiesData.description}}
       </div>
     </div>
-    <div class="row leftborder " style="max-height:305px;     min-height: 245px;">
+    <div class="row leftborder " style="min-height: 245px;">
       <div class="col-md-12">
         <h4>FEATURES</h4>
       </div>
@@ -181,6 +181,23 @@
         </tbody>
       </table>
     </div>
+      
+      <div class="row leftborder" style="min-height:158px;">
+      <div class="col-md-12">
+        <h4 class="text-center">RENT OPTIONS</h4>
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr ng-repeat="(key, value) in propertiesData.priceRent">
+           <td>{{key}}</td>
+            <td>{{value | currency:"$":0}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
+      
+      
     <div class="row leftborder" style="max-height:215px; min-height: 147px;">
       <div class="col-md-12">
         <h4 class="text-center">Q R CODE</h4>
@@ -228,7 +245,7 @@
       </div>
       <div class="col-md-12 text-center breakbr"><button class="btn btn-success ">See all</button></div>
     </div>
-    <div class="row leftborder" style="max-height:305px; min-height: 226px;">
+    <!--<div class="row leftborder" style="max-height:305px; min-height: 226px;">
       <div class="col-md-12">
         <h4 class="text-center">SUBSCRIBE THIS PROPERTY</h4>
       </div>
@@ -237,7 +254,7 @@
       </div>
       <div class="col-md-12">                                    <input type="text" class="form-control noBorder"  placeholder="Your email id"></div>
       <div class="col-md-12 text-center breakbr"><button class="btn btn-default">Subscribe</button></div>
-    </div>
+    </div>-->
     <div class="row leftborder" style="max-height:845px;     min-height: 610px;">
       <div class="col-md-12">
         <h4>PRICE HISTROY</h4>
