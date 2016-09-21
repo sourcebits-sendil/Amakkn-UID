@@ -103,45 +103,15 @@
             <div class="col-md-12">
                 <table class="table table-striped">
                     <tbody>
-                        <tr>
-                            <td>Elevetors</td>
-                            <td>East Face</td>
-                        </tr>
-                        <tr>
-                            <td>Park</td>
-                            <td>Surround Road</td>
-                        </tr>
-                        <tr>
-                            <td>Club Houses</td>
-                            <td>Playgrounds</td>
-                        </tr>
-                        <tr>
-                            <td>Malls</td>
-                            <td>Gym</td>
-                        </tr>
-                        <tr>
-                            <td>Freeway</td>
-                            <td>Highway</td>
-                        </tr>
-                        <tr>
-                            <td>Fireplace</td>
-                            <td>Maid Room</td>
-                        </tr>
-                        <tr>
-                            <td>Pool</td>
-                            <td>Driver Room</td>
-                        </tr>
-                        <tr>
-                            <td>Garage</td>
-                            <td>Guest Parking</td>
-                        </tr>
-                        <tr>
-                            <td>Shoping Centers</td>
-                            <td>Church</td>
-                        </tr>
-                        <tr>
-                            <td>Yoga Center</td>
-                            <td>Mosques</td>
+                        <tr ng-repeat="items in item.amenities" ng-switch on="$index % 2">
+                            <td ng-switch-when="0">
+                                {{item.amenities[$index]}}
+                            </td>
+                            <td ng-switch-when="0">
+                                <span ng-show="items[$index+1]">
+                                    {{item.amenities[$index+1]}}
+                                </span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
