@@ -54,8 +54,22 @@ textarea{max-width:100%;max-height:70px;}
 .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
 .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fff; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #6dc0ce; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fff; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%; border: solid 1px #cdcdcd;  }
+
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {    width: 11px;
+    height: 16px;
+    background: #fff;
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    content: " ";
+    
+    border: solid #6dc0ce;
+    border-width: 0 2px 2px 0;
+    transform: rotate(42deg);
+}
+
 .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 2px; box-shadow: none; margin: 20px 0;}
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #6dc0ce; height:30%;}
 .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
@@ -101,8 +115,8 @@ border-radius: 4px;}
 /*indidual*/
 #login-account {
   position: relative;
-  width: 200px;
-    left: 60px;
+  width: 75px;
+    left: 116px;
   padding: 5px;
     color: #fff;
   background: #6dc0ce;
@@ -115,11 +129,16 @@ border-radius: 4px;}
 
 
 }
+
+@media (max-width: 1200px) {
+    #login-account{left: 31%;}
+    
+}
 #login-account:before, #login-account:after, #login-account ul:before {
   content: '';
   display: block;
   position: absolute;
-  left: 91px;
+  left: 30px;
   width: 0;
   height: 0;
   border: 7px outset transparent;
