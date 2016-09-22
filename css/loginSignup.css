@@ -38,7 +38,7 @@ textarea{max-width:100%;max-height:70px;}
     width: 900px;
 }
 .input-group-btn:last-child>.btn{
-    margin-left: -33px;
+   /* margin-left: -33px;*/
 }
 .right {
     border-right: 1px solid #ccc;
