@@ -73,6 +73,12 @@
     color: rgba(44, 65, 164, 0.96);
     transition: 0.3s;
 }*/
-
+.md-button {
+   
+    min-height: 36px;
+    background: 0 0;
+    white-space: nowrap;
+    min-width: 49px;
+}
 
 

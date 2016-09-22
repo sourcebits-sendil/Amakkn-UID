@@ -92,6 +92,16 @@
                 maxRange: 50
             }
         };
+        
+        
+        $scope.value4 = "1970;1980";
+  $scope.options = {
+    from: 1960,
+    to: 2015,
+    step: 1,
+    dimension: " $",
+    scale: [1960, '|', 1970, '|', 1980, '|' , 1990, '|', 2000, '|', 2015]
+  };
 
         $scope.amenityList = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/getAmenitiesForPropertyType/';

@@ -61,7 +61,7 @@
 {
     border-bottom: 1px solid #e1e1e1;
     width: 100%;
-   width: 583px;
+   width: auto;
     margin-right: 0;
 }
 
@@ -86,7 +86,8 @@
 
 
 .colright{
-    height: 486px;
+    /*height: 486px ;*/
+    max-height: 100% !important;
 }
 
 .cols{

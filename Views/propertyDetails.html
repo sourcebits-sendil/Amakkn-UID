@@ -94,8 +94,25 @@
       </div>
       <table class="table table-striped">
         <tbody>
-          <tr ng-repeat="item in propertiesData.amenities">
-            <td>{{item}}</td>
+          <tr ng-repeat="items in propertiesData.amenities" ng-switch on="$index % 4">
+            <td ng-switch-when="0">
+              {{propertiesData.amenities[$index]}}
+            </td>
+            <td ng-switch-when="0">
+              <span ng-show="items[$index+1]">
+                {{propertiesData.amenities[$index+1]}}
+              </span>
+            </td>
+            <td ng-switch-when="0">
+              <span ng-show="items[$index+2]">
+                {{propertiesData.amenities[$index+2]}}
+              </span>
+            </td>
+            <td ng-switch-when="0">
+              <span ng-show="items[$index+3]">
+                {{propertiesData.amenities[$index+3]}}
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>
