@@ -136,8 +136,14 @@ amakknApp.config(function($routeProvider){
     })
     .when('/morefilter', {
         templateUrl : '../../Views/morefilter.html',
-controller  : 'morefilter'
+        controller  : 'morefilter'
     })
+    
+    .when('/propertyCompare', {
+        templateUrl : '../../Views/propertyCompare.html',
+        controller  : 'propertyCompareController'
+    })
+    
 
     // route for the home page
     .when('/', {
