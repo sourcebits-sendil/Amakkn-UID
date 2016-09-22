@@ -253,11 +253,14 @@
                         <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
                     </span>
                 </div><!-- /input-group -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                         
                 <p ng-show="signUp.phone.$invalid && !signUp.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
 
 
                 <p class="text-left" style="">SMS verification code will be sent to you. If did not recieve it <a ng-click="resendOTP()" class="btn" ng-disabled="!isDisabled">Resend</a></p>
-
+</div></div>
 
                 <div class="form-group" ng-class="{ 'has-error' : signUp.code.$invalid && !signUp.code.$pristine }">
                 <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6"  minlength="6" required name="code" ng-model="userForm.code" style="text-transform: uppercase;">
