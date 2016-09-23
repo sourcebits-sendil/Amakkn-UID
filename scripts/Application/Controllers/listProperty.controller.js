@@ -20,7 +20,15 @@
         $scope.amenityListCount = null;
         $scope.currStatus = true;
 
+        /* initiating view objects used to switch */
+        $scope.view={
+              name: ''
+        };
+
         activate();
+
+        $scope.nextStep = function(step){$scope.view.name=step;}
+
 
         //////////////
 
