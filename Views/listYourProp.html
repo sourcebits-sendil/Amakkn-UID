@@ -31,21 +31,19 @@
       <div class="padding20"></div>
       <div class="padding20"></div>
       <div class="row propertyborder">
-          <md-radio-group class="md-padding " style="max-width:1170px;">
-            <md-nav-bar md-selected-nav-item="" nav-bar-aria-label="navigation links" >
-                <div ng-repeat="item in propertiesTypeData" class="">
-                    <!-- <div class="row bottmborder"> -->
-                    <md-radio-button ng-value="{{item.name}}">
-                      <div class="col-md-2"><img ng-src={{item.image}}>
-                      </div>
-                      <div class="col-md-10">{{item.name}}
-                        <p>{{item.description}}</p>
-                      </div>
-                    </md-radio-button>
-                </div>
-            </md-nav-bar>
-          </md-radio-group>
+    <div class="col-md-6"  ng-repeat="item in propertiesTypeData">
+      <div class="row ">
+        <!-- <div class="row bottmborder"> -->
+        <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
+          <div class="col-md-2"><img ng-src={{item.image}}>
+          </div>
+          <div class="col-md-10"><a href="">{{item.name}}</a>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
       <div class="padding20"></div>
       <div class="row">
         <div class="col-md-12 text-center"><button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('propAddress')">Continue</button>
