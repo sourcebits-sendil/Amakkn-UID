@@ -19,6 +19,7 @@
         $scope.amenityListData = null;
         $scope.amenityListCount = null;
         $scope.currStatus = true;
+        $scope.currentNavItem = "Resi";
 
         /* initiating view objects used to switch */
         $scope.view={

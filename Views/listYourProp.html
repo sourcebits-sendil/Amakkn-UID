@@ -14,28 +14,37 @@
   </div>
   <hr>
     <div ng-switch-default>
+
       <div class="row ">
-        <a href="" ng-click="selectCategory('1')"><div class="col-md-6 resi propertyborder">Residential</div></a>
-        <a href="" ng-click="selectCategory('2')"><div class="col-md-6 resi propertyborder">Commercial</div></a>
+        <md-content class="md-padding " >
+            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+              <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')">Residential</md-nav-item>
+              <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')">Commercial</md-nav-item>
+            </md-nav-bar>
+          </md-content>
       </div>
+
+
       <div class="col-md-12">
         <h3 class="property">What type of property would you like to list?</h3>
       </div>
       <div class="padding20"></div>
       <div class="padding20"></div>
       <div class="row propertyborder">
-        <div class="col-md-6"  ng-repeat="item in propertiesTypeData">
-          <div class="row ">
-            <!-- <div class="row bottmborder"> -->
-            <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
-              <div class="col-md-2"><img ng-src={{item.image}}>
-              </div>
-              <div class="col-md-10"><a href="">{{item.name}}</a>
-                <p>{{item.description}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <md-radio-group class="md-padding " style="max-width:1170px;">
+            <md-nav-bar md-selected-nav-item="" nav-bar-aria-label="navigation links" >
+                <div ng-repeat="item in propertiesTypeData" class="">
+                    <!-- <div class="row bottmborder"> -->
+                    <md-radio-button ng-value="{{item.name}}">
+                      <div class="col-md-2"><img ng-src={{item.image}}>
+                      </div>
+                      <div class="col-md-10">{{item.name}}
+                        <p>{{item.description}}</p>
+                      </div>
+                    </md-radio-button>
+                </div>
+            </md-nav-bar>
+          </md-radio-group>
       </div>
       <div class="padding20"></div>
       <div class="row">
