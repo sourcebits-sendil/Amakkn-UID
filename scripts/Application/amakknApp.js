@@ -78,8 +78,8 @@ amakknApp.config(function($routeProvider){
         templateUrl : '../Views/addagent.html'
     })
 
-    .when('/propertyType', {
-        templateUrl : '../Views/propertyType.html',
+    .when('/listYourProp', {
+        templateUrl : '../Views/listYourProp.html',
         controller  : 'listPropertyController'
     })
     .when('/propertyLocation', {
