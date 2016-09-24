@@ -16,12 +16,14 @@
     <div ng-switch-default>
 
       <div class="row ">
+
         <md-content class="md-padding " >
             <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-              <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')">Residential</md-nav-item>
-              <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')">Commercial</md-nav-item>
+              <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left" style="width:40%;">Residential</md-nav-item>
+              <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:40%;">Commercial</md-nav-item>
             </md-nav-bar>
           </md-content>
+
       </div>
 
 
@@ -31,7 +33,7 @@
       <div class="padding20"></div>
       <div class="padding20"></div>
       <div class="row propertyborder">
-    <div class="col-md-6"  ng-repeat="item in propertiesTypeData">
+    <div class="col-md-6"  ng-repeat="item in propertiesTypeData" >
       <div class="row btn"  ng-click="selectType(item.key)">
         <!-- <div class="row bottmborder"> -->
         <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
@@ -52,7 +54,7 @@
     </div>
 
     <!-- Mapping property Address -->
-    <div data-ng-switch-when="propAddress">
+    <div data-ng-switch-when="propAddress" >
         <div class="row">
             <div class="col-md-12"><h3 class="property">Where is your Apartment located?</h3></div>
         </div>
@@ -451,6 +453,26 @@
         <div class="col-md-6 propertyborder colright">
             <h3>Listing Type</h3>
             <h6>Select the listing of your property and set price</h6>
+            <div class="row">
+            <div class="col-md-6"><button type="button" class="btn btn-defalut" >For Rent</button></div>
+                <div class="col-md-6"><button type="button" class="btn btn-success" >For Sale</button></div>
+            </div>
+            <div class="padding20"></div>
+            <div class="row">
+            <div class="col-md-3">Price</div>
+                <div class="col-md-9"><div class="input-group form-group"  id="otp-group">
+
+                        <md-select name="curency" class="form-control"  placeholder="curency"  style="min-width:20%;width:25%; color:#6dc0ce; margin-top: 0px;" >
+                            <md-option >$44.000</md-option>
+                        </md-select> <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone" style="width:73%;">
+
+
+
+
+                </div></div>
+            </div>
+
+
         </div>
     </div>
 
