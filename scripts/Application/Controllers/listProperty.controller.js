@@ -94,18 +94,30 @@
         };
         
         
-        $scope.value4 = "1970;1980";
+          $scope.value4 = "300;1000";
   $scope.options = {
-    from: 1960,
-    to: 2015,
+    from: 200,
+    to: 1200,
     step: 1,
-    dimension: " $",
-    scale: [1960, '|', 1970, '|', 1980, '|' , 1990, '|', 2000, '|', 2015]
+    dimension: " m2",
+    scale: [200+'m2', '|', 400+'m2', '|', 600+'m2', '|' , 800+'m2', '|', 1000+'m2', '|', 1200+'m2']
   };
-        
+
+      
+         $scope.value5 = "300;1000";
+  $scope.options = {
+    from: 200,
+    to: 1200,
+    step: 1,
+    dimension: " m2",
+    scale: [200+'m2', '|', 400+'m2', '|', 600+'m2', '|' , 800+'m2', '|', 1000+'m2', '|', 1200+'m2']
+  };
+
         
         //pagignation
-       /* $scope.showData = function( ){
+       
+        
+        $scope.showData = function( ){
 
  $scope.curPage = 0;
  $scope.pageSize = 3;
@@ -131,7 +143,65 @@
 			};
          
 };
-      */
+        
+        
+        $scope.showDatas = function( ){
+
+ $scope.curPages = 0;
+ $scope.pageSizes = 3;
+     $scope.datalistss = [
+         { "name": "John","age":"16","designation":"Software Engineer1"},
+    {"name": "John2","age":"21","designation":"Software Engineer2"},
+    {"name": "John3","age":"19","designation":"Software Engineer3"},
+    {"name": "John4","age":"17","designation":"Software Engineer4"},
+    {"name": "John5","age":"21","designation":"Software Engineer5"},
+    {"name": "John6","age":"31","designation":"Software Engineer6"},
+    {"name": "John7","age":"41","designation":"Software Engineer7"},
+    {"name": "John8","age":"16","designation":"Software Engineer8"},
+    {"name": "John18","age":"16","designation":"Software Engineer9"},
+    {"name": "John28","age":"16","designation":"Software Engineer10"},
+    {"name": "John38","age":"16","designation":"Software Engineer11"},
+    {"name": "John48","age":"16","designation":"Software Engineer12"},
+    {"name": "John58","age":"16","designation":"Software Engineer13"},
+    {"name": "John68","age":"16","designation":"Software Engineer14"},
+    {"name": "John68","age":"16","designation":"Software Engineer15"}
+]
+     $scope.numberOfPagess = function() {
+				return Math.ceil($scope.datalistss.length / $scope.pageSizes);
+			};
+         
+};
+        
+        
+         $scope.showData3 = function( ){
+
+ $scope.curPage3 = 0;
+ $scope.pageSize3 = 3;
+     $scope.datalists3 = [
+         { "name": "John","age":"16","designation":"Software Engineer1"},
+    {"name": "John2","age":"21","designation":"Software Engineer2"},
+    {"name": "John3","age":"19","designation":"Software Engineer3"},
+    {"name": "John4","age":"17","designation":"Software Engineer4"},
+    {"name": "John5","age":"21","designation":"Software Engineer5"},
+    {"name": "John6","age":"31","designation":"Software Engineer6"},
+    {"name": "John7","age":"41","designation":"Software Engineer7"},
+    {"name": "John8","age":"16","designation":"Software Engineer8"},
+    {"name": "John18","age":"16","designation":"Software Engineer9"},
+    {"name": "John28","age":"16","designation":"Software Engineer10"},
+    {"name": "John38","age":"16","designation":"Software Engineer11"},
+    {"name": "John48","age":"16","designation":"Software Engineer12"},
+    {"name": "John58","age":"16","designation":"Software Engineer13"},
+    {"name": "John68","age":"16","designation":"Software Engineer14"},
+    {"name": "John68","age":"16","designation":"Software Engineer15"}
+]
+     $scope.numberOfPages3 = function() {
+				return Math.ceil($scope.datalists3.length / $scope.pageSize3);
+			};
+         
+};
+        
+        
+      
 
 
 

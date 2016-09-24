@@ -3,7 +3,8 @@
   @import url('../css/completelistingdetails.css');
   @import url('../css/home.css');
   @import url('../css/loginSignup.css');
-    @import url('../css/propertytype.css');        
+    @import url('../css/propertytype.css'); 
+    @import url('../css/addfilter.css');
 
 </style>
 <div class="padding20"></div>
@@ -82,21 +83,22 @@
       </div>
     </div>
     <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
-      <div class="row"><a href="">Property Details</a>
-        <p>Enter the details of your property.</p>
+      <div class="row">
+         <div class="col-md-12"> <a href="">Property Details</a>
+        <p style="text-align:justify;">Enter the details of your property.</p>
       </div>
-        
+        </div>
         
          <div class="row borderinside">
        
              
-            <!--  <div class="col-md-12 col-sm-6 col-xs-6 "><p  >Bathrooms</p> <div  ng-init="showData()"> 
+              <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Bathrooms</h4> <div  ng-init="showData()"> 
     <div class="pagination pagination-centered" ng-show="datalists.length">
         <div class="row pagination-controle pagination">
         <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == 0"
  ng-click="curPage=curPage-1">  -</button></div>
   
- <div class="col-md-6 addspan">7+  {{curPage + 1}} Bedrooms {{ numberOfPages() }}</div>
+ <div class="col-md-6 addspan"> {{curPage+1}} Bedrooms {{ numberOfPages() }}</div>
             
  <div class="col-md-2 "><button type="button" class="btn btn-primary next"
  ng-disabled="curPage >= datalists.length/pageSize - 1"
@@ -104,8 +106,40 @@
         </div>
 </div>
   
-</div></div>-->
-
+</div></div>
+             
+             <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Receptions</h4> <div  ng-init="showDatas()"> 
+    <div class="pagination pagination-centered" ng-show="datalistss.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPages == 0"
+ ng-click="curPages=curPages-1">  -</button></div>
+  
+ <div class="col-md-6 addspan"> {{curPages+1}} Receptions {{ numberOfPagess() }}</div>
+            
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPages >= datalistss.length/pageSizes - 1"
+ ng-click="curPages = curPages+1">+ </button></div>
+        </div>
+</div>
+  
+</div></div>
+             
+             <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Bathrooms</h4> <div  ng-init="showData3()"> 
+    <div class="pagination pagination-centered" ng-show="datalists3.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage3 == 0"
+ ng-click="curPage3=curPage3-1">  -</button></div>
+  
+ <div class="col-md-6 addspan"> {{curPage3+1}} Bedrooms {{ numberOfPages3() }}</div>
+            
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPage3 >= datalists3.length/pageSize3 - 1"
+ ng-click="curPage3 = curPage3+1">+ </button></div>
+        </div>
+</div>
+  
+</div></div>
+<!--
                      <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p >Bedrooms</p> <section layout="row" layout-align="center center">
   <md-button class="groupX gy left">1+</md-button>
   <md-button class="groupX  gy middle">2+</md-button>
@@ -133,7 +167,7 @@
                          <md-button class="groupX gy middle">5+</md-button>
                          <md-button class="groupX gy middle">6+</md-button>
   <md-button class="groupX gy right">7+</md-button>
-</section></div>
+</section></div>-->
                <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
             </div>
@@ -174,34 +208,12 @@
           <button type="button" class="btn btn-round color2">South - West</button>
         </div>
         <div class="row buttonleft" style="position: relative">
-          <h4>CONSTRUCTION AREA</h4>
-          <div>
-            <div class="slider-container">
-              <div class="slider">
-                <output id="rangevalue">200 m2</output>
-                <input type="range" min="300 m2" max="1200 m2" onchange="rangevalue.value=value" value="30000" /> </div>
-              <div class="price-ranges">
-                <div class="price-range">
-                  <div class="styled-border"> <span>|</span> </div>
-                  <p>200 m2</p>
-                </div>
-                <div class="price-range">
-                  <div class="styled-border"> <span>|</span> </div>
-                  <p>400 m2</p>
-                </div>
-                <div class="price-range">
-                  <div class="styled-border"> <span>|</span>
-                  </div>
-                  <p>600 m2</p>
-                </div>
-                <div class="price-range">
-                  <div class="styled-border"> <span>|</span>
-                  </div>
-                  <p>1000 m2</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h4>CONSTRUCTION AREA</h4><br>
+         <div class="row">
+            <div class="col-md-12">
+         <input ng-model="value5" type="text" id="mySlider1" slider options="options" /></div>
+        </div><br>
+            <br>
           <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
             </div>
@@ -211,32 +223,10 @@
       <div class="row borderinside">
         <h4 class="buttonleft">Visiting Hours</h4>
         <div class="row"></div>
+          <br>
         <div class="row">
-          <div class="slider-container">
-            <div class="slider">
-              <output id="rangevalue1">200 m2</output>
-              <input type="range" min="300 m2" max="1200 m2" onchange="rangevalue1.value=value" value="30000" /> </div>
-            <div class="price-ranges">
-              <div class="price-range">
-                <div class="styled-border"> <span>|</span> </div>
-                <p>200 m2</p>
-              </div>
-              <div class="price-range">
-                <div class="styled-border"> <span>|</span> </div>
-                <p>400 m2</p>
-              </div>
-              <div class="price-range">
-                <div class="styled-border"> <span>|</span>
-                </div>
-                <p>600 m2</p>
-              </div>
-              <div class="price-range">
-                <div class="styled-border"> <span>|</span>
-                </div>
-                <p>1000 m2</p>
-              </div>
-            </div>
-            <h4>Duration: 2 Hours</h4> </div>
+            <div class="col-md-12">
+         <input ng-model="value4" type="text" id="mySlider1" slider options="options" /></div>
         </div>
         <hr>
         <div class="row buttonleft">
