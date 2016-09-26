@@ -98,7 +98,7 @@
         <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == 0"
  ng-click="curPage=curPage-1">  -</button></div>
   
- <div class="col-md-6 addspan"> {{curPage+1}} Bedrooms {{ numberOfPages() }}</div>
+ <div class="col-md-6 addspan"> {{curPage+1}} Bedrooms  </div>
             
  <div class="col-md-2 "><button type="button" class="btn btn-primary next"
  ng-disabled="curPage >= datalists.length/pageSize - 1"
@@ -114,7 +114,7 @@
         <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPages == 0"
  ng-click="curPages=curPages-1">  -</button></div>
   
- <div class="col-md-6 addspan"> {{curPages+1}} Receptions {{ numberOfPagess() }}</div>
+ <div class="col-md-6 addspan"> {{curPages+1}} Receptions </div>
             
  <div class="col-md-2 "><button type="button" class="btn btn-primary next"
  ng-disabled="curPages >= datalistss.length/pageSizes - 1"
@@ -130,7 +130,7 @@
         <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage3 == 0"
  ng-click="curPage3=curPage3-1">  -</button></div>
   
- <div class="col-md-6 addspan"> {{curPage3+1}} Bedrooms {{ numberOfPages3() }}</div>
+ <div class="col-md-6 addspan"> {{curPage3+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
             
  <div class="col-md-2 "><button type="button" class="btn btn-primary next"
  ng-disabled="curPage3 >= datalists3.length/pageSize3 - 1"
@@ -198,7 +198,7 @@
         </div>
         <div class="row buttonleft">
           <h4>FRONTISPIECE</h4>
-          <button type="button" class="btn btn-round color2">North</button>
+          <button type="button" class="btn btn-round color2" >North</button>
           <button type="button" class="btn btn-round color1">South</button>
           <button type="button" class="btn btn-round color2">East</button>
           <button type="button" class="btn btn-round color1">West</button>

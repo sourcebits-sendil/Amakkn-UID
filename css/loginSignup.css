@@ -134,6 +134,37 @@ border-radius: 4px;}
     #login-account{left: 31%;}
     
 }
+
+/* Custom, iPhone Retina */
+	@media only screen and (min-width : 320px){
+        .fbBtn {
+    background-color: #4061a6;
+    margin-left: 0px;}
+	}
+ 
+
+
+	/* Extra Small Devices, Phones */
+	@media only screen and (min-width : 480px){
+ 
+	}
+ 
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px){
+ 
+	}
+ 
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px){
+ 
+	}
+ 
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px){
+ 
+	}
+
+
 #login-account:before, #login-account:after, #login-account ul:before {
   content: '';
   display: block;

@@ -148,7 +148,7 @@
         $scope.showDatas = function( ){
 
  $scope.curPages = 0;
- $scope.pageSizes = 3;
+ $scope.pageSizes = 1;
      $scope.datalistss = [
          { "name": "John","age":"16","designation":"Software Engineer1"},
     {"name": "John2","age":"21","designation":"Software Engineer2"},
@@ -200,10 +200,6 @@
          
 };
         
-        
-      
-
-
 
         $scope.amenityList = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/getAmenitiesForPropertyType/';
