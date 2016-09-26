@@ -10,7 +10,7 @@
         .controller('listPropertyController', listPropertyController);
 
     /* @ngInject */
-    function listPropertyController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, NgMap, $mdToast) {
+    function listPropertyController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, NgMap, $mdToast, $mdSelect) {
         var vm = this;
         var marker;
         vm.class = 'listPropertyController';
@@ -30,6 +30,7 @@
         /* used for form values */
         $scope.userForm={userId:'1', category:'1'};
         $scope.urlRest = '';
+        $scope.forSale = true;
 
         //activate();
 
@@ -100,17 +101,40 @@
                 case 'addDetails':
                     $scope.view.name=step;
 
+
+                    //$scope.urlRest = 'http://52.42.99.192/Property/addPropertyStep1/';
+
                     break;
 
                 case 'addDescription':
                     $scope.view.name=step;
+                    $scope.urlRest = 'http://52.42.99.192/Property/savePropertyDescription/';
+                    $scope.userForm.propertyId = '18';
+
+
 
                     break;
 
                 case 'setPrice':
-                    $scope.view.name=step;
+
+                    if($scope.userForm.description != null && $scope.userForm.description != '' ){
+                    //$log.debug($scope.userForm.description);
+                    httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                            if(result.resCode == 0){
+                               $scope.view.name=step; $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                                // alert(result.resStr);
+                                $log.debug(result.response);
+                                }else{
+                                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                                    //alert(result.resStr);
+                                }
+                            });
+                    }
+
 
                     break;
+
+
 
                     default:
                     $scope.view.name= 'default';
@@ -118,7 +142,19 @@
             }
         }
 
+        $scope.updateRooms = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyRooms/';
+        }
+        $scope.updateAmenities = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyAmenities/';
+        }
+        $scope.updateContact = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyContactNumber/'
+        }
 
+        $scope.updatePrice = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyPrice/'
+        }
         //////////////
 
         function activate() {
