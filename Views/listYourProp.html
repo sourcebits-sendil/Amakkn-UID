@@ -180,36 +180,39 @@
                  <div class="row borderinside">
 
 
-                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p >Bedrooms</p> <section layout="row" layout-align="center center">
-          <md-button class="groupX gy left">1+</md-button>
-          <md-button class="groupX  gy middle">2+</md-button>
-          <md-button class="groupX gy middle">3+</md-button>
-          <md-button class="groupX gy middle">4+</md-button>
-                                 <md-button class="groupX gy middle">5+</md-button>
-                                 <md-button class="groupX gy middle">6+</md-button>
-          <md-button class="groupX gy right">7+</md-button>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p >Bedrooms</p>
+         <section layout="row" layout-align="center center">
+            <md-button class="groupX gy left" ng-click="bedrooms=1:1">1+</md-button>
+            <md-button class="groupX  gy middle" ng-click="bedrooms=1:2">2+</md-button>
+            <md-button class="groupX gy middle" ng-click="bedrooms=1:3">3+</md-button>
+            <md-button class="groupX gy middle" ng-click="bedrooms=1:4">4+</md-button>
+            <md-button class="groupX gy middle" ng-click="bedrooms=1:5">5+</md-button>
+            <md-button class="groupX gy middle" ng-click="bedrooms=1:6">6+</md-button>
+            <md-button class="groupX gy right" ng-click="bedrooms=1:7">7+</md-button>
         </section></div>
-                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p  >Receptions</p> <section layout="row" layout-align="center center">
-          <md-button class="groupX gy left">1+</md-button>
-          <md-button class="groupX gy middle">2+</md-button>
-          <md-button class="groupX gy middle">3+</md-button>
-          <md-button class="groupX gy middle">4+</md-button>
-                                 <md-button class="groupX gy middle">5+</md-button>
-                                 <md-button class="groupX gy middle">6+</md-button>
-          <md-button class="groupX gy right">7+</md-button>
+ <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p>Receptions</p>
+        <section layout="row" layout-align="center center">
+            <md-button class="groupX gy left" ng-click="bedrooms=1:1">1+</md-button>
+            <md-button class="groupX gy middle">2+</md-button>
+            <md-button class="groupX gy middle">3+</md-button>
+            <md-button class="groupX gy middle">4+</md-button>
+            <md-button class="groupX gy middle">5+</md-button>
+            <md-button class="groupX gy middle">6+</md-button>
+            <md-button class="groupX gy right">7+</md-button>
         </section></div>
 
-                    <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p  >Bathrooms</p> <section layout="row" layout-align="center center">
-          <md-button class="groupX gy left">1+</md-button>
-          <md-button class="groupX gy middle">2+</md-button>
-          <md-button class="groupX gy middle">3+</md-button>
-          <md-button class="groupX gy middle">4+</md-button>
-                                 <md-button class="groupX gy middle">5+</md-button>
-                                 <md-button class="groupX gy middle">6+</md-button>
-          <md-button class="groupX gy right">7+</md-button>
+                    <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p >Bathrooms</p>
+            <section layout="row" layout-align="center center">
+                <md-button class="groupX gy left" ng-click="bathrooms=1:1">1+</md-button>
+                <md-button class="groupX gy middle" ng-click="bathrooms=1:2">2+</md-button>
+                <md-button class="groupX gy middle" ng-click="bathrooms=1:3">3+</md-button>
+                <md-button class="groupX gy middle" ng-click="bathrooms=1:4">4+</md-button>
+                <md-button class="groupX gy middle" ng-click="bathrooms=1:5">5+</md-button>
+                <md-button class="groupX gy middle" ng-click="bathrooms=1:6">6+</md-button>
+                <md-button class="groupX gy right" ng-click="bathrooms=1:7">7+</md-button>
         </section></div>
                        <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+                           <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><button class="btn btn-success" type="button" ng-click="updateRooms()">Save Changes</button>
                     </div>
                   </div>
                 </div>
@@ -223,7 +226,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+                    <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><button type="button" class="btn btn-success">Save Changes</button>
                   </div>
                 </div>
               </div>
@@ -451,46 +454,46 @@
             <h3>Listing Type</h3>
             <h6>Select the listing of your property and set price</h6>
             <div class="row">
-            <div class="col-md-6"><button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut'}[!forSale]" ng-click="forSale = !forSale">For Rent</button></div>
-                <div class="col-md-6"><button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut'}[!forSale]" ng-click="forSale = !forSale">For Sale</button></div>
+            <div class="col-md-6"><button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale">For Rent</button></div>
+                <div class="col-md-6"><button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale">For Sale</button></div>
             </div>
             <div class="padding20"></div>
             <div class="row" ng-show="forSale">
             <div class="col-md-3">Price</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="price">
                 </div>
             </div>
             <div class="row" ng-hide="forSale">
                 <div class="col-md-3">Yearly</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" ng-show="yearlyPrice">
                 </div>
                 <div class="col-md-3">6 Months</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" ng-show="6monthsPrice">
                 </div>
                 <div class="col-md-3">Monthly</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" ng-show="monthlyPrice">
                 </div>
                 <div class="col-md-3">Weekly</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" ng-show="weeklyPrice">
                 </div>
                 <div class="col-md-3">Weekend</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekend" ng-show="weekendPrice">
                 </div>
                 <div class="col-md-3">Daily</div>
                 <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="phone">
+                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="daily" ng-show="dailyPrice">
                 </div>
             </div>
         </div>
         </div>
         <div class="row" style="clear: both;padding-top: 100px;">
-            <div class="col-md-3"><button class="btn btn-lg btn-success propertbutton">Publish my Listing</button></div>
+            <div class="col-md-3"><button class="btn btn-lg btn-success propertbutton" ng-click="publishProp">Publish my Listing</button></div>
            <div class="col-md-6 "><button class="btn btn-lg btn-default ">Preview</button></div>
         </div>
     </div>

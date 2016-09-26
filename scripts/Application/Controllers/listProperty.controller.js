@@ -31,6 +31,9 @@
         $scope.userForm={userId:'1', category:'1'};
         $scope.urlRest = '';
         $scope.forSale = true;
+        $scope.bedrooms = '';
+        $scope.bathrooms= '';
+        $scope.reception = '';
 
         //activate();
 
@@ -85,7 +88,8 @@
                             if(result.resCode == 0){
                                $scope.view.name=step; $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
                                 // alert(result.resStr);
-                                $log.debug(result.response);
+                                //$log.debug(result.response);
+                                $scope.userForm.propertyId = result.response.propertyId;
                                 }else{
                                     $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
                                     //alert(result.resStr);
@@ -109,7 +113,7 @@
                 case 'addDescription':
                     $scope.view.name=step;
                     $scope.urlRest = 'http://52.42.99.192/Property/savePropertyDescription/';
-                    $scope.userForm.propertyId = '18';
+                    //$scope.userForm.propertyId = '18';
 
 
 
@@ -144,17 +148,34 @@
 
         $scope.updateRooms = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyRooms/';
+            $scope.userForm.rooms = $scope.bedrooms, $scope.bathrooms, $scope.reception;
         }
         $scope.updateAmenities = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyAmenities/';
+            $scope.userForm.amenities = '';
+        }
+        $scope.updateFeatures = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyFeatures/';
+            $scope.userForm.features = '';
+            $scope.userForm.visitingHours = '';
+            $scope.userForm.visitingDays = '';
+
         }
         $scope.updateContact = function(){
-            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyContactNumber/'
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyContactNumber/';
+            $scope.userForm.phone = '';
+            $scope.userForm.countryCode = ''
+        }
+        $scope.updatePrice = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyPrice/';
+            $scope.userForm.listedFor = '';
+            $scope.userForm.price = '';
+        }
+        $scope.publishProp = function(){
+            $scope.urlRest = 'http://52.42.99.192/Property/publishMyListing/';
         }
 
-        $scope.updatePrice = function(){
-            $scope.urlRest = 'http://52.42.99.192/Property/savePropertyPrice/'
-        }
+
         //////////////
 
         function activate() {
