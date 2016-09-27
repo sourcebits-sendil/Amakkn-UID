@@ -26,6 +26,7 @@
         $scope.isDisabled = false;
         /* used for form values */
         $scope.userForm={};
+        $scope.userForm.codes = {country_code:'',country_isd_code:''}
         /* var for error Response */
         $scope.errorResponse={};
         /* var for success Response */
@@ -36,6 +37,7 @@
         $scope.userForm.companyType = '1';
         /* loading country codes and ISD codes from JSON file from own Library*/
         $rootScope.loggedIn = false;
+        $scope.locIP = '';
 
         $http.get('../scripts/Library/data.json').success(function(data) {
                 $scope.countryCodes = data;
@@ -44,7 +46,12 @@
         if (navigator.geolocation) {
            $.getJSON("http://freegeoip.net/json/", function(result){
                 /* Selecting the matching country code in dropdown of the mobile number field*/
-                $scope.userForm.codes = result.country_code;
+                //$scope.userForm.codes = result.country_code;
+                //$scope.userForm.codes = result.country_code;
+                $scope.locIP = result.country_code;
+               //$log.debug(result)
+               //$scope.userForm.codes.country_isd_code = result.country_isd_code;
+
             });
         }else{
                 //alert("Geolocation services are not supported by your browser.");
@@ -114,7 +121,8 @@
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
             $scope.view.name = "otp";
-            $scope.userForm.isSocial = "No";
+            $scope.userForm.isSocial = "0";
+            $scope.countryCodes.country_code = $scope.locIP;
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
             }else{
@@ -126,14 +134,14 @@
                 myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
             }, 500);
         }
-        $scope.selectedCode = function(){
-            alert(' ');
+        $scope.selectedCode = function(code){
+            $log.debug(code);
         }
         $scope.getOTP = function() {
             $scope.isDisabled = true;
             var IsdJson = $scope.countryCodes;
-            var isd = $filter('filter')(IsdJson, {country_code:$scope.userForm.codes})[0];
-            alert(isd.country_isd_code);
+            var isd = $filter('filter')(IsdJson, {country_code:$scope.locIP})[0];
+            //alert(isd.country_isd_code);
             $scope.userForm.countryCode =  isd.country_isd_code;
             $log.debug('Values ' + $scope.userForm.accountType + ' ' +
                        $scope.userForm.userType + ' ' +
