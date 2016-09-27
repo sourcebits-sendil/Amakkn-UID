@@ -270,5 +270,5 @@ article{padding-top: 30px;}
 
 
 @media only screen and  (min-width: 286px) and (max-width: 544px){
-.banner_img{height:768px;background: none left top no-repeat;background-size:cover;}
+.banner_img{height:375px;background: none left top no-repeat;background-size:cover; background: #f8f8f8;}
 }
