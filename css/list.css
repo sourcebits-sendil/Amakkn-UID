@@ -180,4 +180,12 @@ font-weight: 100px;}
     padding-top: 10px;
 }
 
+.menutop{
+    margin-top:40px;
+}
+@media (max-width: 1200px) {
+    .menutop{    margin-top: 89px;}
+    
+}
+
 
