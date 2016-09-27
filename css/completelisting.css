@@ -99,3 +99,7 @@
     position: absolute;
     padding-left: 45%;
 }
+/* styles for search box */
+ .md-button.md-accent{color: #24c969;width: 100%;font-size: 20px;}
+ .md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969;}
+ .md-nav-item{width:30%;}
