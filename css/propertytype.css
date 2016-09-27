@@ -81,4 +81,27 @@
     min-width: 49px;
 }
 
+.btn-pri {
+    width: 70px;
+	height: 30px;
+	    border: none;
+	border-radius: 50px 0 0 50px;
+	background-color: #6dc0ce;
+
+}
+.next{
+    width: 70px;
+	height: 30px;
+	    border: none;
+border-radius: 0 50px 50px 0;
+background-color: #6dc0ce;
+    margin-left: -15px;
+}
+.addspan{
+width: 317px;
+	height: 30px;
+	
+	background-color: #ffffff;
+	border: solid 1px #6dc0ce;
+}
 

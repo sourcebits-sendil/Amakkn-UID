@@ -12,8 +12,8 @@
     <div class="container  noPadding"  data-ng-switch-when="map" style="width:100%;height:768px;">
         <nav class="navbar navbar-default " style="margin-top:40px;">
           <div class="container-fluid container-fluidmenu " id="filtermenu">
-              <div class="col-md-12 menushadow-nav">
-                  <div class="col-md-2"></div>
+              <div class="col-md-12 col-sm-12 col-xs-12 menushadow-nav">
+                  <div class="col-md-2 col-sm-2 col-xs-2"></div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header ">
               <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse col-md-3 menubar2padding" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse col-md-3  col-sm-3 col-xs-3 menubar2padding" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
 
 
@@ -62,17 +62,17 @@
                  <ul class="dropdown-menu propertyborder groupwidth">
 
                          <div class="row">
-                <div class="col-md-12"><h3 class="property">Apartment, House / Villa, Office, Warehouse</h3></div>
+                <div class="col-md-12 col-sm-12 col-xs-12"><h3 class="property">Apartment, House / Villa, Office, Warehouse</h3></div>
             </div><hr>
 
 
-                             <div class="col-md-12 "><p class="filterp" > Residential Properties</p>
+                             <div class="col-md-12 col-sm-12 col-xs-12 "><p class="filterp" > Residential Properties</p>
         <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Apartment</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">House / Villa</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Land / Plot</button>
 
         </div>
-                             <div class="col-md-12 "><p class="filterp" >Commercial Properties</p>
+                             <div class="col-md-12 col-sm-12 col-xs-12 "><p class="filterp" >Commercial Properties</p>
           <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu">Office</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Showroom</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Commercial Site</button>
@@ -98,18 +98,18 @@
                   <ul class="dropdown-menu propertyborder groupwidth">
 
                          <div class="row">
-                <div class="col-md-12"><h3 class="property">3+ Bedrooms, 2+ Bathrooms</h3></div>
+                <div class="col-md-12 col-sm-12 col-xs-12"><h3 class="property">3+ Bedrooms, 2+ Bathrooms</h3></div>
             </div><hr>
-                         <div class="col-md-12">
+                         <div class="col-md-12 col-sm-12 col-xs-12">
 
-                             <div class="col-md-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p> <section layout="row" layout-align="center center">
+                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p> <section layout="row" layout-align="center center">
           <md-button class="groupX gy left">1+</md-button>
           <md-button class="groupX  gy middle">2+</md-button>
           <md-button class="groupX gy middle">3+</md-button>
           <md-button class="groupX gy middle">4+</md-button>
           <md-button class="groupX gy right">5+</md-button>
         </section></div>
-                             <div class="col-md-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p> <section layout="row" layout-align="center center">
+                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p> <section layout="row" layout-align="center center">
           <md-button class="groupX gy left">1+</md-button>
           <md-button class="groupX gy middle">2+</md-button>
           <md-button class="groupX gy middle">3+</md-button>
@@ -159,19 +159,19 @@
               </div>
 
     </div>
-    <div data-ng-switch-when="banner" class="banner_img">
+    <div data-ng-switch-when="banner" class="banner_img hide-xs">
 
         <div class="text-center" style="top:20%;position:relative;">
             <div class="row " ><img src="../assets/images/logo.svg" alt="Amakkn" ></div>
             <div class="row "><h3>Helping you to find right place</h3></div>
             <div class="header-content" style="padding: 0px 30px; top: 80%;">
-                    <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  visible-lg visible-md disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
+                    <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  visible-lg visible-md hide-xs disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
 
 
-                <div class="pull-right"><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md "  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+                <div class="pull-right"><button type="button" class="btn btn-default roundedBtn pull-right visible-lg visible-md hide-xs "  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
 
             </div>
-            <div class="row marginTB20 visible-md visible-lg">
+            <div class="row marginTB20 visible-md visible-lg hide-xs">
                  <md-content class="md-padding searchBox" >
                     <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
                       <md-nav-item md-nav-click="goto('buy')" name="buy">Buy</md-nav-item>
@@ -204,6 +204,59 @@
               </div>
 
     </div>
+    
+    <!--mobile device-->
+    
+    
+     <div data-ng-switch-when="banner" class="banner_img hide-lg hide-md visible-xs">
+
+        <div class="text-center" style="top:20%;position:relative;">
+            <div class="row " ><img src="../assets/images/logo.svg" alt="Amakkn" ></div>
+            <div class="row "><h4>Your Home to Buying, Renting and Sales.</h4></div>
+            <div class="header-content" >
+                    <div class="pull-left "><button type="button" class="btn btn-default roundedBtn  hide-lg hide-md hide-xs disabled"><span class="glyphicon glyphicon-menu-left buttonLR" aria-hidden="true"></span></button></div>
+
+
+                <div class="pull-right"><button type="button" class="btn btn-default roundedBtn pull-right hide-lg hide-md hide-xs"  value="map" ng-click="switchMap()"><span class="glyphicon glyphicon-menu-right buttonLR" aria-hidden="true"></span></button></div>
+
+            </div>
+            <div class="row  hide-md hide-lg visible-xs">
+                 <md-content class="md-padding searchBox_md " >
+                    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                      <md-nav-item md-nav-click="goto('buy')" name="buy">Buy</md-nav-item>
+                      <md-nav-item md-nav-click="goto('rent')" name="rent">Rent</md-nav-item>
+                      <md-nav-item md-nav-click="goto('sell')" name="sell">Sell</md-nav-item>
+                    </md-nav-bar>
+                    <div class="ext-content">
+                        <div class="" style="padding-top: 20px;">
+                            <input type="text" class="form-control noBorder"  placeholder="Enter a City, Address or ZIP Code" style="width:60%;" places-auto-complete size=80 ng-model="vm.address"  on-place-changed="placeChanged()" />
+
+                            <md-select placeholder="All Properties" ng-model="user" md-on-open="loadUsers()"  id="md-select" style="color:#fff;width:141px;height:35px;margin:0px 20px;" >
+                                <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+                            </md-select>
+
+                            <a href="#listMap" style="color:#fff;text-decoration:none;"><button type="submit" class="btn btn-default greenBtn" style="width:74px;height:35px;">Search</button></a>
+                        </div>
+                    </div>
+                </md-content>
+            </div>
+
+
+        </div>
+        <div class="text-center"  style="bottom:0;position:absolute;width:100%;padding-bottom:30px;">
+                  <a href="" class="btn btn-default disabled" id="gray" >
+                      <img src="../assets/icons/icon.png" >
+                  </a>
+                  <a href="" class="btn btn-default" id="gray"  ng-click="switchMap()">
+                    <img src="../assets/icons/map-icon.png" >
+                  </a>
+              </div>
+
+    </div>
+     
+    
+    
+    
 </header>
 
 <div style="background:#fff; ">
@@ -212,8 +265,8 @@
              <h5>Dubai, United Arab Emirates</h5>
         </div>
 
-    <div class="container">
-    <div class="col-md-4 noPadding">
+    <div class="container hide-xs">
+    <div class="col-md-4 col-sm-4 col-xs-4 noPadding">
         <div class="girdcls margin10" style="position:relative;">
             <div style="top:0;float:right;padding:20px;">
                 <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
@@ -251,7 +304,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 noPadding">
+    <div class="col-md-4 col-sm-4 col-xs-4 noPadding">
         <div class=" girdcls1 margin10" style="position:relative;">
             <div style="top:0;float:right;padding:20px;">
                 <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
@@ -289,7 +342,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 noPadding">
+    <div class="col-md-4 col-sm-4 col-xs-4 noPadding">
         <div class=" girdcls2 margin10" style="position:relative;">
             <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
                 <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
@@ -317,12 +370,125 @@
     </div>
 
     </div>
+    
+    <!--gallery-->
+    
+    <div class="container">
+    <div class="col-xs-4 noPadding hide-md hide-sm visible-xs ">
+        <div class="girdcls margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav" class="img-responsive">
+                    <img src="../assets/icons/liked-copy.svg " alt="favorite" ng-show="isFav" class="img-responsive">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class="girdcls3 margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class="girdcls5 margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="this.isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="this.isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 noPadding hide-md hide-sm visible-xs">
+        <div class=" girdcls1 margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;">
+                <a href="" ng-init="this.isFav = false" ng-click="isFavTog(this)">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="this.isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="this.isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class=" girdcls4 margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+         <div class="girdcls6 margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
+    <div class=" col-xs-4 noPadding hide-md hide-sm visible-xs">
+        <div class=" girdcls2 margin10 img-responsive" style="position:relative;">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:0;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+        <div class=" girdcls7 margin10 img-responsive">
+            <div style="top:0;float:right;padding:20px;" ng-click="isFav = {false:true, true:false}[isFav]">
+                <a href="" ng-click="isFav = {false:true, true:false}[isFav]">
+                    <img src="../assets/icons/shape.svg" alt="favorite" ng-hide="isFav">
+                    <img src="../assets/icons/liked-copy.svg" alt="favorite" ng-show="isFav">
+                </a>
+            </div>
+            <div style="position: absolute;bottom:33px;margin-left:20px;">
+                <h4>$345,000</h4>
+                <p>3 Bedroom Penthouse Apartment</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+    
+    
+    
+    
     <div class= "text-center ">
              <h1>Why Amakkn?</h1>
          </div>
 
           <div class="row">
-              <div class="col-md-8 col-md-offset-2">
+              <div class="col-md-8 col-sm-8  col-md-offset-2 hide-xs">
                  <p style="padding: 0% 2%;"> In the last five to six years the FTA satellite receiver has become an everyday household electronic device. People all over the world are buying free to air receivers because of their growing and always evolving features and capabilities. FTA receivers these days are gaining popularity all over. Starting initially in Europe, the craze spread globally shortly after. With FTA satellite TV being available in almost every country across the globe, FTA satellite is the wave of the TV future.</p>
 
                  <p style="padding: 0% 2%;">Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
@@ -332,6 +498,21 @@
 
               </div>
           </div>
+    
+    
+    
+    <div class="row">
+              <div class=" col-xs-10 col-md-offset-2 hide-md hide-sm visible-xs " >
+                 <p style="padding: 0% 10%;"> In the last five to six years the FTA satellite receiver has become an everyday household electronic device. People all over the world are buying free to air receivers because of their growing and always evolving features and capabilities. FTA receivers these days are gaining popularity all over. Starting initially in Europe, the craze spread globally shortly after. With FTA satellite TV being available in almost every country across the globe, FTA satellite is the wave of the TV future.</p>
+
+                 <p style="padding: 0% 10%;">Free to air satellite TV channels are free. You can connect your receiver up to multiple satellite dishes and point your dish at different satellites in space. There are thousands of 100% free satellites in space with limited channels per satellite. Some free to air channels include PBS, International channels, and locals. These companies broadcast their signal for free. The majority of people with FTA receivers don’t point their dishes at these satellites. Infact, people all over the world including North America are reprogramming their boxes so they can point their dishes at real satellite TV and watch channels for free.  This is actually where FTA keys come into play. In order to watch FTA satellite TV this way. You need to be constantly entering what are called FTA keys or Dish keys into your receiver so that your receiver can keep itself updated with the satellites in space. This enables you to watch TV.</p>
+
+<div class="text-center padding20">
+<a href="" class="btn btn-default greenBtn btn-lg">Find Out More</a></div><div class="padding20"></div>
+
+              </div>
+          </div>
+    
 
           <hr>
 
@@ -342,7 +523,7 @@
 
     			<div class="row margin-bottom-40">
 
-    				<div class="col-md-12">
+    				<div class="col-md-12 col-sm-12 col-xs-12">
 
     					<div class= "text-center padding20">
              <h1>What Our User Says...</h1>
@@ -355,15 +536,16 @@
     			<div class="row margin-bottom-20 text-center shrink">
 
 
-    				<div class="col-md-4 "  ng-repeat="x in userFeed">
+    				<div class="col-md-4 col-sm-4 col-xs-4 "  ng-repeat="x in userFeed">
                         <div class="whiteBgShad ">
 
 
                             <div class="doublequote"><img src="../assets/images/double.png" class="img-rounded teamImage" alt=""></div>
                             <div class="padding20 userFeedImg">
-    				   	<img src="{{x.image}}" class="img-rounded teamImage" alt=""></div>
-    				   	<div class="editContent padding20">
-                            <p class= "text-center ">
+    				   	<img src="{{x.image}}" class="img-rounded teamImage rounded" alt=""></div>
+    				   	<div class="editContent padding20" style="margin:10px;">
+                            <p class= "text-center " style="    max-height: 100px;
+    overflow: hidden;">
                                 {{x.description}}
                             </p>
                             <h4>{{x.name}}</h4>
@@ -380,7 +562,7 @@
     		</div><!-- /.container -->
 
     	</div><!-- /.item -->
-<div class="padding20"></div><div class="padding20"></div><div class="padding20"></div><div class="padding20"></div>
+<div class="padding20"></div></div>
          <hr>
 
 
@@ -390,7 +572,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-12">
+				<div class="col-md-12 col-sm-12 col-xs-12">
 
 					     <div clas="underlined-title">
 						       <div class="editContent" data-selector="Footers">
@@ -403,7 +585,7 @@
                          <div class="padding20"></div>
 				        <div class="services-wrapper">
 
-						       <div class="col-md-4 ">
+						       <div class="col-md-4 col-sm-4 col-xs-4 ">
 							       <div class="">
 
                                       <span class="iconShadow">
@@ -417,7 +599,7 @@
 							          </div>
 						        </div>
 
-						       <div class="col-md-4">
+						       <div class="col-md-4 col-sm-4 col-xs-4">
 							       <div class="">
 
 								      <span class="iconShadow">
@@ -431,7 +613,7 @@
 							       </div>
 						       </div>
 
-						     <div class="col-md-4">
+						     <div class="col-md-4 col-sm-4 col-xs-4">
 							      <div class="">
 
 								     <span class="iconShadow">
@@ -463,8 +645,8 @@
 		<div class="container-fluid" id="footer ">
 			<!-- Start Row -->
             <div class="padding20"></div>
-			<div class="col-md-8 col-md-offset-2">
-				<div class="col-md-6">
+			<div class="col-md-8 col-sm-8 col-xs-8 col-md-offset-2">
+				<div class="col-md-6 col-sm-6 col-xs-6">
 					<div class=" editContent">
 						<h2 id="textph">Get Our New App</h2>
 					</div>
@@ -477,30 +659,43 @@
 					</div>
                     <div class="padding20"></div>
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-6 col-xs-6 hide-xs">
 							<a  href=""><img src="../assets/images/google-play.png"></a>
 						</div>
-						<div class="col-md-4" >
+						<div class="col-md-4 col-sm-6 col-xs-6 col-md-offset-1 hide-xs" >
 							<a  href=""><img src="../assets/icons/app-store-badges.svg"></a>
 						</div>
 					</div>
+                    
+                    <div class="row" >
+						<div class="col-xs-6 visible-xs hide-md hide-sm">
+							<a  href=""><img src="../assets/images/google-play.png"></a>
+						</div>
+						<div class="col-xs-6 visible-xs hide-md hide-sm" >
+							<a  href=""><img src="../assets/icons/app-store-badges.svg" style="margin-left:90px;"></a>
+						</div>
+					</div>
+                    
                     <div class="padding20"></div>
                     <div class="padding20"></div>
                     <div class="padding20"></div>
                     <div class="padding20"></div>
                     <div class="row">
-                         <div class="col-md-2 col-md-offset-1">
+                         <div class="col-md-2 col-sm-2 col-xs-2 ">
                         <a href="" ><img src="../assets/icons/app-icon.svg"></a>
                              <p class="text-center whiteTxt">Amakkn</p>
                              </div>
                     </div>
 				</div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                        <div class="padding20"></div>
                     <div class="padding20"></div>
 					<img class="img-rounded img-responsive" id="cell" src="../assets/images/mobs.png">
 
 				</div>
+                
+                
+                
 			<div class="row padding20"></div>
                 <div class="row padding20"></div>
            </div>
@@ -512,4 +707,4 @@
 <!--// END Content Block 1-2 --></div><!-- /#page -->
 
 
-</div>
+
