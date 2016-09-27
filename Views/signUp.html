@@ -243,7 +243,7 @@
             <div class="row col-md-4 col-sm-4 col-xs-4 col-md-offset-4 ">
                 <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
                     <div class="selectedCode()" >
-                        <md-select name="countryCode" class="form-control" ng-model="countryCodes.country_code" placeholder="Country"  style="min-width:20%;width:27%; color:#6dc0ce" data-ng-change="selectedCode(countryCodes.country_isd_code)">
+                        <md-select name="countryCode" class="form-control" ng-model="countryCodes.country_code" placeholder="Country"  style="min-width:20%;width:27%; color:#6dc0ce" data-ng-change="selectedCode(countryCodes)" id="num">
                             <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes" >{{codes.country_code +' '+codes.country_isd_code}}</md-option>
                         </md-select>
                     </div>

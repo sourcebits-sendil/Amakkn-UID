@@ -16,7 +16,7 @@
         var vm = this;
         var marker;
         $scope.address = '';
-
+        var ele = '';
         /* initiating view objects used to switch */
         $rootScope.view={
               name: '',
@@ -123,6 +123,7 @@
             $scope.view.name = "otp";
             $scope.userForm.isSocial = "0";
             $scope.countryCodes.country_code = $scope.locIP;
+
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
             }else{
@@ -131,18 +132,29 @@
             var myEl = angular.element( document.querySelector( '#step2' ) );
             myEl.removeClass('active').addClass('complete');
             $timeout(function() {
+                $scope.selectedCode();
                 myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
             }, 500);
         }
-        $scope.selectedCode = function(code){
-            $log.debug(code);
+        $scope.selectedCode = function(){
+            $timeout(function() {
+                ele = document.getElementById("num").getAttribute('aria-label')
+                var cod = ele.split('+')
+                //$log.debug(cod[1]);
+                $scope.userForm.countryCode = '+'+cod[1];
+            }, 500);
+            //var select = document.getElementById('num');
+            //var options = select.options;
+            //var selected = select.options[select.selectedIndex];
+            //which means that:
+            //console.log(selected.value || selected.getAttribute('value'));
         }
         $scope.getOTP = function() {
             $scope.isDisabled = true;
             var IsdJson = $scope.countryCodes;
             var isd = $filter('filter')(IsdJson, {country_code:$scope.locIP})[0];
             //alert(isd.country_isd_code);
-            $scope.userForm.countryCode =  isd.country_isd_code;
+            //$scope.userForm.countryCode =  isd.country_isd_code;
             $log.debug('Values ' + $scope.userForm.accountType + ' ' +
                        $scope.userForm.userType + ' ' +
                        $scope.userForm.countryCode  + ' ' +
