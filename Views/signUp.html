@@ -60,17 +60,17 @@
                 </div>
             </div>
         </div>
-
-
+    
+    
         <div data-ng-switch-when="Individual">
              <form name="signUp" novalidate ng-submit="addName()">
 
             <div class="padding20 text-center" >
 
-                <div class="col-md-5 col-sm-10 col-xs-10 col-md-offset-3 padding20">
+                <div class="col-md-6 col-sm-10 col-xs-10 col-md-offset-3 padding20 hidden-xs">
        
         <div class="row" >
-            <div class="col-md-6 col-sm-6 col-xs-6 noPadding" >
+            <div class="col-md-6 col-sm-6 hidden-xs noPadding" >
             <button class="btn btn-default googleBtn" id="customBtn">
                 SIGN IN WITH GOOGLE PLUS
                 <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
@@ -78,7 +78,7 @@
                 <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 noPadding" >
+            <div class="col-md-6 col-sm-6 hidden-xs noPadding" >
             <button class="btn btn-default fbBtn">
                 SIGN IN WITH FACEBOOK
                 <span><img src="../assets/icons/facebook-logo-button.svg"></span>
@@ -102,14 +102,14 @@
                
                
                      </div>
-            <div class="row  text-center" >
+            <div class="row  text-center  hidden-xs" >
 
-                <div class="row loginTextColor " style="margin-right: 78px;">
+                <div class="row loginTextColor " >
                     <h3>Fill up your details</h3>
                     <p>Please select user type and type your name</p>
                 </div>
             </div>
-            <div class="row  col-md-5 col-sm-5 col-xs-5 col-md-offset-3 ">
+            <div class="row  col-md-6 col-sm-10 col-xs-4 col-md-offset-3 hidden-xs ">
 
                 <div class="input-group form-group form-control" id="otp-group">
                     <span class="input-group-addon"  style="width:10%;" id="input-back">User  Type:</span>
@@ -134,6 +134,85 @@
             </div>
  </form>
         </div>
+    
+    <!--mobile view-->
+    <div data-ng-switch-when="Individual">
+             <form name="signUp" novalidate ng-submit="addName()">
+
+            <div class="padding20 text-center" >
+
+                <div class=" col-xs-12 hidden-md hidden-sm padding20">
+       
+        <div class="row " >
+            <div class=" col-xs-12 hidden-md hidden-sm visible-xs  " >
+            <button class="btn btn-default googleBtn" id="customBtn">
+                SIGN IN WITH GOOGLE PLUS
+                <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
+            </button>
+                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+            </div><br><br>
+            <div class=" col-xs-12  hidden-md hidden-sm visible-xs " >
+            <button class="btn btn-default fbBtn" style="margin-left: -9px;">
+                SIGN IN WITH FACEBOOK
+                <span><img src="../assets/icons/facebook-logo-button.svg"></span>
+            </button>
+            </div>
+        </div>
+
+    		<div class="row hidden-md hidden-sm visible-xs">
+
+    			<div class="divider dashed">
+
+    				<span class="editContent">Or</span>
+
+    			</div><!-- /.divider -->
+
+    		</div><!-- /.col -->
+            </div>
+                
+                
+                 <div class="row">
+               
+               
+                     </div>
+            <div class="row  text-center hidden-md hidden-sm visible-xs" >
+
+                <div class="row loginTextColor text-center " >
+                    <h3>Fill up your details</h3>
+                    <p>Please select user type and type your name</p>
+                </div>
+            </div>
+            <div class="row   hidden-md hidden-sm visible-xs">
+
+                <div class="input-group form-group form-control" id="otp-group">
+                    <span class="input-group-addon"  style="width:10%;" id="input-back">User  Type:</span>
+                    <md-select class="form-group " name="userType" ng-model="userForm.userType" aria-label="..">
+                      <md-option value="1" >Normal User</md-option>
+                      <md-option value="2">Broker/Owner</md-option>
+                </md-select>
+                  </div>
+                <div class="form-group" ng-class="{ 'has-error' : signUp.name.$invalid && !signUp.name.$pristine }" id="name-group">
+                    <input type="text" class="form-control marginTB20" name="name" placeholder="Name*"  required maxlength="25" ng-model="userForm.name">
+                    <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
+                    <input type="email" class="form-control " name="email" placeholder="Email"  maxlength="100">
+                    <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
+                </div>
+                <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
+                    Next
+                </button>
+
+                </div>
+            </div>
+ </form>
+        </div>
+    
+    <!--mobile view close-->
+    
+    
+    
 
         <div data-ng-switch-when="Real Estate Company">
             <form name="signUp" novalidate ng-submit="addName()">
@@ -141,22 +220,22 @@
                 <div class="padding20 text-center" >
 
                 <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 padding20" >
-                    <div class="col-md-6 col-sm-6 col-xs-6 noPadding" >
+                <div class="col-md-6 col-sm-6 hidden-xs col-md-offset-3 padding20" >
+                    <div class="col-md-6 col-sm-6 hidden-xs noPadding" >
                     <button class="btn btn-default googleBtn">
                         SIGN IN WITH GOOGLE PLUS
                         <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
                     </button>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 noPadding" >
+                    <div class="col-md-6 col-sm-6 hidden-xs noPadding" >
                     <button class="btn btn-default fbBtn">
                         SIGN IN WITH FACEBOOK
                         <span><img src="../assets/icons/facebook-logo-button.svg"></span>
                     </button>
                     </div>
                 </div>
-                     <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-4 ">
-                <div class="col-md-12">
+                     <div class="col-md-4 col-sm-4 hidden-xs col-md-offset-4 ">
+                <div class="col-md-12 hidden-xs">
 
     			<div class="divider dashed">
 
@@ -167,14 +246,14 @@
     		</div><!-- /.col -->
                     </div>
                      </div>
-                <div class="row text-center" >
+                <div class="row text-center hidden-xs" >
 
-                <div class="row loginTextColor ">
+                <div class="row loginTextColor hidden-xs">
                     <h3>Fill up your company details</h3>
-                    <p>Please select user type and type your name</p>
+                    <!--<p>Please select user type and type your name</p>-->
                 </div>
             </div>
-            <div class="row col-md-4 col-sm-4 col-xs-4 col-md-offset-4 ">
+            <div class="row col-md-4 col-sm-4 hidden-xs col-md-offset-4 ">
 
 
                 <div class="input-group form-group form-control" id="otp-group" style="width:100%;">
@@ -230,17 +309,122 @@
             </form>
 
         </div>
+    <!-- mobile view-->
+    <div data-ng-switch-when="Real Estate Company">
+            <form name="signUp" novalidate ng-submit="addName()">
+
+                <div class="padding20 text-center" >
+
+                <div class=" col-xs-12 hidden-md hidden-sm padding20">
+       
+        <div class="row " >
+            <div class=" col-xs-12 hidden-md hidden-sm visible-xs  " >
+            <button class="btn btn-default googleBtn" id="customBtn">
+                SIGN IN WITH GOOGLE PLUS
+                <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
+            </button>
+                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+            </div><br><br>
+            <div class=" col-xs-12  hidden-md hidden-sm visible-xs " >
+            <button class="btn btn-default fbBtn" style="margin-left: -9px;">
+                SIGN IN WITH FACEBOOK
+                <span><img src="../assets/icons/facebook-logo-button.svg"></span>
+            </button>
+            </div>
+        </div>
+
+    		<div class="row hidden-md hidden-sm visible-xs">
+
+    			<div class="divider dashed">
+
+    				<span class="editContent">Or</span>
+
+    			</div><!-- /.divider -->
+
+    		</div><!-- /.col -->
+                    <div class="row text-center " >
+
+                <div class="row loginTextColor hidden-md hidden-sm visible-xs ">
+                    <h4>Fill up your company details</h4>
+                    <!--<p>Please select user type and type your name</p>-->
+                </div>
+            </div>
+            </div>
+                
+            <div class="row col-xs-12 hidden-md hidden-sm visible-xs ">
+
+
+                <div class="input-group form-group form-control" id="otp-group" style="width:100%;">
+                    <span class="input-group-addon" style="width:10%;" id="input-back">Company Type:</span>
+
+                    <md-select class="" name="companyType" ng-model="userForm.companyType" aria-label="..">
+                      <md-option value="1">Real Estate Marketing Company</md-option>
+                      <md-option value="2">Real Estate Development Company</md-option>
+
+
+                    </md-select>
+                  </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.name.$invalid && !signUp.name.$pristine }" id="name-group">
+                    <input type="text" class="form-control marginTB20" name="name" placeholder="Name*"  required maxlength="25" ng-model="userForm.name">
+                    <p ng-show="signUp.name.$invalid && !signUp.name.$pristine" class="help-block text-left">You name is required.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.email.$invalid && !signUp.email.$pristine }" id="email-group">
+                    <input type="email" class="form-control " name="email" placeholder="Email*" required ng-model="userForm.email" maxlength="100">
+                    <p ng-show="signUp.email.$invalid && !signUp.email.$pristine" class="help-block text-left">Enter a valid email.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.companyName.$invalid && !signUp.companyName.$pristine }">
+                <input type="text" class="form-control marginTB20" name="companyName" placeholder="Commercial Name of the company*" ng-model="userForm.companyName" required/>
+                <p ng-show="signUp.companyName.$invalid && !signUp.companyName.$pristine" class="help-block text-left">Enter your Company Name.</p>
+                </div>
+
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.managerName.$invalid && !signUp.managerName.$pristine }">
+                <input type="text" class="form-control marginTB20" name="managerName" placeholder="Manager Name*" ng-model="userForm.managerName" required />
+                <p ng-show="signUp.managerName.$invalid && !signUp.managerName.$pristine" class="help-block text-left">Enter Manager's Name.</p>
+                </div>
+
+                <div class="form-group">
+                <input type="text" class="form-control marginTB20" name="commercialRecordNumber" placeholder="Commercial record number" ng-model="userForm.commercialRecordNumber"/>
+                </div>
+                <div class="form-group">
+                <input type="url" class="form-control marginTB20" name="website" placeholder="Company website url" ng-model="userForm.website"/>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Write about company: 4000 chars Maximum" maxlength="4000" id="abtComp" ng-model="userForm.description"></textarea>
+                </div>
+                <div  class="form-group">
+                  <input  class="form-control marginTB20" type="text"  size=80 ng-model="address"  readonly />
+                </div>
+                <ng-map zoom="15" center="current-position"  scrollwheel="false" zoom-to-include-markers="auto" street-view-control="false"></ng-map>
+
+                <button class="btn btn-default greenBtn marginTB20" type="submit" ng-disabled="signUp.$invalid">
+                    Next
+                </button>
+                    </div></div>
+            </form>
+
+        </div>
+    
+    
+    <!-- mobile view close-->
+    
+    
+    
     <div data-ng-switch-when="otp">
 
             <form name="signUp" novalidate ng-submit="confOTP()">
 
             <div class=" text-center" >
-                <div class="row loginTextColor ">
+                <div class="row loginTextColor hidden-xs">
                     <h3>One Time Password</h3>
                     <p>Please fill the OTP for user verification</p>
                 </div>
             </div>
-            <div class="row col-md-4 col-sm-4 col-xs-4 col-md-offset-4 ">
+            <div class="row col-md-4 col-sm-4 col-xs-4 hidden-xs col-md-offset-4 ">
                 <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
                     <div class="" >
                         <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:27%; color:#6dc0ce" >
@@ -275,6 +459,56 @@
                 </div>
             </form>
     </div>
+    <!--mobile view-->
+    <div data-ng-switch-when="otp">
+
+            <form name="signUp" novalidate ng-submit="confOTP()">
+
+            <div class=" text-center" >
+                <div class="row loginTextColor hidden-md hidden-sm visible-xs ">
+                    <h3>One Time Password</h3>
+                    <p>Please fill the OTP for user verification</p>
+                </div>
+            </div>
+            <div class="row  col-xs-12 visible-xs hidden-md hidden-sm col-md-offset-4 ">
+                <div class="input-group form-group" ng-class="{ 'has-error' : signUp.phone.$invalid && !signUp.phone.$pristine }" id="otp-group">
+                    <div class="" >
+                        <md-select name="countryCode" class="form-control" ng-model="userForm.codes" placeholder="Country"  style="min-width:20%;width:27%; color:#6dc0ce" >
+                            <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes">{{codes.country_code +' '+codes.country_isd_code}}</md-option>
+                        </md-select>
+                    </div>
+
+                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" style="width:73%;">
+                    <span class="input-group-btn ">
+                        <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
+                    </span>
+                </div><!-- /input-group -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                         
+                <p ng-show="signUp.phone.$invalid && !signUp.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
+
+
+                <p class="text-left" style="">SMS verification code will be sent to you. If did not recieve it <a ng-click="resendOTP()" class="btn" ng-disabled="!isDisabled">Resend</a></p>
+</div></div>
+
+                <div class="form-group" ng-class="{ 'has-error' : signUp.code.$invalid && !signUp.code.$pristine }">
+                <input type="text" class="form-control marginTB20" id="otpPass" placeholder="Please enter the OTP code here*" maxlength="6"  minlength="6" required name="code" ng-model="userForm.code" style="text-transform: uppercase;">
+                <p ng-show="signUp.code.$invalid && !signUp.code.$pristine" style="color:#a94442;" class="text-left">Add OTP code from the SMS.</p>
+
+
+                <button class="btn btn-default greenBtn"  type="submit" ng-disabled="signUp.$invalid">
+                    Confirm
+                </button>
+
+            </div>
+                </div>
+            </form>
+    </div>
+    
+    <!--mobile view close-->
+    
+    
         <div data-ng-switch-when="pswrd">
             <form name="signUp" novalidate ng-submit="setPass()">
             <div class="padding20 text-center" >

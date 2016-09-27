@@ -144,6 +144,8 @@ controller  : 'morefilter'
 controller  : 'propertyCompare'
     })
     
+    
+   
 
     // route for the home page
     .when('/', {
