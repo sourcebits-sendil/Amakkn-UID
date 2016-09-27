@@ -15,46 +15,8 @@
 
         var vm = this;
         var marker;
-        $scope.address = 'Current';
-        var geocoder = new google.maps.Geocoder();
-        $scope.placeChanged = function() {
-            //alert(' ');
-            vm.place = this.getPlace();
+        $scope.address = '';
 
-            //alert(vm.place.geometry.location)
-            //console.log('location', vm.place.geometry.location);
-            vm.map.setCenter(vm.place.geometry.location);
-            /*$timeout(function(){
-             marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
-                vm.map.panTo(vm.place.geometry.location);
-            }, 200);*/
-
-          }
-        $timeout(function(){
-            NgMap.getMap().then(function(map) {
-            vm.map = map;
-              //alert(' ');
-                marker = new google.maps.Marker({position: map.getCenter(), map: vm.map});
-                vm.map.panTo(map.getCenter());
-
-                geocodePosition(marker.getPosition());
-          });
-        },200)
-
-       var geocodePosition = function(pos) {
-          geocoder.geocode({
-            latLng: pos
-          }, function(responses) {
-            if (responses && responses.length > 0) {
-                 $timeout(function(){
-              $scope.address=(responses[0].formatted_address);
-                     },200)
-                //alert($scope.address);
-            } else {
-              $scope.address=('Cannot determine address at this location.');
-            }
-          });
-        }
         /* initiating view objects used to switch */
         $rootScope.view={
               name: '',
@@ -90,8 +52,56 @@
         /* Function to switch into details entry form based on user type - Individual or Real estate agent*/
         $scope.user = function(type){
             $scope.view.name = type;
-            $scope.selectedUser = type;
             $scope.userForm.accountType = type == 'Individual'? '1':'2';
+
+            if($scope.userForm.accountType == '2'){
+                $scope.selectedUser = 'Company';
+                var geocoder = new google.maps.Geocoder();
+                $scope.placeChanged = function() {
+                    //alert(' ');
+                    vm.place = this.getPlace();
+
+                    //alert(vm.place.geometry.location)
+                    //console.log('location', vm.place.geometry.location);
+                    vm.map.setCenter(vm.place.geometry.location);
+                    /*$timeout(function(){
+                     marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
+                        vm.map.panTo(vm.place.geometry.location);
+                    }, 200);*/
+
+                  }
+                $timeout(function(){
+                    NgMap.getMap().then(function(map) {
+                    vm.map = map;
+                      //alert(' ');
+                        marker = new google.maps.Marker({position: map.getCenter(), map: vm.map});
+                        vm.map.panTo(map.getCenter());
+
+                        geocodePosition(marker.getPosition());
+                  });
+                },200)
+
+               var geocodePosition = function(pos) {
+                  geocoder.geocode({
+                    latLng: pos
+                  }, function(responses) {
+                    if (responses && responses.length > 0) {
+                          $timeout(function(){
+                                $scope.address=(responses[0].formatted_address);
+                                $scope.userForm.address = $scope.address;
+                                //$scope.userForm.latitude = pos.lat();
+                                //$scope.userForm.longitude = pos.lng();
+                            },200);
+                        //alert($scope.address);
+                    } else {
+                      $scope.address=('Cannot determine address at this location.');
+                    }
+                  });
+                }
+            }else{
+                $scope.selectedUser = type;
+            }
+
             var myEl = angular.element( document.querySelector( '#step1' ) );
 
             myEl.removeClass('active').addClass('complete');
@@ -116,12 +126,14 @@
                 myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
             }, 500);
         }
-
+        $scope.selectedCode = function(){
+            alert(' ');
+        }
         $scope.getOTP = function() {
             $scope.isDisabled = true;
             var IsdJson = $scope.countryCodes;
             var isd = $filter('filter')(IsdJson, {country_code:$scope.userForm.codes})[0];
-            //alert(isd.country_isd_code);
+            alert(isd.country_isd_code);
             $scope.userForm.countryCode =  isd.country_isd_code;
             $log.debug('Values ' + $scope.userForm.accountType + ' ' +
                        $scope.userForm.userType + ' ' +
