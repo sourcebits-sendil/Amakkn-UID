@@ -1,0 +1,357 @@
+<style>
+    @import url('../css/completelisting.css');
+    @import url('../css/completelistingdetails.css');
+    @import url('../css/home.css');
+    @import url('../css/loginSignup.css');
+    @import url('../css/propertytype.css'); 
+    @import url('../css/addfilter.css');
+</style>
+<div class="padding20"></div>
+<div class="padding20"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <h3>List Your Property</h3>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="stepwizard">
+        <div class="stepwizard-row">
+          <div class="stepwizard">
+            <button type="button" class="btn btn-success btn-circle"></button>
+          </div>
+          <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle"></button>
+          </div>
+          <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle"></button>
+          </div>
+          <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row ">
+    <div class="col-md-6  col-sm-6 col-xs-6 propertyborder colright">
+      <div class="row bottmborder ">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h3>Complete You Listing</h3>
+        </div>
+      </div>
+      <div class="row bottmborder">
+        <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
+          <p>You can add up to 30 property photos.</p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <button type="button" class="btn btn-success btn-circle"></button>
+        </div>
+      </div>
+      <div class="row bottmborder">
+        <div class="col-md-9 col-sm-9 col-xs-9 "><a href="">Address</a>
+          <p>Enter the full address of your property.</p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <button type="button" class="btn btn-default btn-circle"></button>
+        </div>
+      </div>
+      <div class="row bottmborder">
+        <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
+          <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <button type="button" class="btn btn-default btn-circle"></button>
+        </div>
+      </div>
+      <div class="row bottmborder">
+        <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
+          <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <button type="button" class="btn btn-default btn-circle"></button>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
+          <p>Choose whether this property is to sell / rent and specify your costs!</p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <button type="button" class="btn btn-default btn-circle"></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
+      <div class="row">
+
+         <div class="col-md-12"> <a href="">Property Details</a>
+        <p style="text-align:justify;">Enter the details of your property.</p>
+      </div>
+        </div>
+        
+         <div class="row borderinside">
+       
+             
+              <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Bathrooms</h4> <div  ng-init="showData()"> 
+    <div class="pagination pagination-centered" ng-show="datalists.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == 0"
+ ng-click="curPage=curPage-1">  -</button></div>
+  
+ <div class="col-md-6 addspan"> {{curPage+1}} Bedrooms  </div>
+            
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPage >= datalists.length/pageSize - 1"
+ ng-click="curPage = curPage+1">+ </button></div>
+        </div>
+</div>
+  
+</div></div>
+             
+             <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Receptions</h4> <div  ng-init="showDatas()"> 
+    <div class="pagination pagination-centered" ng-show="datalistss.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPages == 0"
+ ng-click="curPages=curPages-1">  -</button></div>
+  
+ <div class="col-md-6 addspan"> {{curPages+1}} Receptions </div>
+            
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPages >= datalistss.length/pageSizes - 1"
+ ng-click="curPages = curPages+1">+ </button></div>
+        </div>
+</div>
+  
+</div></div>
+             
+             <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Bathrooms</h4> <div  ng-init="showData3()"> 
+    <div class="pagination pagination-centered" ng-show="datalists3.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage3 == 0"
+ ng-click="curPage3=curPage3-1">  -</button></div>
+  
+ <div class="col-md-6 addspan"> {{curPage3+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
+            
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPage3 >= datalists3.length/pageSize3 - 1"
+ ng-click="curPage3 = curPage3+1">+ </button></div>
+        </div>
+</div>
+  
+</div></div>
+<!--
+
+                     <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p >Bedrooms</p> <section layout="row" layout-align="center center">
+  <md-button class="groupX gy left">1+</md-button>
+  <md-button class="groupX  gy middle">2+</md-button>
+  <md-button class="groupX gy middle">3+</md-button>
+  <md-button class="groupX gy middle">4+</md-button>
+                         <md-button class="groupX gy middle">5+</md-button>
+                         <md-button class="groupX gy middle">6+</md-button>
+  <md-button class="groupX gy right">7+</md-button>
+</section></div>
+                     <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p  >Receptions</p> <section layout="row" layout-align="center center">
+  <md-button class="groupX gy left">1+</md-button>
+  <md-button class="groupX gy middle">2+</md-button>
+  <md-button class="groupX gy middle">3+</md-button>
+  <md-button class="groupX gy middle">4+</md-button>
+                         <md-button class="groupX gy middle">5+</md-button>
+                         <md-button class="groupX gy middle">6+</md-button>
+  <md-button class="groupX gy right">7+</md-button>
+</section></div>
+            
+            <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p  >Bathrooms</p> <section layout="row" layout-align="center center">
+  <md-button class="groupX gy left">1+</md-button>
+  <md-button class="groupX gy middle">2+</md-button>
+  <md-button class="groupX gy middle">3+</md-button>
+  <md-button class="groupX gy middle">4+</md-button>
+                         <md-button class="groupX gy middle">5+</md-button>
+                         <md-button class="groupX gy middle">6+</md-button>
+  <md-button class="groupX gy right">7+</md-button>
+</section></div>-->
+<<<<<<< HEAD
+               <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+            </div>
+          </div>  
+=======
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+          </div>
+>>>>>>> 54a647b70bfd31c2f5411e7ca0f47b96456a1e06
+        </div>
+      </div>
+
+      <div class="row borderinside">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h4 class="buttonleft">AMENITIES</h4>
+          <div class="buttonleft contentMarginBottom">
+            <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+          </div>
+        </div>
+      </div>
+      <div class="row borderinside">
+        <h4 class="buttonleft">Features</h4>
+        <div class="row"></div>
+        <div class="col-md-11 col-sm-11 col-xs-11 buttonleft" style="position: relative">
+          <h4>YEAR OF CONSTRUCTION</h4>
+          <div>
+            <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options" rz-slider-tpl-url="listingDetialsCustom.html"> </rzslider>
+          </div>
+        </div>
+        <div class="row buttonleft">
+          <h4>FRONTISPIECE</h4>
+          <button type="button" class="btn btn-round color2" >North</button>
+          <button type="button" class="btn btn-round color1">South</button>
+          <button type="button" class="btn btn-round color2">East</button>
+          <button type="button" class="btn btn-round color1">West</button>
+          <button type="button" class="btn btn-round color2">North - West</button>
+          <button type="button" class="btn btn-round color2">North - East</button>
+          <button type="button" class="btn btn-round color2">South - East</button>
+          <button type="button" class="btn btn-round color2">South - West</button>
+        </div>
+        <div class="row buttonleft" style="position: relative">
+
+          <h4>CONSTRUCTION AREA</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <input ng-model="value5" type="text" id="mySlider1" slider options="options" />
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row borderinside">
+        <h4 class="buttonleft">Visiting Hours</h4>
+        <div class="row"></div>
+
+          <br>
+        <div class="row">
+            <div class="col-md-12">
+         <input ng-model="value4" type="text" id="mySlider1" slider options="options" /></div>
+
+        </div>
+        <hr>
+        <div class="row buttonleft">
+          <h4>REPEAT</h4>
+          <button type="button" class="btn btn-round color2">Daily</button>
+          <button type="button" class="btn btn-round color1">Weekly</button>
+        </div>
+        <div class="row buttonleft">
+          <h4>SELECT DAYS </h4>
+          <button type="button" class="btn btn-round color2">Sunday</button>
+          <button type="button" class="btn btn-round color2">Monday</button>
+          <button type="button" class="btn btn-round color1">Tuesday</button>
+          <button type="button" class="btn btn-round color2">Wednesday</button>
+          <button type="button" class="btn btn-round color2">Thursday</button>
+          <button type="button" class="btn btn-round color2">Friday</button>
+          <button type="button" class="btn btn-round color1">Saturday</button>
+        </div>
+        <hr>
+        <div class="">
+          <p class="buttonleft">Activity will repeat every week on Saturdays and Tuesdays.</p>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+          </div>
+        </div>
+
+        <div class="row buttonleft">
+          <h4>ADD FLOOR PLAN</h4>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <button type="button" class="btn btn-default btn-circleplus  "><span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <p style="text-align:justify;">Add .pdf or .image</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row buttonleft">
+          <h4>CONTACT NUMBER</h4>
+          <div class="form-group ">
+            <div class="input-group form-group profiletextbox" id="otp-group" style="width:500px;">
+              <div class="">
+                <md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>
+              </div>
+              <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;"> </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6  "><a href="#" class="btn btn-default">Suspend Open Viewings</a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row borderinside">
+
+            <h4 class="buttonleft">Features</h4>
+
+
+
+                <div class="row buttonleft">
+
+                <h4>FRONTISPIECE</h4>
+
+                           <rzslider rz-slider-model="slider.value"
+                            rz-slider-options="slider.options"
+                            rz-slider-tpl-url="listingDetialsCustom.html">
+                           </rzslider>
+
+                </div>
+
+             <div class="row buttonleft">
+                 <h4 >FRONTISPIECE</h4>
+
+                 <button type="button" class="btn btn-round color2">North</button>
+                 <button type="button" class="btn btn-round color1">South</button>
+                 <button type="button" class="btn btn-round color2">East</button>
+                 <button type="button" class="btn btn-round color1">West</button>
+                 <button type="button" class="btn btn-round color2">North - West</button>
+                 <button type="button" class="btn btn-round color2">North - East</button>
+                 <button type="button" class="btn btn-round color2">South - East</button>
+                 <button type="button" class="btn btn-round color2">South - West</button>
+
+                 </div>
+
+            <div class="row">
+            <div class="col-md-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a></div>
+            </div>
+          </div>--></div>
+    <div class="padding20"></div>
+    <div class="padding20"></div>
+  </div>
