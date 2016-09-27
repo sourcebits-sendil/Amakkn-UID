@@ -144,6 +144,8 @@ amakknApp.config(function($routeProvider){
         controller  : 'propertyCompareController'
     })
     
+    
+   
 
     // route for the home page
     .when('/', {
