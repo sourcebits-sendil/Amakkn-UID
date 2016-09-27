@@ -15,6 +15,7 @@
 
         var vm = this;
         var marker;
+        $scope.address = 'Current';
         var geocoder = new google.maps.Geocoder();
         $scope.placeChanged = function() {
             //alert(' ');
@@ -45,7 +46,10 @@
             latLng: pos
           }, function(responses) {
             if (responses && responses.length > 0) {
+                 $timeout(function(){
               $scope.address=(responses[0].formatted_address);
+                     },200)
+                //alert($scope.address);
             } else {
               $scope.address=('Cannot determine address at this location.');
             }

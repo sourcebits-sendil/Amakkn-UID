@@ -1,489 +1,228 @@
-
-
-   <style>
- 
-  @import url('../css/home.css');
- @import url('../css/propertycompare.css');
+<style>
+    @import url('../css/home.css');
+    @import url('../css/propertycompare.css');
 </style>
-
-
-
-
 <div class="padding20"></div>
 <div class="padding20"></div>
-
 <div class="container leftborder">
-<div class="row  ">
-    <div class="col-md-4 "><img src="../assets/images/apartment.png">
-        <div class="row ">
-        <div class="col-md-6"><h4>FOR SALE</h4></div>
-        <div class="col-md-6"><p class="textp">Posted on: 15 June 2016</p></div>
-        </div>
-        <div class="row">
-        <div class="col-md-6"><h4>$1,429,000</h4></div>
-        <div class="col-md-6"><div class="dropdown emi ">
-          <button class="btn btn-default btn-xs dropdown-toggle previous" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          EMI Start at $5000
-          <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div>
+    <div class="col-md-4"  ng-repeat="item in propertiesData.propertyArray">    
+        <div class="row " >
+            <div class="col-md-12 "><img ng-src={{getImage(item.photos)}}>
+                <div class="row ">
+                    <div class="col-md-6">
+                        <h4>FOR {{item.listedFor | uppercase}}</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="textp">Posted on: 15 June 2016</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>{{item.priceRent['Yearly'] | currency:"$":0}}</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="dropdown emi ">
+                            <button class="btn btn-default btn-xs dropdown-toggle previous" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> EMI Start at $5000 <span class="caret"></span> </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">Action</a>
+                                </li>
+                                <li><a href="#">Another action</a>
+                                </li>
+                                <li><a href="#">Something else here</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="textp">{{item.propertyTypeName}}
+                            <br> <span  ng-repeat="(key, value) in item.rooms">{{value}} {{key}}, </span> 1575 sqft </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="textp">{{item.address}}</p>
+                    </div>
+                    <div class="col-md-4"><img src="../assets/images/map%202.png">
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="row"><div class="col-md-12">
-            <p class="textp">Apartment<br>
-2 Bedrooms, 2 Bathrooms, 1575 sqft </p></div></div>
-        
         <div class="row">
-        <div class="col-md-8"><p class="textp">424 E 54th Street #10-F, C -Wing
-New York NY, 10022
-Sutton Place</p></div>
-        <div class="col-md-4"><img src="../assets/images/map%202.png"></div>
-        </div>
-    </div>
-    <div class="col-md-4 "><img src="../assets/images/apartment.png">
-        <div class="row">
-        <div class="col-md-6"><h4>FOR SALE</h4></div>
-        <div class="col-md-6"><p class="textp">Posted on: 15 June 2016</p></div>
-        </div>
-        <div class="row">
-        <div class="col-md-6"><h4>$1,429,000</h4></div>
-        <div class="col-md-6"><div class="dropdown emi ">
-          <button class="btn btn-default btn-xs dropdown-toggle previous" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          EMI Start at $5000
-          <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div>
+            <div class="col-md-12">
+                <h4><span ng-if="$first">OVERVIEW</span> &nbsp;</h4> </div>
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td><span ng-if="$first">Property Type</span>
+                                <br>{{item.propertyTypeName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Price
+                                <br>{{item.priceRent['Yearly'] | currency:"$":0}}</td>
+                        </tr>
+                        <tr ng-repeat="(key, value) in item.rooms">
+                            <td>{{key}}
+                            <br>{{value}}</td>
+                        </tr>
+                        <tr ng-repeat="(key, value) in item.features">
+                            <td>{{key}}
+                            <br>{{value}}</td>
+                        </tr>
+                        <tr>
+                            <td>Days on Amakkn
+                                <br>{{getDaysCount(item.createdAt)}} Days</td>
+                        </tr>
+                        <tr>
+                            <td>Total Views
+                                <br>{{item.views}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        
-        <div class="row"><div class="col-md-12">
-            <p class="textp">Apartment<br>
-2 Bedrooms, 2 Bathrooms, 1575 sqft </p></div></div>
-        
         <div class="row">
-        <div class="col-md-8"><p class="textp">424 E 54th Street #10-F, C -Wing
-New York NY, 10022
-Sutton Place</p></div>
-        <div class="col-md-4"><img src="../assets/images/map%202.png"></div>
-        </div>
-    </div>
-    <div class="col-md-4 "><img src="../assets/images/apartment.png">
-        <div class="row">
-        <div class="col-md-6"><h4>FOR SALE</h4></div>
-        <div class="col-md-6"><p class="textp">Posted on: 15 June 2016</p></div>
-        </div>
-        <div class="row">
-        <div class="col-md-6"><h4>$1,429,000</h4></div>
-        <div class="col-md-6"><div class="dropdown emi ">
-          <button class="btn btn-default btn-xs dropdown-toggle previous" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          EMI Start at $5000
-          <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div>
+            <div class="col-md-12">
+                <h4><span ng-if="$first">DESCRIPTION</span> &nbsp;</h4> </div>
+            <div class="col-md-12">
+                <p>{{item.description}}</p> <a href="">More.</a>
             </div>
         </div>
-        
-        <div class="row"><div class="col-md-12">
-            <p class="textp">Apartment<br>
-2 Bedrooms, 2 Bathrooms, 1575 sqft </p></div></div>
-        
         <div class="row">
-        <div class="col-md-8"><p class="textp">424 E 54th Street #10-F, C -Wing
-New York NY, 10022
-Sutton Place</p></div>
-        <div class="col-md-4"><img src="../assets/images/map%202.png"></div>
+            <div class="col-md-8">
+                <h4><span ng-if="$first">FEATURES</span> &nbsp;</h4> </div>
+            <div class="col-md-2"><span ng-if="$last">Available</span> &nbsp;</div>
+            <div class="col-md-2"><span ng-if="$last">Not Available</span> &nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr ng-repeat="items in item.amenities" ng-switch on="$index % 2">
+                            <td ng-switch-when="0">
+                                {{item.amenities[$index]}}
+                            </td>
+                            <td ng-switch-when="0">
+                                <span ng-show="items[$index+1]">
+                                    {{item.amenities[$index+1]}}
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>PRICE HISTROY</h4> </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>DATE</td>
+                            <td>PRICE</td>
+                            <td>$/SQFT</td>
+                        </tr>
+                        <tr>
+                            <td> 06/24/16</td>
+                            <td> $383,4</td>
+                            <td> $189</td>
+                        </tr>
+                        <tr>
+                            <td>08/17/15</td>
+                            <td>L$339,875 </td>
+                            <td>$172</td>
+                        </tr>
+                        <tr>
+                            <td>07/27/14</td>
+                            <td>$339,875 </td>
+                            <td>$135</td>
+                        </tr>
+                        <tr>
+                            <td>09/14/12</td>
+                            <td>$29,243 </td>
+                            <td>$123</td>
+                        </tr>
+                        <tr>
+                            <td>09/14/11</td>
+                            <td>$301,879</td>
+                            <td>$102</td>
+                        </tr>
+                        <tr>
+                            <td>10/03/10</td>
+                            <td>$230,800</td>
+                            <td>$98</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>MORTGAGE</h4> </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Monthly mortgage for 424 E, 58th… Did you know? You may be able to qualify for a lower rate and reduce the monthly payment.</p>
+                <p>Calculator provided by Amakkn</p>
+                <div class="row">
+                    <div class="col-md-6"> Price</div>
+                    <div class="col-md-6">$25,000</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"> Down Payment</div>
+                    <div class="col-md-6">$5,000 (20%)</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">Loan Amount</div>
+                    <div class="col-md-6">$20,000</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">Loan Type</div>
+                    <div class="col-md-6">30 Year Fixed 3.32%</div>
+                </div>
+                <div class="row">
+                    <p style="text-align:center"><a href="">Get your personal rate</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>PROPERTY LISTED & MANAGED BY</h4> </div>
+        </div>
+        <div class="row" style="min-height:436px;">
+            <div class="col-md-12 leftborder">
+                <div class="col-md-12 text-center"><img alt="Avatar" class="img-md img-circle img-border mar-btm" ng-src={{item.hostInfo['avatar']}} />
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="pad-btm panels1 ">
+                        <button class="btn btn-info btn-sm">Company Profile</button>
+                        <button class="btn btn-info btn-sm">See All Listings</button>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <h4>Agent Name</h4>
+                    <p class="text-center">Ghassan Saleh (BRN: 30723)</p>
+                    <h4>Real Estate Agency Details</h4>
+                    <p class="text-center">Saudi Real Estate (RERA ORN: 12945)</p>
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="pad-btm  ">
+                        <button class="btn btn-success">Call Broker</button>
+                        <button class="btn btn-success">Live Chat</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div> 
-    
-    <div class="row">
-      <div class="col-md-12">
-        <h4>OVERVIEW</h4>
-      </div>
-        <div class="col-md-4"><table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Property Type<br>Apartment</td>
-          </tr>
-          <tr>
-            <td>Price<br>$1,190,000</td>
-          </tr>
-            <tr><td>Beds<br>2</td></tr>
-            <tr><td>Bathrooms<br>2</td></tr>
-            <tr><td>Parking<br>0</td></tr>
-            <tr><td>Floor<br>4th</td></tr>
-            <tr><td>Construction Area<br>$23.73 m2 </td></tr>
-            <tr><td>Days on Amakkn <br>11 Days</td></tr>
-            <tr><td>Total Views<br>383</td></tr>
-        </tbody>
-      </table>
-        </div>
-        <div class="col-md-4"><table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Apartment<br>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>$1,190,000<br>&nbsp;</td>
-          </tr>
-            <tr><td>2<br>&nbsp;</td></tr>
-            <tr><td>2<br>&nbsp;</td></tr>
-            <tr><td>1<br>&nbsp;</td></tr>
-            <tr><td>4th<br>&nbsp;</td></tr>
-            <tr><td>$23.73 m2<br>&nbsp; </td></tr>
-            <tr><td>11 Days<br>&nbsp;</td></tr>
-            <tr><td>383<br>&nbsp;</td></tr>
-        </tbody>
-      </table></div>
-        <div class="col-md-4"><table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Apartment<br>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>$1,190,000<br>&nbsp;</td>
-          </tr>
-            <tr><td>2<br>&nbsp;</td></tr>
-            <tr><td>2<br>&nbsp;</td></tr>
-            <tr><td>1<br>&nbsp;</td></tr>
-            <tr><td>4th<br>&nbsp;</td></tr>
-            <tr><td>$23.73 m2<br>&nbsp; </td></tr>
-            <tr><td>11 Days<br>&nbsp;</td></tr>
-            <tr><td>383<br>&nbsp;</td></tr>
-        </tbody>
-      </table></div>
-        
-        </div>
-    
-    
-    <div class="row">
-    <div class="col-md-12">
-        <h4>DESCRIPTION</h4>
-      </div>
-        
-        <div class="col-md-4"><p>All users on MySpace will know that there are millions of people out there. Every day besides so many people joining this community, there are many others who will be looking out for friends. This will mean that they are naturally looking out for good people who are interesting enough. For this, the profile has to be very interesting.</p>
-
-<p>To make the profile unique, you can use good MySpace layouts.</p>
-
-<a href="">More.</a></div>
-        <div class="col-md-4"><p>All users on MySpace will know that there are millions of people out there. Every day besides so many people joining this community, there are many others who will be looking out for friends. This will mean that they are naturally looking out for good people who are interesting enough. For this, the profile has to be very interesting.</p>
-
-<p>To make the profile unique, you can use good MySpace layouts.</p>
-
-<a href="">More.</a></div>
-        <div class="col-md-4"><p>All users on MySpace will know that there are millions of people out there. Every day besides so many people joining this community, there are many others who will be looking out for friends. This will mean that they are naturally looking out for good people who are interesting enough. For this, the profile has to be very interesting.</p>
-
-<p>To make the profile unique, you can use good MySpace layouts.</p>
-
-<a href="">More.</a></div>
-    
-    </div>
-    
-    
-    <div class="row">
-    <div class="col-md-8">
-        <h4>FEATURES</h4>
-      </div>
-        
-        <div class="col-md-2">Available</div>
-        <div class="col-md-2">Not Available</div></div>
-        <div class="row">
-        <div class="col-md-4"><table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Elevetors</td>
-            
-            <td>East Face</td>
-          </tr>
-            <tr><td>Park</td><td>Surround Road</td></tr>
-            <tr><td>Club Houses</td><td>Playgrounds</td></tr>
-            <tr><td>Malls</td><td>Gym</td></tr>
-            <tr><td>Freeway</td><td>Highway</td></tr>
-            <tr><td>Fireplace</td><td>Maid Room</td></tr>
-            <tr><td>Pool</td><td>Driver Room</td></tr>
-            <tr><td>Garage</td><td>Guest Parking</td></tr>
-            <tr><td>Shoping Centers</td><td>Church</td></tr>
-<tr><td>Yoga Center</td><td>Mosques</td></tr>
-
-        </tbody>
-      </table></div>
-         <div class="col-md-4"><table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Elevetors</td>
-            
-            <td>East Face</td>
-          </tr>
-            <tr><td>Park</td><td>Surround Road</td></tr>
-            <tr><td>Club Houses</td><td>Playgrounds</td></tr>
-            <tr><td>Malls</td><td>Gym</td></tr>
-            <tr><td>Freeway</td><td>Highway</td></tr>
-            <tr><td>Fireplace</td><td>Maid Room</td></tr>
-            <tr><td>Pool</td><td>Driver Room</td></tr>
-            <tr><td>Garage</td><td>Guest Parking</td></tr>
-            <tr><td>Shoping Centers</td><td>Church</td></tr>
-<tr><td>Yoga Center</td><td>Mosques</td></tr>
-
-        </tbody>
-      </table></div>
-         <div class="col-md-4"><table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Elevetors</td>
-            
-            <td>East Face</td>
-          </tr>
-            <tr><td>Park</td><td>Surround Road</td></tr>
-            <tr><td>Club Houses</td><td>Playgrounds</td></tr>
-            <tr><td>Malls</td><td>Gym</td></tr>
-            <tr><td>Freeway</td><td>Highway</td></tr>
-            <tr><td>Fireplace</td><td>Maid Room</td></tr>
-            <tr><td>Pool</td><td>Driver Room</td></tr>
-            <tr><td>Garage</td><td>Guest Parking</td></tr>
-            <tr><td>Shoping Centers</td><td>Church</td></tr>
-<tr><td>Yoga Center</td><td>Mosques</td></tr>
-
-        </tbody>
-      </table></div>
-        
-    </div>
-    
-    <div class="row">
-    <div class="col-md-8">
-        <h4>PRICE HISTROY</h4>
-        </div></div>
-    <div class="row">
-    <div class="col-md-4">
-         <table class="table table-striped">
-        <tbody>
-            <tr><td>DATE</td><td>PRICE</td><td>$/SQFT</td></tr>
-            <tr><td> 06/24/16</td><td> $383,4</td><td> $189</td></tr>
-            <tr><td>08/17/15</td><td>L$339,875 </td><td>$172</td></tr>
-            <tr><td>07/27/14</td><td>$339,875 </td><td>$135</td></tr>
-            <tr><td>09/14/12</td><td>$29,243 </td><td>$123</td></tr>
-            <tr><td>09/14/11</td><td>$301,879</td><td>$102</td></tr>
-            <tr><td>10/03/10</td><td>$230,800</td><td>$98</td></tr>
-            </tbody>
-      </table>
-        </div>
-         <div class="col-md-4">
-         <table class="table table-striped">
-        <tbody>
-            <tr><td>DATE</td><td>PRICE</td><td>$/SQFT</td></tr>
-            <tr><td> 06/24/16</td><td> $383,4</td><td> $189</td></tr>
-            <tr><td>08/17/15</td><td>L$339,875 </td><td>$172</td></tr>
-            <tr><td>07/27/14</td><td>$339,875 </td><td>$135</td></tr>
-            <tr><td>09/14/12</td><td>$29,243 </td><td>$123</td></tr>
-            <tr><td>09/14/11</td><td>$301,879</td><td>$102</td></tr>
-            <tr><td>10/03/10</td><td>$230,800</td><td>$98</td></tr>
-            </tbody>
-      </table>
-        </div>
-         <div class="col-md-4">
-         <table class="table table-striped">
-        <tbody>
-            <tr><td>DATE</td><td>PRICE</td><td>$/SQFT</td></tr>
-            <tr><td> 06/24/16</td><td> $383,4</td><td> $189</td></tr>
-            <tr><td>08/17/15</td><td>L$339,875 </td><td>$172</td></tr>
-            <tr><td>07/27/14</td><td>$339,875 </td><td>$135</td></tr>
-            <tr><td>09/14/12</td><td>$29,243 </td><td>$123</td></tr>
-            <tr><td>09/14/11</td><td>$301,879</td><td>$102</td></tr>
-            <tr><td>10/03/10</td><td>$230,800</td><td>$98</td></tr>
-            </tbody>
-      </table>
-        </div>
-    </div>
-    
-    
-    <div class="row">
-    <div class="col-md-8">
-        <h4>MORTGAGE</h4>
-        </div></div>
-    
-    <div class="row">
-        <div class="col-md-4">
-    <p>Monthly mortgage for 424 E, 58th…
-Did you know? You may be able to qualify for a lower rate and reduce the monthly payment.</p><p>Calculator provided by Amakkn</p>
-    
-        
-        <div class="row">
-        <div class="col-md-6"> Price</div>
-        <div class="col-md-6">$25,000</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6"> Down Payment</div>
-        <div class="col-md-6">$5,000 (20%)</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6">Loan Amount</div>
-        <div class="col-md-6">$20,000</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6">Loan Type</div>
-        <div class="col-md-6">30 Year Fixed 3.32%</div>
-        </div>
-            
-            <div class="row"><p style="text-align:center"><a href="" >Get your personal rate</a></p></div>
-        </div>
-        
-        
-        <div class="col-md-4">
-    <p>Monthly mortgage for 424 E, 58th…
-Did you know? You may be able to qualify for a lower rate and reduce the monthly payment.</p><p>Calculator provided by Amakkn</p>
-    
-        
-        <div class="row">
-        <div class="col-md-6"> Price</div>
-        <div class="col-md-6">$25,000</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6"> Down Payment</div>
-        <div class="col-md-6">$5,000 (20%)</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6">Loan Amount</div>
-        <div class="col-md-6">$20,000</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6">Loan Type</div>
-        <div class="col-md-6">30 Year Fixed 3.32%</div>
-        </div>
-            
-            <div class="row"><p style="text-align:center"><a href="" >Get your personal rate</a></p></div>
-        </div>
-        
-        
-        <div class="col-md-4">
-    <p>Monthly mortgage for 424 E, 58th…
-Did you know? You may be able to qualify for a lower rate and reduce the monthly payment.</p><p>Calculator provided by Amakkn</p>
-    
-        
-        <div class="row">
-        <div class="col-md-6"> Price</div>
-        <div class="col-md-6">$25,000</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6"> Down Payment</div>
-        <div class="col-md-6">$5,000 (20%)</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6">Loan Amount</div>
-        <div class="col-md-6">$20,000</div>
-        </div>
-            <div class="row">
-        <div class="col-md-6">Loan Type</div>
-        <div class="col-md-6">30 Year Fixed 3.32%</div>
-        </div>
-            
-            <div class="row"><p style="text-align:center"><a href="" >Get your personal rate</a></p></div>
-        </div>
-        
-        </div>
-    
-    
-    <div class="row">
-    <div class="col-md-12">
-        <h4>PROPERTY LISTED & MANAGED BY</h4>
-        </div></div>
-    
-    <div class="row" style="min-height:436px;">
-    <div class="col-md-4 leftborder" >
-      
-      <div class="col-md-12 text-center"><img alt="Avatar" class="img-md img-circle img-border mar-btm" src="http://bootdey.com/img/Content/avatar/avatar4.png"></div>
-      <div class="col-md-12 text-center">
-        <div class="pad-btm panels1 ">
-          <button class="btn btn-info btn-sm">Company Profile</button>
-          <button class="btn btn-info btn-sm">See All Listings</button>
-        </div>
-      </div>
-      <div class="col-md-12 text-center">
-        <h4 >Agent Name</h4>
-        <p class="text-center">Ghassan Saleh (BRN: 30723)</p>
-        <h4>Real Estate Agency Details</h4>
-        <p class="text-center">Saudi Real Estate (RERA ORN: 12945)</p>
-      </div>
-      <div class="col-md-12 text-center">
-        <div class="pad-btm  ">
-          <button class="btn btn-success">Call Broker</button>
-          <button class="btn btn-success">Live Chat</button>
-        </div>
-      </div>
-    
-        </div>
-         <div class="col-md-4 leftborder" >
-      
-      <div class="col-md-12 text-center"><img alt="Avatar" class="img-md img-circle img-border mar-btm" src="http://bootdey.com/img/Content/avatar/avatar4.png"></div>
-      <div class="col-md-12 text-center">
-        <div class="pad-btm panels1 ">
-          <button class="btn btn-info btn-sm">Company Profile</button>
-          <button class="btn btn-info btn-sm">See All Listings</button>
-        </div>
-      </div>
-      <div class="col-md-12 text-center">
-        <h4 >Agent Name</h4>
-        <p class="text-center">Ghassan Saleh (BRN: 30723)</p>
-        <h4>Real Estate Agency Details</h4>
-        <p class="text-center">Saudi Real Estate (RERA ORN: 12945)</p>
-      </div>
-      <div class="col-md-12 text-center">
-        <div class="pad-btm  ">
-          <button class="btn btn-success">Call Broker</button>
-          <button class="btn btn-success">Live Chat</button>
-        </div>
-      </div>
-    
-        </div>
-        
-         <div class="col-md-4 leftborder" >
-      
-      <div class="col-md-12 text-center"><img alt="Avatar" class="img-md img-circle img-border mar-btm" src="http://bootdey.com/img/Content/avatar/avatar4.png"></div>
-      <div class="col-md-12 text-center">
-        <div class="pad-btm panels1 ">
-          <button class="btn btn-info btn-sm">Company Profile</button>
-          <button class="btn btn-info btn-sm">See All Listings</button>
-        </div>
-      </div>
-      <div class="col-md-12 text-center">
-        <h4 >Agent Name</h4>
-        <p class="text-center">Ghassan Saleh (BRN: 30723)</p>
-        <h4>Real Estate Agency Details</h4>
-        <p class="text-center">Saudi Real Estate (RERA ORN: 12945)</p>
-      </div>
-      <div class="col-md-12 text-center">
-        <div class="pad-btm ">
-          <button class="btn btn-success">Call Broker</button>
-          <button class="btn btn-success">Live Chat</button>
-        </div>
-      </div>
-    
-        </div>
-        
-        
-    </div>
-                                    
-
 </div>
 <div class="padding20"></div>
 <div class="padding20"></div>
