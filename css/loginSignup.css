@@ -22,7 +22,6 @@ textarea{max-width:100%;max-height:70px;}
 #otp-group md-select,#user-group md-select{margin:0px;}
 #otp-group .form-control{border:0px;} #otp-group{border:1px solid #ccc; background-color: #f9f9f9;} ._md-select-value{border:0px;}
 
-
 .bs-wizard {margin-top: 95px;}
 
 #customHeaderColor {
@@ -124,7 +123,7 @@ border-radius: 4px;}
 #login-account {
   position: relative;
   width: 75px;
-    left: 116px;
+    left: 119px;
   padding: 5px;
     color: #fff;
   background: #6dc0ce;
@@ -138,7 +137,10 @@ border-radius: 4px;}
 
 }
 
-@media (max-width: 1200px) {
+/*@media only screen and (min-width:480px) and (max-width: 640px)*/
+
+
+@media (max-width: 1880px) {
     #login-account{left: 31%;}
     
 }
