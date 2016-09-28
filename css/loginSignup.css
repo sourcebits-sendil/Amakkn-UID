@@ -75,7 +75,7 @@ textarea{max-width:100%;max-height:70px;}
     align-items: flex-end;
     text-align: end;
     width: 31px;
-    margin: 0 -4px;
+    margin: 0 0px;
     -webkit-transform: translate3d(0,1px,0);
     transform: translate3d(0,1px,0);
 }
@@ -95,12 +95,12 @@ textarea{max-width:100%;max-height:70px;}
     position: absolute;}
 
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot:before {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: #6dc0ce;
     position: absolute;
-    top: 6px;
-    left: 6px;
+    top: 7px;
+    left: 7px;
     content: " ";
     border: solid #6dc0ce;
     border-width: 0 2px 2px 0;
@@ -266,3 +266,8 @@ border-radius: 4px;}
 }
 
 
+.form-control {
+   
+    padding: 6px 0px;
+    
+}
