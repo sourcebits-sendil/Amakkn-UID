@@ -22,6 +22,7 @@
         $scope.successResponse={};
         //activate();
         $rootScope.loggedName = '';
+        $scope.userForm.isSocial = "0";
 
         $scope.userlogin = function(){
 
@@ -36,7 +37,7 @@
                     $rootScope.loggedName = result.response.user.name;
                     //alert($rootScope.loggedName);
                 }else{
-                    alert(result.resStr);
+                    //alert(result.resStr);
                 }
              });
         }

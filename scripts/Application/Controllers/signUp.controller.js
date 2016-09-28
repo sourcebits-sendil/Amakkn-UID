@@ -16,6 +16,7 @@
         var vm = this;
         var marker;
         $scope.address = '';
+        var previousNum = '';
         var ele = '';
         /* initiating view objects used to switch */
         $rootScope.view={
@@ -136,7 +137,15 @@
                 myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
             }, 500);
         }
+        $scope.changedNumber = function(){
+            //$log.debug('working');
+            if(previousNum != $scope.userForm.phone && $scope.userForm.phone != ""){
+                $scope.isDisabled = false;
+               }
+                previousNum = $scope.userForm.phone;
+        }
         $scope.selectedCode = function(){
+            $scope.isDisabled = false;
             $timeout(function() {
                 ele = document.getElementById("num").getAttribute('aria-label')
                 var cod = ele.split('+')
