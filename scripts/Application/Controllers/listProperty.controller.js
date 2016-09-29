@@ -1,6 +1,6 @@
 /**
- * @author: Devansh
- * @since(mm/dd/yy): 9/11/2016
+ * @author: Sendil
+ * @since(mm/dd/yy): 9/26/2016
  */
 (function () {
     'use strict';
@@ -264,10 +264,9 @@
     scale: [1960, '|', 1970, '|', 1980, '|' , 1990, '|', 2000, '|', 2015]
   };
 
-        
         //pagignation
-       
-        
+
+
         $scope.showData = function( ){
 
  $scope.curPage = 0;
@@ -292,10 +291,10 @@
      $scope.numberOfPages = function() {
 				return Math.ceil($scope.datalists.length / $scope.pageSize);
 			};
-         
+
 };
-        
-        
+
+
         $scope.showDatas = function( ){
 
  $scope.curPages = 0;
@@ -320,10 +319,10 @@
      $scope.numberOfPagess = function() {
 				return Math.ceil($scope.datalistss.length / $scope.pageSizes);
 			};
-         
+
 };
-        
-        
+
+
          $scope.showData3 = function( ){
 
  $scope.curPage3 = 0;
@@ -348,9 +347,10 @@
      $scope.numberOfPages3 = function() {
 				return Math.ceil($scope.datalists3.length / $scope.pageSize3);
 			};
-         
+
 };
-        
+
+
 
         $scope.amenityList = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/getAmenitiesForPropertyType/';
@@ -364,9 +364,9 @@
         }
         $scope.amenityList();
 
-        $scope.clickedBtn = function(index){
-            $scope.selectedBtn = index;
-            
+        $scope.clickedBtn = function($event){
+            //debugger;
+            $(event.currentTarget).toggleClass('color2').toggleClass('color1');
         }
     }
 })();
