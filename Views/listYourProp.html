@@ -17,10 +17,13 @@
 
       <div class="row ">
 
-        <md-content class="md-padding " >
+        <md-content class="md-padding "  style="    color: rgba(0,0,0,0.87); padding:0px;
+    border: 1px solid #ccc;
+    padding-top: 0px; background:none; 
+">
             <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-              <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left" style="width:40%;">Residential</md-nav-item>
-              <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:40%;">Commercial</md-nav-item>
+              <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left " style="width:50%; left:0;">Residential</md-nav-item>
+              <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:50%;">Commercial</md-nav-item>
             </md-nav-bar>
           </md-content>
 
@@ -34,7 +37,7 @@
       <div class="padding20"></div>
       <div class="row propertyborder">
     <div class="col-md-6"  ng-repeat="item in propertiesTypeData" >
-      <div class="row btn"  ng-click="selectType(item.key)">
+      <div class="row btn"  ng-click="selectType(item.key)" style="padding:0px;">
         <!-- <div class="row bottmborder"> -->
         <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
           <div class="col-md-2"><img ng-src={{item.image}}>
