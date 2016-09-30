@@ -236,7 +236,7 @@
                 $scope.userForm.countryCode = '+'+cod[1];
 
         $timeout(function() {
-            alert($scope.userForm.countryCode);
+            //alert($scope.userForm.countryCode);
             $scope.urlRest = 'http://52.42.99.192/Login/forgotPassword/';
             $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
