@@ -11,7 +11,7 @@
 
     /* @ngInject */
 
-    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast, NgMap) {
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast, NgMap, $auth) {
 
         var vm = this;
         var marker;
@@ -40,6 +40,9 @@
         $rootScope.loggedIn = false;
         $scope.locIP = '';
 
+        $scope.authenticate = function(provider) {
+          $auth.authenticate(provider);
+        };
 
         $scope.getCountryCode = function(){
             $http.get('../scripts/Library/data.json').success(function(data) {
