@@ -36,6 +36,7 @@
                     $rootScope.loggedIn = true;
                     $rootScope.loggedName = result.response.user.name;
                     //alert($rootScope.loggedName);
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
                 }else{
                     //alert(result.resStr);
                 }
