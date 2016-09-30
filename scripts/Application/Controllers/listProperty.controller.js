@@ -280,7 +280,7 @@
         $scope.showData = function( ){
 
  $scope.curPage = 0;
- $scope.pageSize = 3;
+ $scope.pageSize = 1;
      $scope.datalists = [
          { "name": "John","age":"16","designation":"Software Engineer1"},
     {"name": "John2","age":"21","designation":"Software Engineer2"},
@@ -336,7 +336,7 @@
          $scope.showData3 = function( ){
 
  $scope.curPage3 = 0;
- $scope.pageSize3 = 3;
+ $scope.pageSize3 = 1;
      $scope.datalists3 = [
          { "name": "John","age":"16","designation":"Software Engineer1"},
     {"name": "John2","age":"21","designation":"Software Engineer2"},
