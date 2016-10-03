@@ -324,14 +324,7 @@
 
         <div class="row buttonleft">
           <h4>FRONTISPIECE</h4>
-          <button type="button" class="btn btn-round color2">North</button>
-          <button type="button" class="btn btn-round color1">South</button>
-          <button type="button" class="btn btn-round color2">East</button>
-          <button type="button" class="btn btn-round color1">West</button>
-          <button type="button" class="btn btn-round color2">North - West</button>
-          <button type="button" class="btn btn-round color2">North - East</button>
-          <button type="button" class="btn btn-round color2">South - East</button>
-          <button type="button" class="btn btn-round color2">South - West</button>
+          <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
         </div>
 
           <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
@@ -352,13 +345,7 @@
         <hr>
         <div class="row buttonleft">
           <h4>SELECT DAYS </h4>
-          <button type="button" class="btn btn-round color2">Sunday</button>
-          <button type="button" class="btn btn-round color2">Monday</button>
-          <button type="button" class="btn btn-round color1">Tuesday</button>
-          <button type="button" class="btn btn-round color2">Wednesday</button>
-          <button type="button" class="btn btn-round color2">Thursday</button>
-          <button type="button" class="btn btn-round color2">Friday</button>
-          <button type="button" class="btn btn-round color1">Saturday</button>
+          <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in daysList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
         </div>
         <hr>
         <div class="row">

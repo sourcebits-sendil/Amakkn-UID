@@ -251,7 +251,8 @@
                     $scope.roomTypeListData = result.response.room;
                     $scope.amenityListData = result.response.amenity;
                     $scope.featureListData = result.response.feature;
-                    $scope.roomTypeListCount = result.response.length;
+                    $scope.frontispicesList = ["North","South","East","West","North - West","North - East","South - East","South - West"];
+                    $scope.daysList = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                 }
             });
         }
