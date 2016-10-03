@@ -41,7 +41,15 @@
         $scope.locIP = '';
 
         $scope.authenticate = function(provider) {
-          $auth.authenticate(provider);
+          $auth.authenticate(provider)
+          .then(function(response) {
+            // Signed in with Google.
+              $log.debug(response.oauthType);
+          })
+          .catch(function(response) {
+            // Something went wrong.
+
+          })
         };
 
         $scope.getCountryCode = function(){
