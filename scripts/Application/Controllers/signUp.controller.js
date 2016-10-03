@@ -40,10 +40,11 @@
         $rootScope.loggedIn = false;
         $scope.locIP = '';
 
-        $scope.authenticate = function(provider) {
+        $rootScope.authenticate = function(provider) {
           $auth.authenticate(provider)
           .then(function(response) {
             // Signed in with Google.
+              alert('workings')
               $log.debug(response.oauthType);
           })
           .catch(function(response) {

@@ -38,7 +38,7 @@
         //activate();
 
         $scope.nextStep = function(step){
-            step = 'addDetails'
+            //step = 'addDetails'
             switch (step){
                 case 'propAddress':
                     if($scope.userForm.propertyType != null && $scope.userForm.category != null && $scope.userForm.userId != null){
