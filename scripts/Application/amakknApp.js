@@ -1,4 +1,4 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider', 'satellizer']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
@@ -180,6 +180,16 @@ amakknApp.config(function($routeProvider){
 
   return Service;
 }])
+  .config(function($authProvider) {
+
+    $authProvider.facebook({
+      clientId: '192874244471411'
+    });
+    $authProvider.google({
+      clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com'
+    });
+
+})
 /*.config(['$httpProvider', function($httpProvider) {
     $httpProvider.interceptors.push('LoadingListener');
 }])
@@ -274,3 +284,4 @@ function run($rootScope, $location, $cookieStore, $http) {
             }
         });
     }*/
+
