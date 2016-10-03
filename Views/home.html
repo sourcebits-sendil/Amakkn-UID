@@ -3,6 +3,7 @@
     @import url('../css/grid.css');
     @import url('../css/filtermenu.css');
     @import url('../css/propertytype.css');
+
 </style>
 
 
@@ -71,23 +72,26 @@
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Land / Plot</button>
 
         </div>
-                             <div class="col-md-12 col-sm-12 col-xs-12 "><p class="filterp" >Commercial Properties</p>
-          <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu">Office</button>
+                             <div class="col-md-12 col-sm-12 col-xs-12 " style="margin-bottom: 11px;"><p class="filterp" >Commercial Properties</p>
+                                 <div class="row">
+                                     <div class="col-md-12 ">
+                                 <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu">Office</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Showroom</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Commercial Site</button>
                                  <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Industrial</button>
-                                 <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Warehouse</button>
+                                 <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu " style="    margin-top: 10px;">Warehouse</button></div></div>
         </div>
 
 
                   </ul>
                 </li>
-                  <li class="dropdown list">
+                  <li class="dropdown list" >
                   <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Price Range <span class="caret"></span></a>
-                  <ul class="dropdown-menu propertyborder groupwidth">
-                      <li><a href="">From $550,000 to $1M</a></li>
-                      <input id="slider3" type ="range" min ="-2.5" max="3.0" step ="0.1"/>
-
+                  <ul class="dropdown-menu propertyborder groupwidth" style="padding-bottom:10px;">
+                      <li><a href="" class="filterp" >From $550,000 to $1M</a></li><br>
+                      <input ng-model="value7" type="text" id="mySlider1" slider options="options" />
+                      <div class="row">&nbsp;</div><div class="row">&nbsp;</div>
+<div class="col-md-12 filterp"><button class="btn btn-success" type="button" >DONE</button></div>
 
                   </ul>
                 </li>
@@ -97,24 +101,40 @@
                   <ul class="dropdown-menu propertyborder groupwidth">
 
                          <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12"><h3 class="property">3+ Bedrooms, 2+ Bathrooms</h3></div>
+                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: -34px;"><h3 class="property">3+ Bedrooms, 2+ Bathrooms</h3></div>
             </div><hr>
                          <div class="col-md-12 col-sm-12 col-xs-12">
 
-                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p> <section layout="row" layout-align="center center">
-          <md-button class="groupX gy left">1+</md-button>
-          <md-button class="groupX  gy middle">2+</md-button>
-          <md-button class="groupX gy middle">3+</md-button>
-          <md-button class="groupX gy middle">4+</md-button>
-          <md-button class="groupX gy right">5+</md-button>
-        </section></div>
-                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p> <section layout="row" layout-align="center center">
-          <md-button class="groupX gy left">1+</md-button>
-          <md-button class="groupX gy middle">2+</md-button>
-          <md-button class="groupX gy middle">3+</md-button>
-          <md-button class="groupX gy middle">4+</md-button>
-          <md-button class="groupX gy right">5+</md-button>
-        </section></div>
+                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p></div> <div class="col-md-12 col-sm-6 col-xs-6 "> <div  ng-init="showDatafilter()">
+    <div class="pagination pagination-centered" ng-show="datalistsfilter.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-3"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPagefilter == 0"
+ ng-click="curPagefilter=curPagefilter-1">  -</button></div>
+
+ <div class="col-md-6 addspans"> {{curPagefilter+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
+
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPagefilter >= datalistsfilter.length/pageSizefilter - 1"
+ ng-click="curPagefilter = curPagefilter+1">+ </button></div>
+        </div>
+</div>
+
+</div></div>
+                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p></div> <div class="col-md-12 col-sm-6 col-xs-6 "> <div  ng-init="showDatafilter1()">
+    <div class="pagination pagination-centered" ng-show="datalistsfilter1.length">
+        <div class="row pagination-controle pagination">
+        <div class="col-md-3"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPagefilter1 == 0"
+ ng-click="curPagefilter1=curPagefilter1-1">  -</button></div>
+
+ <div class="col-md-6 addspans"> {{curPagefilter1+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
+
+ <div class="col-md-2 "><button type="button" class="btn btn-primary next"
+ ng-disabled="curPagefilter1 >= datalistsfilter1.length/pageSizefilter1 - 1"
+ ng-click="curPagefilter1 = curPagefilter1+1">+ </button></div>
+        </div>
+</div>
+
+</div></div>
                          </div>
 
                   </ul>

@@ -55,7 +55,7 @@
     box-shadow: 2px;
 
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 .bottmborder
 {
@@ -100,6 +100,6 @@
     padding-left: 45%;
 }
 /* styles for search box */
- .md-button.md-accent{color: #24c969;width: 100%;font-size: 20px;}
- .md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969;}
+ .md-button.md-accent{color: #24c969;width: 100%;font-size: 20px; border-right: solid 2px #e1e1e1;}
+ .md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969; bottom: -1px; height: 3px;}
  .md-nav-item{width:30%;}
