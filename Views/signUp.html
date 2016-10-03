@@ -139,7 +139,7 @@
         </div>
     
     <!--mobile view-->
-    <div data-ng-switch-when="Individual">
+    <!--<div data-ng-switch-when="Individual">
              <form name="signUp" novalidate ng-submit="addName()">
 
             <div class="padding20 text-center" >
@@ -152,8 +152,7 @@
                 SIGN IN WITH GOOGLE PLUS
                 <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
             </button>
-                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+
             </div><br><br>
             <div class=" col-xs-12  hidden-md hidden-sm visible-xs " >
             <button class="btn btn-default fbBtn" style="margin-left: -9px;">
@@ -169,9 +168,8 @@
 
     				<span class="editContent">Or</span>
 
-    			</div><!-- /.divider -->
-
-    		</div><!-- /.col -->
+    			</div>
+    		</div>
             </div>
                 
                 
@@ -210,7 +208,7 @@
                 </div>
             </div>
  </form>
-        </div>
+        </div>-->
     
     <!--mobile view close-->
     
@@ -221,43 +219,6 @@
             <form name="signUp" novalidate ng-submit="addName()">
 
                 <div class="padding20 text-center" >
-
-
-
-                <!--<div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 padding20" >
-                    <div class="col-md-6 col-sm-6 col-xs-6 noPadding" >
-
-                    <button class="btn btn-default googleBtn">
-                        SIGN IN WITH GOOGLE PLUS
-                        <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
-                    </button>
-                    </div>
-                    <div class="col-md-6 col-sm-6 hidden-xs noPadding" >
-                    <button class="btn btn-default fbBtn">
-                        SIGN IN WITH FACEBOOK
-                        <span><img src="../assets/icons/facebook-logo-button.svg"></span>
-                    </button>
-                    </div>
-                </div>
-                     <div class="col-md-4 col-sm-4 hidden-xs col-md-offset-4 ">
-                <div class="col-md-12 hidden-xs">
-
-    			<div class="divider dashed">
-
-    				<span class="editContent">Or</span>
-
-    			</div>
-
-    		</div>
-                    </div>
-
-                     </div>
-<<<<<<< HEAD
-
-
-         </div>-->
-
 
             <div class="row text-center hidden-xs" >
                 <div class="row loginTextColor hidden-xs">
@@ -325,7 +286,7 @@
 
         </div>
     <!-- mobile view-->
-    <div data-ng-switch-when="Real Estate Company">
+    <!--<div data-ng-switch-when="Real Estate Company">
             <form name="signUp" novalidate ng-submit="addName()">
 
                 <div class="padding20 text-center" >
@@ -338,8 +299,7 @@
                 SIGN IN WITH GOOGLE PLUS
                 <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
             </button>
-                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+
             </div><br><br><br><br>
             <div class=" col-xs-12  hidden-md hidden-sm visible-xs " >
             <button class="btn btn-default fbBtn" style="margin-left: 0px;">
@@ -355,14 +315,14 @@
 
     				<span class="editContent">Or</span>
 
-    			</div><!-- /.divider -->
+    			</div>
 
-    		</div><!-- /.col -->
+    		</div>
 
 
                 <div class="row loginTextColor hidden-md hidden-sm visible-xs text-center ">
                     <h4>Fill up your company details</h4>
-                    <!--<p>Please select user type and type your name</p>-->
+
                 </div>
 
             </div>
@@ -422,7 +382,7 @@
                     </div></div>
             </form>
 
-        </div>
+        </div>-->
     
     
     <!-- mobile view close-->
@@ -446,7 +406,7 @@
                             <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes" >{{codes.country_code +' '+codes.country_isd_code}}</md-option>
                         </md-select>
                     </div>
-                  <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" style="width:73%;" ng-blur="changedNumber()">
+                  <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="20" required name="phone" ng-model="userForm.phone" style="width:73%;" ng-blur="changedNumber()">
                     <span class="input-group-btn ">
                         <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
                     </span>
@@ -474,7 +434,7 @@
             </form>
     </div>
     <!--mobile view-->
-    <div data-ng-switch-when="otp" ng-init="addName()">
+    <!--<div data-ng-switch-when="otp" ng-init="addName()">
 
             <form name="signUp" novalidate ng-submit="confOTP()">
 
@@ -496,7 +456,7 @@
                     <span class="input-group-btn ">
                         <button class="btn btn-default    " type="submit" id="input-otp" ng-click="getOTP()" ng-disabled="isDisabled">Send OTP</button>
                     </span>
-                </div><!-- /input-group -->
+                </div>
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                          
@@ -518,7 +478,7 @@
             </div>
                 </div>
             </form>
-    </div>
+    </div>-->
     
     <!--mobile view close-->
     
