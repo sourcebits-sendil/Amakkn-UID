@@ -8,417 +8,527 @@
 <div class="padding20"></div>
 <div class="padding20"></div>
 <div class="container" data-ng-switch on="view.name">
-  <div class="row">
     <div class="row">
-    <div class="col-md-6 col-sm-6 col-xs-6">
-      <h3>List Your Property</h3>
-    </div>
-    <div class="col-md-6 col-sm-6 col-xs-6">
-      <div class="stepwizard">
-        <div class="stepwizard-row">
-          <div class="stepwizard">
-            <button type="button" class="btn btn-success btn-circle1"></button>
-          </div>
-          <div class="stepwizard-step">
-            <button type="button" class="btn btn-default btn-circle1"></button>
-          </div>
-          <div class="stepwizard-step">
-            <button type="button" class="btn btn-default btn-circle1"></button>
-          </div>
-          <div class="stepwizard-step">
-            <button type="button" class="btn btn-default btn-circle1" disabled="disabled"></button>
-          </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <h3>List Your Property</h3>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="stepwizard">
+                    <div class="stepwizard-row">
+                        <div class="stepwizard">
+                            <button type="button" class="btn btn-success btn-circle1"></button>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn btn-default btn-circle1"></button>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn btn-default btn-circle1"></button>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn btn-default btn-circle1" disabled="disabled"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  </div>
-  <hr>
+    <hr>
     <div ng-switch-default>
 
-      <div class="row ">
+        <div class="row ">
 
-        <md-content class="md-padding " style="padding:0px;" >
-            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-              <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left" style="width:50%;">Residential</md-nav-item>
-              <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:50%;">Commercial</md-nav-item>
-            </md-nav-bar>
-          </md-content>
+            <md-content class="md-padding " style="padding:0px;">
+                <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                    <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left" style="width:50%;">Residential</md-nav-item>
+                    <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:50%;">Commercial</md-nav-item>
+                </md-nav-bar>
+            </md-content>
 
-      </div>
-
-
-      <div class="col-md-12">
-        <h3 class="property">What type of property would you like to list?</h3>
-      </div>
-      <div class="padding20"></div>
-      <div class="padding20"></div>
-      <div class="row propertyborder">
-    <div class="col-md-6"  ng-repeat="item in propertiesTypeData" >
-      <div class="row "  ng-click="selectType(item.key)">
-        <!-- <div class="row bottmborder"> -->
-        <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
-          <div class="col-md-2"><img ng-src={{item.image}}>
-          </div>
-          <div class="col-md-10 text-left"><a href="">{{item.name}}</a>
-            <p>{{item.description}}</p>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-      <div class="padding20"></div>
-      <div class="row">
-        <div class="col-md-12 text-center"><button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('propAddress')">Continue</button>
+
+
+        <div class="col-md-12">
+            <h3 class="property">What type of property would you like to list?</h3>
         </div>
-      </div>
+        <div class="padding20"></div>
+        <div class="padding20"></div>
+        <div class="row propertyborder">
+            <div class="col-md-6" ng-repeat="item in propertiesTypeData">
+                <div class="row " ng-click="selectType(item.key)">
+                    <!-- <div class="row bottmborder"> -->
+                    <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
+                        <div class="col-md-2"><img ng-src={{item.image}}>
+                        </div>
+                        <div class="col-md-10 text-left"><a href="">{{item.name}}</a>
+                            <p>{{item.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding20"></div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('propAddress')">Continue</button>
+            </div>
+        </div>
     </div>
 
     <!-- Mapping property Address -->
-    <div data-ng-switch-when="propAddress" >
+    <div data-ng-switch-when="propAddress">
         <div class="row">
-            <div class="col-md-12"><h3 class="property">Where is your Apartment located?</h3></div>
+            <div class="col-md-12">
+                <h3 class="property">Where is your Apartment located?</h3>
+            </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-            <div class="input-group col-md-12"> <span class="input-group-btn">
+                <div class="input-group col-md-12"> <span class="input-group-btn">
                             <button class="btn btn-default btn-lg" type="button">
                                 <i class="glyphicon glyphicon-send"></i>
                             </button>
                         </span>
-                        <input type="text" class="form-control input-lg"  ng-model="address" readonly/>
+                    <input type="text" class="form-control input-lg" ng-model="address" readonly/>
 
-                    </div>
+                </div>
             </div>
-        </div> <div class="padding20"></div>
+        </div>
+        <div class="padding20"></div>
 
         <div class="row">
-            <ng-map zoom="15" center="current-position"  scrollwheel="false" zoom-to-include-markers="auto" street-view-control="false"></ng-map>
+            <ng-map zoom="15" center="current-position" scrollwheel="false" zoom-to-include-markers="auto" street-view-control="false"></ng-map>
         </div>
         <div class="padding20"></div>
         <div class="row">
-            <div class="col-md-3 col-md-offset-3"><button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('default')">Back</button></div>
-           <div class="col-md-6 "><button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('addPhotos')">Continue</button></div>
+            <div class="col-md-3 col-md-offset-3">
+                <button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('default')">Back</button>
+            </div>
+            <div class="col-md-6 ">
+                <button class="btn btn-lg btn-success propertbutton" ng-click="nextStep('addPhotos')">Continue</button>
+            </div>
         </div>
     </div>
 
     <!-- Adding Photos -->
     <div data-ng-switch-when="addPhotos">
         <style>
-            body{overflow: hidden;}
+            body {
+                overflow: hidden;
+            }
         </style>
         <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
             <div class="row bottmborder1 ">
-                <div class="col-md-12 col-sm-12 col-xs-12"><h3>Complete You Listing</h3></div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Complete You Listing</h3>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a><p>You can add up to 30 property photos.</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
+                    <p>You can add up to 30 property photos.</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-success btn-circle"></button>
+                </div>
             </div>
             <div class="row bottmborder1" ng-click="nextStep('addDetails')">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a><p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-default btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
+                    <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-default btn-circle"></button>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a><p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
+                    <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
+                </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-default btn-circle"></button></div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-default btn-circle"></button>
+                </div>
             </div>
 
             <div class=" " style="margin-left: -16px;">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a><p>Choose whether this property is to sell / rent and specify your costs!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 "> <button type="button" class="btn btn-default btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
+                    <p>Choose whether this property is to sell / rent and specify your costs!</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 ">
+                    <button type="button" class="btn btn-default btn-circle"></button>
+                </div>
             </div>
         </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright" style="height:650px;overflow-y:auto;" >
-                <div class="col-md-12 col-sm-12 col-xs-12"><a href="">Add Photos</a><p>You can add up to 30 property photos.</p></div>
-
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png"></div>
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png"></div>
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-28.png"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png"></div>
-                        <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png"></div>
-                        <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-30.png"></div>
-                </div>
-
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png"></div>
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png"></div>
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-28.png"></div>
+        <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright" style="height:650px;overflow-y:auto;">
+            <div class="col-md-12 col-sm-12 col-xs-12"><a href="">Add Photos</a>
+                <p>You can add up to 30 property photos.</p>
             </div>
 
-                <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png"></div>
-                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png"></div>
-                    <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-28.png"></div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png">
                 </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-28.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-30.png">
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6   "><button type="button" class="btn btn-success" ng-click="nextStep('addDetails')">Done</button></div>
-                    <div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default btn-circleplus  "><span class="glyphicon glyphicon-plus"></span></button></div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png">
                 </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-28.png">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-27.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-29.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/rectangle-28.png">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6   ">
+                    <button type="button" class="btn btn-success" ng-click="nextStep('addDetails')">Done</button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-default btn-circleplus  "><span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Adding Property Details -->
     <div data-ng-switch-when="addDetails">
         <style>
-           /* body{overflow: hidden;} */
+            /* body{overflow: hidden;} */
         </style>
         <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
             <div class="row bottmborder1 ">
-                <div class="col-md-12 col-sm-12 col-xs-12"><h3>Complete You Listing</h3></div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Complete You Listing</h3>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a><p>You can add up to 30 property photos.</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
+                    <p>You can add up to 30 property photos.</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-success btn-circle"></button>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a><p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
+                    <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-success btn-circle"></button>
+                </div>
             </div>
             <div class="row bottmborder1 " ng-click="nextStep('addDescription')">
-                <div class="col-md-9 col-sm-9 col-xs-9 "><a href="">Property Description</a><p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p></div>
+                <div class="col-md-9 col-sm-9 col-xs-9 "><a href="">Property Description</a>
+                    <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
+                </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-default btn-circle"></button></div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-default btn-circle"></button>
+                </div>
             </div>
 
             <div class=" " style="margin-left: -16px;">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a><p>Choose whether this property is to sell / rent and specify your costs!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-default btn-circle"></button></div>
-            </div>
-        </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
-      <div class="row">
-
-         <div class="col-md-12"> <a href="">Property Details</a>
-        <p style="text-align:justify;">Enter the details of your property.</p>
-      </div>
-        </div>
-
-         <div class="row borderinside">
-
-
-              <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Bathrooms</h4> <div  ng-init="showData()">
-    <div class="pagination pagination-centered" ng-show="datalists.length">
-        <div class="row pagination-controle pagination">
-        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == 0"
- ng-click="curPage=curPage-1">  -</button></div>
-
- <div class="col-md-6 addspan"> {{curPage+1}} Bedrooms  </div>
-
- <div class="col-md-2 "><button type="button" class="btn btn-primary next"
- ng-disabled="curPage >= datalists.length/pageSize - 1"
- ng-click="curPage = curPage+1">+ </button></div>
-        </div>
-</div>
-
-</div></div>
-
-             <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Receptions</h4> <div  ng-init="showDatas()">
-    <div class="pagination pagination-centered" ng-show="datalistss.length">
-        <div class="row pagination-controle pagination">
-        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPages == 0"
- ng-click="curPages=curPages-1">  -</button></div>
-
- <div class="col-md-6 addspan"> {{curPages+1}} Receptions </div>
-
- <div class="col-md-2 "><button type="button" class="btn btn-primary next"
- ng-disabled="curPages >= datalistss.length/pageSizes - 1"
- ng-click="curPages = curPages+1">+ </button></div>
-        </div>
-</div>
-
-</div></div>
-
-             <div class="col-md-12 col-sm-6 col-xs-6 "><h4 style="text-align:justify;" >Bathrooms</h4> <div  ng-init="showData3()">
-    <div class="pagination pagination-centered" ng-show="datalists3.length">
-        <div class="row pagination-controle pagination">
-        <div class="col-md-2"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage3 == 0"
- ng-click="curPage3=curPage3-1">  -</button></div>
-
- <div class="col-md-6 addspan"> {{curPage3+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
-
- <div class="col-md-2 "><button type="button" class="btn btn-primary next"
- ng-disabled="curPage3 >= datalists3.length/pageSize3 - 1"
- ng-click="curPage3 = curPage3+1">+ </button></div>
-        </div>
-</div>
-
-</div></div>
-
-              <div class="row borderinside">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-          <h4 class="buttonleft">AMENITIES</h4>
-          <div class="buttonleft contentMarginBottom">
-            <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
-          </div>
-        </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><button type="button" class="btn btn-success">Save Changes</button>
-                  </div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
+                    <p>Choose whether this property is to sell / rent and specify your costs!</p>
                 </div>
-              </div>
-              <div class="row borderinside">
-                <h4 class="buttonleft">YEAR OF CONSTRUCTION</h4>
-                <div class="row"></div>
-                <div class="col-md-11 col-sm-11 col-xs-11 buttonleft" style="position: relative">
-                  
-                  <div class="row">
-            <div class="col-md-12"><div class="row">&nbsp;</div><div class="row">&nbsp;</div>
-              <input ng-model="value6" type="text" id="mySlider1" slider options="options" />
-            </div>
-          </div><div class="row">&nbsp;</div><div class="row">&nbsp;</div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-default btn-circle"></button>
                 </div>
-                <div class="row buttonleft"><div class="row">&nbsp;</div>
-                  <h4>FRONTISPIECE</h4>
-                  <button type="button" class="btn btn-round color2">North</button>
-                  <button type="button" class="btn btn-round color2">South</button>
-                  <button type="button" class="btn btn-round color3">East</button>
-                  <button type="button" class="btn btn-round color2">West</button>
-                  <button type="button" class="btn btn-round color2">North - West</button>
-                  <button type="button" class="btn btn-round color2">North - East</button>
-                  <button type="button" class="btn btn-round color2">South - East</button>
-                  <button type="button" class="btn btn-round color3">South - West</button>
-                </div>
-                <div class="row buttonleft" style="position: relative"><div class="row">&nbsp;</div>
-
-          <h4>CONSTRUCTION AREA</h4>
-          <br>
-          <div class="row">
-            <div class="col-md-12">
-              <input ng-model="value5" type="text" id="mySlider1" slider options="options" />
             </div>
-          </div>
-          <br>
-          <br>
-
-            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><button class="btn btn-success" type="button" ng-click="updateAmenities()">Save Changes</button>
-          </div>
-
         </div>
-      </div>
-      <div class="row borderinside">
-        <h4 class="buttonleft">Visiting Hours</h4>
-        <div class="row"></div>
-
-          <br>
-        <div class="row">
-            <div class="col-md-12">
-         <input ng-model="value4" type="text" id="mySlider1" slider options="options" /></div>
-
-        </div>
-        <hr>
-        <div class="row buttonleft">
-          <h4>REPEAT</h4>
-          <button type="button" class="btn btn-round color2">Daily</button>
-          <button type="button" class="btn btn-round color1">Weekly</button>
-        </div>
-        <div class="row buttonleft">
-          <h4>SELECT DAYS </h4>
-          <button type="button" class="btn btn-round color2">Sunday</button>
-          <button type="button" class="btn btn-round color2">Monday</button>
-          <button type="button" class="btn btn-round color3">Tuesday</button>
-          <button type="button" class="btn btn-round color2">Wednesday</button>
-          <button type="button" class="btn btn-round color2">Thursday</button>
-          <button type="button" class="btn btn-round color3">Friday</button>
-          <button type="button" class="btn btn-round color2">Saturday</button>
-        </div>
-        <hr>
-        <div class="">
-          <p class="buttonleft">Activity will repeat every week on Saturdays and Tuesdays.</p>
-        </div>
-        <hr>
-        <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><button class="btn btn-success" type="button" ng-click="updateFeatures()">Save Changes</button>
-            </div>
-          </div>
-
-        <div class="row buttonleft">
-          <h4>ADD FLOOR PLAN</h4>
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <button type="button" class="btn btn-default btn-circleplus  "><span class="glyphicon glyphicon-plus"></span>
-            </button>
-            <p style="text-align:justify;">Add .pdf or .image</p>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
             <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
-              </div>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+                <div class="col-md-12"> <a href="">Property Details</a>
+                    <p style="text-align:justify;">Enter the details of your property.</p>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="row buttonleft">
-          <h4>CONTACT NUMBER</h4>
-          <div class="form-group ">
-            <div class="input-group form-group profiletextbox" id="otp-group" style="width:500px;">
-              <div class="">
-                <md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>
-              </div>
-              <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;"> </div>
-          </div>
+            <div class="row borderinside">
+
+
+                <div class="col-md-12 col-sm-6 col-xs-6 ">
+                    <h4 style="text-align:justify;">Bathrooms</h4>
+                    <div ng-init="showData()">
+                        <div class="pagination pagination-centered" ng-show="datalists.length">
+                            <div class="row pagination-controle pagination">
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == 0" ng-click="curPage=curPage-1"> -</button>
+                                </div>
+
+                                <div class="col-md-6 addspan"> {{curPage+1}} Bedrooms </div>
+
+                                <div class="col-md-2 ">
+                                    <button type="button" class="btn btn-primary next" ng-disabled="curPage >= datalists.length/pageSize - 1" ng-click="curPage = curPage+1">+ </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-6 col-xs-6 ">
+                    <h4 style="text-align:justify;">Receptions</h4>
+                    <div ng-init="showDatas()">
+                        <div class="pagination pagination-centered" ng-show="datalistss.length">
+                            <div class="row pagination-controle pagination">
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary btn-pri" ng-disabled="curPages == 0" ng-click="curPages=curPages-1"> -</button>
+                                </div>
+
+                                <div class="col-md-6 addspan"> {{curPages+1}} Receptions </div>
+
+                                <div class="col-md-2 ">
+                                    <button type="button" class="btn btn-primary next" ng-disabled="curPages >= datalistss.length/pageSizes - 1" ng-click="curPages = curPages+1">+ </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-6 col-xs-6 ">
+                    <h4 style="text-align:justify;">Bathrooms</h4>
+                    <div ng-init="showData3()">
+                        <div class="pagination pagination-centered" ng-show="datalists3.length">
+                            <div class="row pagination-controle pagination">
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage3 == 0" ng-click="curPage3=curPage3-1"> -</button>
+                                </div>
+
+                                <div class="col-md-6 addspan"> {{curPage3+1}} Bedrooms
+                                    <!--{{ numberOfPages3() }}-->
+                                </div>
+
+                                <div class="col-md-2 ">
+                                    <button type="button" class="btn btn-primary next" ng-disabled="curPage3 >= datalists3.length/pageSize3 - 1" ng-click="curPage3 = curPage3+1">+ </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row borderinside">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="buttonleft">AMENITIES</h4>
+                        <div class="buttonleft contentMarginBottom">
+                            <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
+                            <button type="button" class="btn btn-success">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row borderinside">
+                    <h4 class="buttonleft">YEAR OF CONSTRUCTION</h4>
+                    <div class="row"></div>
+                    <div class="col-md-11 col-sm-11 col-xs-11 buttonleft" style="position: relative">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">&nbsp;</div>
+                                <div class="row">&nbsp;</div>
+                                <input ng-model="value6" type="text" id="mySlider1" slider options="options" />
+                            </div>
+                        </div>
+                        <div class="row">&nbsp;</div>
+                        <div class="row">&nbsp;</div>
+                    </div>
+                    <div class="row buttonleft">
+                        <div class="row">&nbsp;</div>
+                        <h4>FRONTISPIECE</h4>
+                        <button type="button" class="btn btn-round color2">North</button>
+                        <button type="button" class="btn btn-round color2">South</button>
+                        <button type="button" class="btn btn-round color3">East</button>
+                        <button type="button" class="btn btn-round color2">West</button>
+                        <button type="button" class="btn btn-round color2">North - West</button>
+                        <button type="button" class="btn btn-round color2">North - East</button>
+                        <button type="button" class="btn btn-round color2">South - East</button>
+                        <button type="button" class="btn btn-round color3">South - West</button>
+                    </div>
+                    <div class="row buttonleft" style="position: relative">
+                        <div class="row">&nbsp;</div>
+
+                        <h4>CONSTRUCTION AREA</h4>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input ng-model="value5" type="text" id="mySlider1" slider options="options" />
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
+                            <button class="btn btn-success" type="button" ng-click="updateAmenities()">Save Changes</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row borderinside">
+                    <h4 class="buttonleft">Visiting Hours</h4>
+                    <div class="row"></div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input ng-model="value4" type="text" id="mySlider1" slider options="options" />
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row buttonleft">
+                        <h4>REPEAT</h4>
+                        <button type="button" class="btn btn-round color2">Daily</button>
+                        <button type="button" class="btn btn-round color1">Weekly</button>
+                    </div>
+                    <div class="row buttonleft">
+                        <h4>SELECT DAYS </h4>
+                        <button type="button" class="btn btn-round color2">Sunday</button>
+                        <button type="button" class="btn btn-round color2">Monday</button>
+                        <button type="button" class="btn btn-round color3">Tuesday</button>
+                        <button type="button" class="btn btn-round color2">Wednesday</button>
+                        <button type="button" class="btn btn-round color2">Thursday</button>
+                        <button type="button" class="btn btn-round color3">Friday</button>
+                        <button type="button" class="btn btn-round color2">Saturday</button>
+                    </div>
+                    <hr>
+                    <div class="">
+                        <p class="buttonleft">Activity will repeat every week on Saturdays and Tuesdays.</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
+                            <button class="btn btn-success" type="button" ng-click="updateFeatures()">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <div class="row buttonleft">
+                        <h4>ADD FLOOR PLAN</h4>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <button type="button" class="btn btn-default btn-circleplus  "><span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                            <p style="text-align:justify;">Add .pdf or .image</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row buttonleft">
+                        <h4>CONTACT NUMBER</h4>
+                        <div class="form-group ">
+                            <div class="input-group form-group profiletextbox" id="otp-group" style="width:500px;">
+                                <div class="">
+                                    <md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>
+                                </div>
+                                <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;"> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 buttonleft">
+                            <button class="btn btn-success" type="button" ng-click="updateContact()">Save Changes</button>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6  "><a href="#" class="btn btn-default">Suspend Open Viewings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding20"></div>
+            <div class="padding20"></div>
         </div>
-        <div class="row">
-            <div class="col-md-4 buttonleft"><button class="btn btn-success" type="button" ng-click="updateContact()">Save Changes</button>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6  "><a href="#" class="btn btn-default">Suspend Open Viewings</a>
-          </div>
-        </div>
-      </div>
-      </div>
-    <div class="padding20"></div>
-    <div class="padding20"></div>
-  </div>
     </div>
     <!-- Adding Property Description -->
     <div data-ng-switch-when="addDescription">
         <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
             <div class="row bottmborder1 ">
-                <div class="col-md-12 col-sm-12 col-xs-12"><h3>Complete You Listing</h3></div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Complete You Listing</h3>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a><p>You can add up to 30 property photos.</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
+                    <p>You can add up to 30 property photos.</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-success btn-circle"></button>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a><p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
+                    <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-success btn-circle"></button>
+                </div>
             </div>
             <div class="row bottmborder1">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a><p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
+                    <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
+                </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-success btn-circle"></button>
+                </div>
             </div>
 
             <div class=" " style="margin-left: -16px;" ng-click="nextStep('setPrice')">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a><p>Choose whether this property is to sell / rent and specify your costs!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-default btn-circle"></button></div>
+                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
+                    <p>Choose whether this property is to sell / rent and specify your costs!</p>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                    <button type="button" class="btn btn-default btn-circle"></button>
+                </div>
             </div>
         </div>
         <div class="col-md-6 propertyborder colright">
-            <div class="col-md-12"><a href="">Property Description</a><p>Enter the description of your property in 600 characters.</p></div>
+            <div class="col-md-12"><a href="">Property Description</a>
+                <p>Enter the description of your property in 600 characters.</p>
+            </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <textarea class="form-control" rows="5" placeholder="About your property in 600 characters." style="height: 326px;" ng-model="userForm.description"></textarea>
@@ -426,8 +536,12 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6"><button type="button" class="btn btn-success" ng-click="nextStep('setPrice')">Save Changes</button></div>
-                    <div class="col-md-6"><p class="pull-right"> 500 Characters Remaining</p></div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-success" ng-click="nextStep('setPrice')">Save Changes</button>
+                </div>
+                <div class="col-md-6">
+                    <p class="pull-right"> 500 Characters Remaining</p>
+                </div>
             </div>
 
         </div>
@@ -436,74 +550,100 @@
     <!-- Setting price -->
     <div data-ng-switch-when="setPrice">
         <div>
-        <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
-            <div class="row bottmborder ">
-                <div class="col-md-12 col-sm-12 col-xs-12"><h3>Complete You Listing</h3></div>
-            </div>
-            <div class="row bottmborder">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a><p>You can add up to 30 property photos.</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
-            </div>
-            <div class="row bottmborder">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a><p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
-            </div>
-            <div class="row bottmborder">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a><p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p></div>
+            <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
+                <div class="row bottmborder ">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h3>Complete You Listing</h3>
+                    </div>
+                </div>
+                <div class="row bottmborder">
+                    <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
+                        <p>You can add up to 30 property photos.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                        <button type="button" class="btn btn-success btn-circle"></button>
+                    </div>
+                </div>
+                <div class="row bottmborder">
+                    <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
+                        <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                        <button type="button" class="btn btn-success btn-circle"></button>
+                    </div>
+                </div>
+                <div class="row bottmborder">
+                    <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
+                        <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
+                    </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
-            </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                        <button type="button" class="btn btn-success btn-circle"></button>
+                    </div>
+                </div>
 
-            <div class=" ">
-                <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a><p>Choose whether this property is to sell / rent and specify your costs!</p></div>
-                <div class="col-md-3 col-sm-3 col-xs-3 text-right"> <button type="button" class="btn btn-success btn-circle"></button></div>
-            </div>
-        </div>
-        <div class="col-md-6 propertyborder colright">
-            <h3>Listing Type</h3>
-            <h6>Select the listing of your property and set price</h6>
-            <div class="row">
-            <div class="col-md-6"><button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale">For Rent</button></div>
-                <div class="col-md-6"><button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale">For Sale</button></div>
-            </div>
-            <div class="padding20"></div>
-            <div class="row" ng-show="forSale">
-            <div class="col-md-3">Price</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="price">
+                <div class=" ">
+                    <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
+                        <p>Choose whether this property is to sell / rent and specify your costs!</p>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                        <button type="button" class="btn btn-success btn-circle"></button>
+                    </div>
                 </div>
             </div>
-            <div class="row" ng-hide="forSale">
-                <div class="col-md-3">Yearly</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" ng-show="yearlyPrice">
+            <div class="col-md-6 propertyborder colright">
+                <h3>Listing Type</h3>
+                <h6>Select the listing of your property and set price</h6>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale">For Rent</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale">For Sale</button>
+                    </div>
                 </div>
-                <div class="col-md-3">6 Months</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" ng-show="6monthsPrice">
+                <div class="padding20"></div>
+                <div class="row" ng-show="forSale">
+                    <div class="col-md-3">Price</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="price">
+                    </div>
                 </div>
-                <div class="col-md-3">Monthly</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" ng-show="monthlyPrice">
-                </div>
-                <div class="col-md-3">Weekly</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" ng-show="weeklyPrice">
-                </div>
-                <div class="col-md-3">Weekend</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekend" ng-show="weekendPrice">
-                </div>
-                <div class="col-md-3">Daily</div>
-                <div class="col-md-9">
-                    <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="daily" ng-show="dailyPrice">
+                <div class="row" ng-hide="forSale">
+                    <div class="col-md-3">Yearly</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" ng-show="yearlyPrice">
+                    </div>
+                    <div class="col-md-3">6 Months</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" ng-show="6monthsPrice">
+                    </div>
+                    <div class="col-md-3">Monthly</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" ng-show="monthlyPrice">
+                    </div>
+                    <div class="col-md-3">Weekly</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" ng-show="weeklyPrice">
+                    </div>
+                    <div class="col-md-3">Weekend</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekend" ng-show="weekendPrice">
+                    </div>
+                    <div class="col-md-3">Daily</div>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="daily" ng-show="dailyPrice">
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <div class="row" style="clear: both;padding-top: 100px;">
-            <div class="col-md-3"><button class="btn btn-lg btn-success propertbutton" ng-click="publishProp">Publish my Listing</button></div>
-           <div class="col-md-6 "><button class="btn btn-lg btn-default ">Preview</button></div>
+            <div class="col-md-3">
+                <button class="btn btn-lg btn-success propertbutton" ng-click="publishProp">Publish my Listing</button>
+            </div>
+            <div class="col-md-6 ">
+                <button class="btn btn-lg btn-default ">Preview</button>
+            </div>
         </div>
     </div>
 
