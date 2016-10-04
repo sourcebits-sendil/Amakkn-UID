@@ -120,7 +120,7 @@
     <!--mobile view-->
 
 
-     <div class="row text-center">
+     <div class="row text-center visible-xs">
     <div class=" col-xs-12  hidden-md hidden-sm visible-xs ">
         <div class="row loginTextColor " >
             <h3>Sign In</h3>
@@ -166,7 +166,7 @@
 
                  <div class="row">
                      <div class=" col-xs-12 hidden-md hidden-sm visible-xs form-group">
-                <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
+                <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
                  <p ng-show="login.phone.$invalid && !login.phone.$pristine" style="color:#a94442;">Phone number is required.</p></div>
                     </div>
                  <div class="row"> <div class=" col-xs-12 hidden-md hidden-sm visible-xs form-group" >
