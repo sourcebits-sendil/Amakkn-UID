@@ -22,6 +22,7 @@
         $scope.successResponse={};
         //activate();
         $rootScope.loggedName = '';
+        $scope.userForm.isSocial = "0";
 
         $scope.userlogin = function(){
 
@@ -35,8 +36,9 @@
                     $rootScope.loggedIn = true;
                     $rootScope.loggedName = result.response.user.name;
                     //alert($rootScope.loggedName);
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
                 }else{
-                    alert(result.resStr);
+                    //alert(result.resStr);
                 }
              });
         }
@@ -46,9 +48,10 @@
                 //$mdToast.show($mdToast.simple().textContent('Hello'));
                $rootScope.myPromise = $timeout(function(){
                     $location.path('/signUp');
-                   $rootScope.myPromise = $timeout(function(){$rootScope.view.name = "otp";}, 50)
-
-                    $scope.userForm.isSocial = "No";
+                   $rootScope.forgetPass = true;
+                   //$rootScope.myPromise = $timeout(function(){$rootScope.view.name = "otp";}, 50)
+                   //$rootScope.updateCountryCode()
+                    //$scope.userForm.isSocial = "0";
 
                }, 1000);
             }

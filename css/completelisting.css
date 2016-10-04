@@ -72,6 +72,7 @@
     padding-top: 20px;
     padding-bottom: 0px;
 }
+
 .bottmborder
 {
     border-bottom: 1px solid #e1e1e1;
@@ -80,6 +81,14 @@
     margin-right: 0;
 }
 
+.bottmborder1
+{
+    border-bottom: 1px solid #e1e1e1;
+    width: 100%;
+   width: auto;
+    margin-right: -15px;
+    margin-right: -16px;
+}
 .btn-circleplus {
   width: 75px;
   height: 75px;
@@ -118,3 +127,14 @@
  .md-button.md-accent{color: #24c969;width: 100%;font-size: 20px; border-right: solid 2px #e1e1e1;}
  .md-nav-bar md-nav-ink-bar{color: #24c969; background:#24c969; bottom: -1px; height: 3px;}
  .md-nav-item{width:30%;}
+
+
+.md-padding {
+    /* padding: 16px; */
+    border: solid 1px #ccc;
+}
+
+@media (min-width: 960px)
+.md-padding {
+    /* padding: 16px; */
+}

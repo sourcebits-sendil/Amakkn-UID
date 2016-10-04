@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular
+     angular
         .module('amakkn')
         .controller('listPropertyController', listPropertyController);
 
@@ -38,7 +38,7 @@
         //activate();
 
         $scope.nextStep = function(step){
-
+            //step = 'addDetails'
             switch (step){
                 case 'propAddress':
                     if($scope.userForm.propertyType != null && $scope.userForm.category != null && $scope.userForm.userId != null){
@@ -269,29 +269,26 @@
     from: 1960,
     to: 2015,
     step: 1,
-    dimension: " ",
+    dimension: " $",
     scale: [1960, '|', 1970, '|', 1980, '|' , 1990, '|', 2000, '|', 2015]
   };
         
-        
-           $scope.value6= "1996";
+        $scope.value6 = "1996";
   $scope.options = {
     from: 1960,
     to: 2015,
     step: 1,
     dimension: " $",
-    scale: [1960, 1970,  1980,  1990,  2000,  2015]
+    scale: [1960, '|', 1970, '|', 1980, '|' , 1990, '|', 2000, '|', 2015]
   };
-      
-        
         
         //pagignation
-       
-        
+
+
         $scope.showData = function( ){
 
  $scope.curPage = 0;
- $scope.pageSize = 1;
+ $scope.pageSize = 3;
      $scope.datalists = [
          { "name": "John","age":"16","designation":"Software Engineer1"},
     {"name": "John2","age":"21","designation":"Software Engineer2"},
@@ -312,10 +309,10 @@
      $scope.numberOfPages = function() {
 				return Math.ceil($scope.datalists.length / $scope.pageSize);
 			};
-         
+
 };
-        
-        
+
+
         $scope.showDatas = function( ){
 
  $scope.curPages = 0;
@@ -340,14 +337,14 @@
      $scope.numberOfPagess = function() {
 				return Math.ceil($scope.datalistss.length / $scope.pageSizes);
 			};
-         
+
 };
-        
-        
+
+
          $scope.showData3 = function( ){
 
  $scope.curPage3 = 0;
- $scope.pageSize3 = 1;
+ $scope.pageSize3 = 3;
      $scope.datalists3 = [
          { "name": "John","age":"16","designation":"Software Engineer1"},
     {"name": "John2","age":"21","designation":"Software Engineer2"},
@@ -368,10 +365,11 @@
      $scope.numberOfPages3 = function() {
 				return Math.ceil($scope.datalists3.length / $scope.pageSize3);
 			};
-         
+
 };
-        
-        
+
+
+
         $scope.amenityList = function(){
             $scope.urlRest = 'http://52.42.99.192/Property/getAmenitiesForPropertyType/';
             var param = {"propertyType":"4"};

@@ -1,8 +1,12 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider', 'satellizer', 'auth0.lock', 'angular-jwt']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
-amakknApp.config(function($routeProvider){
+amakknApp.config(function($routeProvider, lockProvider){
+    lockProvider.init({
+        clientID: 'lXsdM6rjFINZc1PIRf5mRXnRrYAa8IEg',
+        domain: 'amakkn.auth0.com'
+      });
     $routeProvider
 
    // route for the buy page
@@ -180,6 +184,16 @@ amakknApp.config(function($routeProvider){
 
   return Service;
 }])
+  .config(function($authProvider) {
+
+    $authProvider.facebook({
+      clientId: '192874244471411'
+    });
+    $authProvider.google({
+      clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com'
+    });
+
+})
 /*.config(['$httpProvider', function($httpProvider) {
     $httpProvider.interceptors.push('LoadingListener');
 }])
@@ -247,8 +261,9 @@ amakknApp.config(function($routeProvider){
         }
     };
 }]); */
-amakknApp.controller('index',['MyService','$scope', '$location', '$rootScope', function($scope,$http,MyService, $location,$rootScope){
+amakknApp.controller('index',['MyService','$scope', '$location', '$rootScope', function($scope,$http,MyService, $location,$rootScope, auth){
 
+    $scope.auth = auth;
     /*$scope.pendingRequests = function(){
         return MyService.requestingSomeURL();
       }*/
@@ -274,3 +289,4 @@ function run($rootScope, $location, $cookieStore, $http) {
             }
         });
     }*/
+

@@ -3,7 +3,7 @@
     @import url('../css/grid.css');
     @import url('../css/filtermenu.css');
     @import url('../css/propertytype.css');
-  
+
 </style>
 
 
@@ -105,35 +105,35 @@
             </div><hr>
                          <div class="col-md-12 col-sm-12 col-xs-12">
 
-                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p></div> <div class="col-md-12 col-sm-6 col-xs-6 "> <div  ng-init="showDatafilter()"> 
+                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Minimum Bedrooms</p></div> <div class="col-md-12 col-sm-6 col-xs-6 "> <div  ng-init="showDatafilter()">
     <div class="pagination pagination-centered" ng-show="datalistsfilter.length">
         <div class="row pagination-controle pagination">
         <div class="col-md-3"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPagefilter == 0"
  ng-click="curPagefilter=curPagefilter-1">  -</button></div>
-  
+
  <div class="col-md-6 addspans"> {{curPagefilter+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
-            
+
  <div class="col-md-2 "><button type="button" class="btn btn-primary next"
  ng-disabled="curPagefilter >= datalistsfilter.length/pageSizefilter - 1"
  ng-click="curPagefilter = curPagefilter+1">+ </button></div>
         </div>
 </div>
-  
+
 </div></div>
-                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p></div> <div class="col-md-12 col-sm-6 col-xs-6 "> <div  ng-init="showDatafilter1()"> 
+                             <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3"><p class="filterp" >Maximum Bedrooms</p></div> <div class="col-md-12 col-sm-6 col-xs-6 "> <div  ng-init="showDatafilter1()">
     <div class="pagination pagination-centered" ng-show="datalistsfilter1.length">
         <div class="row pagination-controle pagination">
         <div class="col-md-3"><button type="button" class="btn btn-primary btn-pri" ng-disabled="curPagefilter1 == 0"
  ng-click="curPagefilter1=curPagefilter1-1">  -</button></div>
-  
+
  <div class="col-md-6 addspans"> {{curPagefilter1+1}} Bedrooms <!--{{ numberOfPages3() }}--></div>
-            
+
  <div class="col-md-2 "><button type="button" class="btn btn-primary next"
  ng-disabled="curPagefilter1 >= datalistsfilter1.length/pageSizefilter1 - 1"
  ng-click="curPagefilter1 = curPagefilter1+1">+ </button></div>
         </div>
 </div>
-  
+
 </div></div>
                          </div>
 

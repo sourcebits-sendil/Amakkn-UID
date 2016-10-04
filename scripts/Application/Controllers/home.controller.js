@@ -36,6 +36,7 @@
         $scope.users = null;
         $scope.currentNavItem = "buy";
         $rootScope.propertyArr = [];
+        $rootScope.forgetPass = false;
 
   $scope.loadUsers = function() {
     // Use timeout to simulate a 650ms request.
@@ -105,21 +106,21 @@
                 }, 200);
             });
         }
-        
-        
-        
+
+
+
         $scope.value7 = "200;300";
   $scope.options = {
-      
+
     from: 1,
     to: 500,
     step: 1,
     dimension: "$",
-    
+
   };
-        
+
         //filter home page
-        
+
         $scope.showDatafilter = function( ){
 
  $scope.curPagefilter = 0;
@@ -144,10 +145,10 @@
      $scope.numberOfPagesfilter = function() {
 				return Math.ceil($scope.datalistsfilter.length / $scope.pageSizefilter);
 			};
-         
+
 };
-        
-        
+
+
          $scope.showDatafilter1 = function( ){
 
  $scope.curPagefilter1 = 0;
@@ -172,7 +173,7 @@
      $scope.numberOfPagesfilter1 = function() {
 				return Math.ceil($scope.datalistsfilter1.length / $scope.pageSizefilter1);
 			};
-         
+
 };
 
         var getProperties = function(){

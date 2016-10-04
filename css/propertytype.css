@@ -22,7 +22,7 @@
 .bottmborder
 {
 
-    
+
     border-bottom: 1px solid #e1e1e1;
     width: 100%;
     margin-left: 0px;
@@ -33,7 +33,7 @@
 
     border: 1px solid #ddd;
    margin-left: -15px;
-   
+
 }
 
 .bottmborderss
@@ -41,7 +41,7 @@
 
     border-bottom: 1px solid #ddd;
    margin-left: -15px;
-   
+
 }
 
 
@@ -145,7 +145,7 @@ textarea{max-width:100%;max-height:70px;}
 
 @media (max-width: 1400px) {
    .addspan{margin-left: 31px;}
-    
+
 }
 @media (max-width: 1170px){
     width: 259px;

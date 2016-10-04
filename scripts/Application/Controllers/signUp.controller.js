@@ -11,11 +11,12 @@
 
     /* @ngInject */
 
-    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast, NgMap) {
+    function signUpController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast, NgMap, $auth) {
 
         var vm = this;
         var marker;
         $scope.address = '';
+        var previousNum = '';
         var ele = '';
         /* initiating view objects used to switch */
         $rootScope.view={
@@ -39,25 +40,48 @@
         $rootScope.loggedIn = false;
         $scope.locIP = '';
 
-        $http.get('../scripts/Library/data.json').success(function(data) {
-                $scope.countryCodes = data;
-        });
-        /* checking the browser's support for HTML geolocation support and fetching the country code based on IP address*/
-        if (navigator.geolocation) {
-           $.getJSON("http://freegeoip.net/json/", function(result){
-                /* Selecting the matching country code in dropdown of the mobile number field*/
-                //$scope.userForm.codes = result.country_code;
-                //$scope.userForm.codes = result.country_code;
-                $scope.locIP = result.country_code;
-               //$log.debug(result)
-               //$scope.userForm.codes.country_isd_code = result.country_isd_code;
+        $rootScope.authenticate = function(provider) {
+          $auth.authenticate(provider)
+          .then(function(response) {
+            // Signed in with Google.
+              alert('workings')
+              $log.debug(response.oauthType);
+          })
+          .catch(function(response) {
+            // Something went wrong.
 
+          })
+        };
+
+        $scope.getCountryCode = function(){
+            $http.get('../scripts/Library/data.json').success(function(data) {
+                $scope.countryCodes = data;
             });
-        }else{
-                //alert("Geolocation services are not supported by your browser.");
+            /* checking the browser's support for HTML geolocation support and fetching the country code based on IP address*/
+            if (navigator.geolocation) {
+               $.getJSON("http://freegeoip.net/json/", function(result){
+                    /* Selecting the matching country code in dropdown of the mobile number field*/
+                    $scope.locIP = result.country_code;
+                });
+            }else{
+                    //alert("Geolocation services are not supported by your browser.");
+            }
+
+            if($rootScope.forgetPass){
+                //alert('w ')
+
+                   // $scope.addName();
+                    $rootScope.view.name = "otp";
+                    //$scope.getCountryCode();
+                   // $scope.countryCodes.country_code = $scope.locIP;
+
+            }
         }
+        $scope.getCountryCode();
         /* Function to switch into details entry form based on user type - Individual or Real estate agent*/
         $scope.user = function(type){
+
+
             $scope.view.name = type;
             $scope.userForm.accountType = type == 'Individual'? '1':'2';
 
@@ -67,9 +91,6 @@
                 $scope.placeChanged = function() {
                     //alert(' ');
                     vm.place = this.getPlace();
-
-                    //alert(vm.place.geometry.location)
-                    //console.log('location', vm.place.geometry.location);
                     vm.map.setCenter(vm.place.geometry.location);
                     /*$timeout(function(){
                      marker = new google.maps.Marker({position: vm.place.geometry.location, map: vm.map});
@@ -120,9 +141,10 @@
 
         $scope.addName = function(){
             //$log.debug($scope.userForm.userType );
+            $scope.getCountryCode();
             $scope.view.name = "otp";
             $scope.userForm.isSocial = "0";
-            $scope.countryCodes.country_code = $scope.locIP;
+
 
             if($scope.userForm.accountType=='1'){
                 $scope.urlRest = 'http://52.42.99.192/Login/signupIndividualUser/';
@@ -132,11 +154,21 @@
             var myEl = angular.element( document.querySelector( '#step2' ) );
             myEl.removeClass('active').addClass('complete');
             $timeout(function() {
-                $scope.selectedCode();
+                //$scope.selectedCode();
+                //alert(' ');
+                $scope.countryCodes.country_code = $scope.locIP;
                 myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
             }, 500);
         }
+        $scope.changedNumber = function(){
+            //$log.debug('working');
+            if(previousNum != $scope.userForm.phone && $scope.userForm.phone != ""){
+                $scope.isDisabled = false;
+               }
+                previousNum = $scope.userForm.phone;
+        }
         $scope.selectedCode = function(){
+            $scope.isDisabled = false;
             $timeout(function() {
                 ele = document.getElementById("num").getAttribute('aria-label')
                 var cod = ele.split('+')
@@ -149,7 +181,9 @@
             //which means that:
             //console.log(selected.value || selected.getAttribute('value'));
         }
+
         $scope.getOTP = function() {
+
             $scope.isDisabled = true;
             var IsdJson = $scope.countryCodes;
             var isd = $filter('filter')(IsdJson, {country_code:$scope.locIP})[0];
@@ -169,7 +203,9 @@
                            $scope.userForm.name );
 
         //$http.post('http://52.42.99.192/Login/signupIndividualUser/', $scope.userForm) .success(function(data) { $log.debug(data) });
-
+            if($rootScope.forgetPass){
+                $scope.resendOTP();
+            }else{
            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if(result.resCode == 0){
                     $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
@@ -179,6 +215,7 @@
                         //alert(result.resStr);
                     }
                 });
+            }
         }
 
         $scope.addPass = function(){
@@ -204,6 +241,14 @@
 
 
         $scope.resendOTP = function(){
+
+                ele = document.getElementById("num").getAttribute('aria-label')
+                var cod = ele.split('+')
+                //$log.debug(cod[1]);
+                $scope.userForm.countryCode = '+'+cod[1];
+
+        $timeout(function() {
+            //alert($scope.userForm.countryCode);
             $scope.urlRest = 'http://52.42.99.192/Login/forgotPassword/';
             $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                  if(result.resCode == 0){
@@ -215,6 +260,7 @@
                         //alert(result.resStr);
                     }
                 });
+            }, 500);
         }
         $scope.confOTP = function(){
             $scope.urlRest = 'http://52.42.99.192/Login/verifyUser/';
