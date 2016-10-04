@@ -253,22 +253,48 @@
                     $scope.amenityListData = result.response.amenity;
                     $scope.featureListData = result.response.feature;
                     $.each($scope.featureListData, function(i, v){
+
                         if (v.name == "Year of Construction")
                         {
                             $scope.year = new Date(new Date().setFullYear(new Date().getFullYear() + 3)).getFullYear();
                             v.upperLimit = $scope.year;
                             $scope.symbol = "";
+
+                            //var totalDuration = v.upperLimit - v.lowerLimit;
+                            //var intervalValue = totalDuration / 5;
+                            //var val1 = v.lowerLimit - (-intervalValue);
+                            $scope.firstInterval = 1980;
+                            //var val2 = $scope.firstInterval - (-intervalValue);
+                            $scope.secondInterval = 1990;
+                            //var val3 = $scope.secondInterval - (-intervalValue);
+                            $scope.thirdInterval = 2000;
+                            //var val4 = $scope.thirdInterval - (-intervalValue);
+                            $scope.fourthInterval = 2010;
+
+
                         }
                         else
                         {
                             $scope.symbol = " m²";
+                            var totalArea = v.upperLimit - v.lowerLimit;
+                            var intervalValue = totalArea / 5;
+                            var val1 = v.lowerLimit - (-intervalValue);
+                            $scope.firstInterval = 100* parseInt(parseInt(val1) / 100);
+                            var val2 = $scope.firstInterval - (-intervalValue);
+                            $scope.secondInterval = 100* parseInt(parseInt(val2) / 100);
+                            var val3 = $scope.secondInterval - (-intervalValue);
+                            $scope.thirdInterval = 100* parseInt(parseInt(val3) / 100);
+                            var val4 = $scope.thirdInterval - (-intervalValue);
+                            $scope.fourthInterval = 100* parseInt(parseInt(val4) / 100);
+
                         }
+                        debugger;
                         $scope.x.push({value: i, name: v.name, isMandatory: v.isMandatory, key: v.key, options: {
                         from: v.lowerLimit,
                         to: v.upperLimit,
                         step: 1,
                         dimension: $scope.symbol,
-                        
+                        scale: [v.lowerLimit, '|', $scope.firstInterval, '|', $scope.secondInterval, '|', $scope.thirdInterval, '|', $scope.fourthInterval, '|', v.upperLimit]
                     }});
                     })
                     $scope.frontispicesList = ["North","South","East","West","North - West","North - East","South - East","South - West"];
