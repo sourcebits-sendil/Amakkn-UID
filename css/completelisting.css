@@ -39,6 +39,12 @@
     border-radius: 15px;
     border-color: #24c969;
 }
+
+.btn-info {
+    color: #fff;
+    background-color: #24c969;
+    border-color: #46b8da;
+}
 .btn-circle1 {
     width: 25px;
     height: 25px;
