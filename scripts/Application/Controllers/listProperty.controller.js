@@ -232,7 +232,7 @@
             }
         };
         
-        $scope.value4 = "1970";
+        $scope.value4 = "1970;1980";
         $scope.options = {
             from: 1960,
             to: 2015,
@@ -248,9 +248,29 @@
             };
             $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {
                 if (result.resCode == 0) {
+                    $scope.x = [];
                     $scope.roomTypeListData = result.response.room;
                     $scope.amenityListData = result.response.amenity;
                     $scope.featureListData = result.response.feature;
+                    $.each($scope.featureListData, function(i, v){
+                        if (v.name == "Year of Construction")
+                        {
+                            $scope.year = new Date(new Date().setFullYear(new Date().getFullYear() + 3)).getFullYear();
+                            v.upperLimit = $scope.year;
+                            $scope.symbol = "";
+                        }
+                        else
+                        {
+                            $scope.symbol = " m²";
+                        }
+                        $scope.x.push({value: i, name: v.name, isMandatory: v.isMandatory, key: v.key, options: {
+                        from: v.lowerLimit,
+                        to: v.upperLimit,
+                        step: 1,
+                        dimension: $scope.symbol,
+                        
+                    }});
+                    })
                     $scope.frontispicesList = ["North","South","East","West","North - West","North - East","South - East","South - West"];
                     $scope.daysList = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                 }

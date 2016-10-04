@@ -269,9 +269,9 @@
         <div class="col-md-12 col-sm-6 col-xs-6" ng-repeat="item in roomTypeListData">
           <h4 style="text-align:justify;">{{item.name}}</h4>
           <div ng-init="curPage = item.lowerLimit">
-            <div class="pagination pagination-centered" >
-              <div class="row pagination-controle pagination" >
-                <div class="col-md-2" >
+            <div class="pagination pagination-centered">
+              <div class="row pagination-controle pagination">
+                <div class="col-md-2">
                   <button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == item.lowerLimit" ng-click="curPage=curPage-1"> -</button>
                 </div>
 
@@ -286,8 +286,6 @@
           </div>
         </div>
 
-        
-
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
             <button class="btn btn-success" type="button" ng-click="updateRooms()">Save Changes</button>
@@ -295,41 +293,44 @@
         </div>
 
       </div>
-        <div class="row borderinside">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h4 class="buttonleft">AMENITIES</h4>
-            <div class="buttonleft contentMarginBottom">
-              <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
-            </div>
+      <div class="row borderinside">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h4 class="buttonleft">AMENITIES</h4>
+          <div class="buttonleft contentMarginBottom">
+            <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
           </div>
         </div>
+      </div>
       <div class="row borderinside">
         <h4 class="buttonleft">Features</h4>
         <div class="row"></div>
 
-        <div class="row buttonleft" style="position: relative"  ng-repeat="item in featureListData">
-
-          <h4>{{item.name}}</h4>
-          <br>
-          <div class="row">
-            <div class="col-md-12">
-            <input ng-model="value4" type="text" slider options="options" />
+        <div class="row buttonleft" style="position: relative" ng-repeat="item in x">
+          <div ng-if="item.name !== 'Frontispiece' ">
+            <h4>{{item.name}}</h4>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <input ng-model="item.value" type="text" slider options="item.options" />
+              </div>
+            </div>
+            <br>
           </div>
+          <div ng-if="item.name == 'Frontispiece' ">
+            <h4>{{item.name}}</h4>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
+              </div>
+            </div>
+
           </div>
-          <br>
-          <br>
-
-
         </div>
 
-        <div class="row buttonleft">
-          <h4>FRONTISPIECE</h4>
-          <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
+        <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
+          <button class="btn btn-success" type="button" ng-click="updateAmenities()">Save Changes</button>
         </div>
-
-          <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
-            <button class="btn btn-success" type="button" ng-click="updateAmenities()">Save Changes</button>
-          </div>
       </div>
       <div class="row borderinside">
         <h4 class="buttonleft">Visiting Hours</h4>
@@ -338,7 +339,7 @@
         <br>
         <div class="row">
           <div class="col-md-12">
-            <!-- <input ng-model="value4" type="text" id="mySlider2" slider options="options" /> -->
+            <input ng-model="value4" type="text" id="mySlider2" slider options="options" />
           </div>
 
         </div>
