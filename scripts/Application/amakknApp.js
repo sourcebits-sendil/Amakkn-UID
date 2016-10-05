@@ -1,12 +1,9 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider', 'satellizer', 'auth0.lock', 'angular-jwt']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider', 'satellizer']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
-amakknApp.config(function($routeProvider, lockProvider){
-    lockProvider.init({
-        clientID: 'lXsdM6rjFINZc1PIRf5mRXnRrYAa8IEg',
-        domain: 'amakkn.auth0.com'
-      });
+amakknApp.config(function($routeProvider){
+
     $routeProvider
 
    // route for the buy page
