@@ -190,7 +190,8 @@ amakknApp.config(function($routeProvider, lockProvider){
       clientId: '192874244471411'
     });
     $authProvider.google({
-      clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com'
+      clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',
+        responseType: 'token'
     });
 
 })
