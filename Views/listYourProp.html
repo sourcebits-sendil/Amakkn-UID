@@ -17,16 +17,16 @@
         <div class="stepwizard">
           <div class="stepwizard-row">
             <div class="stepwizard">
-              <button type="button" class="btn btn-success btn-circle"></button>
+              <button type="button" class="btn btn-success btn-circle1"></button>
             </div>
             <div class="stepwizard-step">
-              <button type="button" class="btn btn-default btn-circle"></button>
+              <button type="button" class="btn btn-default btn-circle1"></button>
             </div>
             <div class="stepwizard-step">
-              <button type="button" class="btn btn-default btn-circle"></button>
+              <button type="button" class="btn btn-default btn-circle1"></button>
             </div>
             <div class="stepwizard-step">
-              <button type="button" class="btn btn-default btn-circle" disabled="disabled"></button>
+              <button type="button" class="btn btn-default btn-circle1" disabled="disabled"></button>
             </div>
           </div>
         </div>
@@ -38,10 +38,10 @@
 
     <div class="row ">
 
-      <md-content class="md-padding ">
+      <md-content class="md-padding " style="padding:0px;">
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-          <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left" style="width:40%;">Residential</md-nav-item>
-          <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:40%;">Commercial</md-nav-item>
+          <md-nav-item md-nav-click="goto('Resi')" name="Resi" ng-click="selectCategory('1')" class="push-left" style="width:50%;">Residential</md-nav-item>
+          <md-nav-item md-nav-click="goto('Comm')" name="Comm" ng-click="selectCategory('2')" style="width:50%;">Commercial</md-nav-item>
         </md-nav-bar>
       </md-content>
 
@@ -54,7 +54,7 @@
     <div class="padding20"></div>
     <div class="row propertyborder">
       <div class="col-md-6" ng-repeat="item in propertiesTypeData">
-        <div class="row btn" ng-click="selectType(item.key)">
+        <div class="row " ng-click="selectType(item.key)">
           <!-- <div class="row bottmborder"> -->
           <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
             <div class="col-md-2"><img ng-src={{item.image}}>
@@ -133,15 +133,15 @@
           <h3>Complete You Listing</h3>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
           <p>You can add up to 30 property photos.</p>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+          <button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
-      <div class="row bottmborder" ng-click="nextStep('addDetails')">
+      <div class="row bottmborder1" ng-click="nextStep('addDetails')">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
           <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
         </div>
@@ -149,7 +149,7 @@
           <button type="button" class="btn btn-default btn-circle"></button>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
           <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
         </div>
@@ -159,7 +159,7 @@
         </div>
       </div>
 
-      <div class=" " style="">
+      <div class="row bottmborder1 " style="">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
           <p>Choose whether this property is to sell / rent and specify your costs!</p>
         </div>
@@ -226,39 +226,41 @@
       /* body{overflow: hidden;} */
     </style>
     <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
-      <div class="row bottmborder ">
+      <div class="row bottmborder1 ">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <h3>Complete You Listing</h3>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
           <p>You can add up to 30 property photos.</p>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+          <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
           <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+         <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
 
-        <div class="row bottmborder" ng-click="nextStep('addDescription')">
-            <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
-              <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
-            </div>
+      <div class="row bottmborder1 " ng-click="nextStep('addDescription')">
+        <div class="col-md-9 col-sm-9 col-xs-9 "><a href="">Property Description</a>
+          <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
+        </div>
+
             <div class="col-md-3 col-sm-3 col-xs-3 text-right">
               <button type="button" class="btn btn-default btn-circle"></button>
             </div>
         </div>
 
 
-      <div class="row bottmborder">
+      <div class=" row bottmborder1">
+
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
           <p>Choose whether this property is to sell / rent and specify your costs!</p>
         </div>
@@ -319,8 +321,8 @@
         <div class="row buttonleft" style="position: relative" ng-repeat="item in x">
           <div ng-if="item.name !== 'Frontispiece' ">
             <h4>{{item.name}}</h4>
-            <br>
-            <div class="row">
+            <br><br>
+            <div class="row" style="margin-right: 10px;">
               <div class="col-md-12">
                 <input ng-model="item.value" type="text" slider options="item.options" />
               </div>
@@ -330,7 +332,7 @@
           <div ng-if="item.name == 'Frontispiece' ">
             <h4>{{item.name}}</h4>
             <br>
-            <div class="row">
+            <div class="row" >
               <div class="col-md-12">
                 <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
               </div>
@@ -360,11 +362,15 @@
           <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in daysList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
         </div>
         <hr>
+          <div class="">
+                        <p class="buttonleft">Activity will repeat every week on Saturdays and Tuesdays.</p>
+                    </div>
+                    <hr>
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
             <button class="btn btn-success" type="button" ng-click="updateFeatures()">Save Changes</button>
           </div>
-        </div>
+        </div><hr>
 
         <div class="row buttonleft">
           <h4>ADD FLOOR PLAN</h4>
@@ -424,34 +430,34 @@
 <!-- Adding Property Description -->
 <div data-ng-switch-when="addDescription">
   <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
-    <div class="row bottmborder ">
+    <div class="row bottmborder1 ">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h3>Complete You Listing</h3>
       </div>
     </div>
-    <div class="row bottmborder">
+    <div class="row bottmborder1">
       <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
         <p>You can add up to 30 property photos.</p>
       </div>
       <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-        <button type="button" class="btn btn-success btn-circle"></button>
+        <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
       </div>
     </div>
-    <div class="row bottmborder">
+    <div class="row bottmborder1">
       <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
         <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
       </div>
       <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-        <button type="button" class="btn btn-success btn-circle"></button>
+        <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
       </div>
     </div>
-    <div class="row bottmborder">
+    <div class="row bottmborder1">
       <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
         <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
       </div>
 
       <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-        <button type="button" class="btn btn-success btn-circle"></button>
+        <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
       </div>
     </div>
 
@@ -490,34 +496,34 @@
 <div data-ng-switch-when="setPrice">
   <div>
     <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
-      <div class="row bottmborder ">
+      <div class="row bottmborder1 ">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <h3>Complete You Listing</h3>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Add Photos</a>
           <p>You can add up to 30 property photos.</p>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+          <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Details</a>
           <p>List your properties amenities, choose visiting hours and add specify anything else you wish!</p>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+          <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Property Description</a>
           <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
         </div>
 
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+         <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
 
@@ -526,7 +532,7 @@
           <p>Choose whether this property is to sell / rent and specify your costs!</p>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-success btn-circle"></button>
+          <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
     </div>
@@ -561,9 +567,11 @@
         <div class="col-md-9" ng-show="monthlyPrice">
           <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" >
         </div>
+
         <div class="col-md-3" ng-show="weeklyPrice">Weekly</div>
         <div class="col-md-9" ng-show="weeklyPrice">
           <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" >
+
         </div>
         <div class="col-md-3" ng-show="weekendPrice">Weekend</div>
         <div class="col-md-9" ng-show="weekendPrice">
