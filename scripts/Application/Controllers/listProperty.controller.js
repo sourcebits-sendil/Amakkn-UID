@@ -6,7 +6,7 @@
     'use strict';
     angular.module('amakkn').controller('listPropertyController', listPropertyController);
     /* @ngInject */
-    function listPropertyController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, NgMap, $mdToast, $mdSelect) {
+    function listPropertyController($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, NgMap, $mdToast) {
         var vm = this;
         var marker;
         vm.class = 'listPropertyController';
@@ -36,7 +36,7 @@
         //activate();
 
         $scope.nextStep = function(step) {
-            step = 'addDetails'
+            //step = 'addDetails'
             switch (step) {
 
                 case 'propAddress':
@@ -45,35 +45,57 @@
                         $scope.placeChanged = function() {
                             vm.place = this.getPlace();
                             vm.map.setCenter(vm.place.geometry.location);
+                            $log.debug(vm.place.geometry.location)
                         }
                         $timeout(function() {
                             NgMap.getMap().then(function(map) {
                                 vm.map = map;
-                                marker = new google.maps.Marker({
+                                /*marker = new google.maps.Marker({
                                     position: map.getCenter(),
                                     map: vm.map
-                                });
+                                });*/
                                 vm.map.panTo(map.getCenter());
-                                geocodePosition(marker.getPosition());
+                                //geocodePosition(map.getCenter());
+
                             });
+
                         }, 200);
-                        var geocodePosition = function(pos) {
+                        $scope.geocodePosition = function(event) {
+                            //$log.debug(event.latLng)
                             geocoder.geocode({
-                                latLng: pos
+                                'location': event.latLng
                             }, function(responses) {
                                 if (responses && responses.length > 0) {
                                     $timeout(function() {
                                         $scope.address = (responses[0].formatted_address);
                                         $scope.userForm.address = $scope.address;
-                                        $scope.userForm.latitude = pos.lat();
-                                        $scope.userForm.longitude = pos.lng();
+                                        $scope.userForm.latitude = event.latLng.lat();
+                                        $scope.userForm.longitude = event.latLng.lng();
                                     }, 200);
                                     //alert(pos.lng())
                                 } else {
                                     $scope.address = ('Cannot determine address at this location.');
                                 }
                             });
-                        }
+                        }/*
+                        $scope.doSth = function() {
+                          geocoder.geocode({'location': this.getPosition()}, function(results, status) {
+                            if (status === google.maps.GeocoderStatus.OK) {
+                              if (results[1]) {
+                                //console.log(results[1]);
+                                  $scope.address = (results[1].formatted_address);
+
+                              } else {
+                                window.alert('No results found');
+                              }
+                            } else {
+                              window.alert('Geocoder failed due to: ' + status);
+                            }
+                          });
+                            //geocodePosition(this.getPosition());
+                        }*/
+
+
                     } else {
                         alert('Select type of property')
                     }
@@ -290,7 +312,7 @@
                             $scope.fourthInterval = 100* parseInt(parseInt(val4) / 100);
 
                         }
-                        debugger;
+                        //debugger;
                         $scope.x.push({value: i, name: v.name, isMandatory: v.isMandatory, key: v.key, options: {
                         from: v.lowerLimit,
                         to: v.upperLimit,
