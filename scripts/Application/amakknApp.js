@@ -158,8 +158,12 @@ amakknApp.config(function($routeProvider){
             }*/
     })
     .otherwise({ redirectTo: '/' });
-}).run(function($rootScope) {
+}).run(function($rootScope, $http) {
         //run();
+    'use strict';
+
+    $http.defaults.headers.common.Accept = 'application/json';
+    $http.defaults.headers.common['Content-Type'] = 'application/json';
       $rootScope.$on('$stateChangeStart', function() {
         $rootScope.stateLoading = true;
       })
