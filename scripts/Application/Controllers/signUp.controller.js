@@ -45,7 +45,7 @@
           .then(function(response) {
             // Signed in with Google.
               alert('workings')
-              $log.debug(response.oauthType);
+              $log.debug(response);
           })
           .catch(function(response) {
             // Something went wrong.

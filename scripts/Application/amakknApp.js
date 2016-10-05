@@ -1,12 +1,9 @@
-var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider', 'satellizer', 'auth0.lock', 'angular-jwt']);
+var amakknApp = angular.module("amakkn", ["ngRoute", 'amakkn.directive', 'http.service', 'ngMaterial', 'cgBusy', 'ngCookies', 'directive.g+signin', 'ngMap', 'rzModule', 'ngSanitize', 'angularAwesomeSlider', 'satellizer']);
 
 angular.module('Authentication', []);
 // Route used for Menu bar -------------
-amakknApp.config(function($routeProvider, lockProvider){
-    lockProvider.init({
-        clientID: 'lXsdM6rjFINZc1PIRf5mRXnRrYAa8IEg',
-        domain: 'amakkn.auth0.com'
-      });
+amakknApp.config(function($routeProvider){
+
     $routeProvider
 
    // route for the buy page
@@ -161,8 +158,12 @@ amakknApp.config(function($routeProvider, lockProvider){
             }*/
     })
     .otherwise({ redirectTo: '/' });
-}).run(function($rootScope) {
+}).run(function($rootScope, $http) {
         //run();
+    'use strict';
+
+    $http.defaults.headers.common.Accept = 'application/json';
+    $http.defaults.headers.common['Content-Type'] = 'application/json';
       $rootScope.$on('$stateChangeStart', function() {
         $rootScope.stateLoading = true;
       })
@@ -190,7 +191,8 @@ amakknApp.config(function($routeProvider, lockProvider){
       clientId: '192874244471411'
     });
     $authProvider.google({
-      clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com'
+      clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',
+        responseType: 'token'
     });
 
 })

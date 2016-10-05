@@ -93,7 +93,7 @@
 }
 .colright {
     /*height: 486px ;*/
-    
+
     max-height: 100% !important;
 }
 .cols {
@@ -124,7 +124,7 @@
 }
 .md-padding {
     /* padding: 16px; */
-    
+
     border: solid 1px #ccc;
 }
 @media (min-width: 960px) .md-padding {

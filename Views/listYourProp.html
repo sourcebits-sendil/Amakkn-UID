@@ -8,7 +8,7 @@
 <div class="padding20"></div>
 <div class="padding20"></div>
 <div class="container" data-ng-switch on="view.name">
-  <div class="row">
+
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-6">
         <h3>List Your Property</h3>
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-  </div>
+
   <hr>
   <div ng-switch-default>
 
@@ -97,7 +97,17 @@
     <div class="padding20"></div>
 
     <div class="row">
-      <ng-map zoom="15" center="current-position" scrollwheel="false" zoom-to-include-markers="auto" street-view-control="false"></ng-map>
+      <!--<ng-map zoom="8" center="current-position" scrollwheel="false" zoom-to-include-markers="auto" street-view-control="false">
+            <marker position="current-location" draggable="true" ></marker>
+        </ng-map>-->
+        <ng-map>
+          <marker
+             centered="true"
+             position="current-location"
+             draggable="true"
+             on-dragend="geocodePosition()" >
+          </marker>
+        </ng-map>
     </div>
     <div class="padding20"></div>
     <div class="row">
@@ -113,9 +123,9 @@
   <!-- Adding Photos -->
   <div data-ng-switch-when="addPhotos">
     <style>
-      body {
+      /*body {
         overflow: hidden;
-      }
+      }*/
     </style>
     <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
       <div class="row bottmborder ">
@@ -237,17 +247,20 @@
          <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
+
       <div class="row bottmborder1 " ng-click="nextStep('addDescription')">
         <div class="col-md-9 col-sm-9 col-xs-9 "><a href="">Property Description</a>
           <p>Summarise the highlights of your property. The more detailed and descriptive, the better!</p>
         </div>
 
-        <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-          <button type="button" class="btn btn-default btn-circle"></button>
+            <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+              <button type="button" class="btn btn-default btn-circle"></button>
+            </div>
         </div>
-      </div>
+
 
       <div class=" row bottmborder1">
+
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
           <p>Choose whether this property is to sell / rent and specify your costs!</p>
         </div>
@@ -396,7 +409,7 @@
           <div class="form-group ">
             <div class="input-group form-group profiletextbox" id="otp-group" style="width:500px;">
               <div class="">
-                <md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>
+                <!--<md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>-->
               </div>
               <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;"> </div>
           </div>
@@ -413,7 +426,7 @@
     <div class="padding20"></div>
     <div class="padding20"></div>
   </div>
-</div>
+
 <!-- Adding Property Description -->
 <div data-ng-switch-when="addDescription">
   <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
@@ -448,8 +461,8 @@
       </div>
     </div>
 
-    <div class=" " ng-click="nextStep('setPrice')">
-      <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
+    <div class="row bottmborder" ng-click="nextStep('setPrice')">
+        <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
         <p>Choose whether this property is to sell / rent and specify your costs!</p>
       </div>
       <div class="col-md-3 col-sm-3 col-xs-3 text-right">
@@ -514,7 +527,7 @@
         </div>
       </div>
 
-      <div class=" ">
+      <div class="row bottmborder">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
           <p>Choose whether this property is to sell / rent and specify your costs!</p>
         </div>
@@ -538,33 +551,35 @@
       <div class="row" ng-show="forSale">
         <div class="col-md-3">Price</div>
         <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="price">
+          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="price">
         </div>
       </div>
       <div class="row" ng-hide="forSale">
-        <div class="col-md-3">Yearly</div>
-        <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" ng-show="yearlyPrice">
+        <div class="col-md-3" ng-show="yearlyPrice">Yearly</div>
+        <div class="col-md-9" ng-show="yearlyPrice">
+          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" >
         </div>
-        <div class="col-md-3">6 Months</div>
-        <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" ng-show="6monthsPrice">
+        <div class="col-md-3" ng-show="6monthsPrice">6 Months</div>
+        <div class="col-md-9" ng-show="6monthsPrice">
+          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" >
         </div>
-        <div class="col-md-3">Monthly</div>
-        <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" ng-show="monthlyPrice">
+        <div class="col-md-3" ng-show="monthlyPrice">Monthly</div>
+        <div class="col-md-9" ng-show="monthlyPrice">
+          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" >
         </div>
-        <div class="col-md-3">Weekly</div>
-        <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" ng-show="weeklyPrice">
+
+        <div class="col-md-3" ng-show="weeklyPrice">Weekly</div>
+        <div class="col-md-9" ng-show="weeklyPrice">
+          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" >
+
         </div>
-        <div class="col-md-3">Weekend</div>
-        <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekend" ng-show="weekendPrice">
+        <div class="col-md-3" ng-show="weekendPrice">Weekend</div>
+        <div class="col-md-9" ng-show="weekendPrice">
+          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekend" >
         </div>
-        <div class="col-md-3">Daily</div>
-        <div class="col-md-9">
-          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="daily" ng-show="dailyPrice">
+        <div class="col-md-3" ng-show="dailyPrice">Daily</div>
+        <div class="col-md-9" ng-show="dailyPrice">
+          <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="daily" >
         </div>
       </div>
     </div>
