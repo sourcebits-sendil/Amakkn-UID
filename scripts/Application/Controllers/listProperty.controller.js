@@ -165,7 +165,9 @@
                     break;
                 case 'addDetails':
                     $scope.view.name = step;
+
                     $timeout(function(){
+                         $scope.propertyDetailsList();
                         $scope.getCountryCode();
                     }, 500);
                     //alert('pointing')
@@ -198,7 +200,9 @@
         }
 
         $scope.updateRooms = function() {
-            var arr = [];
+
+            var arr = '';
+            $scope.userForm.rooms ='';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyRooms/';
             //$scope.userForm.rooms = $scope.bedrooms, $scope.bathrooms, $scope.reception;
             var result = document.getElementsByClassName("roomVal");
@@ -207,44 +211,127 @@
 
             wrappedQueryResult.each(function(i){
 
-                arr.push(wrappedQueryResult[i].value);
-
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
             })
             $scope.userForm.rooms = arr;
-            $log.debug($scope.userForm.rooms)
+
+            var param = {
+                "rooms": $scope.userForm.rooms + '',
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId
+            };
+             $log.debug(param)
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updateAmenities = function() {
-            var arr = [];
+            var arr = '';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyAmenities/';
             //$scope.userForm.amenities = '';
-            var result = document.getElementsByClassName("color3");
+            var result = document.getElementById("amenities");
+             //alert(result)
+            result = result.getElementsByClassName("color3");
             var wrappedQueryResult = angular.element(result);
             //$log.debug(wrappedQueryResult[0].value)
             $scope.userForm.amenities = '';
             wrappedQueryResult.each(function(i){
 
-                arr.push(wrappedQueryResult[i].value);
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
 
             })
             $scope.userForm.amenities = arr ;
             $log.debug($scope.userForm.propertyId +'  '+ $scope.userForm.userId +' '+$scope.userForm.amenities)
-
+            var param = {
+                "amenities": $scope.userForm.amenities + '',
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId
+            };
+             $log.debug(param)
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updateFeatures = function() {
-            var arr = [];
+            var arr = '';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyFeatures/';
            // $scope.userForm.features = '';
             //$scope.userForm.visitingHours = '';
             //$scope.userForm.visitingDays = '';
             var result = document.getElementsByClassName("slidersCls");
             var wrappedQueryResult = angular.element(result);
+            //arr = wrappedQueryResult;
 
             var ele = document.getElementsByClassName("visitHrs");
             var hrs = angular.element(ele);
             $scope.userForm.visitingHours = hrs[0].value;
-            $log.debug($scope.userForm.visitingHours);
+            //$log.debug($scope.userForm.visitingHours);
+
+            var str = ($scope.userForm.visitingHours).split(';');
+            //alert(str);
+            $scope.userForm.visitingHours = str[0]+':'+str[1];
+
+            $scope.userForm.amenities = '';
+            wrappedQueryResult.each(function(i){
+
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
+
+            })
+            $scope.userForm.amenities = arr ;
+
+            var param = {
+                "visitingHours": $scope.userForm.visitingHours,
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId,
+                "features": $scope.userForm.features,
+                "visitingDays": $scope.userForm.visitingDays
+            };
+            $log.debug(param)
+
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updateContact = function() {
@@ -299,7 +386,7 @@
             var param = {
                 "category": $scope.propCategory
             };
-            $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if (result.resCode == 0) {
                     $scope.propertiesTypeData = result.response;
                     $scope.propertiesTypeCount = result.response.length;
@@ -310,7 +397,7 @@
 
         $scope.selectType = function(prop) {
             //alert(prop);
-            $scope.userForm.propertyType = prop;
+            $scope.userForm.propertyType = prop+'';
 
         }
 
@@ -364,9 +451,10 @@
         };
 
         $scope.propertyDetailsList = function() {
+            //alert($scope.userForm.propertyType)
             $scope.urlRest = 'http://52.42.99.192/Property/getAllParamsForAddPropertyForPropertyType/';
             var param = {
-                "propertyType": "4"
+                "propertyType": $scope.userForm.propertyType + ''
             };
             $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {
                 if (result.resCode == 0) {
@@ -425,7 +513,7 @@
             });
         }
 
-        $scope.propertyDetailsList();
+
         $scope.clickedBtn = function($event) {
             //debugger;
             $(event.currentTarget).toggleClass('color2').toggleClass('color3');

@@ -45,8 +45,13 @@
           .then(function(response) {
             // Signed in with Google.
               //alert('workings')
+
+              //var param = '/oauthplayground/?code=4/yspt06Lki4P1q2x8mtep49iQd0mJO1oayrZ-YMghOFU
+
+
               $log.debug(response);
           })
+
           .catch(function(response) {
             // Something went wrong.
 
@@ -62,6 +67,7 @@
                $.getJSON("http://freegeoip.net/json/", function(result){
                     /* Selecting the matching country code in dropdown of the mobile number field*/
                     $scope.locIP = result.country_code;
+
                 });
             }else{
                     //alert("Geolocation services are not supported by your browser.");
@@ -117,8 +123,8 @@
                           $timeout(function(){
                                 $scope.address=(responses[0].formatted_address);
                                 $scope.userForm.address = $scope.address;
-                                //$scope.userForm.latitude = pos.lat();
-                                //$scope.userForm.longitude = pos.lng();
+                                $scope.userForm.latitude = pos.lat();
+                                $scope.userForm.longitude = pos.lng();
                             },200);
                         //alert($scope.address);
                     } else {
@@ -158,6 +164,7 @@
                 //alert(' ');
                 $scope.countryCodes.country_code = $scope.locIP;
                 myEl = angular.element( document.querySelector( '#step3' )).removeClass('disabled').addClass('active');
+                $scope.selectedCode();
             }, 500);
         }
         $scope.changedNumber = function(){
@@ -188,7 +195,8 @@
             var IsdJson = $scope.countryCodes;
             var isd = $filter('filter')(IsdJson, {country_code:$scope.locIP})[0];
             //alert(isd.country_isd_code);
-            //$scope.userForm.countryCode =  isd.country_isd_code;
+            //$scope.userForm.countryCode =  $scope.countryCodes.country_code;
+
             $log.debug('Values ' + $scope.userForm.accountType + ' ' +
                        $scope.userForm.userType + ' ' +
                        $scope.userForm.countryCode  + ' ' +

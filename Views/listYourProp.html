@@ -285,7 +285,7 @@
             <div class="pagination pagination-centered">
               <div class="row pagination-controle pagination">
                 <div class="col-md-2">
-                  <button type="button" class="btn btn-primary btn-pri roomVal" ng-disabled="curPage == item.lowerLimit" ng-click="curPage=curPage-1" value="{{curPage}}:{{item.key}}" > -</button>
+                  <button type="button" class="btn btn-primary btn-pri roomVal" ng-disabled="curPage == item.lowerLimit" ng-click="curPage=curPage-1" value="{{item.key}}:{{curPage}}" > -</button>
                 </div>
 
                 <div class="col-md-6 addspan"> {{curPage}} {{item.name}} </div>
@@ -361,7 +361,7 @@
         <hr>
         <div class="row buttonleft">
           <h4>SELECT DAYS </h4>
-          <button type="button" class="btn btn-round color2" ng-click="clickedBtn($index)" ng-repeat="item in daysList" ng-class="{color3: $index == selectedBtn}">{{item}}</button>
+          <button type="button" class="btn btn-round color2" ng-click="clickedBtn($index)" ng-repeat="item in daysList" ng-class="{color3: $index == selectedBtn}" value="{{item.key}}">{{item}}</button>
         </div>
         <hr>
 
