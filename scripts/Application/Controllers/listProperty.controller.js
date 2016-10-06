@@ -330,7 +330,7 @@
         $scope.propertyDetailsList();
         $scope.clickedBtn = function($event) {
             //debugger;
-            $(event.currentTarget).toggleClass('color2').toggleClass('color1');
+            $(event.currentTarget).toggleClass('color2').toggleClass('color3');
         }
     }
 })();
