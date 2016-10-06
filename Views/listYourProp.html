@@ -53,13 +53,13 @@
     <div class="padding20"></div>
     <div class="padding20"></div>
     <div class="row propertyborder">
-      <div class="col-md-6" ng-repeat="item in propertiesTypeData">
-        <div class="row " ng-click="selectType(item.key)">
+      <div class="col-md-6" ng-repeat="item in propertiesTypeData"  >
+        <div class="row " ng-click="selectType(item.key)" >
           <!-- <div class="row bottmborder"> -->
-          <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'">
-            <div class="col-md-2"><img ng-src={{item.image}}>
+          <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'" >
+            <div class="col-md-2"  ><img  style="margin-top: 8px;" ng-src={{item.image}} >
             </div>
-            <div class="col-md-10 text-left"><a href="">{{item.name}}</a>
+            <div class="col-md-10 text-left" ><a href="" >{{item.name}}</a>
               <p>{{item.description}}</p>
             </div>
           </div>
@@ -83,7 +83,7 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
+
         <div class="input-group col-md-12"> <span class="input-group-btn">
                             <button class="btn btn-default btn-lg" type="button">
                                 <i class="glyphicon glyphicon-send"></i>
@@ -92,11 +92,11 @@
           <input type="text" class="form-control input-lg" ng-model="address" readonly/>
 
         </div>
-      </div>
+
     </div>
     <div class="padding20"></div>
 
-    <div class="row">
+    <div class="row " style="border:1px solid #e1e1e1">
       <!--<ng-map zoom="8" center="current-position" scrollwheel="false" zoom-to-include-markers="auto" street-view-control="false">
             <marker position="current-location" draggable="true" ></marker>
         </ng-map>-->
@@ -421,15 +421,16 @@
           <div class="col-md-6 col-sm-6 col-xs-6  "><a href="#" class="btn btn-default">Suspend Open Viewings</a>
           </div>
         </div>
-      </div>
+      </div><div class="padding20"></div>
+
     </div>
-    <div class="padding20"></div>
-    <div class="padding20"></div>
+
+
   </div>
 
 <!-- Adding Property Description -->
 <div data-ng-switch-when="addDescription">
-  <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright">
+  <div class="col-md-6 col-sm-6 col-xs-6 propertyborder colright" >
     <div class="row bottmborder1 ">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h3>Complete You Listing</h3>
@@ -461,7 +462,7 @@
       </div>
     </div>
 
-    <div class="row bottmborder" ng-click="nextStep('setPrice')">
+    <div class="row bottmborder1" ng-click="nextStep('setPrice')">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
         <p>Choose whether this property is to sell / rent and specify your costs!</p>
       </div>
@@ -470,13 +471,13 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 propertyborder colright">
+  <div class="col-md-6 propertyborder colright" style="min-height: 378px;">
     <div class="col-md-12"><a href="">Property Description</a>
       <p>Enter the description of your property in 600 characters.</p>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <textarea class="form-control" rows="5" placeholder="About your property in 600 characters." style="height: 326px;" ng-model="userForm.description"></textarea>
+        <textarea class="form-control" rows="5" placeholder="About your property in 600 characters." style="min-height: 211px;" ng-model="userForm.description"></textarea>
       </div>
     </div>
 
@@ -488,7 +489,7 @@
         <p class="pull-right"> 500 Characters Remaining</p>
       </div>
     </div>
-
+<div class="padding20"></div>
   </div>
 </div>
 
@@ -527,7 +528,7 @@
         </div>
       </div>
 
-      <div class="row bottmborder">
+      <div class="row bottmborder1">
         <div class="col-md-9 col-sm-9 col-xs-9"><a href="">Set Price and List Type</a>
           <p>Choose whether this property is to sell / rent and specify your costs!</p>
         </div>
@@ -536,7 +537,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 propertyborder colright">
+    <div class="col-md-6 propertyborder colright" style="min-height: 378px;" >
       <h3>Listing Type</h3>
       <h6>Select the listing of your property and set price</h6>
       <div class="row">
