@@ -33,6 +33,14 @@
         $scope.bedrooms = '';
         $scope.bathrooms = '';
         $scope.reception = '';
+
+        $scope.yearlyPrice = false;
+        $scope.halfYearPrice = false;
+        $scope.monthlyPrice = true;
+        $scope.weeklyPrice = false;
+        $scope.weekendPrice = false;
+        $scope.dailyPrice = false;
+
         //activate();
 
         $scope.nextStep = function(step) {
