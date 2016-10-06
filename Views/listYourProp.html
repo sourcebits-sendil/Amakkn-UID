@@ -285,7 +285,7 @@
             <div class="pagination pagination-centered">
               <div class="row pagination-controle pagination">
                 <div class="col-md-2">
-                  <button type="button" class="btn btn-primary btn-pri" ng-disabled="curPage == item.lowerLimit" ng-click="curPage=curPage-1"> -</button>
+                  <button type="button" class="btn btn-primary btn-pri roomVal" ng-disabled="curPage == item.lowerLimit" ng-click="curPage=curPage-1" value="{{curPage}}:{{item.key}}" > -</button>
                 </div>
 
                 <div class="col-md-6 addspan"> {{curPage}} {{item.name}} </div>
@@ -309,8 +309,13 @@
       <div class="row borderinside">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <h4 class="buttonleft">AMENITIES</h4>
-          <div class="buttonleft contentMarginBottom">
-            <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color2: $index == selectedBtn}">{{item.name}}</button>
+          <div class="buttonleft contentMarginBottom" id="amenities">
+            <button type="button" class="btn btn-round color2" ng-click="clickedBtn($index)" ng-repeat="item in amenityListData" ng-class="{color3: $index == selectedBtn}" value="{{item.key}}">{{item.name}}</button>
+          </div>
+        </div>
+          <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
+            <button class="btn btn-success" type="button" ng-click="updateAmenities()">Save Changes</button>
           </div>
         </div>
       </div>
@@ -324,7 +329,7 @@
             <br><br>
             <div class="row" style="margin-right: 10px;">
               <div class="col-md-12">
-                <input ng-model="item.value" type="text" slider options="item.options" />
+                <input ng-model="item.value" class="slidersCls" type="text" slider options="item.options" value="item.key"/>
               </div>
             </div>
             <br>
@@ -334,45 +339,41 @@
             <br>
             <div class="row" >
               <div class="col-md-12">
-                <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
+                <button type="button" class="btn btn-round color2" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color3: $index == selectedBtn}">{{item}}</button>
               </div>
             </div>
 
           </div>
         </div>
 
-        <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
-          <button class="btn btn-success" type="button" ng-click="updateAmenities()">Save Changes</button>
-        </div>
-      </div>
-      <div class="row borderinside">
+
+
         <h4 class="buttonleft">Visiting Hours</h4>
         <div class="row"></div>
 
         <br>
         <div class="row">
           <div class="col-md-12">
-            <input ng-model="value4" type="text" id="mySlider2" slider options="options" />
+            <input ng-model="value4" type="text" id="mySlider2" class="visitHrs" slider options="options" />
           </div>
 
         </div>
         <hr>
         <div class="row buttonleft">
           <h4>SELECT DAYS </h4>
-          <button type="button" class="btn btn-round color1" ng-click="clickedBtn($index)" ng-repeat="item in daysList" ng-class="{color2: $index == selectedBtn}">{{item}}</button>
+          <button type="button" class="btn btn-round color2" ng-click="clickedBtn($index)" ng-repeat="item in daysList" ng-class="{color3: $index == selectedBtn}">{{item}}</button>
         </div>
         <hr>
-          <div class="">
-                        <p class="buttonleft">Activity will repeat every week on Saturdays and Tuesdays.</p>
-                    </div>
-                    <hr>
+
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-6 buttonleft">
             <button class="btn btn-success" type="button" ng-click="updateFeatures()">Save Changes</button>
           </div>
         </div><hr>
 
-        <div class="row buttonleft">
+           </div>
+ <div class="row borderinside">
+        <div class=" buttonleft">
           <h4>ADD FLOOR PLAN</h4>
           <div class="col-md-6 col-sm-6 col-xs-6">
             <button type="button" class="btn btn-default btn-circleplus  "><span class="glyphicon glyphicon-plus"></span>
@@ -381,25 +382,25 @@
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/picture.png">
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/picture.png">
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/picture.png">
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/picture.png">
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/picture.png">
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4"><img scr="../assets/images/picture.png">
+              <div class="col-md-4 col-sm-4 col-xs-4"><img src="../assets/images/picture.png">
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><a href="#" class="btn btn-success">Save Changes</a>
+              <div class="col-md-6 col-sm-6 col-xs-6 buttonleft"><button class="btn btn-success" type="button">Save Changes</button>
             </div>
           </div>
         </div>
@@ -410,15 +411,18 @@
             <div class="input-group form-group profiletextbox" id="otp-group" style="width:500px;">
               <div class="">
                 <!--<md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>-->
+                    <md-select name="countryCode" class="form-control" ng-model="countryCodes.country_code" placeholder="Country"  style="min-width:20%;width:25%; color:#6dc0ce" data-ng-change="selectedCode(countryCodes)" id="num">
+                        <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes" >{{codes.country_code +' '+codes.country_isd_code}}</md-option>
+                    </md-select>
               </div>
-              <input type="tel" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;"> </div>
+              <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;" ng-model="userForm.phone"> </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-4 buttonleft">
             <button class="btn btn-success" type="button" ng-click="updateContact()">Save Changes</button>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-6  "><a href="#" class="btn btn-default">Suspend Open Viewings</a>
+          <div class="col-md-6 col-sm-6 col-xs-6  "><a href="" class="btn btn-default">Suspend Open Viewings</a>
           </div>
         </div>
       </div><div class="padding20"></div>
@@ -556,12 +560,12 @@
         </div>
       </div>
       <div class="row" ng-hide="forSale">
-        <div class="col-md-3" ng-show="yearlyPrice">Yearly</div>
-        <div class="col-md-9" ng-show="yearlyPrice">
+        <div class="col-md-3" >Yearly</div>
+        <div class="col-md-9" >
           <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" >
         </div>
-        <div class="col-md-3" ng-show="halfYearPrice">6 Months</div>
-        <div class="col-md-9" ng-show="monthsPrice">
+        <div class="col-md-3" >6 Months</div>
+        <div class="col-md-9">
           <input type="tel" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" >
         </div>
         <div class="col-md-3" ng-show="monthlyPrice">Monthly</div>
@@ -587,7 +591,7 @@
   </div>
   <div class="row" style="clear: both;padding-top: 100px;">
     <div class="col-md-3">
-      <button class="btn btn-lg btn-success propertbutton" ng-click="publishProp">Publish my Listing</button>
+      <button class="btn btn-lg btn-success propertbutton" ng-click="publishProp()">Publish my Listing</button>
     </div>
     <div class="col-md-6 ">
       <button class="btn btn-lg btn-default ">Preview</button>

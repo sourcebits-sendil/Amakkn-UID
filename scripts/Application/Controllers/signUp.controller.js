@@ -44,7 +44,7 @@
           $auth.authenticate(provider)
           .then(function(response) {
             // Signed in with Google.
-              alert('workings')
+              //alert('workings')
               $log.debug(response);
           })
           .catch(function(response) {
