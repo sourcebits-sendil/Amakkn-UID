@@ -46,11 +46,11 @@
     border-color: #46b8da;
 }
 .btn-circle1 {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     text-align: center;
     padding: 0px 0;
-    margin-top: 0px;
+    margin-top: 6px;
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 15px;
