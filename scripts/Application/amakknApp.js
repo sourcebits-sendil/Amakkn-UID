@@ -192,7 +192,17 @@ amakknApp.config(function($routeProvider){
     });
     $authProvider.google({
       clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',
-        responseType: 'token'
+        responseType: 'token',
+        url: '/auth/google',
+          authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+          redirectUri: window.location.origin,
+          requiredUrlParams: ['scope'],
+          optionalUrlParams: ['display'],
+          scope: ['profile', 'email'],
+          scopePrefix: 'openid',
+          scopeDelimiter: ' ',
+          display: 'popup',
+          oauthType: '2.0',
     });
 
 })
