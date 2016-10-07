@@ -298,7 +298,7 @@
 
             var str = ($scope.userForm.visitingHours).split(';');
             //alert(str);
-            $scope.userForm.visitingHours = str[0]+':'+str[1];
+            $scope.userForm.visitingHours = str[0]+'00'+','+str[1]+'00';
 
             result = document.getElementById("seleDays");
             result = result.getElementsByClassName("color3");
@@ -320,7 +320,7 @@
                 "visitingHours": $scope.userForm.visitingHours,
                 "propertyId": $scope.userForm.propertyId,
                 "userId": $scope.userForm.userId,
-                "features": $scope.userForm.features,
+                "features": " ",
                 "visitingDays": $scope.userForm.visitingDays
             };
             $log.debug(param)
