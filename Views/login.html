@@ -1,60 +1,64 @@
-
 <head>
     <meta name="google-signin-client_id" content="491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com">
 
-    <style>@import url('../css/loginSignup.css')</style>
+    <style>
+        @import url('../css/loginSignup.css')
+    </style>
     <script>
-       /* var googleUser = {};
-          var startApp = function() {
-            gapi.load('auth2', function(){
-              // Retrieve the singleton for the GoogleAuth library and set up the client.
-              auth2 = gapi.auth2.init({
-                client_id: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',
-                cookiepolicy: 'single_host_origin',
-                // Request scopes in addition to 'profile' and 'email'
-                //scope: 'additional_scope'
-              });
-              attachSignin(document.getElementById('customBtn'));
-            });
-          };
+        /* var googleUser = {};
+                  var startApp = function() {
+                    gapi.load('auth2', function(){
+                      // Retrieve the singleton for the GoogleAuth library and set up the client.
+                      auth2 = gapi.auth2.init({
+                        client_id: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',
+                        cookiepolicy: 'single_host_origin',
+                        // Request scopes in addition to 'profile' and 'email'
+                        //scope: 'additional_scope'
+                      });
+                      attachSignin(document.getElementById('customBtn'));
+                    });
+                  };
 
-          function attachSignin(element) {
-            console.log(element.id);
-            auth2.attachClickHandler(element, {},
-                function(googleUser) {
-                  //document.getElementById('name').innerText = "Signed in: " +
-                      googleUser.getBasicProfile().getName();
-                }, function(error) {
-                  alert(JSON.stringify(error, undefined, 2));
-                });
-          }*/
+                  function attachSignin(element) {
+                    console.log(element.id);
+                    auth2.attachClickHandler(element, {},
+                        function(googleUser) {
+                          //document.getElementById('name').innerText = "Signed in: " +
+                              googleUser.getBasicProfile().getName();
+                        }, function(error) {
+                          alert(JSON.stringify(error, undefined, 2));
+                        });
+                  }*/
     </script>
 </head>
 <div class="container-fluid text-center greyBtmBorder">
-<div class="padding20"></div>   <div class="padding20"></div>
-     <div class="row text-center">
-    <div class="col-md-6 col-sm-10 col-xs-10 col-md-offset-3 hidden-xs padding20">
-        <div class="row loginTextColor " >
-            <h3>Sign In</h3>
-            <p>Dont have an Amakkn account? <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></p><p>&nbsp;</p>
-        </div>
-        <div class="row" >
-            <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs noPadding hidden-xs" >
-            <button class="btn btn-default googleBtn" id="customBtn">
-                SIGN IN WITH GOOGLE PLUS
-                <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
-            </button>
-                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
+    <div class="padding20"></div>
+    <div class="padding20"></div>
+    <div class="row text-center">
+        <div class="col-md-6 col-sm-10 col-xs-10 col-md-offset-3 hidden-xs padding20">
+            <div class="row loginTextColor ">
+                <h3>Sign In</h3>
+                <p>Dont have an Amakkn account? <a href="#signUp" class="hvr-underline-reveal">Sign Up</a>
+                </p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs noPadding hidden-xs">
+                    <button class="btn btn-default googleBtn" id="customBtn">
+                        SIGN IN WITH GOOGLE PLUS
+                        <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
+                    </button>
+                    <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs noPadding hidden-xs">
+                    <button class="btn btn-default fbBtn">
+                        SIGN IN WITH FACEBOOK
+                        <span><img src="../assets/icons/facebook-logo-button.svg"></span>
+                    </button>
+                </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs noPadding hidden-xs" >
-            <button class="btn btn-default fbBtn">
-                SIGN IN WITH FACEBOOK
-                <span><img src="../assets/icons/facebook-logo-button.svg"></span>
-            </button>
-            </div>
-        </div>
-       <!-- mobile
+            <!-- mobile
         <div class="row" >
             <div class="col-md-12 col-sm-12 col-xs-12  hide-md hide-sm visible-xs" >
             <button class="btn btn-default googleBtn" id="customBtn">
@@ -71,134 +75,151 @@
             </button>
             </div>
         </div>-->
-        
-        
 
-    		<div class="row">
 
-    			<div class="divider dashed">
 
-    				<span class="editContent">Or</span>
+            <div class="row">
 
-    			</div><!-- /.divider -->
+                <div class="divider dashed">
 
-    		</div><!-- /.col -->
+                    <span class="editContent">Or</span>
+
+                </div>
+                <!-- /.divider -->
+
             </div>
+            <!-- /.col -->
         </div>
-         <div class="row text-center loginTextColor hidden-xs "  style="     margin-top: -39px;">
+    </div>
+    <div class="row text-center loginTextColor hidden-xs " style="     margin-top: -39px;">
 
 
-            <h3>Sign In with your phone number</h3><p>&nbsp;</p>
+        <h3>Sign In with your phone number</h3>
+        <p>&nbsp;</p>
 
-        </div>
-        <div class="row form-group col-md-6 col-sm-4 col-xs-4 col-md-offset-3 hidden-xs  ">
-             <form name="login" novalidate ng-submit="userlogin() "4>
-                 <div class="row">
-                     <div class="col-md-12 col-sm-12 col-xs-12  form-group">
-                <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
-                 <p ng-show="login.phone.$invalid && !login.phone.$pristine" style="color:#a94442;">Phone number is required.</p></div>
-                    </div>
-                 <div class="row"> <div class="col-md-12 col-sm-12 col-xs-12   form-group" >
-                <input type="password" class="form-control" id="pw1"  name="pw1" placeholder="Password*" maxlength="50" required ng-model="userForm.password" auto-fill-sync  / style=" -webkit-user-select: text;
+    </div>
+    <div class="row form-group col-md-6 col-sm-4 col-xs-4 col-md-offset-3 hidden-xs  ">
+        <form name="login" novalidate ng-submit="userlogin() " 4>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12  form-group">
+                    <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
+                    <p ng-show="login.phone.$invalid && !login.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12   form-group">
+                    <input type="password" class="form-control" id="pw1" name="pw1" placeholder="Password*" maxlength="50" required ng-model="userForm.password" auto-fill-sync / style=" -webkit-user-select: text;
   -khtml-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
-  user-select: text;" >
+  user-select: text;">
 
-                  <p class="text-left" style="color:#a94442;" ng-show="login.pw2.$error.pwmatch && login.pw2.$invalid">
-                    Re-type same as in password.
-                     </p></div>
-                 </div>
-                <button class="btn btn-default greenBtn" type="submit" ng-disabled="login.$invalid">
-                    Sign in
-                </button>
-                <p class="forgetPswrd marginTB20"><a href="" ng-click="redirect()">Forgot Password?</a></p>
-             </form>
+                    <p class="text-left" style="color:#a94442;" ng-show="login.pw2.$error.pwmatch && login.pw2.$invalid">
+                        Re-type same as in password.
+                    </p>
+                </div>
             </div>
+            <button class="btn btn-default greenBtn" type="submit" ng-disabled="login.$invalid">
+                Sign in
+            </button>
+            <p class="forgetPswrd marginTB20"><a href="" ng-click="redirect()">Forgot Password?</a>
+            </p>
+        </form>
+    </div>
 
-    
+
     <!--mobile view-->
 
 
-     <div class="row text-center visible-xs">
-    <div class=" col-xs-12  hidden-md hidden-sm visible-xs ">
-        <div class="row loginTextColor " >
-            <h3>Sign In</h3>
-            <p>Dont have an Amakkn account? <a href="#signUp" class="hvr-underline-reveal">Sign Up</a></p>
-        </div>
-        <div class="row " >
-            <div class=" col-xs-12 hidden-md hidden-sm visible-xs  " >
-            <button class="btn btn-default googleBtn" id="customBtn">
-                SIGN IN WITH GOOGLE PLUS
-                <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
-            </button>
-                <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
+    <div class="row text-center visible-xs">
+        <div class=" col-xs-12  hidden-md hidden-sm visible-xs ">
+            <div class="row loginTextColor ">
+                <h3>Sign In</h3>
+                <p>Dont have an Amakkn account? <a href="#signUp" class="hvr-underline-reveal">Sign Up</a>
+                </p>
+            </div>
+            <div class="row ">
+                <div class=" col-xs-12 hidden-md hidden-sm visible-xs  ">
+                    <button class="btn btn-default googleBtn" id="customBtn">
+                        SIGN IN WITH GOOGLE PLUS
+                        <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
+                    </button>
+                    <!--<google-plus-signin clientid="491700206414-rc3shi2pu7v5bmse43comrctu2emvl6h"></google-plus-signin>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
-            </div><br><br><br><br>
-            <div class=" col-xs-12  hidden-md hidden-sm visible-xs " >
-            <button class="btn btn-default fbBtn" style="margin-left: -9px;">
-                SIGN IN WITH FACEBOOK
-                <span><img src="../assets/icons/facebook-logo-button.svg"></span>
-            </button>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class=" col-xs-12  hidden-md hidden-sm visible-xs ">
+                    <button class="btn btn-default fbBtn" style="margin-left: -9px;">
+                        SIGN IN WITH FACEBOOK
+                        <span><img src="../assets/icons/facebook-logo-button.svg"></span>
+                    </button>
+                </div>
             </div>
-        </div>
-       
-    		<div class="row">
 
-    			<div class="divider dashed">
+            <div class="row">
 
-    				<span class="editContent">Or</span>
+                <div class="divider dashed">
 
-    			</div><!-- /.divider -->
+                    <span class="editContent">Or</span>
 
-    		</div><!-- /.col -->
+                </div>
+                <!-- /.divider -->
+
             </div>
+            <!-- /.col -->
         </div>
-         <div class="row text-center loginTextColor hidden-md hidden-sm visible-xs "  style="     margin-top: -39px;">
+    </div>
+    <div class="row text-center loginTextColor hidden-md hidden-sm visible-xs " style="     margin-top: -39px;">
 
 
-            <h3>Sign In with your phone number</h3>
+        <h3>Sign In with your phone number</h3>
 
-        </div>
+    </div>
 
-        <div class="row form-group col-xs-12  hidden-md hidden-sm visible-xs text-center ">
-             <form name="login" novalidate ng-submit="userlogin() ">
+    <div class="row form-group col-xs-12  hidden-md hidden-sm visible-xs text-center ">
+        <form name="login" novalidate ng-submit="userlogin() ">
 
-                 <div class="row">
-                     <div class=" col-xs-12 hidden-md hidden-sm visible-xs form-group">
-                <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
-                 <p ng-show="login.phone.$invalid && !login.phone.$pristine" style="color:#a94442;">Phone number is required.</p></div>
-                    </div>
-                 <div class="row"> <div class=" col-xs-12 hidden-md hidden-sm visible-xs form-group" >
-                <input type="password" class="form-control" id="pw1"  name="pw1" placeholder="Password*" maxlength="50" required ng-model="userForm.password" auto-fill-sync  / style=" -webkit-user-select: text;
+            <div class="row">
+                <div class=" col-xs-12 hidden-md hidden-sm visible-xs form-group">
+                    <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" ng-model="userForm.phone" />
+                    <p ng-show="login.phone.$invalid && !login.phone.$pristine" style="color:#a94442;">Phone number is required.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-xs-12 hidden-md hidden-sm visible-xs form-group">
+                    <input type="password" class="form-control" id="pw1" name="pw1" placeholder="Password*" maxlength="50" required ng-model="userForm.password" auto-fill-sync / style=" -webkit-user-select: text;
   -khtml-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
-  user-select: text;"  >
+  user-select: text;">
 
-                  <p class="text-left" style="color:#a94442;" ng-show="login.pw2.$error.pwmatch && login.pw2.$invalid">
-                    Re-type same as in password.
-                     </p></div>
-                 </div>
-                <button class="btn btn-default greenBtn" type="submit" ng-disabled="login.$invalid">
-                    Sign in
-                </button>
-                <p class="forgetPswrd marginTB20"><a href="" ng-click="redirect()">Forgot Password?</a></p>
-             </form>
+                    <p class="text-left" style="color:#a94442;" ng-show="login.pw2.$error.pwmatch && login.pw2.$invalid">
+                        Re-type same as in password.
+                    </p>
+                </div>
             </div>
-
-    
+            <button class="btn btn-default greenBtn" type="submit" ng-disabled="login.$invalid">
+                Sign in
+            </button>
+            <p class="forgetPswrd marginTB20"><a href="" ng-click="redirect()">Forgot Password?</a>
+            </p>
+        </form>
     </div>
 
+
+</div>
+
 <script>
-   /* function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail());
-    }*/
+    /* function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail());
+        }*/
 
-   // startApp();jhjhyu
+    // startApp();jhjhyu
 </script>
-
