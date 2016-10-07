@@ -295,7 +295,7 @@
 
          $scope.setPass = function(){
              $scope.urlRest = 'http://52.42.99.192/Login/setPasswordForUser/';
-             $log.debug($scope.userForm.password);
+             //$log.debug($scope.userForm.password);
              //restCall();
              $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if(result.resCode == 0){
@@ -303,6 +303,7 @@
                     myEl.removeClass('active').addClass('complete');
                     $rootScope.loggedIn = true;
                     $rootScope.loggedName = result.response.user.name;
+                    $scope.userForm.userId = result.response.user.userId;
                     $location.path('/');
 
                 }else{

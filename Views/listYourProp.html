@@ -546,45 +546,45 @@
       <h6>Select the listing of your property and set price</h6>
       <div class="row">
         <div class="col-md-6">
-          <button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale" ng-click="userForm.listedFor = '1'">For Rent</button>
+          <button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]"  ng-click="listedFor('1')">For Rent</button>
         </div>
         <div class="col-md-6">
-          <button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]" ng-click="forSale = !forSale" ng-click="userForm.listedFor = '2'">For Sale</button>
+          <button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]"  ng-click="listedFor('2')">For Sale</button>
         </div>
       </div>
       <div class="padding20"></div>
       <div class="row" ng-show="forSale">
         <div class="col-md-3">Price</div>
         <div class="col-md-9">
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="price">
+          <input type="number" class="form-control sellingPrice" aria-label="..." placeholder="" maxlength="12" required >
         </div>
       </div>
       <div class="row marginT20" ng-hide="forSale">
         <div class="col-md-3" >Yearly</div>
         <div class="col-md-9" >
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="yearly" >
+          <input type="number" class="form-control rentalPrice" aria-label="..." placeholder="" maxlength="12" required  >
         </div>
         <div class="col-md-3" >6 Months</div>
         <div class="col-md-9">
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="6months" >
+          <input type="number" class="form-control rentalPrice" aria-label="..." placeholder="" maxlength="12" required >
         </div>
         <div class="col-md-3" >Monthly</div>
         <div class="col-md-9" >
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="monthly" >
+          <input type="number" class="form-control rentalPrice" aria-label="..." placeholder="" maxlength="12" required  >
         </div>
 
         <div class="col-md-3" >Weekly</div>
         <div class="col-md-9" >
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekly" >
+          <input type="number" class="form-control rentalPrice" aria-label="..." placeholder="" maxlength="12" required  >
 
         </div>
         <div class="col-md-3" >Weekend</div>
         <div class="col-md-9" >
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="weekend" >
+          <input type="number" class="form-control rentalPrice" aria-label="..." placeholder="" maxlength="12" required >
         </div>
         <div class="col-md-3" >Daily</div>
         <div class="col-md-9" >
-          <input type="number" class="form-control" aria-label="..." placeholder="" maxlength="12" required name="daily" >
+          <input type="number" class="form-control rentalPrice" aria-label="..." placeholder="" maxlength="12" required >
         </div>
       </div>
         <div class="row">

@@ -25,24 +25,26 @@
         };
         /* used for form values */
         $scope.userForm = {
-            userId: '1',
+
             category: '1',
-            listedFor: ''
+            listedFor: '1'
         };
+        $scope.userForm.userId = $rootScope.userID
         var ele = '';
         $scope.address = 'Drag and drop the marker on your place in map'
         $scope.urlRest = '';
-        $scope.forSale = true;
+        $scope.forSale = false;
         $scope.bedrooms = '';
         $scope.bathrooms = '';
         $scope.reception = '';
 
-        $scope.yearlyPrice = false;
-        $scope.halfYearPrice = false;
-        $scope.monthlyPrice = true;
-        $scope.weeklyPrice = false;
-        $scope.weekendPrice = false;
-        $scope.dailyPrice = false;
+        $scope.yearlyPrice = '';
+        $scope.halfYearPrice = '';
+        $scope.monthlyPrice = '';
+        $scope.weeklyPrice = '';
+        $scope.weekendPrice = '';
+        $scope.dailyPrice = '';
+        $scope.sellingPrice = '';
 
 
         //activate();
@@ -368,7 +370,31 @@
         $scope.updatePrice = function() {
             var arr = '';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyPrice/';
+            if($scope.forSale){
+                var result = document.getElementsByClassName("sellingPrice");
+                var wrappedQueryResult = angular.element(result);
+                //alert(wrappedQueryResult[0].value)
+                $scope.userForm.price = wrappedQueryResult[0].value;
+            }else{
+                $scope.userForm.price = '';
+                var result = document.getElementsByClassName("rentalPrice");
+                var wrappedQueryResult = angular.element(result);
+                //$log.debug(wrappedQueryResult[0].value)
+                wrappedQueryResult.each(function(i){
 
+                    //arr.push(wrappedQueryResult[i].value);
+                    if(wrappedQueryResult[i].value != '' && wrappedQueryResult[i].value != ' '){
+                        if(i< wrappedQueryResult.length-1){
+                        arr += (i+1)+ ':'+ wrappedQueryResult[i].value+',';
+                            }else{
+                             arr += (i+1)+ ':'+ wrappedQueryResult[i].value
+                            }
+                    }
+
+                })
+                //$log.debug(arr);
+                $scope.userForm.price = arr +'';
+            }
 
 
             var param = {
@@ -392,7 +418,10 @@
             });
 
         }
-
+        $scope.listedFor = function(num){
+            if($scope.forSale){$scope.forSale = false;}else{$scope.forSale = true;}
+            $scope.userForm.listedFor = num +'';
+        }
         $scope.publishProp = function() {
                 $scope.urlRest = 'http://52.42.99.192/Property/publishMyListing/';
                 $log.debug($scope.userForm.propertyId+' '+$scope.userForm.userId);
