@@ -25,11 +25,11 @@
         };
         /* used for form values */
         $scope.userForm = {
-
+            userId: '1',
             category: '1',
             listedFor: '1'
         };
-        $scope.userForm.userId = $rootScope.userID
+        //$scope.userForm.userId = $rootScope.userID
         var ele = '';
         $scope.address = 'Drag and drop the marker on your place in map'
         $scope.urlRest = '';
@@ -418,6 +418,31 @@
             });
 
         }
+        $scope.frontier = function(ele){
+
+            /*var element = document.querySelector('frontierID');
+            element = element.querySelector('color2');
+            var angElement = angular.element(element);
+            angElement.addClass('color3');
+            angElement.removeClass('color2');*/
+
+            $('#frontierID button').removeClass('color3');
+            $('#frontierID button').addClass('color2');
+            $('#'+ele.item).addClass('color3');
+            $scope.userForm.Frontier = ele.item;
+            //$log.debug(ele.item);
+
+            //ele.classList.add("my-class");
+            /*result = result.getElementsByClassName("color3");
+            var wrappedQueryResult = angular.element(result);
+            wrappedQueryResult.each(function(i){
+
+                wrappedQueryResult[i].
+
+            })*/
+        }
+
+
         $scope.listedFor = function(num){
             if($scope.forSale){$scope.forSale = false;}else{$scope.forSale = true;}
             $scope.userForm.listedFor = num +'';
@@ -587,7 +612,6 @@
                 }
             });
         }
-
 
         $scope.clickedBtn = function($event) {
             //debugger;
