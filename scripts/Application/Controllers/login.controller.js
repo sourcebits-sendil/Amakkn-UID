@@ -35,6 +35,9 @@
                     $location.path('/');
                     $rootScope.loggedIn = true;
                     $rootScope.loggedName = result.response.user.name;
+                    $scope.userForm.userId = result.response.user.userId;
+                    $rootScope.userID = result.response.user.userId;
+                    $log.debug($rootScope.userID)
                     //alert($rootScope.loggedName);
                     $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
                 }else{

@@ -25,15 +25,63 @@
         };
         /* used for form values */
         $scope.userForm = {
-            userId: '1',
-            category: '1'
+
+            category: '1',
+            listedFor: '1'
         };
+        $scope.userForm.userId = $rootScope.userID
+        var ele = '';
+        $scope.address = 'Drag and drop the marker on your place in map'
         $scope.urlRest = '';
-        $scope.forSale = true;
+        $scope.forSale = false;
         $scope.bedrooms = '';
         $scope.bathrooms = '';
         $scope.reception = '';
+
+        $scope.yearlyPrice = '';
+        $scope.halfYearPrice = '';
+        $scope.monthlyPrice = '';
+        $scope.weeklyPrice = '';
+        $scope.weekendPrice = '';
+        $scope.dailyPrice = '';
+        $scope.sellingPrice = '';
+
+
         //activate();
+
+        $scope.getCountryCode = function(){
+            $http.get('../scripts/Library/data.json').success(function(data) {
+                $scope.countryCodes = data;
+            });
+            /* checking the browser's support for HTML geolocation support and fetching the country code based on IP address*/
+            if (navigator.geolocation) {
+               $.getJSON("http://freegeoip.net/json/", function(result){
+                    /* Selecting the matching country code in dropdown of the mobile number field*/
+                    $scope.locIP = result.country_code;
+                });
+            }else{
+                    //alert("Geolocation services are not supported by your browser.");
+            }
+
+
+        }
+
+        $scope.selectedCode = function(){
+            //$scope.isDisabled = false;
+            $timeout(function() {
+                ele = document.getElementById("num").getAttribute('aria-label')
+                var cod = ele.split('+')
+                //$log.debug(cod[1]);
+                $scope.userForm.countryCode = '+'+cod[1];
+                $log.debug($scope.userForm.countryCode);
+            }, 500);
+            //var select = document.getElementById('num');
+            //var options = select.options;
+            //var selected = select.options[select.selectedIndex];
+            //which means that:
+            //console.log(selected.value || selected.getAttribute('value'));
+        }
+
 
         $scope.nextStep = function(step) {
             //step = 'addDetails'
@@ -45,7 +93,7 @@
                         $scope.placeChanged = function() {
                             vm.place = this.getPlace();
                             vm.map.setCenter(vm.place.geometry.location);
-                            $log.debug(vm.place.geometry.location)
+                            //$log.debug(vm.place.geometry.location)
                         }
                         $timeout(function() {
                             NgMap.getMap().then(function(map) {
@@ -97,7 +145,8 @@
 
 
                     } else {
-                        alert('Select type of property')
+                        //alert('Select type of property')
+                        $mdToast.show($mdToast.simple().textContent('Select type of property').position('bottom right'));
                     }
                     break;
                 case 'addPhotos':
@@ -119,6 +168,12 @@
                     break;
                 case 'addDetails':
                     $scope.view.name = step;
+
+                    $timeout(function(){
+                         $scope.propertyDetailsList();
+                        $scope.getCountryCode();
+                    }, 500);
+                    //alert('pointing')
                     //$scope.urlRest = 'http://52.42.99.192/Property/addPropertyStep1/';
                     break;
                 case 'addDescription':
@@ -128,7 +183,7 @@
                     break;
                 case 'setPrice':
                     if ($scope.userForm.description != null && $scope.userForm.description != '') {
-                        //$log.debug($scope.userForm.description);
+                        $log.debug($scope.userForm.description);
                         httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                             if (result.resCode == 0) {
                                 $scope.view.name = step;
@@ -148,36 +203,239 @@
         }
 
         $scope.updateRooms = function() {
+
+            var arr = '';
+            $scope.userForm.rooms ='';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyRooms/';
-            $scope.userForm.rooms = $scope.bedrooms, $scope.bathrooms, $scope.reception;
+            //$scope.userForm.rooms = $scope.bedrooms, $scope.bathrooms, $scope.reception;
+            var result = document.getElementsByClassName("roomVal");
+            var wrappedQueryResult = angular.element(result);
+            //$log.debug(wrappedQueryResult[0].value)
+
+            wrappedQueryResult.each(function(i){
+
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
+            })
+            $scope.userForm.rooms = arr;
+
+            var param = {
+                "rooms": $scope.userForm.rooms + '',
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId
+            };
+             $log.debug(param)
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updateAmenities = function() {
+            var arr = '';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyAmenities/';
+            //$scope.userForm.amenities = '';
+            var result = document.getElementById("amenities");
+             //alert(result)
+            result = result.getElementsByClassName("color3");
+            var wrappedQueryResult = angular.element(result);
+            //$log.debug(wrappedQueryResult[0].value)
             $scope.userForm.amenities = '';
+            wrappedQueryResult.each(function(i){
+
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
+
+            })
+            $scope.userForm.amenities = arr ;
+            $log.debug($scope.userForm.propertyId +'  '+ $scope.userForm.userId +' '+$scope.userForm.amenities)
+            var param = {
+                "amenities": $scope.userForm.amenities + '',
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId
+            };
+             $log.debug(param)
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updateFeatures = function() {
+            var arr = '';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyFeatures/';
-            $scope.userForm.features = '';
-            $scope.userForm.visitingHours = '';
+           // $scope.userForm.features = '';
+            //$scope.userForm.visitingHours = '';
+            //$scope.userForm.visitingDays = '';
+            var result = document.getElementsByClassName("slidersCls");
+            var wrappedQueryResult = angular.element(result);
+            //arr = wrappedQueryResult;
+
+            var ele = document.getElementsByClassName("visitHrs");
+            var hrs = angular.element(ele);
+            $scope.userForm.visitingHours = hrs[0].value;
+            //$log.debug($scope.userForm.visitingHours);
+
+            var str = ($scope.userForm.visitingHours).split(';');
+            //alert(str);
+            $scope.userForm.visitingHours = str[0]+'00'+','+str[1]+'00';
+
+            result = document.getElementById("seleDays");
+            result = result.getElementsByClassName("color3");
+            wrappedQueryResult = angular.element(result);
+
             $scope.userForm.visitingDays = '';
+
+            wrappedQueryResult.each(function(i){
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
+            })
+            $scope.userForm.visitingDays = arr ;
+
+            var param = {
+                "visitingHours": $scope.userForm.visitingHours,
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId,
+                "features": " ",
+                "visitingDays": $scope.userForm.visitingDays
+            };
+            $log.debug(param)
+
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updateContact = function() {
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyContactNumber/';
-            $scope.userForm.phone = '';
-            $scope.userForm.countryCode = ''
+            //$scope.userForm.phone;
+            //$scope.userForm.countryCode ;
+            //$log.debug($scope.userForm.countryCode+' '+ $scope.userForm.phone +' '+ $scope.userForm.propertyId+' '+$scope.userForm.userId);
+
+            var param = {
+                "phone": $scope.userForm.phone+'',
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId,
+                "countryCode": $scope.userForm.countryCode
+            };
+            $log.debug(param)
+
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    //$log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
         }
 
         $scope.updatePrice = function() {
+            var arr = '';
             $scope.urlRest = 'http://52.42.99.192/Property/savePropertyPrice/';
-            $scope.userForm.listedFor = '';
-            $scope.userForm.price = '';
-        }
+            if($scope.forSale){
+                var result = document.getElementsByClassName("sellingPrice");
+                var wrappedQueryResult = angular.element(result);
+                //alert(wrappedQueryResult[0].value)
+                $scope.userForm.price = wrappedQueryResult[0].value;
+            }else{
+                $scope.userForm.price = '';
+                var result = document.getElementsByClassName("rentalPrice");
+                var wrappedQueryResult = angular.element(result);
+                //$log.debug(wrappedQueryResult[0].value)
+                wrappedQueryResult.each(function(i){
 
+                    //arr.push(wrappedQueryResult[i].value);
+                    if(wrappedQueryResult[i].value != '' && wrappedQueryResult[i].value != ' '){
+                        if(i< wrappedQueryResult.length-1){
+                        arr += (i+1)+ ':'+ wrappedQueryResult[i].value+',';
+                            }else{
+                             arr += (i+1)+ ':'+ wrappedQueryResult[i].value
+                            }
+                    }
+
+                })
+                //$log.debug(arr);
+                $scope.userForm.price = arr +'';
+            }
+
+
+            var param = {
+                "listedFor": $scope.userForm.listedFor,
+                "propertyId": $scope.userForm.propertyId,
+                "userId": $scope.userForm.userId,
+                "price": $scope.userForm.price
+            };
+            $log.debug(param)
+
+            httpService.getData($scope.urlRest, param).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
+
+        }
+        $scope.listedFor = function(num){
+            if($scope.forSale){$scope.forSale = false;}else{$scope.forSale = true;}
+            $scope.userForm.listedFor = num +'';
+        }
         $scope.publishProp = function() {
                 $scope.urlRest = 'http://52.42.99.192/Property/publishMyListing/';
+                $log.debug($scope.userForm.propertyId+' '+$scope.userForm.userId);
+                httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
+                if (result.resCode == 0) {
+                    //$scope.view.name = step;
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    // alert(result.resStr);
+                    $log.debug(result.response);
+                } else {
+                    $mdToast.show($mdToast.simple().textContent(result.resStr).position('bottom right'));
+                    //alert(result.resStr);
+                }
+            });
             }
             //////////////
         function activate() {
@@ -195,6 +453,7 @@
             $scope.propCategory = categoryId;
             $scope.userForm.category = categoryId;
             $scope.propertyTypeList();
+            $scope.userForm.propertyType = null;
         }
 
         $scope.propertyTypeList = function() {
@@ -202,7 +461,7 @@
             var param = {
                 "category": $scope.propCategory
             };
-            $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {
+            $rootScope.myPromise = httpService.getData($scope.urlRest, $scope.userForm).then(function(result) {
                 if (result.resCode == 0) {
                     $scope.propertiesTypeData = result.response;
                     $scope.propertiesTypeCount = result.response.length;
@@ -213,7 +472,8 @@
 
         $scope.selectType = function(prop) {
             //alert(prop);
-            $scope.userForm.propertyType = prop;
+            $scope.userForm.propertyType = prop+'';
+
         }
 
         $scope.getImage = function(photos) {
@@ -256,19 +516,20 @@
             }
         };
 
-        $scope.value4 = "1970;1980";
+        $scope.value4 = "1;24";
         $scope.options = {
-            from: 1960,
-            to: 2015,
+            from: 1,
+            to: 24,
             step: 1,
-            dimension: " $",
-            scale: [1960, '|', 1970, '|', 1980, '|', 1990, '|', 2000, '|', 2015]
+            dimension: "Hrs",
+            scale: [1, '|', 6, '|', 12, '|', 18, '|', 24]
         };
 
         $scope.propertyDetailsList = function() {
+            //alert($scope.userForm.propertyType)
             $scope.urlRest = 'http://52.42.99.192/Property/getAllParamsForAddPropertyForPropertyType/';
             var param = {
-                "propertyType": "4"
+                "propertyType": $scope.userForm.propertyType + ''
             };
             $rootScope.myPromise = httpService.getData($scope.urlRest, param).then(function(result) {
                 if (result.resCode == 0) {
@@ -327,7 +588,7 @@
             });
         }
 
-        $scope.propertyDetailsList();
+
         $scope.clickedBtn = function($event) {
             //debugger;
             $(event.currentTarget).toggleClass('color2').toggleClass('color3');

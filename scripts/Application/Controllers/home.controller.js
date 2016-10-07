@@ -37,6 +37,7 @@
         $scope.currentNavItem = "buy";
         $rootScope.propertyArr = [];
         $rootScope.forgetPass = false;
+        $rootScope.userID;
 
   $scope.loadUsers = function() {
     // Use timeout to simulate a 650ms request.
