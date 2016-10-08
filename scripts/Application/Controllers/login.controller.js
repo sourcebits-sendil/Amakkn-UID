@@ -10,12 +10,15 @@
         .controller('loginController', loginController);
 
     /* @ngInject */
-    function loginController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast) {
+    function loginController ($log, $scope, $http, $timeout, $filter, httpService, $location, $rootScope, $mdToast, $auth) {
         //var vm = this;
         //vm.class = 'loginController';
 
         /* used for form values */
-        $scope.userForm={};
+        $scope.userForm={
+            name: '',
+            email: ''
+        };
         /* var for error Response */
         $scope.errorResponse={};
         /* var for success Response */
@@ -23,6 +26,74 @@
         //activate();
         $rootScope.loggedName = '';
         $scope.userForm.isSocial = "0";
+
+        $rootScope.authenticate = function(provider) {
+          $auth.authenticate(provider)
+          .then(function(response) {
+            // Signed in with Google.
+              //alert('workings')
+
+              //var param = '/oauthplayground/?code=4/yspt06Lki4P1q2x8mtep49iQd0mJO1oayrZ-YMghOFU
+
+
+             //$log.debug(provider);
+              if(provider == 'google'){
+                    $http.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token='+response.access_token).success(function(data) {
+                        $log.debug(data);
+                        if(data.name != null){
+                            $scope.userForm.name = data.name;
+
+                        };
+                        if(data.email != null){
+                            $scope.userForm.email = data.email;
+                        }
+                        $scope.userForm.isSocial = "1";
+                        $scope.userlogin();
+                    });
+              }else if(provider == 'facebook'){
+                  $scope.userid = '';
+                  var resData = '';
+              $scope.userData = $http.get('https://graph.facebook.com/me?access_token='+response.access_token).success(function(data) {
+                $log.debug(data);
+                  if(data.name != null){
+                        $scope.userForm.name = data.name;
+
+                    };
+                  resData = data;
+                $scope.userid = data.id;
+                  getEmail();
+
+               })
+                 var getEmail = function(){
+                     $http({
+                       method : "GET",
+                       url : "https://graph.facebook.com/"+$scope.userid+"?fields=email,picture",
+                       access_token:response.access_token
+                   }).then(function mySucces(response) {
+                       $log.debug(response.data);
+                        if(response.data.email != null){
+                            $scope.userForm.email = response.data.email;
+                            $scope.userForm.isSocial = "1";
+                            $scope.userlogin();
+                        }
+
+                   }, function myError(response) {
+                       $log.debug(response.statusText);
+
+                   });
+                 }
+
+
+
+              }
+          })
+
+
+          .catch(function(response) {
+            // Something went wrong.
+
+          })
+        };
 
         $scope.userlogin = function(){
 

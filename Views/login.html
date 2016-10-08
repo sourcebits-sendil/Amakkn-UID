@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs noPadding hidden-xs">
-                    <button class="btn btn-default googleBtn" id="customBtn">
+                    <button class="btn btn-default googleBtn" id="customBtn" ng-click="authenticate('google')">
                         SIGN IN WITH GOOGLE PLUS
                         <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
                     </button>
@@ -52,7 +52,7 @@
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs noPadding hidden-xs">
-                    <button class="btn btn-default fbBtn">
+                    <button class="btn btn-default fbBtn" ng-click="authenticate('facebook')">
                         SIGN IN WITH FACEBOOK
                         <span><img src="../assets/icons/facebook-logo-button.svg"></span>
                     </button>
@@ -140,7 +140,7 @@
             </div>
             <div class="row ">
                 <div class=" col-xs-12 hidden-md hidden-sm visible-xs  ">
-                    <button class="btn btn-default googleBtn" id="customBtn">
+                    <button class="btn btn-default googleBtn" id="customBtn" >
                         SIGN IN WITH GOOGLE PLUS
                         <span><img src="../assets/icons/google-plus-social-logotype.svg"></span>
                     </button>
@@ -152,7 +152,7 @@
                 <br>
                 <br>
                 <div class=" col-xs-12  hidden-md hidden-sm visible-xs ">
-                    <button class="btn btn-default fbBtn" style="margin-left: -9px;">
+                    <button class="btn btn-default fbBtn" style="margin-left: -9px;" >
                         SIGN IN WITH FACEBOOK
                         <span><img src="../assets/icons/facebook-logo-button.svg"></span>
                     </button>

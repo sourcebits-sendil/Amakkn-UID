@@ -188,7 +188,8 @@ amakknApp.config(function($routeProvider){
   .config(function($authProvider) {
 
     $authProvider.facebook({
-      clientId: '192874244471411'
+      clientId: '192874244471411',
+        responseType: 'token'
     });
     $authProvider.google({
       clientId: '491700206414-7d9695rso2ecnve37pe259jk2g7idf6k.apps.googleusercontent.com',

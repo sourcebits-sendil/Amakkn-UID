@@ -21,7 +21,8 @@
         /* initiating view objects used to switch */
         $rootScope.view={
               name: '',
-            accountType:''
+            accountType:'',
+            email: ''
         };
         /* used to disable OTP button and enable resend link*/
         $scope.isDisabled = false;
@@ -49,8 +50,53 @@
               //var param = '/oauthplayground/?code=4/yspt06Lki4P1q2x8mtep49iQd0mJO1oayrZ-YMghOFU
 
 
-              $log.debug(response);
+             //$log.debug(provider);
+              if(provider == 'google'){
+                    $http.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token='+response.access_token).success(function(data) {
+                        $log.debug(data);
+                        if(data.name != null){
+                            $scope.userForm.name = data.name;
+                        };
+                        if(data.email != null){
+                            $scope.userForm.email = data.email;
+                        }
+                        $scope.userForm.isSocial = "1";
+                    });
+              }else if(provider == 'facebook'){
+                  $scope.userid = '';
+                  var resData = '';
+              $scope.userData = $http.get('https://graph.facebook.com/me?access_token='+response.access_token).success(function(data) {
+                $log.debug(data);
+                  if(data.name != null){
+                        $scope.userForm.name = data.name;
+                    };
+                  resData = data;
+                $scope.userid = data.id;
+                  getEmail();
+
+               })
+                 var getEmail = function(){
+                     $http({
+                       method : "GET",
+                       url : "https://graph.facebook.com/"+$scope.userid+"?fields=email,picture",
+                       access_token:response.access_token
+                   }).then(function mySucces(response) {
+                       $log.debug(response.data);
+                        if(response.data.email != null){
+                            $scope.userForm.email = response.data.email;
+                        }
+
+                   }, function myError(response) {
+                       $log.debug(response.statusText);
+
+                   });
+                 }
+
+
+                  $scope.userForm.isSocial = "1";
+              }
           })
+
 
           .catch(function(response) {
             // Something went wrong.
