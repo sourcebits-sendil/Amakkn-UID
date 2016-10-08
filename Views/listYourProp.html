@@ -53,8 +53,8 @@
     <div class="padding20"></div>
     <div class="padding20"></div>
     <div class="row propertyborder">
-      <div class="col-md-6" ng-repeat="item in propertiesTypeData"  >
-        <div class="row " ng-click="selectType(item.key)" >
+      <div class="col-md-6 active-link" ng-repeat="item in propertiesTypeData"  >
+        <div class="row " ng-click="selectType(item.key)"  >
           <!-- <div class="row bottmborder"> -->
           <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'" >
             <div class="col-md-2"  ><img  style="margin-top: 8px;" ng-src={{item.image}} >

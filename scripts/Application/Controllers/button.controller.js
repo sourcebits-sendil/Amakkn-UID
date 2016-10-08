@@ -3,7 +3,7 @@
   angular
       .module('amakkn',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
       .config(['$mdIconProvider', function($mdIconProvider) {
-        $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
+       // $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
       }])
       .controller('buttoncontroller', buttoncontroller);
 
