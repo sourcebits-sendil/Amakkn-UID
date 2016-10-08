@@ -85,3 +85,11 @@ content: " ";
     background: #6dc0ce;
     box-shadow: -1px 1px 4px 1px rgba(0, 0, 0, 0.2);
 }
+.addspan1 {
+    width: 200px;
+    height: 30px;
+    background-color: #ffffff;
+    border: solid 1px #6dc0ce;
+    text-align: center;
+    padding-top: 6px;
+}
