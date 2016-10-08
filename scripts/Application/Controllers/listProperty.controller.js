@@ -25,11 +25,11 @@
         };
         /* used for form values */
         $scope.userForm = {
-
+            userId: '1',
             category: '1',
             listedFor: '1'
         };
-        $scope.userForm.userId = $rootScope.userID
+        //$scope.userForm.userId = $rootScope.userID
         var ele = '';
         $scope.address = 'Drag and drop the marker on your place in map'
         $scope.urlRest = '';
@@ -292,6 +292,15 @@
             var result = document.getElementsByClassName("slidersCls");
             var wrappedQueryResult = angular.element(result);
             //arr = wrappedQueryResult;
+            wrappedQueryResult.each(function(i){
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
+                $log.debug(arr);
+            })
 
             var ele = document.getElementsByClassName("visitHrs");
             var hrs = angular.element(ele);
@@ -307,7 +316,7 @@
             wrappedQueryResult = angular.element(result);
 
             $scope.userForm.visitingDays = '';
-
+            arr='';
             wrappedQueryResult.each(function(i){
                 //arr.push(wrappedQueryResult[i].value);
                 if(i< wrappedQueryResult.length-1){
@@ -418,6 +427,31 @@
             });
 
         }
+        $scope.frontier = function(ele){
+
+            /*var element = document.querySelector('frontierID');
+            element = element.querySelector('color2');
+            var angElement = angular.element(element);
+            angElement.addClass('color3');
+            angElement.removeClass('color2');*/
+
+            $('#frontierID button').removeClass('color3');
+            $('#frontierID button').addClass('color2');
+            $('#'+ele.item).addClass('color3');
+            $scope.userForm.Frontier = ele.item;
+            //$log.debug(ele.item);
+
+            //ele.classList.add("my-class");
+            /*result = result.getElementsByClassName("color3");
+            var wrappedQueryResult = angular.element(result);
+            wrappedQueryResult.each(function(i){
+
+                wrappedQueryResult[i].
+
+            })*/
+        }
+
+
         $scope.listedFor = function(num){
             if($scope.forSale){$scope.forSale = false;}else{$scope.forSale = true;}
             $scope.userForm.listedFor = num +'';
@@ -587,7 +621,6 @@
                 }
             });
         }
-
 
         $scope.clickedBtn = function($event) {
             //debugger;

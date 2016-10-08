@@ -329,7 +329,7 @@
             <br><br>
             <div class="row" style="margin-right: 10px;">
               <div class="col-md-12">
-                <input ng-model="item.value" class="slidersCls" type="text" slider options="item.options" value="item.key"/>
+                <input  class="slidersCls" type="text" slider options="item.options" id="item.key"/>
               </div>
             </div>
             <br>
@@ -338,8 +338,8 @@
             <h4>{{item.name}}</h4>
             <br>
             <div class="row" >
-              <div class="col-md-12">
-                <button type="button" class="btn btn-round color2" ng-click="clickedBtn($index)" ng-repeat="item in frontispicesList" ng-class="{color3: $index == selectedBtn}">{{item}}</button>
+              <div class="col-md-12" id="frontierID">
+                <button type="button" class="btn btn-round color2" ng-click="frontier({item})" ng-repeat="item in frontispicesList" ng-class="{color3: $index == selectedBtn}" id="{{item}}" value="{{item}}">{{item}}</button>
               </div>
             </div>
 
@@ -349,9 +349,9 @@
 
 
         <h4 class="buttonleft">Visiting Hours</h4>
-        <div class="row"></div>
+        <div class="row padding20"></div>
 
-        <br>
+
         <div class="row">
           <div class="col-md-12">
             <input ng-model="value4" type="text" id="mySlider2" class="visitHrs" slider options="options" />
@@ -409,12 +409,12 @@
           <h4>CONTACT NUMBER</h4>
           <div class="form-group ">
             <div class="input-group form-group profiletextbox" id="otp-group" style="width:500px;">
-              <div class="">
+
                 <!--<md-select name="countryCode" class="form-control  " placeholder="Country" style="min-width:20%;width:25%; color:#6dc0ce">KSA +966 </md-select>-->
                     <md-select name="countryCode" class="form-control" ng-model="countryCodes.country_code" placeholder="Country"  style="min-width:20%;width:25%; color:#6dc0ce" data-ng-change="selectedCode(countryCodes)" id="num">
                         <md-option ng-value="codes.country_code" ng-repeat="codes in countryCodes" >{{codes.country_code +' '+codes.country_isd_code}}</md-option>
                     </md-select>
-              </div>
+
               <input type="number" class="form-control" aria-label="..." placeholder="Mobile Number*" maxlength="12" required name="phone" style="width:73%;" ng-model="userForm.phone"> </div>
           </div>
         </div>
