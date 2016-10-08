@@ -25,11 +25,11 @@
         };
         /* used for form values */
         $scope.userForm = {
-            userId: '1',
+
             category: '1',
             listedFor: '1'
         };
-        //$scope.userForm.userId = $rootScope.userID
+        $scope.userForm.userId = $rootScope.userID
         var ele = '';
         $scope.address = 'Drag and drop the marker on your place in map'
         $scope.urlRest = '';
@@ -172,7 +172,7 @@
                     $timeout(function(){
                          $scope.propertyDetailsList();
                         $scope.getCountryCode();
-                    }, 500);
+                    }, 50);
                     //alert('pointing')
                     //$scope.urlRest = 'http://52.42.99.192/Property/addPropertyStep1/';
                     break;
@@ -403,7 +403,7 @@
                     }
 
                 })
-                //$log.debug(arr);
+                $log.debug(arr);
                 $scope.userForm.price = arr +'';
             }
 
@@ -506,9 +506,13 @@
         }
         $scope.propertyTypeList();
 
-        $scope.selectType = function(prop) {
+        $scope.selectType = function(prop, nam) {
             //alert(prop);
+            //alert(nam)
             $scope.userForm.propertyType = prop+'';
+            $('.selectBorder').show();
+            $('#'+nam).hide();
+
 
         }
 

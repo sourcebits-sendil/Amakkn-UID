@@ -53,17 +53,20 @@
     <div class="padding20"></div>
     <div class="padding20"></div>
     <div class="row propertyborder">
-      <div class="col-md-6 active-link" ng-repeat="item in propertiesTypeData"  >
-        <div class="row " ng-click="selectType(item.key)"  >
+      <div class="col-md-6" style="padding:10px 0px; " ng-repeat="item in propertiesTypeData"  >
+        <div class="row " ng-click="selectType(item.key, item.name)"  style="outline: none;">
           <!-- <div class="row bottmborder"> -->
-          <div ng-class="getBottmBorder($index, $last)  ? 'row bottmborder' : 'row bottmbordernone'" >
-            <div class="col-md-2"  ><img  style="margin-top: 8px;" ng-src={{item.image}} >
+
+            <div class="col-md-1 col-md-offset-1"  ><img  style="margin-top: 8px;" ng-src={{item.image}} >
             </div>
-            <div class="col-md-10 text-left" ><a href="" >{{item.name}}</a>
+            <div class="col-md-8 text-left" ><a href="" >{{item.name}}</a>
               <p>{{item.description}}</p>
+
             </div>
-          </div>
+
         </div>
+          <md-nav-ink-bar style="width: 100%;" class="selectedBorder" ></md-nav-ink-bar>
+          <md-nav-ink-bar style="width: 100%;" class="selectBorder" id="{{item.name}}"></md-nav-ink-bar>
       </div>
     </div>
     <div class="padding20"></div>
@@ -546,10 +549,10 @@
       <h6>Select the listing of your property and set price</h6>
       <div class="row">
         <div class="col-md-6">
-          <button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]"  ng-click="listedFor('1')">For Rent</button>
+          <button type="button" class="btn btn-lg" ng-class="{false: 'btn-success', true: 'btn-defalut '}[!forSale]"  ng-click="listedFor('2')">For Rent</button>
         </div>
         <div class="col-md-6">
-          <button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]"  ng-click="listedFor('2')">For Sale</button>
+          <button type="button" class="btn btn-lg" ng-class="{true: 'btn-success', false: 'btn-defalut '}[!forSale]"  ng-click="listedFor('1')">For Sale</button>
         </div>
       </div>
       <div class="padding20"></div>
