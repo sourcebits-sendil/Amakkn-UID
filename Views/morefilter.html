@@ -3,13 +3,121 @@
     @import url('../css/home.css');
     @import url('../css/morefilter.css');
     @import url('../css/addfilter.css');
+     @import url('../css/grid.css');
+    @import url('../css/filtermenu.css');
 </style>
 
-<div class="padding20"></div>
-<div class="padding20"></div>
-<div class="container">
+<div class="mapViewFil">
+<nav class="navbar navbar-default " style="margin-top:15px;">
+            <div class="container-fluid container-fluidmenu " id="filtermenu">
+                <div class="col-md-12 col-sm-12 col-xs-12 menushadow-nav">
+                    <div class="col-md-2 col-sm-2 col-xs-2 "></div>
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header ">
+                        <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only ">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse col-md-3  col-sm-3 col-xs-3 menubar2padding" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+
+
+
+                            <li class="dropdown list ">
+                                <a href="" class="dropdown-toggle active " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy <span class="caret"></span></a>
+                                <ul class="dropdown-menu ">
+
+                                    <li><a href="">Buy</a>
+                                    </li>
+                                    <li><a href="">Rent</a>
+                                    </li>
+                                    <li><a href="">Sell</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="">Separated link</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="">One more separated link</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" class="form-control" style="min-width:90%;border:none;" placeholder="Enter a City, Address or ZIP Code" places-auto-complete size=80 ng-model="vm.address" on-place-changed="placeChanged()"><a href="" class="btn btn-default" style="border:none;"><span class="glyphicon glyphicon-send" ></span> </a>
+                            </div>
+
+
+                        </form>
+
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class="dropdown list">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Property Type <span class="caret"></span></a>
+                                <ul class="dropdown-menu propertyborder groupwidth">
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <h3 class="property">Apartment, House / Villa, Office, Warehouse</h3>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <p class="filterp"> Residential Properties</p>
+                                        <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Apartment</button>
+                                        <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">House / Villa</button>
+                                        <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Land / Plot</button>
+
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 " style="margin-bottom: 11px;">
+                                        <p class="filterp">Commercial Properties</p>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu">Office</button>
+                                                <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Showroom</button>
+                                                <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Commercial Site</button>
+                                                <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu ">Industrial</button>
+                                                <button type="button" class="btn btn-primary btn-round-sm btn-sm btnmenu " style="    margin-top: 10px;">Warehouse</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </ul>
+                            </li>
+                            <li class="dropdown list">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Price Range <span class="caret"></span></a>
+                                <ul class="dropdown-menu propertyborder groupwidth" style="padding-bottom:10px;">
+                                    <li><a href="" class="filterp">From $550,000 to $1M</a>
+                                    </li>
+                                    <br>
+                                    <input ng-model="value7" type="text" id="mySlider1" slider options="options" />
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="col-md-12 filterp">
+                                        <button class="btn btn-success" type="button">DONE</button>
+                                    </div>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="dropdown list">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Filters<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <div class="container " >
+
     <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-10">
+        <div class="col-md-8 col-sm-10 col-xs-10">
             <md-content class="md-padding" layout="column" style=" top: 16px;
 ">
                 <form name="fruitForm">
@@ -36,8 +144,8 @@
     </div>
 <hr>
     <div class="row">
-        <div class="">
-            <h4>PROPERTY TYPE</h4>
+        <div class="col-md-12">
+            <h4 class="texth">PROPERTY TYPE</h4>
             <button type="button" class="btn btn-round color1">Apartment & Floor</button>
             <button type="button" class="btn btn-round color2">Villa/Palace</button>
             <button type="button" class="btn btn-round color2">Land/Plot</button>
@@ -159,15 +267,15 @@
           </div></div>
     </div>
 <hr>
-    <div class="row">
-        <h4>YEAR OF CONSTRUCTION</h4>
+    <div class="row"><div class="col-md-12">
+        <h4 class="texth">YEAR OF CONSTRUCTION</h4>
         <br>
         <input ng-model="value" type="text" id="mySlider1" slider options="options" />
-    </div>
+        </div></div>
     <div class="padding20"></div><hr>
     <div class="row">
-        <div class="">
-            <h4>PROPERTY TYPE</h4>
+        <div class="col-md-12">
+            <h4 class="texth">PROPERTY TYPE</h4>
             <button type="button" class="btn btn-round color1">Swimming Pool</button>
             <button type="button" class="btn btn-round color2">Playground</button>
             <button type="button" class="btn btn-round color2">Driver Room</button>
@@ -183,16 +291,16 @@
     </div>
 <hr>
 
-    <div class="row">
-        <h4>CONSTRUCTION AREA</h4>
+    <div class="row"><div class="col-md-12">
+        <h4 class="texth">CONSTRUCTION AREA</h4>
         <br>
         <input ng-model="value2" type="text" id="mySlider1" slider options="optionsone" />
-    </div>
+        </div></div>
 
     <div class="padding20"></div><hr>
     <div class="row">
-        <div class="">
-            <h4>FRONTISPIECE</h4>
+        <div class="col-md-12">
+            <h4 class="texth">FRONTISPIECE</h4>
             <button type="button" class="btn btn-round color1">North</button>
             <button type="button" class="btn btn-round color2">East</button>
             <button type="button" class="btn btn-round color2">West</button>
@@ -204,14 +312,29 @@
     </div>
 
 <div class="padding20"></div><hr>
-    <div class="row">
-        <h4>LAND AREA</h4>
+    <div class="row"><div class="col-md-12">
+        <h4 class="texth">LAND AREA</h4>
         <br>
         <input ng-model="value3" type="text" id="mySlider1" slider options="optionstwo" />
-    </div>
+    </div></div>
 
 
 
     <div class="padding20"></div>
     <div class="padding20"></div>
 </div>
+
+                                </ul>
+                            </li>
+<li> <a href="#listMap">
+                                <button type="button" class="btn btn-success">Search</button>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+    </nav></div>
+
+
