@@ -292,6 +292,15 @@
             var result = document.getElementsByClassName("slidersCls");
             var wrappedQueryResult = angular.element(result);
             //arr = wrappedQueryResult;
+            wrappedQueryResult.each(function(i){
+                //arr.push(wrappedQueryResult[i].value);
+                if(i< wrappedQueryResult.length-1){
+                arr += wrappedQueryResult[i].value+',';
+                    }else{
+                     arr += wrappedQueryResult[i].value
+                    }
+                $log.debug(arr);
+            })
 
             var ele = document.getElementsByClassName("visitHrs");
             var hrs = angular.element(ele);
@@ -307,7 +316,7 @@
             wrappedQueryResult = angular.element(result);
 
             $scope.userForm.visitingDays = '';
-
+            arr='';
             wrappedQueryResult.each(function(i){
                 //arr.push(wrappedQueryResult[i].value);
                 if(i< wrappedQueryResult.length-1){
