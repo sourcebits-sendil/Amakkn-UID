@@ -329,7 +329,7 @@
             <br><br>
             <div class="row" style="margin-right: 10px;">
               <div class="col-md-12">
-                <input  class="slidersCls" type="text" slider options="item.options" id="item.key"/>
+                <input ng-model="item.value" class="slidersCls" type="text" slider options="item.options" id="{{item.key}}"/>
               </div>
             </div>
             <br>
@@ -339,7 +339,7 @@
             <br>
             <div class="row" >
               <div class="col-md-12" id="frontierID">
-                <button type="button" class="btn btn-round color2" ng-click="frontier({item})" ng-repeat="item in frontispicesList" ng-class="{color3: $index == selectedBtn}" id="{{item}}" value="{{item}}">{{item}}</button>
+                <button type="button" class="btn btn-round color2" ng-click="frontier({item},{btn})" ng-repeat="btn in frontispicesList" ng-class="{color3: $index == selectedBtn}" id="{{btn}}" value="{{item.key}}">{{btn}}</button>
               </div>
             </div>
 

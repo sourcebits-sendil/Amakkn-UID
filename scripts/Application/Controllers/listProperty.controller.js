@@ -295,13 +295,13 @@
             wrappedQueryResult.each(function(i){
                 //arr.push(wrappedQueryResult[i].value);
                 if(i< wrappedQueryResult.length-1){
-                arr += wrappedQueryResult[i].value+',';
+                arr += wrappedQueryResult[i].id+':'+wrappedQueryResult[i].value+',';
                     }else{
-                     arr += wrappedQueryResult[i].value
+                     arr += wrappedQueryResult[i].id+':'+wrappedQueryResult[i].value
                     }
-                $log.debug(arr);
+                //$log.debug(arr);
             })
-
+            $scope.userForm.features = arr;
             var ele = document.getElementsByClassName("visitHrs");
             var hrs = angular.element(ele);
             $scope.userForm.visitingHours = hrs[0].value;
@@ -309,7 +309,7 @@
 
             var str = ($scope.userForm.visitingHours).split(';');
             //alert(str);
-            $scope.userForm.visitingHours = str[0]+'00'+','+str[1]+'00';
+            $scope.userForm.visitingHours = str[0]+':00'+','+str[1]+':00';
 
             result = document.getElementById("seleDays");
             result = result.getElementsByClassName("color3");
@@ -326,12 +326,14 @@
                     }
             })
             $scope.userForm.visitingDays = arr ;
-
+            if($scope.userForm.Frontier != '' ){
+                $scope.userForm.features += ','+$scope.userForm.Frontier;
+            }
             var param = {
                 "visitingHours": $scope.userForm.visitingHours,
                 "propertyId": $scope.userForm.propertyId,
                 "userId": $scope.userForm.userId,
-                "features": " ",
+                "features": $scope.userForm.features + '',
                 "visitingDays": $scope.userForm.visitingDays
             };
             $log.debug(param)
@@ -427,7 +429,7 @@
             });
 
         }
-        $scope.frontier = function(ele){
+        $scope.frontier = function(itm, ele){
 
             /*var element = document.querySelector('frontierID');
             element = element.querySelector('color2');
@@ -437,8 +439,8 @@
 
             $('#frontierID button').removeClass('color3');
             $('#frontierID button').addClass('color2');
-            $('#'+ele.item).addClass('color3');
-            $scope.userForm.Frontier = ele.item;
+            $('#'+ele.btn).addClass('color3');
+            $scope.userForm.Frontier = itm.item.key+':'+ele.btn;
             //$log.debug(ele.item);
 
             //ele.classList.add("my-class");
@@ -608,6 +610,7 @@
 
                         }
                         //debugger;
+                        //$log.debug('key '+v.key)
                         $scope.x.push({value: i, name: v.name, isMandatory: v.isMandatory, key: v.key, options: {
                         from: v.lowerLimit,
                         to: v.upperLimit,
@@ -616,7 +619,7 @@
                         scale: [v.lowerLimit, '|', $scope.firstInterval, '|', $scope.secondInterval, '|', $scope.thirdInterval, '|', $scope.fourthInterval, '|', v.upperLimit]
                     }});
                     })
-                    $scope.frontispicesList = ["North","South","East","West","North - West","North - East","South - East","South - West"];
+                    $scope.frontispicesList = ["North","South","East","West","North-West","North-East","South-East","South-West"];
                     $scope.daysList = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                 }
             });
